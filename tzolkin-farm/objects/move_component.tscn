@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://btmrm0mgepk6k"]
+
+[ext_resource type="Script" uid="uid://clp1cprfmo3vq" path="res://objects/move_component.gd" id="1_butck"]
+
+[node name="MoveComponent" type="Node" unique_id=357507057]
+script = ExtResource("1_butck")
+target_destination = null
+move_speed = null
+weight = null
+moving = null
+lerp = null

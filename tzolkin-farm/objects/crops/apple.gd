@@ -1,0 +1,19 @@
+extends Seed
+
+
+# Called when the node enters the scene tree for the first time.
+#func _ready() -> void:
+#	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta: float) -> void:
+#	pass
+func on_harvest_sprout():
+	expire(0,0,1) 
+
+func on_harvest_flower():
+	expire(0,3,0) 
+
+func on_harvest_fruit():
+	expire(5) 

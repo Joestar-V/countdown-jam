@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://6n4000xxixlu" path="res://art/wheel.png" id="1_45fdq"]
 [ext_resource type="Script" uid="uid://wanjkf673j7x" path="res://objects/wheel.gd" id="1_t0jdk"]
-[ext_resource type="PackedScene" uid="uid://dwffc1owgj0bq" path="res://objects/slot.tscn" id="3_7wgt2"]
 
 [node name="Wheel" type="Node2D" unique_id=965928083]
 script = ExtResource("1_t0jdk")
@@ -10,7 +9,3 @@ script = ExtResource("1_t0jdk")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1007096157]
 texture_filter = 1
 texture = ExtResource("1_45fdq")
-
-[node name="Slot" parent="." unique_id=658892514 instance=ExtResource("3_7wgt2")]
-visible = false
-position = Vector2(0, -432)

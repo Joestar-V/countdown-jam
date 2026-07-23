@@ -1,27 +1,28 @@
 [gd_scene format=3 uid="uid://cwjxq2jehc60x"]
 
-[ext_resource type="Script" uid="uid://bk8ker20h438b" path="res://objects/seed.gd" id="1_i0yiy"]
-[ext_resource type="Texture2D" uid="uid://v5qbx44u3pla" path="res://icon.svg" id="1_tlmcv"]
+[ext_resource type="Script" uid="uid://8ardumhsiw4g" path="res://code/seed_class.gd" id="1_i0yiy"]
+[ext_resource type="Texture2D" uid="uid://bx1udl3a5xrme" path="res://art/card images/apple.png" id="2_i0yiy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i0yiy"]
-size = Vector2(63.999996, 64)
+size = Vector2(228.50781, 285.5)
 
-[node name="Seed" type="Node2D" unique_id=1742177086]
+[node name="Card" type="Node2D" unique_id=1742177086]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_i0yiy")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=551817306]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_tlmcv")
+texture = ExtResource("2_i0yiy")
 
 [node name="Button" type="Button" parent="Sprite2D" unique_id=1813872466]
 self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -64.0
-offset_top = -64.0
-offset_right = -64.0
-offset_bottom = -64.0
+offset_left = -228.5
+offset_top = -285.5
+offset_right = -228.5
+offset_bottom = -285.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -32,9 +33,13 @@ metadata/_edit_use_anchors_ = true
 self_modulate = Color(1, 1, 1, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=186938305]
+position = Vector2(0.00390625, 0.0078125)
 shape = SubResource("RectangleShape2D_i0yiy")
+
+[node name="Goodies" type="Node2D" parent="." unique_id=1952957824]
 
 [connection signal="button_down" from="Sprite2D/Button" to="." method="_on_button_button_down"]
 [connection signal="button_up" from="Sprite2D/Button" to="." method="_on_button_button_up"]
+[connection signal="pressed" from="Sprite2D/Button" to="." method="_on_button_pressed"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

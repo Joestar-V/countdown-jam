@@ -1,8 +1,5 @@
-extends Node2D
-@export var open = false
-@onready var seed 
-@export var pos = 0
-@export_enum("Seed", "Sprout", "Flower", "Fruit", "Death") var stage = 0
+extends Marker2D
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

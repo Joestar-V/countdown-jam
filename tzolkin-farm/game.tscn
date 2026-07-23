@@ -1,71 +1,25 @@
 [gd_scene format=3 uid="uid://dprbbbe0l5c2r"]
 
-[ext_resource type="PackedScene" uid="uid://cwjxq2jehc60x" path="res://objects/seed.tscn" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://rt7vegnmsa1o" path="res://objects/wheel.tscn" id="1_feb5d"]
 [ext_resource type="Script" uid="uid://cnu0x64ps4cho" path="res://game.gd" id="1_vef74"]
 [ext_resource type="PackedScene" uid="uid://dwffc1owgj0bq" path="res://objects/slot.tscn" id="2_e2o6t"]
 [ext_resource type="Texture2D" uid="uid://cuslkrq4nfwkr" path="res://art/b97505da0c981614338824d4b74f3e4c.jpg" id="2_hve3p"]
 [ext_resource type="Texture2D" uid="uid://bc6x6ul1kc1ak" path="res://art/trellis-latticework-fence-garden-house-boundary-fence-6db7dfdbb7ff9fb232adb861d5a887b6.png" id="3_mfdv2"]
+[ext_resource type="PackedScene" uid="uid://cx7f4liipktpg" path="res://objects/resources.tscn" id="4_7sc4i"]
 [ext_resource type="Texture2D" uid="uid://08vp65ahorar" path="res://art/skullsymbol.png" id="4_fc0e3"]
 [ext_resource type="Texture2D" uid="uid://dotkrdgaep1s7" path="res://art/fruitsymbol.png" id="4_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://cot72hewwyhox" path="res://art/flowersymbol.png" id="5_vef74"]
 [ext_resource type="Texture2D" uid="uid://o2ax2jjy3s3x" path="res://art/sproutsymbol.png" id="6_hve3p"]
 [ext_resource type="Texture2D" uid="uid://c6v3lkqytohw1" path="res://art/seedlingsymbol.png" id="7_mfdv2"]
+[ext_resource type="PackedScene" uid="uid://h25xor7ms780" path="res://objects/crops/apple.tscn" id="12_215e1"]
 [ext_resource type="Texture2D" uid="uid://c7qwdtv3x87xu" path="res://art/png-clipart-sun-sun-sun.png" id="12_iotsf"]
+[ext_resource type="Texture2D" uid="uid://v5qbx44u3pla" path="res://icon.svg" id="13_lc2xo"]
 
 [sub_resource type="Animation" id="Animation_vef74"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Wheel:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(473, 841)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Wheel:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
 
 [sub_resource type="Animation" id="Animation_hve3p"]
 resource_name = "wheelspin"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Wheel:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(473, 841)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Wheel:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 0.3298672286269279]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mfdv2"]
 _data = {
@@ -98,27 +52,9 @@ rotation = 1.5707964
 scale = Vector2(2.9922915, 2.9922922)
 texture = ExtResource("3_mfdv2")
 
-[node name="Wheel" parent="." unique_id=965928083 instance=ExtResource("1_feb5d")]
-position = Vector2(473, 841)
-
-[node name="Slot1" parent="Wheel" unique_id=549096188 instance=ExtResource("2_e2o6t")]
-position = Vector2(-323, -248)
-open = true
-
-[node name="Slot2" parent="Wheel" unique_id=658892514 instance=ExtResource("2_e2o6t")]
-position = Vector2(-238, -340)
-
-[node name="Slot3" parent="Wheel" unique_id=528141128 instance=ExtResource("2_e2o6t")]
-position = Vector2(-124, -396)
-
-[node name="Slot4" parent="Wheel" unique_id=677792465 instance=ExtResource("2_e2o6t")]
-position = Vector2(-3, -425)
-
-[node name="Slot5" parent="Wheel" unique_id=571329795 instance=ExtResource("2_e2o6t")]
-position = Vector2(110, -399)
-
-[node name="Slot6" parent="Wheel" unique_id=921799361 instance=ExtResource("2_e2o6t")]
-position = Vector2(222, -339)
+[node name="Resources" parent="." unique_id=1812906870 instance=ExtResource("4_7sc4i")]
+position = Vector2(289, 969.00006)
+scale = Vector2(0.99999994, 0.99999994)
 
 [node name="symbols" type="Node2D" parent="." unique_id=1184561991]
 position = Vector2(504, 392)
@@ -151,14 +87,14 @@ texture = ExtResource("7_mfdv2")
 
 [node name="Seedpouch" type="Node2D" parent="." unique_id=196106970]
 
-[node name="Seed" parent="Seedpouch" unique_id=1742177086 instance=ExtResource("1_80nbo")]
-position = Vector2(405, 346)
+[node name="Apple" parent="Seedpouch" unique_id=1467552852 instance=ExtResource("12_215e1")]
+position = Vector2(461, 739)
 
-[node name="Seed3" parent="Seedpouch" unique_id=1115150649 instance=ExtResource("1_80nbo")]
-position = Vector2(287, 327)
+[node name="Apple2" parent="Seedpouch" unique_id=1742177086 instance=ExtResource("12_215e1")]
+position = Vector2(389, 449)
 
-[node name="Seed2" parent="Seedpouch" unique_id=427494486 instance=ExtResource("1_80nbo")]
-position = Vector2(359, 440)
+[node name="Apple3" parent="Seedpouch" unique_id=973654748 instance=ExtResource("12_215e1")]
+position = Vector2(494, 303)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=411556663]
 libraries/ = SubResource("AnimationLibrary_mfdv2")
@@ -167,4 +103,41 @@ libraries/ = SubResource("AnimationLibrary_mfdv2")
 position = Vector2(1774, 139)
 texture = ExtResource("12_iotsf")
 
-[connection signal="turn_over" from="Seedpouch/Seed" to="." method="_on_seed_turn_over"]
+[node name="spots" type="Node2D" parent="." unique_id=451446717]
+
+[node name="Slot2" parent="spots" unique_id=658892514 instance=ExtResource("2_e2o6t")]
+position = Vector2(739, 904)
+open = true
+
+[node name="Slot3" parent="spots" unique_id=44547900 instance=ExtResource("2_e2o6t")]
+position = Vector2(854, 848)
+pos = 1
+stage = 1
+
+[node name="Slot4" parent="spots" unique_id=1877094531 instance=ExtResource("2_e2o6t")]
+position = Vector2(975, 819)
+pos = 2
+stage = 2
+
+[node name="Slot5" parent="spots" unique_id=714500809 instance=ExtResource("2_e2o6t")]
+position = Vector2(1088, 845)
+pos = 3
+stage = 3
+
+[node name="Slot6" parent="spots" unique_id=1471545763 instance=ExtResource("2_e2o6t")]
+position = Vector2(1199, 905)
+pos = 4
+stage = 4
+
+[node name="End Turn" type="Button" parent="." unique_id=1810491390]
+offset_left = 1545.0
+offset_top = 877.0
+offset_right = 1681.0
+offset_bottom = 1013.0
+text = "End turn"
+icon = ExtResource("13_lc2xo")
+
+[node name="Wheel" parent="." unique_id=965928083 instance=ExtResource("1_feb5d")]
+position = Vector2(995, 1179)
+
+[connection signal="pressed" from="End Turn" to="." method="_on_end_turn_pressed"]

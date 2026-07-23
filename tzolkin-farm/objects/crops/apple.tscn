@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://h25xor7ms780"]
+
+[ext_resource type="PackedScene" uid="uid://cwjxq2jehc60x" path="res://objects/seed.tscn" id="1_64t0u"]
+[ext_resource type="Script" uid="uid://c251dprifihqm" path="res://objects/crops/apple.gd" id="1_boifr"]
+[ext_resource type="Texture2D" uid="uid://bx1udl3a5xrme" path="res://art/card images/apple.png" id="2_onxb7"]
+
+[node name="Apple" unique_id=1742177086 instance=ExtResource("1_64t0u")]
+script = ExtResource("1_boifr")
+water_cost = 3
+category = 2
+tooltip_sprout = "+1 Fertilizer"
+tooltip_flower = "+3 Money"
+tooltip_fruit = "+5 Food"
+card_name = "Apple Tree"
+picture = ExtResource("2_onxb7")
+tooltip = "A juicy, rewarding crop that yields filling fruit if you can spare the water."

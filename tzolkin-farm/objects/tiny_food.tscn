@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cchjx1sfgt7kh"]
+
+[ext_resource type="Texture2D" uid="uid://c668e1veyatay" path="res://art/apple-fruit-apple-e6ec8ba6a6ccf1af58f6d52fc24bb863.png" id="1_2o4se"]
+[ext_resource type="Script" uid="uid://cbhb84wk7msjw" path="res://objects/tiny_resource.gd" id="2_kvvqh"]
+[ext_resource type="PackedScene" uid="uid://btmrm0mgepk6k" path="res://objects/move_component.tscn" id="3_3bk5v"]
+
+[node name="TinyFood" type="Sprite2D" unique_id=1327108993]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_2o4se")
+script = ExtResource("2_kvvqh")
+
+[node name="MoveComponent" parent="." unique_id=357507057 node_paths=PackedStringArray("actor") instance=ExtResource("3_3bk5v")]
+actor = NodePath("..")
+target_destination = Vector2(0, 0)
+move_speed = 0
+weight = 0.0
+moving = false
+lerp = false
+
+[connection signal="movement_finished" from="MoveComponent" to="." method="_on_move_component_movement_finished"]

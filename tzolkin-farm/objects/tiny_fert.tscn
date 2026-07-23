@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://d3jm61raakk"]
+
+[ext_resource type="Texture2D" uid="uid://c8yq733xmh0cc" path="res://art/1670075.png" id="1_4w41g"]
+[ext_resource type="Script" uid="uid://cbhb84wk7msjw" path="res://objects/tiny_resource.gd" id="2_cf2hp"]
+[ext_resource type="PackedScene" uid="uid://btmrm0mgepk6k" path="res://objects/move_component.tscn" id="2_npcmy"]
+
+[node name="TinyFert" type="Sprite2D" unique_id=1327108993]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_4w41g")
+script = ExtResource("2_cf2hp")
+
+[node name="MoveComponent" parent="." unique_id=357507057 node_paths=PackedStringArray("actor") instance=ExtResource("2_npcmy")]
+actor = NodePath("..")
+
+[connection signal="movement_finished" from="MoveComponent" to="." method="_on_move_component_movement_finished"]
