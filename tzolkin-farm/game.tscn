@@ -10,32 +10,90 @@
 [ext_resource type="Texture2D" uid="uid://o2ax2jjy3s3x" path="res://art/sproutsymbol.png" id="6_hve3p"]
 [ext_resource type="Texture2D" uid="uid://c6v3lkqytohw1" path="res://art/seedlingsymbol.png" id="7_mfdv2"]
 
+[sub_resource type="Animation" id="Animation_vef74"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wheel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(473, 841)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Wheel:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_hve3p"]
+resource_name = "wheelspin"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wheel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(473, 841)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Wheel:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.3298672286269279]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mfdv2"]
+_data = {
+&"RESET": SubResource("Animation_vef74"),
+&"wheelspin": SubResource("Animation_hve3p")
+}
+
 [node name="Game" type="Node2D" unique_id=1509497783]
 script = ExtResource("1_vef74")
 
 [node name="Wheel" parent="." unique_id=965928083 instance=ExtResource("1_feb5d")]
 position = Vector2(473, 841)
 
-[node name="Slot" parent="." unique_id=658892514 instance=ExtResource("2_e2o6t")]
-visible = false
-position = Vector2(235, 501)
+[node name="Slot2" parent="Wheel" unique_id=658892514 instance=ExtResource("2_e2o6t")]
+position = Vector2(-238, -340)
 open = true
 
-[node name="Slot2" parent="." unique_id=528141128 instance=ExtResource("2_e2o6t")]
-visible = false
-position = Vector2(349, 445)
+[node name="Slot3" parent="Wheel" unique_id=528141128 instance=ExtResource("2_e2o6t")]
+position = Vector2(-124, -396)
 
-[node name="Slot3" parent="." unique_id=677792465 instance=ExtResource("2_e2o6t")]
-visible = false
-position = Vector2(456, 420)
+[node name="Slot4" parent="Wheel" unique_id=677792465 instance=ExtResource("2_e2o6t")]
+position = Vector2(-3, -425)
 
-[node name="Slot4" parent="." unique_id=571329795 instance=ExtResource("2_e2o6t")]
-visible = false
-position = Vector2(583, 442)
+[node name="Slot5" parent="Wheel" unique_id=571329795 instance=ExtResource("2_e2o6t")]
+position = Vector2(110, -399)
 
-[node name="Slot5" parent="." unique_id=921799361 instance=ExtResource("2_e2o6t")]
-visible = false
-position = Vector2(663, 494)
+[node name="Slot6" parent="Wheel" unique_id=921799361 instance=ExtResource("2_e2o6t")]
+position = Vector2(222, -339)
+
+[node name="Slot1" parent="Wheel" unique_id=549096188 instance=ExtResource("2_e2o6t")]
+position = Vector2(-323, -248)
 
 [node name="symbols" type="Node2D" parent="." unique_id=1184561991]
 scale = Vector2(1.5, 1.5)
@@ -75,5 +133,8 @@ position = Vector2(77, 174)
 
 [node name="Seed2" parent="Seedpouch" unique_id=427494486 instance=ExtResource("1_80nbo")]
 position = Vector2(149, 287)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=411556663]
+libraries/ = SubResource("AnimationLibrary_mfdv2")
 
 [connection signal="turn_over" from="Seedpouch/Seed" to="." method="_on_seed_turn_over"]
