@@ -3,6 +3,7 @@ extends Node2D
 @onready var drawpile: Node2D = $Drawpile
 @onready var hand: VBoxContainer = $Hand
 @onready var handsize = 3
+@onready var discard_pile: Node2D = $DiscardPile
 
 #card thats better when planted with more of itself
 #card that is good to harvest as a sprout but it doenst give back a seed when it does

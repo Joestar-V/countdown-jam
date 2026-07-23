@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://p4aq67v85plf"]
+
+[ext_resource type="Texture2D" uid="uid://uvj581kj3jll" path="res://art/card images/seed_apple_tree.png" id="1_iauqr"]
+[ext_resource type="Script" uid="uid://cbhb84wk7msjw" path="res://objects/tiny_resource.gd" id="2_aj8yx"]
+[ext_resource type="PackedScene" uid="uid://btmrm0mgepk6k" path="res://objects/move_component.tscn" id="3_ns0dw"]
+
+[node name="TinyCard" type="Sprite2D" unique_id=1327108993]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_iauqr")
+script = ExtResource("2_aj8yx")
+
+[node name="MoveComponent" parent="." unique_id=357507057 node_paths=PackedStringArray("actor") instance=ExtResource("3_ns0dw")]
+actor = NodePath("..")
+target_destination = Vector2(0, 0)
+move_speed = 0
+weight = 0.0
+moving = false
+lerp = false
+
+[connection signal="movement_finished" from="MoveComponent" to="." method="_on_move_component_movement_finished"]

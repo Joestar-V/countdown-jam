@@ -12,7 +12,7 @@ class_name Seed
 @export_multiline var tooltip_flower : String = "this is the flower tooltip"
 @export_multiline var tooltip_fruit : String = "this is the fruit tooltip"
 @export_multiline var tooltip_death : String = "" #empty by default, maybe only appears if something has a death effect
-
+@onready var seedPacket = self.scene_file_path
 
 func update_visuals():
 	#do stuf
