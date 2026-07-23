@@ -8,6 +8,8 @@ extends Node2D
 @onready var slotList: Array
 @onready var resources: Node2D = $Resources
 
+var game
+
 @onready var fertCount : int = 0:
 	set(value):
 		resources.fertilizer_label.text = str(value)
