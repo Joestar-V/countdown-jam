@@ -12,6 +12,15 @@ size = Vector2(316, 396)
 [node name="Card" type="Node2D" unique_id=1742177086]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_i0yiy")
+water_cost = null
+category = null
+tooltip_sprout = null
+tooltip_flower = null
+tooltip_fruit = null
+tooltip_death = null
+card_name = null
+rarity = null
+tooltip = null
 seedPacket = ExtResource("2_jx1pl")
 
 [node name="card_image" type="Sprite2D" parent="." unique_id=551817306]
