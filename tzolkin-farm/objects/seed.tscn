@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://8ardumhsiw4g" path="res://code/seed_class.gd" id="1_i0yiy"]
 [ext_resource type="Texture2D" uid="uid://uvj581kj3jll" path="res://art/card images/seed_apple_tree.png" id="2_i0yiy"]
 [ext_resource type="Texture2D" uid="uid://bvjext2dd8joy" path="res://art/card images/green_border.png" id="3_l103h"]
+[ext_resource type="FontFile" uid="uid://j8glluhsw0mx" path="res://art/ui/segoe-print-regular.ttf" id="4_6rnm6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i0yiy"]
 size = Vector2(316, 396)
@@ -32,7 +33,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 metadata/_edit_use_anchors_ = true
 
-[node name="card_image2" type="Sprite2D" parent="." unique_id=1675455252]
+[node name="card_border" type="Sprite2D" parent="." unique_id=1675455252]
 scale = Vector2(0.66, 0.66)
 texture = ExtResource("3_l103h")
 
@@ -54,6 +55,18 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("SystemFont_imxm8")
 theme_override_font_sizes/font_size = 42
 text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="title_label" type="Label" parent="." unique_id=1064076017]
+offset_left = -152.0
+offset_top = -198.0
+offset_right = 152.0
+offset_bottom = -106.0
+theme_override_colors/font_color = Color(0.95686275, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_6rnm6")
+theme_override_font_sizes/font_size = 49
+text = "Apple Tree"
 horizontal_alignment = 1
 vertical_alignment = 1
 

@@ -1,7 +1,9 @@
 extends Card
 class_name Seed
-@onready var water_label = $water_label
 
+
+@onready var water_label = $water_label
+@onready var title_label = $title_label
 
 @export var water_cost := 1
 
@@ -15,6 +17,7 @@ class_name Seed
 func update_visuals():
 	#do stuf
 	water_label.text = str(water_cost)
+	title_label.text = card_name
 
 func on_harvest_sprout():
 	pass
