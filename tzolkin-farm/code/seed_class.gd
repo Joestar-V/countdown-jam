@@ -13,7 +13,6 @@ class_name Seed
 @export_multiline var tooltip_flower : String = "this is the flower tooltip"
 @export_multiline var tooltip_fruit : String = "this is the fruit tooltip"
 @export_multiline var tooltip_death : String = "" #empty by default, maybe only appears if something has a death effect
-@onready var seedPacket = self.scene_file_path
 
 func update_visuals():
 	#do stuf
@@ -39,7 +38,8 @@ func on_harvest_fruit():
 func on_harvest_death():
 	harvest(0,0,0,[seedPacket]) 
 
-func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = []) -> void:
+
+func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket]) -> void:
 	Game.game.seedList.erase(self)
 	Game.game.actions -= 1
 	super(foodCount, moneyCount , fertCount, cards)

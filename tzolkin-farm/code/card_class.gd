@@ -28,8 +28,11 @@ var moving = 0
 var planted = false
 var homeSlot 
 var handPos = 0
+@export var seedPacket : PackedScene
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print(seedPacket)
 	update_visuals()
 
 func update_visuals():
@@ -98,7 +101,7 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 
 
 
-func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = []):
+func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket]):
 	for i in foodCount:
 		var foodlet = TINY_FOOD.instantiate() #why does only 1 apple spawn?
 		goodies.add_child(foodlet)
