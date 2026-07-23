@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://c668e1veyatay" path="res://art/apple-fruit-apple-e6ec8ba6a6ccf1af58f6d52fc24bb863.png" id="5_b3q8k"]
 
 [sub_resource type="FontFile" id="FontFile_6tghx"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/variation_coordinates = {}
 cache/0/face_index = 0
 cache/0/embolden = 0.0
@@ -21,6 +24,11 @@ cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
 cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
+cache/0/42/0/ascent = 0.0
+cache/0/42/0/descent = 0.0
+cache/0/42/0/underline_position = 0.0
+cache/0/42/0/underline_thickness = 0.0
+cache/0/42/0/scale = 1.0
 cache/0/20/0/ascent = 0.0
 cache/0/20/0/descent = 0.0
 cache/0/20/0/underline_position = 0.0
@@ -71,75 +79,71 @@ cache/0/29/0/descent = 0.0
 cache/0/29/0/underline_position = 0.0
 cache/0/29/0/underline_thickness = 0.0
 cache/0/29/0/scale = 1.0
-cache/0/42/0/ascent = 0.0
-cache/0/42/0/descent = 0.0
-cache/0/42/0/underline_position = 0.0
-cache/0/42/0/underline_thickness = 0.0
-cache/0/42/0/scale = 1.0
 
 [node name="Resoures" type="Node2D" unique_id=1812906870]
 script = ExtResource("1_dq3qk")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=315299929]
-scale = Vector2(0.507, 0.507)
+position = Vector2(0, -359)
+rotation = 3.1415927
 texture = ExtResource("2_b3q8k")
 
 [node name="MoneyBag" type="Sprite2D" parent="." unique_id=1913849032]
-position = Vector2(-163, -179)
+position = Vector2(-172.6435, 66.772)
 scale = Vector2(0.167, 0.167)
 texture = ExtResource("3_clkgk")
 
+[node name="moneyLabel" type="Label" parent="." unique_id=2076725046]
+offset_left = -114.0
+offset_top = 43.0
+offset_right = -46.0
+offset_bottom = 100.0
+theme_override_fonts/font = SubResource("FontFile_6tghx")
+theme_override_font_sizes/font_size = 42
+text = "0"
+horizontal_alignment = 1
+
 [node name="Fertilizer" type="Sprite2D" parent="." unique_id=574834322]
-position = Vector2(-166.00003, -58.999977)
+position = Vector2(-438.25003, 68.75002)
 scale = Vector2(0.18652345, 0.18652345)
 texture = ExtResource("4_xqxud")
 
-[node name="moneyLabel" type="Label" parent="." unique_id=2076725046]
-offset_left = -94.0
-offset_top = -199.0
-offset_right = -26.0
-offset_bottom = -142.0
+[node name="fertilizerLabel" type="Label" parent="." unique_id=1936361274]
+offset_left = -376.0
+offset_top = 48.0
+offset_right = -308.0
+offset_bottom = 105.0
 theme_override_fonts/font = SubResource("FontFile_6tghx")
 theme_override_font_sizes/font_size = 42
 text = "0"
 horizontal_alignment = 1
 
-[node name="fertilizerLabel" type="Label" parent="." unique_id=1936361274]
-offset_left = -95.0
-offset_top = -93.0
-offset_right = -27.0
-offset_bottom = -36.0
-theme_override_fonts/font = SubResource("FontFile_6tghx")
-theme_override_font_sizes/font_size = 42
-text = "0"
-horizontal_alignment = 1
+[node name="Food" type="Sprite2D" parent="." unique_id=1502495112]
+position = Vector2(186.00002, 68)
+scale = Vector2(0.06325564, 0.063255645)
+texture = ExtResource("5_b3q8k")
 
 [node name="foodLabel" type="Label" parent="." unique_id=655861824]
-offset_left = 152.0
-offset_top = -185.0
-offset_right = 220.0
-offset_bottom = -68.0
+offset_left = 329.0
+offset_top = 4.0
+offset_right = 397.0
+offset_bottom = 121.0
 theme_override_fonts/font = SubResource("FontFile_6tghx")
 theme_override_font_sizes/font_size = 42
 text = "0"
 horizontal_alignment = 1
 
+[node name="Line2D" type="Line2D" parent="." unique_id=87763950]
+position = Vector2(324, 68)
+points = PackedVector2Array(1, -2, 58.144257, -2, 75, -2)
+width = 6.0
+
 [node name="foodLabel2" type="Label" parent="." unique_id=999662135]
-offset_left = 153.0
-offset_top = -125.0
-offset_right = 221.0
-offset_bottom = -8.0
+offset_left = 330.0
+offset_top = 64.0
+offset_right = 398.0
+offset_bottom = 181.0
 theme_override_fonts/font = SubResource("FontFile_6tghx")
 theme_override_font_sizes/font_size = 42
 text = "30"
 horizontal_alignment = 1
-
-[node name="Food" type="Sprite2D" parent="." unique_id=1502495112]
-position = Vector2(77.00002, -124)
-scale = Vector2(0.06778935, 0.06778936)
-texture = ExtResource("5_b3q8k")
-
-[node name="Line2D" type="Line2D" parent="." unique_id=87763950]
-position = Vector2(147, -121)
-points = PackedVector2Array(1, -2, 75, -2)
-width = 6.0

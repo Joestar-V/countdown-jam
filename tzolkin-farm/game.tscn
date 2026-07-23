@@ -63,7 +63,7 @@ scale = Vector2(0.27174994, 0.27174994)
 texture = ExtResource("4_e8heu")
 
 [node name="Resources" parent="." unique_id=1812906870 instance=ExtResource("4_7sc4i")]
-position = Vector2(973, 269)
+position = Vector2(960, 0)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="symbols" type="Node2D" parent="." unique_id=1184561991]
@@ -98,13 +98,13 @@ texture = ExtResource("7_mfdv2")
 [node name="Seedpouch" type="Node2D" parent="." unique_id=196106970]
 
 [node name="Apple" parent="Seedpouch" unique_id=1467552852 instance=ExtResource("12_215e1")]
-position = Vector2(445, 344)
+position = Vector2(258, 360)
 
 [node name="Apple2" parent="Seedpouch" unique_id=1742177086 instance=ExtResource("12_215e1")]
-position = Vector2(422, 305)
+position = Vector2(239, 301)
 
 [node name="Apple3" parent="Seedpouch" unique_id=973654748 instance=ExtResource("12_215e1")]
-position = Vector2(402, 261)
+position = Vector2(235, 246)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=411556663]
 libraries/ = SubResource("AnimationLibrary_mfdv2")
