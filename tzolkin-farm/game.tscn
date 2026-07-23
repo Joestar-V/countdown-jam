@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cuslkrq4nfwkr" path="res://art/b97505da0c981614338824d4b74f3e4c.jpg" id="2_hve3p"]
 [ext_resource type="Texture2D" uid="uid://bc6x6ul1kc1ak" path="res://art/trellis-latticework-fence-garden-house-boundary-fence-6db7dfdbb7ff9fb232adb861d5a887b6.png" id="3_mfdv2"]
 [ext_resource type="PackedScene" uid="uid://cx7f4liipktpg" path="res://objects/resources.tscn" id="4_7sc4i"]
+[ext_resource type="Texture2D" uid="uid://bgjicp81ynuu2" path="res://art/ui/moon.png" id="4_e8heu"]
 [ext_resource type="Texture2D" uid="uid://08vp65ahorar" path="res://art/skullsymbol.png" id="4_fc0e3"]
 [ext_resource type="Texture2D" uid="uid://dotkrdgaep1s7" path="res://art/fruitsymbol.png" id="4_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://cot72hewwyhox" path="res://art/flowersymbol.png" id="5_vef74"]
@@ -13,8 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://c6v3lkqytohw1" path="res://art/seedlingsymbol.png" id="7_mfdv2"]
 [ext_resource type="PackedScene" uid="uid://h25xor7ms780" path="res://objects/crops/apple.tscn" id="12_215e1"]
 [ext_resource type="Texture2D" uid="uid://c7qwdtv3x87xu" path="res://art/png-clipart-sun-sun-sun.png" id="12_iotsf"]
-[ext_resource type="Texture2D" uid="uid://v5qbx44u3pla" path="res://icon.svg" id="13_lc2xo"]
 [ext_resource type="Script" uid="uid://bhygk66ix8ajf" path="res://code/end_turn.gd" id="14_7sc4i"]
+[ext_resource type="Texture2D" uid="uid://b1npgnjyligff" path="res://art/ui/veg-pouch-2291429493.png" id="16_e8heu"]
+[ext_resource type="Texture2D" uid="uid://buy1h8xxb6wa8" path="res://art/ui/recycle-bin.png" id="17_rvswv"]
 
 [sub_resource type="Animation" id="Animation_vef74"]
 length = 0.001
@@ -55,8 +57,13 @@ rotation = 1.5707964
 scale = Vector2(2.9922915, 2.9922922)
 texture = ExtResource("3_mfdv2")
 
+[node name="Moon" type="Sprite2D" parent="." unique_id=1706999615]
+position = Vector2(1800.0001, 953)
+scale = Vector2(0.27174994, 0.27174994)
+texture = ExtResource("4_e8heu")
+
 [node name="Resources" parent="." unique_id=1812906870 instance=ExtResource("4_7sc4i")]
-position = Vector2(289, 969.00006)
+position = Vector2(973, 269)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="symbols" type="Node2D" parent="." unique_id=1184561991]
@@ -91,13 +98,13 @@ texture = ExtResource("7_mfdv2")
 [node name="Seedpouch" type="Node2D" parent="." unique_id=196106970]
 
 [node name="Apple" parent="Seedpouch" unique_id=1467552852 instance=ExtResource("12_215e1")]
-position = Vector2(461, 739)
+position = Vector2(445, 344)
 
 [node name="Apple2" parent="Seedpouch" unique_id=1742177086 instance=ExtResource("12_215e1")]
-position = Vector2(389, 449)
+position = Vector2(422, 305)
 
 [node name="Apple3" parent="Seedpouch" unique_id=973654748 instance=ExtResource("12_215e1")]
-position = Vector2(494, 303)
+position = Vector2(402, 261)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=411556663]
 libraries/ = SubResource("AnimationLibrary_mfdv2")
@@ -133,16 +140,27 @@ pos = 4
 stage = 4
 
 [node name="End Turn" type="Button" parent="." unique_id=1810491390]
-offset_left = 1545.0
-offset_top = 877.0
-offset_right = 1681.0
-offset_bottom = 1013.0
+offset_left = 1693.0
+offset_top = 886.0
+offset_right = 1900.0
+offset_bottom = 1022.0
 theme = SubResource("Theme_6tghx")
-text = "End turn"
-icon = ExtResource("13_lc2xo")
+theme_override_font_sizes/font_size = 30
+text = "End Day"
 script = ExtResource("14_7sc4i")
 
 [node name="Wheel" parent="." unique_id=965928083 instance=ExtResource("1_feb5d")]
 position = Vector2(995, 1179)
+
+[node name="VegPouch2291429493" type="Sprite2D" parent="." unique_id=1613797165]
+position = Vector2(85.000015, 941.99994)
+rotation = 0.42352977
+scale = Vector2(0.382071, 0.38207093)
+texture = ExtResource("16_e8heu")
+
+[node name="RecycleBin" type="Sprite2D" parent="." unique_id=1034787489]
+position = Vector2(387, 970.00006)
+scale = Vector2(0.1809242, 0.19626692)
+texture = ExtResource("17_rvswv")
 
 [connection signal="pressed" from="End Turn" to="." method="_on_end_turn_pressed"]
