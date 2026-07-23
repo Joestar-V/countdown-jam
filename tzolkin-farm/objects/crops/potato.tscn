@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://r3v57ntk4jk8"]
+
+[ext_resource type="PackedScene" uid="uid://cwjxq2jehc60x" path="res://objects/seed.tscn" id="1_n05as"]
+[ext_resource type="Script" uid="uid://dlpv4smtsj8as" path="res://objects/crops/potato.gd" id="2_n05as"]
+[ext_resource type="Texture2D" uid="uid://dpfhqgibioodl" path="res://art/card images/seed_potato.png" id="3_4v5kv"]
+
+[node name="potato" unique_id=1742177086 instance=ExtResource("1_n05as")]
+script = ExtResource("2_n05as")
+water_cost = 2
+category = 3
+card_name = "Potato"
+picture = ExtResource("3_4v5kv")
+
+[node name="card_image" parent="." index="0" unique_id=551817306]
+texture = ExtResource("3_4v5kv")

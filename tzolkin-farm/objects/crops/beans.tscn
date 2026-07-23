@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://blmgteof8oxul"]
+
+[ext_resource type="PackedScene" uid="uid://cwjxq2jehc60x" path="res://objects/seed.tscn" id="1_xhej6"]
+[ext_resource type="Script" uid="uid://dip6dggymj0i4" path="res://objects/crops/beans.gd" id="2_v124k"]
+
+[node name="beans" unique_id=1742177086 instance=ExtResource("1_xhej6")]
+script = ExtResource("2_v124k")
+water_cost = 2
+category = 3
+card_name = "Beans"

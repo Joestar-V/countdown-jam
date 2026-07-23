@@ -4,10 +4,11 @@ class_name Seed
 
 @onready var water_label = $water_label
 @onready var title_label = $title_label
+@onready var card_border = $card_border
 
 @export var water_cost := 1
 
-@export_enum("Cereral", "Vegetable", "Fruit", "Tuber", "Flower") var category = 0
+@export_enum("Cereal", "Vegetable", "Fruit", "Root", "Flower") var category = 0
 @export_multiline var tooltip_sprout : String = "this is the sprout tooltip"
 @export_multiline var tooltip_flower : String = "this is the flower tooltip"
 @export_multiline var tooltip_fruit : String = "this is the fruit tooltip"
@@ -18,16 +19,26 @@ func update_visuals():
 	#do stuf
 	water_label.text = str(water_cost)
 	title_label.text = card_name
-
+	if picture:
+		card_image.texture = picture
+	
+	match rarity:
+		0:
+			card_border.modulate = Color(1.0, 1.0, 1.0, 1.0)
+		1:
+			card_border.modulate = Color(0.167, 0.838, 0.0, 1.0)
+		2:
+			card_border.modulate = Color(0.976, 0.898, 0.0, 1.0)
+	
 func on_harvest_sprout():
-	pass
+	harvest(0,0,0,[seedPacket]) 
 func on_harvest_flower():
-	pass #maybe emit something here
+	harvest(0,0,0,[seedPacket]) 
 func on_harvest_fruit():
-	pass 
+	harvest(0,0,0,[seedPacket]) 
 func on_harvest_death():
+	harvest(0,0,0,[seedPacket]) 
 
-	harvest()
 func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = []) -> void:
 	Game.game.seedList.erase(self)
 	Game.game.actions -= 1

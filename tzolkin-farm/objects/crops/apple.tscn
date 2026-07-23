@@ -13,4 +13,5 @@ tooltip_flower = "+3 Money"
 tooltip_fruit = "+5 Food"
 card_name = "Apple Tree"
 picture = ExtResource("2_onxb7")
+rarity = 2
 tooltip = "A juicy, rewarding crop that yields filling fruit if you can spare the water."
