@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var seedList : Array
-@onready var seedpouch: Node2D = $Seedpouch
+@onready var seedkeeper: Node2D = $SeedKeeper
 @onready var spots: Node2D = $spots
 @onready var spotList : Array
 @onready var wheel: Node2D = $Wheel
@@ -10,6 +10,8 @@ extends Node2D
 
 @onready  var actions = 1
 @onready  var actionNum = 1
+#@onready var handPos = 0
+const APPLE = preload("res://objects/crops/apple.tscn")
 
 @onready var fertCount : int = 0:
 	set(value):
@@ -26,9 +28,15 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Game.game = self
-	for seed in seedpouch.get_children():
-		seedList.append(seed)
-		seed.turn_over.connect(_on_seed_turn_over)
+	for i in 7:
+		seedkeeper.drawpile.add_card(APPLE)
+	seedkeeper.hand.handList.resize(3)
+	seedkeeper.draw_until_full()
+
+	for seed in seedkeeper.hand.get_children():
+		if seed is Card:
+			seedList.append(seed)
+		#seed.turn_over.connect(_on_seed_turn_over)
 	#for spot in spots.get_children():
 	#	spotList.append(spot)
 	var i = 0
@@ -83,7 +91,7 @@ func _on_end_turn_pressed() -> void:
 	for seed in seedList:
 		if seed.slotted:
 			seed.planted = true
-
+			seedkeeper.hand.handList[seed.handPos] = null
 			#seed.spinning = true
 			print(seed.slot.pos)
 			print(slotList.size())
@@ -96,3 +104,4 @@ func _on_end_turn_pressed() -> void:
 				seed.global_position = seed.slot.position
 				seed.slotted = true
 				seed.moving = 2
+	seedkeeper.draw_until_full()
