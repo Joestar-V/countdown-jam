@@ -10,10 +10,10 @@ extends Seed
 #func _process(delta: float) -> void:
 #	pass
 func on_harvest_sprout():
-	expire(0,0,1) 
+	harvest(0,0,1) 
 
 func on_harvest_flower():
-	expire(0,3,0) 
+	harvest(0,3,0) 
 
 func on_harvest_fruit():
-	expire(5) 
+	harvest(5,4,3) 

@@ -10,13 +10,16 @@ extends Node2D
 
 @onready var fertCount : int = 0:
 	set(value):
+		fertCount = value
 		resources.fertilizer_label.text = str(value)
 @onready var moneyCount : int = 0:
 	set(value):
+		moneyCount = value
 		resources.money_label.text = str(value)
 @onready var foodCount : int = 0:
 	set(value):
-		resources.food_label.text = str(value)
+		foodCount = value
+		resources.food_label.text = str(foodCount)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Game.game = self

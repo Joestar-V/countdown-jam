@@ -82,23 +82,29 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 		slot = null
 		area.get_parent().seed = null
 
-func expire(foodCount = 0, moneyCount = 0, fertCount = 0, cards = []):
+func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = []):
 	for i in foodCount:
 		var foodlet = TINY_FOOD.instantiate() #why does only 1 apple spawn?
 		goodies.add_child(foodlet)
 		foodlet.global_position = global_position
 		foodlet.type = 0
 		foodlet.move_to_resource(Game.game.resources.food.global_position)
+		await get_tree().create_timer(.1).timeout
+
 	for i in moneyCount:
 		var foodlet = TINY_MONEY.instantiate()
 		goodies.add_child(foodlet)
 		foodlet.type = 1
 		foodlet.global_position = global_position
 		foodlet.move_to_resource(Game.game.resources.money_bag.global_position)
+		await get_tree().create_timer(.1).timeout
+
 	for i in fertCount:
 		var foodlet = TINY_FERT.instantiate()
 		goodies.add_child(foodlet)
 		foodlet.type = 2
 		foodlet.global_position = global_position
 		foodlet.move_to_resource(Game.game.resources.fertilizer.global_position)
+		await get_tree().create_timer(.1).timeout
+
 	destroy = true

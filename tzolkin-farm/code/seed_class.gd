@@ -22,8 +22,8 @@ func on_harvest_flower():
 func on_harvest_fruit():
 	pass 
 func on_harvest_death():
-	expire()
-func expire(foodCount = 0, moneyCount = 0, fertCount = 0, cards = []) -> void:
+	harvest()
+func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = []) -> void:
 	Game.game.seedList.erase(self)
 	super(foodCount, moneyCount , fertCount, cards)
 func _on_button_pressed() -> void:
