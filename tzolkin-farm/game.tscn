@@ -12,10 +12,13 @@
 [ext_resource type="Texture2D" uid="uid://cot72hewwyhox" path="res://art/flowersymbol.png" id="5_vef74"]
 [ext_resource type="Texture2D" uid="uid://o2ax2jjy3s3x" path="res://art/sproutsymbol.png" id="6_hve3p"]
 [ext_resource type="Texture2D" uid="uid://c6v3lkqytohw1" path="res://art/seedlingsymbol.png" id="7_mfdv2"]
-[ext_resource type="PackedScene" uid="uid://h25xor7ms780" path="res://objects/crops/apple.tscn" id="12_215e1"]
+[ext_resource type="Script" uid="uid://b706fq76tajfe" path="res://seed_keeper.gd" id="11_hb5m1"]
 [ext_resource type="Texture2D" uid="uid://c7qwdtv3x87xu" path="res://art/png-clipart-sun-sun-sun.png" id="12_iotsf"]
+[ext_resource type="Script" uid="uid://cob7t1n2bxrf5" path="res://code/drawpile.gd" id="12_x5p1p"]
 [ext_resource type="Script" uid="uid://bhygk66ix8ajf" path="res://code/end_turn.gd" id="14_7sc4i"]
+[ext_resource type="Script" uid="uid://htg51x88dvwh" path="res://code/hand.gd" id="15_qhcbd"]
 [ext_resource type="Texture2D" uid="uid://b1npgnjyligff" path="res://art/ui/veg-pouch-2291429493.png" id="16_e8heu"]
+[ext_resource type="Texture2D" uid="uid://bxwnr5lji671h" path="res://art/tempnotch.png" id="16_f1jbl"]
 [ext_resource type="Texture2D" uid="uid://buy1h8xxb6wa8" path="res://art/ui/recycle-bin.png" id="17_rvswv"]
 
 [sub_resource type="Animation" id="Animation_vef74"]
@@ -95,16 +98,51 @@ texture_filter = 1
 position = Vector2(107.33334, 264)
 texture = ExtResource("7_mfdv2")
 
-[node name="Seedpouch" type="Node2D" parent="." unique_id=196106970]
+[node name="SeedKeeper" type="Node2D" parent="." unique_id=196106970]
+script = ExtResource("11_hb5m1")
 
-[node name="Apple" parent="Seedpouch" unique_id=1467552852 instance=ExtResource("12_215e1")]
-position = Vector2(445, 344)
+[node name="Drawpile" type="Node2D" parent="SeedKeeper" unique_id=338499698]
+script = ExtResource("12_x5p1p")
 
-[node name="Apple2" parent="Seedpouch" unique_id=1742177086 instance=ExtResource("12_215e1")]
-position = Vector2(422, 305)
+[node name="VegPouch2291429493" type="Sprite2D" parent="SeedKeeper/Drawpile" unique_id=1613797165]
+position = Vector2(85.000015, 941.99994)
+rotation = 0.42352977
+scale = Vector2(0.382071, 0.38207096)
+texture = ExtResource("16_e8heu")
 
-[node name="Apple3" parent="Seedpouch" unique_id=973654748 instance=ExtResource("12_215e1")]
-position = Vector2(402, 261)
+[node name="Hand" type="VBoxContainer" parent="SeedKeeper" unique_id=270863133]
+offset_left = 82.0
+offset_top = 113.0
+offset_right = 242.0
+offset_bottom = 647.0
+offset_transform_enabled = true
+theme_override_constants/separation = 45
+script = ExtResource("15_qhcbd")
+
+[node name="handSlot1" type="TextureRect" parent="SeedKeeper/Hand" unique_id=1798582581]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("16_f1jbl")
+expand_mode = 5
+
+[node name="handSlot2" type="TextureRect" parent="SeedKeeper/Hand" unique_id=704999475]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("16_f1jbl")
+expand_mode = 5
+
+[node name="handSlot3" type="TextureRect" parent="SeedKeeper/Hand" unique_id=930675326]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("16_f1jbl")
+expand_mode = 5
+
+[node name="DiscardPile" type="Node2D" parent="SeedKeeper" unique_id=1673394178]
+
+[node name="RecycleBin" type="Sprite2D" parent="SeedKeeper/DiscardPile" unique_id=1034787489]
+position = Vector2(387, 970.00006)
+scale = Vector2(0.1809242, 0.19626692)
+texture = ExtResource("17_rvswv")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=411556663]
 libraries/ = SubResource("AnimationLibrary_mfdv2")
@@ -151,16 +189,5 @@ script = ExtResource("14_7sc4i")
 
 [node name="Wheel" parent="." unique_id=965928083 instance=ExtResource("1_feb5d")]
 position = Vector2(995, 1179)
-
-[node name="VegPouch2291429493" type="Sprite2D" parent="." unique_id=1613797165]
-position = Vector2(85.000015, 941.99994)
-rotation = 0.42352977
-scale = Vector2(0.382071, 0.38207093)
-texture = ExtResource("16_e8heu")
-
-[node name="RecycleBin" type="Sprite2D" parent="." unique_id=1034787489]
-position = Vector2(387, 970.00006)
-scale = Vector2(0.1809242, 0.19626692)
-texture = ExtResource("17_rvswv")
 
 [connection signal="pressed" from="End Turn" to="." method="_on_end_turn_pressed"]

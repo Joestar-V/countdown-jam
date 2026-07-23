@@ -1,6 +1,6 @@
 extends Node2D
 class_name Card
-
+@onready var card_image: Sprite2D = $card_image
 @export var card_name : String 
 @export var picture : Texture 
 @export_enum("Dirt Cheap", "Scarce", "One of a Kind") var rarity = 0
@@ -24,6 +24,8 @@ var slotted = false
 var spinning
 var moving = 0
 var planted = false
+var homeSlot 
+var handPos = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	update_visuals()
@@ -35,9 +37,11 @@ func update_visuals():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if dragging:
-		position = get_global_mouse_position() - of
+		global_position = get_global_mouse_position() - of
+	elif !slotted:
+		global_position = homeSlot.global_position + Vector2(card_image.texture.get_width() / 6.0 , card_image.texture.get_height() / 6.0)
 	if spinning:
-		position = slot.global_position
+		global_position = slot.global_position
 	if destroy:
 		if !goodies.get_children():
 			queue_free()
@@ -55,7 +59,7 @@ func _on_button_button_down() -> void:
 func _on_button_button_up() -> void:
 	dragging = false
 	if slotted:
-		position = slotPos
+		global_position = slotPos
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
