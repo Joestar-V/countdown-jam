@@ -23,6 +23,7 @@ var slot
 var slotted = false
 var spinning
 var moving = 0
+var planted = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	update_visuals()
@@ -44,7 +45,7 @@ func _process(delta: float) -> void:
 
 func _on_button_button_down() -> void:
 	if slotted:
-		if slot.pos == 0:
+		if !planted:
 			dragging = true
 			of = get_global_mouse_position() - global_position
 	else:
@@ -65,6 +66,9 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		slotPos = area.global_position
 		#turn_over.emit()
 	elif area.name == "slotHole" and (Game.game.fertCount >= area.get_parent().pos):
+		if slotted:
+			Game.game.fertCount += slot.pos
+
 		Game.game.fertCount -= area.get_parent().pos
 		Game.game.actions -= 1
 		slot = area.get_parent()
@@ -79,11 +83,12 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.name == "slotHole" and moving:
 		moving -= 1
 	elif area.name == "slotHole" and slotted and slot == area.get_parent():
+		Game.game.fertCount += slot.pos
+
 		slotted = false
 		slot = null
 		area.get_parent().seed = null
 		Game.game.actions += 1
-		Game.game.fertCount += area.get_parent().pos
 
 
 

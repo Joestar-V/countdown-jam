@@ -82,6 +82,8 @@ func _on_end_turn_pressed() -> void:
 			
 	for seed in seedList:
 		if seed.slotted:
+			seed.planted = true
+
 			#seed.spinning = true
 			print(seed.slot.pos)
 			print(slotList.size())
