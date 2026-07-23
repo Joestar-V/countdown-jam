@@ -21,7 +21,7 @@ func draw_until_full():
 	for i in hand.handList:
 		j += 1
 		if i and i != null:
-			return
+			pass
 		else:
 			if !drawpile.pile.is_empty():
 				var drawnCard = drawpile.pile.front().instantiate()

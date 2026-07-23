@@ -28,7 +28,7 @@ const APPLE = preload("res://objects/crops/apple.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Game.game = self
-	for i in 7:
+	for i in 40:
 		seedkeeper.drawpile.add_card(APPLE)
 	seedkeeper.hand.handList.resize(3)
 	seedkeeper.draw_until_full()
@@ -90,8 +90,9 @@ func _on_end_turn_pressed() -> void:
 			
 	for seed in seedList:
 		if seed.slotted:
-			seed.planted = true
-			seedkeeper.hand.handList[seed.handPos] = null
+			if !seed.planted:
+				seed.planted = true
+				seedkeeper.hand.handList[seed.handPos] = null
 			#seed.spinning = true
 			print(seed.slot.pos)
 			print(slotList.size())
