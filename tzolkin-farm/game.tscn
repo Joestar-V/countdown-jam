@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://dprbbbe0l5c2r"]
+
+[ext_resource type="PackedScene" uid="uid://cwjxq2jehc60x" path="res://objects/seed.tscn" id="1_80nbo"]
+[ext_resource type="PackedScene" uid="uid://rt7vegnmsa1o" path="res://objects/wheel.tscn" id="1_feb5d"]
+[ext_resource type="Script" uid="uid://cnu0x64ps4cho" path="res://game.gd" id="1_vef74"]
+[ext_resource type="PackedScene" uid="uid://dwffc1owgj0bq" path="res://objects/slot.tscn" id="2_e2o6t"]
+[ext_resource type="Texture2D" uid="uid://08vp65ahorar" path="res://art/skullsymbol.png" id="4_fc0e3"]
+[ext_resource type="Texture2D" uid="uid://dotkrdgaep1s7" path="res://art/fruitsymbol.png" id="4_j5wjh"]
+[ext_resource type="Texture2D" uid="uid://cot72hewwyhox" path="res://art/flowersymbol.png" id="5_vef74"]
+[ext_resource type="Texture2D" uid="uid://o2ax2jjy3s3x" path="res://art/sproutsymbol.png" id="6_hve3p"]
+[ext_resource type="Texture2D" uid="uid://c6v3lkqytohw1" path="res://art/seedlingsymbol.png" id="7_mfdv2"]
+
+[node name="Game" type="Node2D" unique_id=1509497783]
+script = ExtResource("1_vef74")
+
+[node name="Wheel" parent="." unique_id=965928083 instance=ExtResource("1_feb5d")]
+position = Vector2(473, 841)
+
+[node name="Slot" parent="." unique_id=658892514 instance=ExtResource("2_e2o6t")]
+visible = false
+position = Vector2(235, 501)
+open = true
+
+[node name="Slot2" parent="." unique_id=528141128 instance=ExtResource("2_e2o6t")]
+visible = false
+position = Vector2(349, 445)
+
+[node name="Slot3" parent="." unique_id=677792465 instance=ExtResource("2_e2o6t")]
+visible = false
+position = Vector2(456, 420)
+
+[node name="Slot4" parent="." unique_id=571329795 instance=ExtResource("2_e2o6t")]
+visible = false
+position = Vector2(583, 442)
+
+[node name="Slot5" parent="." unique_id=921799361 instance=ExtResource("2_e2o6t")]
+visible = false
+position = Vector2(663, 494)
+
+[node name="symbols" type="Node2D" parent="." unique_id=1184561991]
+scale = Vector2(1.5, 1.5)
+
+[node name="Sprite2D2" type="Sprite2D" parent="symbols" unique_id=1904656237]
+texture_filter = 1
+position = Vector2(529.3333, 262.6667)
+texture = ExtResource("4_fc0e3")
+
+[node name="Sprite2D3" type="Sprite2D" parent="symbols" unique_id=1357566872]
+texture_filter = 1
+position = Vector2(445.3333, 199.33333)
+texture = ExtResource("4_j5wjh")
+
+[node name="Sprite2D4" type="Sprite2D" parent="symbols" unique_id=1255862214]
+texture_filter = 1
+position = Vector2(305.99997, 180.66666)
+texture = ExtResource("5_vef74")
+
+[node name="Sprite2D5" type="Sprite2D" parent="symbols" unique_id=797456245]
+texture_filter = 1
+position = Vector2(207.33334, 206.66666)
+texture = ExtResource("6_hve3p")
+
+[node name="Sprite2D6" type="Sprite2D" parent="symbols" unique_id=1899550781]
+texture_filter = 1
+position = Vector2(107.33334, 264)
+texture = ExtResource("7_mfdv2")
+
+[node name="Seedpouch" type="Node2D" parent="." unique_id=196106970]
+
+[node name="Seed" parent="Seedpouch" unique_id=1742177086 instance=ExtResource("1_80nbo")]
+position = Vector2(195, 193)
+
+[node name="Seed3" parent="Seedpouch" unique_id=1115150649 instance=ExtResource("1_80nbo")]
+position = Vector2(77, 174)
+
+[node name="Seed2" parent="Seedpouch" unique_id=427494486 instance=ExtResource("1_80nbo")]
+position = Vector2(149, 287)
+
+[connection signal="turn_over" from="Seedpouch/Seed" to="." method="_on_seed_turn_over"]

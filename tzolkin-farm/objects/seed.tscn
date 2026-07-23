@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cwjxq2jehc60x"]
+
+[ext_resource type="Script" uid="uid://bk8ker20h438b" path="res://objects/seed.gd" id="1_i0yiy"]
+[ext_resource type="Texture2D" uid="uid://v5qbx44u3pla" path="res://icon.svg" id="1_tlmcv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i0yiy"]
+size = Vector2(63.999996, 64)
+
+[node name="Seed" type="Node2D" unique_id=1742177086]
+script = ExtResource("1_i0yiy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=551817306]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_tlmcv")
+
+[node name="Button" type="Button" parent="Sprite2D" unique_id=1813872466]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = -64.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1163772541]
+self_modulate = Color(1, 1, 1, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=186938305]
+shape = SubResource("RectangleShape2D_i0yiy")
+
+[connection signal="button_down" from="Sprite2D/Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Sprite2D/Button" to="." method="_on_button_button_up"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
