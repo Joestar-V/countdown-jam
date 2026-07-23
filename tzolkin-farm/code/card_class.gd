@@ -10,6 +10,8 @@ class_name Card
 const TINY_FERT = preload("res://objects/tiny_fert.tscn")
 const TINY_FOOD = preload("res://objects/tiny_food.tscn")
 const TINY_MONEY = preload("res://objects/tiny_money.tscn")
+const TINY_CARD = preload("res://objects/tiny_card.tscn")
+
 @onready var goodies: Node2D = $Goodies
 
 var destroy = false
@@ -119,6 +121,14 @@ func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = []):
 		foodlet.type = 2
 		foodlet.global_position = global_position
 		foodlet.move_to_resource(Game.game.resources.fertilizer.global_position)
+		await get_tree().create_timer(.1).timeout
+	for i in cards:
+		var foodlet = TINY_CARD.instantiate()
+		goodies.add_child(foodlet)
+		foodlet.type = 3
+		foodlet.global_position = global_position
+		foodlet.card = i
+		foodlet.move_to_resource(Game.game.seedkeeper.discard_pile.recycle_bin.global_position)
 		await get_tree().create_timer(.1).timeout
 
 	destroy = true

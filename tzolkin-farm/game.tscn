@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://dwqwiqrv1jfri" path="res://art/ui/hand.png" id="9_hb5m1"]
 [ext_resource type="Script" uid="uid://d0po6tfbuhuc5" path="res://hand_image.gd" id="10_x5p1p"]
 [ext_resource type="Script" uid="uid://b706fq76tajfe" path="res://seed_keeper.gd" id="11_hb5m1"]
+[ext_resource type="Script" uid="uid://x0w1fuppocc7" path="res://code/discard_pile.gd" id="11_x5p1p"]
 [ext_resource type="Texture2D" uid="uid://c7qwdtv3x87xu" path="res://art/png-clipart-sun-sun-sun.png" id="12_iotsf"]
 [ext_resource type="Script" uid="uid://cob7t1n2bxrf5" path="res://code/drawpile.gd" id="12_x5p1p"]
 [ext_resource type="Script" uid="uid://bhygk66ix8ajf" path="res://code/end_turn.gd" id="14_7sc4i"]
@@ -117,6 +118,7 @@ texture = ExtResource("16_f1jbl")
 expand_mode = 5
 
 [node name="DiscardPile" type="Node2D" parent="SeedKeeper" unique_id=318655749]
+script = ExtResource("11_x5p1p")
 
 [node name="RecycleBin" type="Sprite2D" parent="SeedKeeper/DiscardPile" unique_id=1200441947]
 position = Vector2(387, 970.00006)

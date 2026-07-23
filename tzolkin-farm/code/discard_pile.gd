@@ -1,0 +1,15 @@
+extends Node2D
+
+var pile : Array[PackedScene]
+@onready var recycle_bin: Sprite2D = $RecycleBin
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+func add_card(cardScene):
+	pile.append(cardScene)
