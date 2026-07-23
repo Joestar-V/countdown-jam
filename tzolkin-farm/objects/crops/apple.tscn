@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cwjxq2jehc60x" path="res://objects/seed.tscn" id="1_64t0u"]
 [ext_resource type="Script" uid="uid://c251dprifihqm" path="res://objects/crops/apple.gd" id="1_boifr"]
 [ext_resource type="Texture2D" uid="uid://bx1udl3a5xrme" path="res://art/card images/apple.png" id="2_onxb7"]
+[ext_resource type="Texture2D" uid="uid://uvj581kj3jll" path="res://art/card images/seed_apple_tree.png" id="4_onxb7"]
 
 [node name="Apple" unique_id=1742177086 instance=ExtResource("1_64t0u")]
 script = ExtResource("1_boifr")
@@ -16,3 +17,6 @@ card_name = "Apple Tree"
 picture = ExtResource("2_onxb7")
 rarity = null
 tooltip = "A juicy, rewarding crop that yields filling fruit if you can spare the water."
+
+[node name="Sprite2D" parent="." index="0" unique_id=551817306]
+texture = ExtResource("4_onxb7")

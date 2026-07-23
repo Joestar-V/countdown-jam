@@ -1,45 +1,64 @@
 [gd_scene format=3 uid="uid://cwjxq2jehc60x"]
 
 [ext_resource type="Script" uid="uid://8ardumhsiw4g" path="res://code/seed_class.gd" id="1_i0yiy"]
-[ext_resource type="Texture2D" uid="uid://bx1udl3a5xrme" path="res://art/card images/apple.png" id="2_i0yiy"]
+[ext_resource type="Texture2D" uid="uid://uvj581kj3jll" path="res://art/card images/seed_apple_tree.png" id="2_i0yiy"]
+[ext_resource type="Texture2D" uid="uid://bvjext2dd8joy" path="res://art/card images/green_border.png" id="3_l103h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i0yiy"]
-size = Vector2(228.50781, 285.5)
+size = Vector2(316, 396)
+
+[sub_resource type="SystemFont" id="SystemFont_imxm8"]
 
 [node name="Card" type="Node2D" unique_id=1742177086]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_i0yiy")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=551817306]
-scale = Vector2(0.5, 0.5)
+[node name="card_image" type="Sprite2D" parent="." unique_id=551817306]
+scale = Vector2(0.66, 0.66)
 texture = ExtResource("2_i0yiy")
 
-[node name="Button" type="Button" parent="Sprite2D" unique_id=1813872466]
+[node name="Button" type="Button" parent="card_image" unique_id=1813872466]
 self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -228.5
-offset_top = -285.5
-offset_right = -228.5
-offset_bottom = -285.5
+offset_left = -239.39392
+offset_top = -300.0
+offset_right = -239.39392
+offset_bottom = -300.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 metadata/_edit_use_anchors_ = true
 
+[node name="card_image2" type="Sprite2D" parent="." unique_id=1675455252]
+scale = Vector2(0.66, 0.66)
+texture = ExtResource("3_l103h")
+
 [node name="Area2D" type="Area2D" parent="." unique_id=1163772541]
+visible = false
 self_modulate = Color(1, 1, 1, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=186938305]
-position = Vector2(0.00390625, 0.0078125)
 shape = SubResource("RectangleShape2D_i0yiy")
 
 [node name="Goodies" type="Node2D" parent="." unique_id=1952957824]
 
-[connection signal="button_down" from="Sprite2D/Button" to="." method="_on_button_button_down"]
-[connection signal="button_up" from="Sprite2D/Button" to="." method="_on_button_button_up"]
-[connection signal="pressed" from="Sprite2D/Button" to="." method="_on_button_pressed"]
+[node name="water_label" type="Label" parent="." unique_id=1692487856]
+offset_left = 106.0
+offset_top = 126.0
+offset_right = 140.0
+offset_bottom = 184.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_imxm8")
+theme_override_font_sizes/font_size = 42
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_down" from="card_image/Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="card_image/Button" to="." method="_on_button_button_up"]
+[connection signal="pressed" from="card_image/Button" to="." method="_on_button_pressed"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

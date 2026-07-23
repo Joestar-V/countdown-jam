@@ -1,5 +1,6 @@
 extends Card
 class_name Seed
+@onready var water_label = $water_label
 
 
 @export var water_cost := 1
@@ -13,7 +14,7 @@ class_name Seed
 
 func update_visuals():
 	#do stuf
-	pass
+	water_label.text = str(water_cost)
 
 func on_harvest_sprout():
 	pass
@@ -22,10 +23,12 @@ func on_harvest_flower():
 func on_harvest_fruit():
 	pass 
 func on_harvest_death():
+
 	harvest()
 func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = []) -> void:
 	Game.game.seedList.erase(self)
 	super(foodCount, moneyCount , fertCount, cards)
+	
 func _on_button_pressed() -> void:
 	if slotted:
 		if slot.stage != 0:
