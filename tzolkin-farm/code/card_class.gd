@@ -58,7 +58,7 @@ func _on_button_button_up() -> void:
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.name == "slotHole" and (slotted):
+	if area.name == "slotHole" and (moving):
 		slot = area.get_parent()
 		area.get_parent().seed = self
 		slotted = true
@@ -66,6 +66,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		#turn_over.emit()
 	elif area.name == "slotHole" and (Game.game.fertCount >= area.get_parent().pos):
 		Game.game.fertCount -= area.get_parent().pos
+		Game.game.actions -= 1
 		slot = area.get_parent()
 		area.get_parent().seed = self
 		slotted = true
@@ -77,10 +78,14 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.name == "slotHole" and moving:
 		moving -= 1
-	elif area.name == "slotHole":
+	elif area.name == "slotHole" and slotted and slot == area.get_parent():
 		slotted = false
 		slot = null
 		area.get_parent().seed = null
+		Game.game.actions += 1
+		Game.game.fertCount += area.get_parent().pos
+
+
 
 func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = []):
 	for i in foodCount:

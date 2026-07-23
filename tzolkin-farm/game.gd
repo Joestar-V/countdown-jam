@@ -8,7 +8,8 @@ extends Node2D
 @onready var slotList: Array
 @onready var resources: Node2D = $Resources
 
-var game
+@onready  var actions = 1
+@onready  var actionNum = 1
 
 @onready var fertCount : int = 0:
 	set(value):
@@ -52,6 +53,9 @@ func _on_seed_turn_over() -> void:
 
 
 func _on_end_turn_pressed() -> void:
+	if actions > 0:
+		return
+	actions = actionNum
 	var i = 0
 	#for slot in slotList:
 	#	i+= 1

@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://h25xor7ms780" path="res://objects/crops/apple.tscn" id="12_215e1"]
 [ext_resource type="Texture2D" uid="uid://c7qwdtv3x87xu" path="res://art/png-clipart-sun-sun-sun.png" id="12_iotsf"]
 [ext_resource type="Texture2D" uid="uid://v5qbx44u3pla" path="res://icon.svg" id="13_lc2xo"]
+[ext_resource type="Script" uid="uid://bhygk66ix8ajf" path="res://code/end_turn.gd" id="14_7sc4i"]
 
 [sub_resource type="Animation" id="Animation_vef74"]
 length = 0.001
@@ -26,6 +27,8 @@ _data = {
 &"RESET": SubResource("Animation_vef74"),
 &"wheelspin": SubResource("Animation_hve3p")
 }
+
+[sub_resource type="Theme" id="Theme_6tghx"]
 
 [node name="Game" type="Node2D" unique_id=1509497783]
 script = ExtResource("1_vef74")
@@ -134,8 +137,10 @@ offset_left = 1545.0
 offset_top = 877.0
 offset_right = 1681.0
 offset_bottom = 1013.0
+theme = SubResource("Theme_6tghx")
 text = "End turn"
 icon = ExtResource("13_lc2xo")
+script = ExtResource("14_7sc4i")
 
 [node name="Wheel" parent="." unique_id=965928083 instance=ExtResource("1_feb5d")]
 position = Vector2(995, 1179)

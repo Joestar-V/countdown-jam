@@ -30,11 +30,12 @@ func on_harvest_death():
 	harvest()
 func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = []) -> void:
 	Game.game.seedList.erase(self)
+	Game.game.actions -= 1
 	super(foodCount, moneyCount , fertCount, cards)
 	
 func _on_button_pressed() -> void:
 	if slotted:
-		if slot.stage != 0:
+		if slot.stage != 0 and Game.game.actions > 0:
 			match slot.stage:
 				1:
 					on_harvest_sprout()
