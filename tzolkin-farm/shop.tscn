@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://cluhqubl3e2e4"]
+
+[ext_resource type="Texture2D" uid="uid://bbdm36xo4kmgu" path="res://art/ui/tablecloth.png" id="1_blqjs"]
+[ext_resource type="Script" uid="uid://dy1gskbm858m8" path="res://shop.gd" id="1_fgaav"]
+[ext_resource type="Texture2D" uid="uid://cilgvgxj6yyax" path="res://art/ui/wood_board.png" id="2_fgaav"]
+[ext_resource type="FontFile" uid="uid://j8glluhsw0mx" path="res://art/ui/segoe-print-regular.ttf" id="3_6lah5"]
+
+[node name="Shop" type="Node2D" unique_id=9903558]
+script = ExtResource("1_fgaav")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=103307646]
+position = Vector2(960, 536)
+scale = Vector2(1.4250001, 1.425)
+texture = ExtResource("1_blqjs")
+
+[node name="Seed_shop" type="ItemList" parent="." unique_id=453998498]
+offset_left = 816.0
+offset_top = 392.0
+offset_right = 1112.0
+offset_bottom = 836.0
+theme_override_font_sizes/font_size = 100
+max_columns = 2
+
+[node name="WoodBoard" type="Sprite2D" parent="." unique_id=566784769]
+position = Vector2(952, 112)
+texture = ExtResource("2_fgaav")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="WoodBoard" unique_id=2130060524]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -771.5
+offset_top = -158.0
+offset_right = -19.5
+offset_bottom = -7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.39215687)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("3_6lah5")
+theme_override_font_sizes/font_size = 78
+text = "Farmer's Market"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="peek" type="Button" parent="." unique_id=1276272614]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1416.0
+offset_top = 56.0
+offset_right = 1544.0
+offset_bottom = 168.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Peek at 
+farm"
+icon_alignment = 1
+
+[node name="reroll" type="Button" parent="." unique_id=1635219617]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 368.0
+offset_top = 56.0
+offset_right = 496.0
+offset_bottom = 168.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Reroll
+Stock"
+icon_alignment = 1
