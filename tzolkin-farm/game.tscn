@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://cot72hewwyhox" path="res://art/flowersymbol.png" id="5_vef74"]
 [ext_resource type="Texture2D" uid="uid://o2ax2jjy3s3x" path="res://art/sproutsymbol.png" id="6_hve3p"]
 [ext_resource type="Texture2D" uid="uid://c6v3lkqytohw1" path="res://art/seedlingsymbol.png" id="7_mfdv2"]
+[ext_resource type="Texture2D" uid="uid://dwqwiqrv1jfri" path="res://art/ui/hand.png" id="9_hb5m1"]
+[ext_resource type="Script" uid="uid://d0po6tfbuhuc5" path="res://hand_image.gd" id="10_x5p1p"]
 [ext_resource type="Script" uid="uid://b706fq76tajfe" path="res://seed_keeper.gd" id="11_hb5m1"]
 [ext_resource type="Texture2D" uid="uid://c7qwdtv3x87xu" path="res://art/png-clipart-sun-sun-sun.png" id="12_iotsf"]
 [ext_resource type="Script" uid="uid://cob7t1n2bxrf5" path="res://code/drawpile.gd" id="12_x5p1p"]
@@ -75,11 +77,17 @@ script = ExtResource("11_hb5m1")
 [node name="Drawpile" type="Node2D" parent="SeedKeeper" unique_id=1586721062]
 script = ExtResource("12_x5p1p")
 
-[node name="VegPouch2291429493" type="Sprite2D" parent="SeedKeeper/Drawpile" unique_id=1662455865]
-position = Vector2(85.000015, 941.99994)
+[node name="pouch" type="Sprite2D" parent="SeedKeeper/Drawpile" unique_id=1662455865]
+position = Vector2(107.000015, 975)
 rotation = 0.42352977
-scale = Vector2(0.382071, 0.38207096)
+scale = Vector2(0.30831346, 0.30831343)
 texture = ExtResource("16_e8heu")
+
+[node name="hand" type="Sprite2D" parent="SeedKeeper" unique_id=1935885946]
+position = Vector2(53.000004, 724)
+scale = Vector2(0.5064725, 0.50647247)
+texture = ExtResource("9_hb5m1")
+script = ExtResource("10_x5p1p")
 
 [node name="Hand" type="VBoxContainer" parent="SeedKeeper" unique_id=1259071162]
 offset_left = 82.0
