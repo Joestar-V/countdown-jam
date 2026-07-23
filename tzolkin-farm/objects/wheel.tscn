@@ -9,7 +9,6 @@ script = ExtResource("1_t0jdk")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1007096157]
 texture_filter = 1
-scale = Vector2(9.5, 9.5)
 texture = ExtResource("1_45fdq")
 
 [node name="Slot" parent="." unique_id=658892514 instance=ExtResource("3_7wgt2")]

@@ -4,11 +4,14 @@
 [ext_resource type="PackedScene" uid="uid://rt7vegnmsa1o" path="res://objects/wheel.tscn" id="1_feb5d"]
 [ext_resource type="Script" uid="uid://cnu0x64ps4cho" path="res://game.gd" id="1_vef74"]
 [ext_resource type="PackedScene" uid="uid://dwffc1owgj0bq" path="res://objects/slot.tscn" id="2_e2o6t"]
+[ext_resource type="Texture2D" uid="uid://cuslkrq4nfwkr" path="res://art/b97505da0c981614338824d4b74f3e4c.jpg" id="2_hve3p"]
+[ext_resource type="Texture2D" uid="uid://bc6x6ul1kc1ak" path="res://art/trellis-latticework-fence-garden-house-boundary-fence-6db7dfdbb7ff9fb232adb861d5a887b6.png" id="3_mfdv2"]
 [ext_resource type="Texture2D" uid="uid://08vp65ahorar" path="res://art/skullsymbol.png" id="4_fc0e3"]
 [ext_resource type="Texture2D" uid="uid://dotkrdgaep1s7" path="res://art/fruitsymbol.png" id="4_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://cot72hewwyhox" path="res://art/flowersymbol.png" id="5_vef74"]
 [ext_resource type="Texture2D" uid="uid://o2ax2jjy3s3x" path="res://art/sproutsymbol.png" id="6_hve3p"]
 [ext_resource type="Texture2D" uid="uid://c6v3lkqytohw1" path="res://art/seedlingsymbol.png" id="7_mfdv2"]
+[ext_resource type="Texture2D" uid="uid://c7qwdtv3x87xu" path="res://art/png-clipart-sun-sun-sun.png" id="12_iotsf"]
 
 [sub_resource type="Animation" id="Animation_vef74"]
 length = 0.001
@@ -73,6 +76,28 @@ _data = {
 [node name="Game" type="Node2D" unique_id=1509497783]
 script = ExtResource("1_vef74")
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2051013424]
+position = Vector2(960, 539.99994)
+scale = Vector2(1.5999998, 1.2)
+texture = ExtResource("2_hve3p")
+
+[node name="TrellisLatticeworkFenceGardenHouseBoundaryFence6Db7Dfdbb7Ff9Fb232Adb861d5a887b8" type="Sprite2D" parent="." unique_id=1344825108]
+position = Vector2(961.1102, -381.06253)
+scale = Vector2(2.9922915, 2.9922922)
+texture = ExtResource("3_mfdv2")
+
+[node name="TrellisLatticeworkFenceGardenHouseBoundaryFence6Db7Dfdbb7Ff9Fb232Adb861d5a887b9" type="Sprite2D" parent="." unique_id=992995480]
+position = Vector2(2305, 332.99997)
+rotation = 1.5707964
+scale = Vector2(2.9922915, 2.9922922)
+texture = ExtResource("3_mfdv2")
+
+[node name="TrellisLatticeworkFenceGardenHouseBoundaryFence6Db7Dfdbb7Ff9Fb232Adb861d5a887b10" type="Sprite2D" parent="." unique_id=1648527557]
+position = Vector2(-350.00003, 336.99997)
+rotation = 1.5707964
+scale = Vector2(2.9922915, 2.9922922)
+texture = ExtResource("3_mfdv2")
+
 [node name="Wheel" parent="." unique_id=965928083 instance=ExtResource("1_feb5d")]
 position = Vector2(473, 841)
 
@@ -96,6 +121,7 @@ position = Vector2(222, -339)
 position = Vector2(-323, -248)
 
 [node name="symbols" type="Node2D" parent="." unique_id=1184561991]
+position = Vector2(504, 392)
 scale = Vector2(1.5, 1.5)
 
 [node name="Sprite2D2" type="Sprite2D" parent="symbols" unique_id=1904656237]
@@ -126,15 +152,19 @@ texture = ExtResource("7_mfdv2")
 [node name="Seedpouch" type="Node2D" parent="." unique_id=196106970]
 
 [node name="Seed" parent="Seedpouch" unique_id=1742177086 instance=ExtResource("1_80nbo")]
-position = Vector2(195, 193)
+position = Vector2(405, 346)
 
 [node name="Seed3" parent="Seedpouch" unique_id=1115150649 instance=ExtResource("1_80nbo")]
-position = Vector2(77, 174)
+position = Vector2(287, 327)
 
 [node name="Seed2" parent="Seedpouch" unique_id=427494486 instance=ExtResource("1_80nbo")]
-position = Vector2(149, 287)
+position = Vector2(359, 440)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=411556663]
 libraries/ = SubResource("AnimationLibrary_mfdv2")
+
+[node name="PngClipartSunSunSun" type="Sprite2D" parent="." unique_id=132937313]
+position = Vector2(1774, 139)
+texture = ExtResource("12_iotsf")
 
 [connection signal="turn_over" from="Seedpouch/Seed" to="." method="_on_seed_turn_over"]
