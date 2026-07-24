@@ -12,7 +12,7 @@ border_color = Color(0.18233654, 0.0075444905, 0, 1)
 texture = ExtResource("1_w6hox")
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
-region_rect = Rect2(-19.487183, 4.7179184, 522.92285, 494.97427)
+region_rect = Rect2(21.435913, 10.564079, 525.3715, 494.97427)
 
 [resource]
 HSeparator/styles/separator = SubResource("StyleBoxFlat_7oix6")

@@ -16,7 +16,21 @@
 size = Vector2(316, 396)
 
 [node name="Card" type="Node2D" unique_id=1742177086]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_i0yiy")
+category = null
+sprout = null
+flower = null
+fruit = null
+death = null
+tooltip_sprout = null
+tooltip_flower = null
+tooltip_fruit = null
+tooltip_death = null
+card_name = null
+rarity = null
+tooltip = null
+water_cost = null
 
 [node name="MoveComponent" parent="." unique_id=357507057 node_paths=PackedStringArray("actor") instance=ExtResource("2_l3x0i")]
 actor = NodePath("..")
@@ -76,7 +90,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="stat_spread" type="PanelContainer" parent="visual" unique_id=1434047059]
-visible = false
 offset_left = 86.0
 offset_top = -90.0
 offset_right = 227.0
@@ -96,11 +109,11 @@ layout_mode = 2
 
 [node name="row1" type="HBoxContainer" parent="visual/stat_spread/margin/vbox" unique_id=287826394]
 visible = false
-custom_minimum_size = Vector2(30, 38)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 
 [node name="Stage" type="TextureRect" parent="visual/stat_spread/margin/vbox/row1" unique_id=81644114]
-custom_minimum_size = Vector2(41, 0)
+custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
 texture = ExtResource("5_366ee")
 expand_mode = 3
@@ -112,11 +125,11 @@ theme = ExtResource("5_y63i3")
 
 [node name="row2" type="HBoxContainer" parent="visual/stat_spread/margin/vbox" unique_id=1670830360]
 visible = false
-custom_minimum_size = Vector2(30, 38)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 
 [node name="Stage" type="TextureRect" parent="visual/stat_spread/margin/vbox/row2" unique_id=1912195198]
-custom_minimum_size = Vector2(41, 0)
+custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
 texture = ExtResource("7_y63i3")
 expand_mode = 3
@@ -128,11 +141,11 @@ theme = ExtResource("5_y63i3")
 
 [node name="row3" type="HBoxContainer" parent="visual/stat_spread/margin/vbox" unique_id=591491995]
 visible = false
-custom_minimum_size = Vector2(30, 38)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 
 [node name="Stage" type="TextureRect" parent="visual/stat_spread/margin/vbox/row3" unique_id=215885362]
-custom_minimum_size = Vector2(41, 0)
+custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
 texture = ExtResource("9_abf7f")
 expand_mode = 3
@@ -144,11 +157,11 @@ theme = ExtResource("5_y63i3")
 
 [node name="row4" type="HBoxContainer" parent="visual/stat_spread/margin/vbox" unique_id=1140507086]
 visible = false
-custom_minimum_size = Vector2(30, 38)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 
 [node name="Stage" type="TextureRect" parent="visual/stat_spread/margin/vbox/row4" unique_id=83329372]
-custom_minimum_size = Vector2(41, 0)
+custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
 texture = ExtResource("10_chx25")
 expand_mode = 3

@@ -48,6 +48,7 @@ func move_to_lerp(delta, destination):
 			lerp = false
 			#skin.moving = false
 			emit_signal("movement_finished")
+			
 func start_moving_time(destination: Vector2, time: float):
 	start_pos = actor.global_position
 	target_destination = destination

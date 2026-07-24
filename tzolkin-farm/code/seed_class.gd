@@ -1,11 +1,9 @@
 extends Card
 class_name Seed
 
+@onready var water_label = $visual/water_label
 
-@onready var water_label = $water_label
-@onready var title_label = $title_label
-@onready var card_border = $card_border
-
+@onready var title_label = $visual/title_label
 
 @export_enum("Cereal", "Vegetable", "Fruit", "Root", "Flower") var category = 0
 @export var sprout : Vector3i 

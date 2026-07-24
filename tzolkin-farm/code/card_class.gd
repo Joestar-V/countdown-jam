@@ -5,13 +5,15 @@ class_name Card
 var money_cost := 5
 #@onready var sell_value := 4
 
+@onready var move_component = $MoveComponent
 
-@onready var default_scale = Vector2(0.5,0.5)
-@onready var hover_scale = Vector2(0.54,0.54)
+@onready var default_scale = Vector2(1.0,1.0)
+@onready var hover_scale = Vector2(1.1,1.1)
 @onready var hovered = false
 
+@onready var card_image = $visual/card_image
+@onready var card_border = $visual/card_border
 
-@onready var card_image: Sprite2D = $card_image
 @export var card_name : String 
 @export var picture : Texture 
 @export_enum("Dirt Cheap", "Scarce", "One of a Kind") var rarity = 0
@@ -20,7 +22,7 @@ var money_cost := 5
 @onready var transition_type = Tween.TransitionType.TRANS_SINE
 
 
-@onready var stat_spread = $stat_spread
+@onready var stat_spread = $visual/stat_spread
 
 const TINY_FERT = preload("res://objects/tiny_fert.tscn")
 const TINY_FOOD = preload("res://objects/tiny_food.tscn")
@@ -54,9 +56,9 @@ func _ready():
 	update_visuals()
 	
 	match rarity:
-		0: money_cost = 5
-		1: money_cost = 10
-		2: money_cost = 20
+		0: money_cost = 1
+		1: money_cost = 2
+		2: money_cost = 3
 
 func update_visuals():
 	scale = default_scale
@@ -100,10 +102,24 @@ func _on_button_button_down() -> void:
 
 func _on_button_button_up() -> void:
 	if shop:
-		print("fart")
+		
 		if Game.game.moneyCount >= money_cost:
+			print("purchase")
 			Game.game.moneyCount -= money_cost
 			Game.game.seedkeeper.drawpile.add_card(seedPacket)
+			
+			$visual.hide()
+			
+			for i in 1:
+				var crd = TINY_CARD.instantiate()
+				goodies.add_child(crd)
+				crd.type = 3
+				crd.global_position = global_position
+				crd.card = i
+				crd.move_to_resource(Game.game.seedkeeper.drawpile.pouch.global_position)
+				await get_tree().create_timer(.3).timeout
+				
+			queue_free()
 		else:
 			
 			#play noise aswell
@@ -186,8 +202,10 @@ func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket])
 		foodlet.card = i
 		foodlet.move_to_resource(Game.game.seedkeeper.discard_pile.recycle_bin.global_position)
 		await get_tree().create_timer(.1).timeout
+		
 	Game.game.water += water_cost
 	destroy = true
+
 
 func zoom():
 	if hovered == false:
@@ -196,9 +214,6 @@ func zoom():
 		scale = hover_scale
 		#create_tween().tween_property(self,"scale",hover_scale,0.2).set_trans(transition_type)
 		#await get_tree().create_timer(.2).timeout
-		
-
-	
 	
 func unzoom():
 	if hovered == true:
@@ -207,4 +222,7 @@ func unzoom():
 		scale = default_scale
 		#create_tween().tween_property(self,"scale",default_scale,0.15).set_trans(transition_type)
 		#await get_tree().create_timer(.15).timeout
-		
+
+func move_to_resource(dest):
+	await get_tree().create_timer(.1).timeout
+	move_component.start_moving_time(dest,.3)
