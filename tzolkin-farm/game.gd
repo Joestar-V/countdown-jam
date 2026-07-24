@@ -8,10 +8,26 @@ extends Node2D
 @onready var slotList: Array
 @onready var resources: Node2D = $Resources
 @onready var harvested = false
-@onready  var actions = 1
+
+
+			
 @onready  var actionNum = 1
 #@onready var handPos = 0
 const APPLE = preload("res://objects/crops/apple.tscn")
+@onready var end_turn = $"End Turn"
+
+
+@onready  var actions : int = 1:
+	set(value):
+		actions = value
+		if actions > 0:
+			end_turn.text = "Plant or Harvest"
+			end_turn.disabled = true
+		else:
+			end_turn.text = "End Day"
+			end_turn.disabled = false
+		
+		
 
 @onready var fertCount : int = 0:
 	set(value):

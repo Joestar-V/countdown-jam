@@ -24,6 +24,7 @@
 [ext_resource type="Script" uid="uid://htg51x88dvwh" path="res://code/hand.gd" id="15_qhcbd"]
 [ext_resource type="Texture2D" uid="uid://b1npgnjyligff" path="res://art/ui/veg-pouch-2291429493.png" id="16_e8heu"]
 [ext_resource type="Texture2D" uid="uid://buy1h8xxb6wa8" path="res://art/ui/recycle-bin.png" id="17_rvswv"]
+[ext_resource type="PackedScene" uid="uid://cluhqubl3e2e4" path="res://shop.tscn" id="22_vaj68"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_imxm8"]
 font = ExtResource("9_f1jbl")
@@ -78,9 +79,35 @@ texture = ExtResource("3_mfdv2")
 metadata/_edit_lock_ = true
 
 [node name="Moon" type="Sprite2D" parent="." unique_id=1706999615]
-position = Vector2(1800.0001, 953)
-scale = Vector2(0.27174994, 0.27174994)
+position = Vector2(1767.9999, 983.99994)
+scale = Vector2(0.4039375, 0.4039375)
 texture = ExtResource("4_e8heu")
+
+[node name="spots" type="Node2D" parent="." unique_id=451446717]
+
+[node name="Slot2" parent="spots" unique_id=658892514 instance=ExtResource("2_e2o6t")]
+position = Vector2(608, 921.00006)
+open = true
+
+[node name="Slot3" parent="spots" unique_id=44547900 instance=ExtResource("2_e2o6t")]
+position = Vector2(768, 832.00006)
+pos = 1
+stage = 1
+
+[node name="Slot4" parent="spots" unique_id=1877094531 instance=ExtResource("2_e2o6t")]
+position = Vector2(960, 800.00006)
+pos = 2
+stage = 2
+
+[node name="Slot5" parent="spots" unique_id=714500809 instance=ExtResource("2_e2o6t")]
+position = Vector2(1152, 832)
+pos = 3
+stage = 3
+
+[node name="Slot6" parent="spots" unique_id=1471545763 instance=ExtResource("2_e2o6t")]
+position = Vector2(1312, 921)
+pos = 4
+stage = 4
 
 [node name="Resources" parent="." unique_id=1812906870 instance=ExtResource("4_7sc4i")]
 position = Vector2(960, 0)
@@ -93,7 +120,7 @@ script = ExtResource("11_hb5m1")
 script = ExtResource("12_x5p1p")
 
 [node name="pouch" type="Sprite2D" parent="SeedKeeper/Drawpile" unique_id=1662455865]
-position = Vector2(107.000015, 975)
+position = Vector2(87.000015, 975)
 rotation = 0.42352977
 scale = Vector2(0.30831346, 0.30831343)
 texture = ExtResource("16_e8heu")
@@ -102,9 +129,9 @@ texture = ExtResource("16_e8heu")
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 201.0
-offset_top = 844.0
-offset_right = 230.0
+offset_left = 181.0
+offset_top = 837.0
+offset_right = 210.0
 offset_bottom = 914.0
 grow_vertical = 0
 text = "x"
@@ -154,17 +181,17 @@ stretch_mode = 5
 script = ExtResource("11_x5p1p")
 
 [node name="RecycleBin" type="Sprite2D" parent="SeedKeeper/DiscardPile" unique_id=1200441947]
-position = Vector2(387, 970.00006)
-scale = Vector2(0.1809242, 0.19626692)
+position = Vector2(343.89832, 953.62506)
+scale = Vector2(0.14677277, 0.15921938)
 texture = ExtResource("17_rvswv")
 
 [node name="discard_count" type="Label" parent="SeedKeeper/DiscardPile" unique_id=1739738977]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 459.0
+offset_left = 401.81607
 offset_top = 837.0
-offset_right = 491.0
+offset_right = 433.81607
 offset_bottom = 914.0
 grow_vertical = 0
 text = "x"
@@ -178,12 +205,12 @@ scale = Vector2(1.5, 1.5)
 
 [node name="Sprite2D2" type="Sprite2D" parent="symbols" unique_id=1904656237]
 texture_filter = 1
-position = Vector2(529.3333, 262.6667)
+position = Vector2(560, 293.33334)
 texture = ExtResource("4_fc0e3")
 
 [node name="Sprite2D3" type="Sprite2D" parent="symbols" unique_id=1357566872]
 texture_filter = 1
-position = Vector2(445.3333, 199.33333)
+position = Vector2(431.99997, 208)
 texture = ExtResource("4_j5wjh")
 
 [node name="Sprite2D4" type="Sprite2D" parent="symbols" unique_id=1255862214]
@@ -193,12 +220,12 @@ texture = ExtResource("5_vef74")
 
 [node name="Sprite2D5" type="Sprite2D" parent="symbols" unique_id=797456245]
 texture_filter = 1
-position = Vector2(207.33334, 206.66666)
+position = Vector2(176.00002, 207.99998)
 texture = ExtResource("6_hve3p")
 
 [node name="Sprite2D6" type="Sprite2D" parent="symbols" unique_id=1899550781]
 texture_filter = 1
-position = Vector2(107.33334, 264)
+position = Vector2(48.00001, 293.33334)
 texture = ExtResource("7_mfdv2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=411556663]
@@ -208,43 +235,25 @@ libraries/ = SubResource("AnimationLibrary_mfdv2")
 position = Vector2(1774, 139)
 texture = ExtResource("12_iotsf")
 
-[node name="spots" type="Node2D" parent="." unique_id=451446717]
-
-[node name="Slot2" parent="spots" unique_id=658892514 instance=ExtResource("2_e2o6t")]
-position = Vector2(677, 931)
-open = true
-
-[node name="Slot3" parent="spots" unique_id=44547900 instance=ExtResource("2_e2o6t")]
-position = Vector2(811, 854)
-pos = 1
-stage = 1
-
-[node name="Slot4" parent="spots" unique_id=1877094531 instance=ExtResource("2_e2o6t")]
-position = Vector2(975, 819)
-pos = 2
-stage = 2
-
-[node name="Slot5" parent="spots" unique_id=714500809 instance=ExtResource("2_e2o6t")]
-position = Vector2(1127, 850)
-pos = 3
-stage = 3
-
-[node name="Slot6" parent="spots" unique_id=1471545763 instance=ExtResource("2_e2o6t")]
-position = Vector2(1255, 939)
-pos = 4
-stage = 4
-
-[node name="End Turn" type="Button" parent="." unique_id=1810491390]
-offset_left = 1693.0
-offset_top = 886.0
-offset_right = 1900.0
-offset_bottom = 1022.0
-theme = SubResource("Theme_6tghx")
-theme_override_font_sizes/font_size = 30
-text = "End Day"
-script = ExtResource("14_7sc4i")
+[node name="Shop" parent="." unique_id=9903558 instance=ExtResource("22_vaj68")]
+visible = false
 
 [node name="Wheel" parent="." unique_id=965928083 instance=ExtResource("1_feb5d")]
-position = Vector2(995, 1179)
+visible = false
+modulate = Color(1, 1, 1, 0.5647059)
+position = Vector2(960.00006, 1376)
+scale = Vector2(12, 12)
+metadata/_edit_lock_ = true
+
+[node name="End Turn" type="Button" parent="." unique_id=1810491390]
+offset_left = 1616.0
+offset_top = 904.0
+offset_right = 1906.0
+offset_bottom = 1040.0
+theme = SubResource("Theme_6tghx")
+theme_override_font_sizes/font_size = 30
+disabled = true
+text = "Plant or Harvest"
+script = ExtResource("14_7sc4i")
 
 [connection signal="pressed" from="End Turn" to="." method="_on_end_turn_pressed"]

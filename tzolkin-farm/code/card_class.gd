@@ -142,7 +142,7 @@ func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket])
 	destroy = true
 
 func zoom():
-	create_tween().tween_property(self,"scale",Vector2(0.59,0.59),0.2).set_trans(transition_type)
+	create_tween().tween_property(self,"scale",Vector2(0.53,0.53),0.2).set_trans(transition_type)
 	
 func unzoom():
 	create_tween().tween_property(self,"scale",Vector2(0.5,0.5),0.15).set_trans(transition_type)
