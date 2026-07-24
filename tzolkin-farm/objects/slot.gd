@@ -3,6 +3,13 @@ extends Node2D
 @onready var seed : Array[Card]
 @export var pos = 0
 @export_enum("Seed", "Sprout", "Flower", "Fruit", "Death") var stage = 0
+const FLASH = preload("uid://c4r08uebnce3l")
+@onready var visuals = $visuals
+
+var glowing := false
+var glow_time = 0.8
+
+@onready var dirt = $visuals/dirt
 
 @onready var seed_slot = $visuals/seed
 
@@ -16,6 +23,7 @@ extends Node2D
 signal finished
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
 	match stage:
 		0: seed_slot.show()
 		1: sprout.show()
@@ -24,10 +32,17 @@ func _ready() -> void:
 		4: death.show()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-	
+	if (Game.game.dragging == true) and (Game.game.actions > 0) and (Game.game.water >= Game.game.dragged.water_cost) and (Game.game.fertCount >= self.pos): 
+		if !glowing: glow()
+	else:
+		create_tween().tween_property(self.material,"shader_parameter/flash_amount",0.0,0.0)
+
+func glow():
+	glowing = true
+	await create_tween().tween_property(self.material,"shader_parameter/flash_amount",0.3,glow_time).set_trans(Tween.TRANS_SINE).finished
+	await create_tween().tween_property(self.material,"shader_parameter/flash_amount",0.0,glow_time).set_trans(Tween.TRANS_SINE).finished
+	glowing = false
 	
 func harvest_list():
 	var tempList : Array[Card]

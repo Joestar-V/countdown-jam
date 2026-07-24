@@ -11,6 +11,41 @@
 [ext_resource type="Texture2D" uid="uid://e685hba5yd32" path="res://art/icons/death.png" id="9_cbeh3"]
 [ext_resource type="Texture2D" uid="uid://dfwvfxnw81ut1" path="res://art/icons/flowering.png" id="9_qvykm"]
 
+[sub_resource type="Shader" id="Shader_mskdk"]
+code = "shader_type canvas_item;
+
+uniform vec4 flash_color : source_color = vec4(1.0, 1.0, 1.0, 1.0);
+uniform float flash_amount : hint_range(0.0, 1.0) = 0.0;
+uniform bool solid_flash = false;
+
+void fragment() {
+    vec4 base = texture(TEXTURE, UV);
+    
+    if (solid_flash) {
+        // Force solid flash color
+        COLOR = vec4(flash_color.rgb, base.a);
+    }
+    else if (flash_amount > 0.0) {
+        // Flash amount now goes all the way to solid at 1.0
+        COLOR.rgb = mix(base.rgb, flash_color.rgb, flash_amount);
+        COLOR.a = base.a;
+    }
+    else {
+        COLOR = base;
+    }
+}
+//void light() {
+//	// Called for every pixel for every light affecting the CanvasItem.
+//	// Uncomment to replace the default light processing function with this one.
+//}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hvygb"]
+shader = SubResource("Shader_mskdk")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_amount = 0.0
+shader_parameter/solid_flash = false
+
 [sub_resource type="LabelSettings" id="LabelSettings_b64ip"]
 line_spacing = -21.095
 font = ExtResource("6_mskdk")
@@ -20,30 +55,36 @@ font_size = 29
 size = Vector2(4.9230766, 4.9230766)
 
 [node name="Slot" type="Node2D" unique_id=658892514]
+material = SubResource("ShaderMaterial_hvygb")
 scale = Vector2(12, 12)
 script = ExtResource("1_ks62j")
 
 [node name="visuals" type="Node2D" parent="." unique_id=168028002]
+use_parent_material = true
 
 [node name="WoodPost" type="Sprite2D" parent="visuals" unique_id=1861404626]
 modulate = Color(0.67481464, 0.67481464, 0.6748146, 1)
+use_parent_material = true
 position = Vector2(-0.08333343, -5.6666656)
 rotation = 3.1415927
 scale = Vector2(0.015317274, 0.0163332)
 texture = ExtResource("2_cbeh3")
 
 [node name="fence" type="Sprite2D" parent="visuals" unique_id=355265209]
+use_parent_material = true
 position = Vector2(-3.5527137e-15, -2.5833335)
 scale = Vector2(0.036, 0.02372439)
 texture = ExtResource("2_rw4v0")
 
 [node name="dirt" type="Sprite2D" parent="visuals" unique_id=442416611]
 texture_filter = 1
+use_parent_material = true
 position = Vector2(0, 0.6666666)
 scale = Vector2(0.029, 0.023250002)
 texture = ExtResource("2_ks62j")
 
 [node name="WoodSign" type="Sprite2D" parent="visuals" unique_id=1071048682]
+use_parent_material = true
 position = Vector2(0, -12.250122)
 scale = Vector2(0.027517233, 0.02856182)
 texture = ExtResource("5_mskdk")
@@ -51,6 +92,7 @@ region_enabled = true
 region_rect = Rect2(303.487, 13.641022, 413.1281, 248.8847)
 
 [node name="GridContainer" type="GridContainer" parent="visuals" unique_id=437010508]
+use_parent_material = true
 offset_left = -5.75
 offset_top = -14.916659
 offset_right = 5.916667
@@ -58,6 +100,7 @@ offset_bottom = -9.166659
 
 [node name="seed" type="Label" parent="visuals" unique_id=901106306]
 visible = false
+use_parent_material = true
 offset_left = -4.6666665
 offset_top = -15.833334
 offset_right = 121.374985
@@ -71,18 +114,21 @@ vertical_alignment = 1
 
 [node name="sprout" type="Sprite2D" parent="visuals" unique_id=2067137813]
 visible = false
+use_parent_material = true
 position = Vector2(0, -12.499999)
 scale = Vector2(0.009693289, 0.009693289)
 texture = ExtResource("7_o2k68")
 
 [node name="flowering" type="Sprite2D" parent="visuals" unique_id=1875729370]
 visible = false
+use_parent_material = true
 position = Vector2(0, -12.333333)
 scale = Vector2(0.0116959065, 0.011695907)
 texture = ExtResource("9_qvykm")
 
 [node name="fruiting" type="Sprite2D" parent="visuals" unique_id=362195934]
 visible = false
+use_parent_material = true
 position = Vector2(0, -12.333333)
 scale = Vector2(0.0054347827, 0.005434784)
 texture = ExtResource("8_kybjj")
@@ -90,6 +136,7 @@ texture = ExtResource("8_kybjj")
 [node name="death" type="Sprite2D" parent="visuals" unique_id=1478699920]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
+use_parent_material = true
 position = Vector2(0, -12.25)
 scale = Vector2(0.008, 0.008)
 texture = ExtResource("9_cbeh3")

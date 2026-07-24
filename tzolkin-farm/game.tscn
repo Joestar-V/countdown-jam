@@ -29,6 +29,65 @@
 [ext_resource type="Texture2D" uid="uid://b0vic0rrekw5e" path="res://art/ui/water_supply.png" id="27_5b14r"]
 [ext_resource type="Script" uid="uid://gpcfttc0alye" path="res://code/sundial.gd" id="27_bnpwn"]
 
+[sub_resource type="Shader" id="Shader_mskdk"]
+code = "shader_type canvas_item;
+
+uniform vec4 flash_color : source_color = vec4(1.0, 1.0, 1.0, 1.0);
+uniform float flash_amount : hint_range(0.0, 1.0) = 0.0;
+uniform bool solid_flash = false;
+
+void fragment() {
+    vec4 base = texture(TEXTURE, UV);
+    
+    if (solid_flash) {
+        // Force solid flash color
+        COLOR = vec4(flash_color.rgb, base.a);
+    }
+    else if (flash_amount > 0.0) {
+        // Flash amount now goes all the way to solid at 1.0
+        COLOR.rgb = mix(base.rgb, flash_color.rgb, flash_amount);
+        COLOR.a = base.a;
+    }
+    else {
+        COLOR = base;
+    }
+}
+//void light() {
+//	// Called for every pixel for every light affecting the CanvasItem.
+//	// Uncomment to replace the default light processing function with this one.
+//}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5b14r"]
+shader = SubResource("Shader_mskdk")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_amount = 0.0
+shader_parameter/solid_flash = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bnpwn"]
+shader = SubResource("Shader_mskdk")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_amount = 0.0
+shader_parameter/solid_flash = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_36jdj"]
+shader = SubResource("Shader_mskdk")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_amount = 0.0
+shader_parameter/solid_flash = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xfvwf"]
+shader = SubResource("Shader_mskdk")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_amount = 0.0
+shader_parameter/solid_flash = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dhpj7"]
+shader = SubResource("Shader_mskdk")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_amount = 0.0
+shader_parameter/solid_flash = false
+
 [sub_resource type="LabelSettings" id="LabelSettings_imxm8"]
 font = ExtResource("9_f1jbl")
 font_size = 44
@@ -149,25 +208,30 @@ texture = ExtResource("7_mfdv2")
 position = Vector2(10, 5)
 
 [node name="Slot2" parent="spots" unique_id=658892514 instance=ExtResource("2_e2o6t")]
+material = SubResource("ShaderMaterial_5b14r")
 position = Vector2(583, 945.00006)
 open = true
 
 [node name="Slot3" parent="spots" unique_id=44547900 instance=ExtResource("2_e2o6t")]
+material = SubResource("ShaderMaterial_bnpwn")
 position = Vector2(764, 837.00006)
 pos = 1
 stage = 1
 
 [node name="Slot4" parent="spots" unique_id=1877094531 instance=ExtResource("2_e2o6t")]
+material = SubResource("ShaderMaterial_36jdj")
 position = Vector2(956, 801)
 pos = 2
 stage = 2
 
 [node name="Slot5" parent="spots" unique_id=714500809 instance=ExtResource("2_e2o6t")]
+material = SubResource("ShaderMaterial_xfvwf")
 position = Vector2(1136, 837)
 pos = 3
 stage = 3
 
 [node name="Slot6" parent="spots" unique_id=1471545763 instance=ExtResource("2_e2o6t")]
+material = SubResource("ShaderMaterial_dhpj7")
 position = Vector2(1316, 945)
 pos = 4
 stage = 4
@@ -304,6 +368,8 @@ label_settings = SubResource("LabelSettings_b64ip")
 [node name="sundial" type="Marker2D" parent="." unique_id=1442074541]
 position = Vector2(1774, 139)
 script = ExtResource("27_bnpwn")
+weekLength = 20
+finalDay = 55
 
 [node name="days" type="Node2D" parent="sundial" unique_id=2086929812]
 position = Vector2(-1774, -139)
