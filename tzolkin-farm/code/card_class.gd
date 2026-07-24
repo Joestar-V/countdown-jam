@@ -61,6 +61,8 @@ func _process(delta: float) -> void:
 
 
 func _on_button_button_down() -> void:
+	if Game.game.water < water_cost and !slotted:
+		Game.game.red_text()
 	if slotted:
 		if !planted:
 			dragging = true
@@ -70,6 +72,7 @@ func _on_button_button_down() -> void:
 		of = get_global_mouse_position() - global_position
 
 func _on_button_button_up() -> void:
+	Game.game.white_text()
 	dragging = false
 	if slotted:
 		global_position = slotPos
@@ -82,8 +85,6 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		slotted = true
 		slotPos = area.global_position
 		#turn_over.emit()
-	elif area.name == "slotHole" and  Game.game.water < water_cost:
-		Game.game.red_text()
 	elif area.name == "slotHole" and (Game.game.fertCount >= area.get_parent().pos) and (Game.game.water >= water_cost) and !Game.game.harvested:
 		if slotted:
 			Game.game.fertCount += slot.pos
@@ -111,8 +112,6 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 		slot = null
 		area.get_parent().seed.erase(self)
 		Game.game.actions += 1
-	elif area.name == "slotHole" and !slotted:
-		Game.game.white_text()
 
 
 func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket]):
