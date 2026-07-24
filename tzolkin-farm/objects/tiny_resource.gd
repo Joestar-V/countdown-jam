@@ -1,6 +1,6 @@
 extends Sprite2D
 @onready var move_component: MoveComponent = $MoveComponent
-
+signal finished
 var type = 0
 var card 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -29,6 +29,8 @@ func _on_move_component_movement_finished(targ = 0) -> void:
 				1:
 					Game.game.seedkeeper.drawpile.add_card(card)
 	queue_free()
+	finished.emit()
+
 	
 	
 func move_to_resource(dest):

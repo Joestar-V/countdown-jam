@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://e685hba5yd32" path="res://art/icons/death.png" id="10_chx25"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i0yiy"]
-size = Vector2(316, 396)
+size = Vector2(158.30594, 198.21933)
 
 [node name="Card" type="Node2D" unique_id=1742177086]
 script = ExtResource("1_i0yiy")
@@ -155,10 +155,10 @@ expand_mode = 3
 stretch_mode = 5
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1163772541]
-visible = false
 self_modulate = Color(1, 1, 1, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=186938305]
+position = Vector2(-0.008403778, 0.21894836)
 shape = SubResource("RectangleShape2D_i0yiy")
 
 [node name="Goodies" type="Node2D" parent="." unique_id=1952957824]

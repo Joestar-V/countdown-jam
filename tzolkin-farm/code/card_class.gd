@@ -47,7 +47,7 @@ var homeSlot
 var handPos = 0
 var seedPacket : PackedScene
 @export var water_cost := 1
-
+signal finished
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	seedPacket = load(scene_file_path)
@@ -101,6 +101,8 @@ func _on_button_button_down() -> void:
 		of = get_global_mouse_position() - global_position
 
 func _on_button_button_up() -> void:
+		#maybe entering an area doesnt slot you right away, it just sets a potential slot and when you let go it slots you
+
 	if shop:
 		
 		if Game.game.moneyCount >= money_cost:
@@ -135,6 +137,7 @@ func _on_button_button_up() -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.name == "slotHole" and (moving):
+		print(slot.seed)
 		slot = area.get_parent()
 		#area.get_parent().seed.append(self)
 		slotted = true
@@ -157,6 +160,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.name == "slotHole" and moving:
+		
 		moving -= 1
 	
 	elif area.name == "slotHole" and slotted and slot == area.get_parent():
@@ -171,7 +175,7 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 
 func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket]):
 	for i in foodCount:
-		var foodlet = TINY_FOOD.instantiate() #why does only 1 apple spawn?
+		var foodlet = TINY_FOOD.instantiate() 
 		goodies.add_child(foodlet)
 		foodlet.global_position = global_position
 		foodlet.type = 0
@@ -202,9 +206,12 @@ func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket])
 		foodlet.card = i
 		foodlet.move_to_resource(Game.game.seedkeeper.discard_pile.recycle_bin.global_position)
 		await get_tree().create_timer(.1).timeout
-		
+	for kid in goodies.get_children():
+		if kid:
+			await kid.finished
 	Game.game.water += water_cost
 	destroy = true
+	finished.emit()
 
 
 func zoom():

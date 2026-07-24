@@ -124,6 +124,7 @@ func _on_end_turn_pressed() -> void:
 				harvested = false
 
 			else:
+				seed.slot.seed.erase(seed)
 				seed.slot = slotList[seed.slot.pos+1]
 				seed.slot.seed.append(seed)
 				seed.global_position = seed.slot.position
@@ -134,7 +135,9 @@ func _on_end_turn_pressed() -> void:
 
 func weekend():
 	for slot in slotList:
+		print(slot.stage)
 		slot.harvest_list()
+		await slot.finished
 	await open_shop()
 	#reshuffle deck
 	calender.restart()
