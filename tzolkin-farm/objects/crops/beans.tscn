@@ -7,4 +7,10 @@
 script = ExtResource("2_v124k")
 water_cost = 2
 category = 3
+tooltip_sprout = "this is the sprout tooltip"
+tooltip_flower = "this is the flower tooltip"
+tooltip_fruit = "this is the fruit tooltip"
+tooltip_death = ""
 card_name = "Beans"
+rarity = 0
+tooltip = "this is the tooltip"

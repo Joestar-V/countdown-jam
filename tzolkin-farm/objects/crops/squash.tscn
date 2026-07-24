@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://0r2fv35jbeuj"]
+
+[ext_resource type="PackedScene" uid="uid://cwjxq2jehc60x" path="res://objects/seed.tscn" id="1_ryfnu"]
+[ext_resource type="Script" uid="uid://dvi44psiuegmc" path="res://objects/crops/squash.gd" id="2_ryfnu"]
+[ext_resource type="Texture2D" uid="uid://dpfhqgibioodl" path="res://art/card images/seed_potato.png" id="3_uh3o2"]
+
+[node name="squash" unique_id=1742177086 instance=ExtResource("1_ryfnu")]
+script = ExtResource("2_ryfnu")
+water_cost = 6
+category = 2
+tooltip_sprout = "+1 Fertilizer"
+tooltip_flower = "+1 Fertilizer"
+tooltip_fruit = "this is the fruit tooltip"
+tooltip_death = ""
+card_name = "Squash"
+rarity = 1
+tooltip = "this is the tooltip"
+
+[node name="card_image" parent="." index="0" unique_id=551817306]
+texture = ExtResource("3_uh3o2")

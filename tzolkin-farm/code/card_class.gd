@@ -5,6 +5,9 @@ class_name Card
 @export var picture : Texture 
 @export_enum("Dirt Cheap", "Scarce", "One of a Kind") var rarity = 0
 
+@onready var transition_type = Tween.TransitionType.TRANS_SINE
+
+
 @export_multiline var tooltip : String = "this is the tooltip"
 
 const TINY_FERT = preload("res://objects/tiny_fert.tscn")
@@ -134,3 +137,12 @@ func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket])
 		await get_tree().create_timer(.1).timeout
 
 	destroy = true
+
+
+
+
+func zoom():
+	create_tween().tween_property(self,"scale",Vector2(0.59,0.59),0.2).set_trans(transition_type)
+	
+func unzoom():
+	create_tween().tween_property(self,"scale",Vector2(0.5,0.5),0.15).set_trans(transition_type)

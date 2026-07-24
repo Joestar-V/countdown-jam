@@ -1,14 +1,14 @@
 extends Seed
 
-
 func on_harvest_sprout():
 	harvest(0,0,1) 
 
+
 func on_harvest_flower():
-	harvest(2,0,1) 
+	harvest(0,0,1) 
 
 func on_harvest_fruit():
-	harvest(4,0,1) 
+	harvest(6,0,0) 
 
 func on_harvest_death():
-	harvest(0,0,3) 
+	harvest(6,0,0) 
