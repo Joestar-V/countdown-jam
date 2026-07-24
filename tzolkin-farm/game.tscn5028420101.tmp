@@ -304,9 +304,10 @@ label_settings = SubResource("LabelSettings_b64ip")
 [node name="sundial" type="Marker2D" parent="." unique_id=1442074541]
 position = Vector2(1774, 139)
 script = ExtResource("27_bnpwn")
-
-[node name="days" type="Node2D" parent="sundial" unique_id=2086929812]
-position = Vector2(-1774, -139)
+currentDay = null
+week = null
+finalDay = null
+weekLength = null
 
 [node name="Sun" type="Sprite2D" parent="sundial" unique_id=132937313]
 texture = ExtResource("12_iotsf")
