@@ -8,7 +8,7 @@ extends Node2D
 @onready var slotList: Array
 @onready var resources: Node2D = $Resources
 @onready var harvested = false
-
+@onready var redtext = false
 @onready var water_label = $WaterSupply/water_label
 
 
@@ -76,11 +76,14 @@ func _ready() -> void:
 		i += 1
 		
 
+func red_text():
+	water_label.modulate = Color.RED
+func white_text():
+	water_label.modulate = Color.WHITE
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
 
 func _on_seed_turn_over() -> void:
 	pass

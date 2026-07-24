@@ -6,13 +6,12 @@
 
 [node name="Apple" unique_id=1742177086 instance=ExtResource("1_64t0u")]
 script = ExtResource("1_boifr")
-water_cost = 3
 category = 2
 tooltip_sprout = "+1 Fertilizer"
 tooltip_flower = "+3 Money"
 tooltip_fruit = "+5 Food"
-tooltip_death = null
 card_name = "Apple Tree"
 picture = ExtResource("2_onxb7")
 rarity = 2
 tooltip = "A juicy, rewarding crop that yields filling fruit if you can spare the water."
+water_cost = 3
