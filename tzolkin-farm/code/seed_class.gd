@@ -6,6 +6,7 @@ class_name Seed
 @onready var title_label = $title_label
 @onready var card_border = $card_border
 
+@onready var stat_spread = $stat_spread
 
 @export_enum("Cereal", "Vegetable", "Fruit", "Root", "Flower") var category = 0
 @export var sprout : Vector3i 
@@ -21,6 +22,8 @@ class_name Seed
 
 func update_visuals():
 	#do stuf
+	stat_spread.seed = self
+	stat_spread.set_visuals()
 	water_label.text = str(water_cost)
 	title_label.text = card_name
 	if picture:

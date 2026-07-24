@@ -4,14 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://uvj581kj3jll" path="res://art/card images/seed_apple_tree.png" id="2_i0yiy"]
 [ext_resource type="Texture2D" uid="uid://bvjext2dd8joy" path="res://art/card images/green_border.png" id="3_l103h"]
 [ext_resource type="FontFile" uid="uid://j8glluhsw0mx" path="res://art/ui/segoe-print-regular.ttf" id="4_6rnm6"]
-[ext_resource type="Texture2D" uid="uid://3et1vavdqc33" path="res://art/Sprout-Download-PNG-Isolated-Image-3149367666.png" id="5_366ee"]
-[ext_resource type="Texture2D" uid="uid://c668e1veyatay" path="res://art/apple-fruit-apple-e6ec8ba6a6ccf1af58f6d52fc24bb863.png" id="5_jx1pl"]
-[ext_resource type="Texture2D" uid="uid://dfwvfxnw81ut1" path="res://art/icons/Document.png" id="7_y63i3"]
+[ext_resource type="Texture2D" uid="uid://3et1vavdqc33" path="res://art/icons/Sprout.png" id="5_366ee"]
+[ext_resource type="Texture2D" uid="uid://c668e1veyatay" path="res://art/icons/food.png" id="5_jx1pl"]
+[ext_resource type="Theme" uid="uid://spt7w6k7gskj" path="res://art/icons/stats_spread.tres" id="5_y63i3"]
+[ext_resource type="Script" uid="uid://c683rrddgkpnc" path="res://objects/stat_spread.gd" id="6_l3x0i"]
+[ext_resource type="Texture2D" uid="uid://dfwvfxnw81ut1" path="res://art/icons/flowering.png" id="7_y63i3"]
+[ext_resource type="Texture2D" uid="uid://dfa75bf7qeymp" path="res://art/icons/fruiting.png" id="9_abf7f"]
+[ext_resource type="Texture2D" uid="uid://e685hba5yd32" path="res://art/icons/death.png" id="10_chx25"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i0yiy"]
 size = Vector2(316, 396)
-
-[sub_resource type="Theme" id="Theme_xa8c5"]
 
 [node name="Card" type="Node2D" unique_id=1742177086]
 scale = Vector2(0.5, 0.5)
@@ -73,46 +75,87 @@ text = "Name"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1434047059]
-visible = false
+[node name="stat_spread" type="PanelContainer" parent="." unique_id=1434047059]
 offset_left = 170.0
 offset_top = -176.0
 offset_right = 311.0
-offset_bottom = 48.0
-theme = SubResource("Theme_xa8c5")
+offset_bottom = 28.0
+theme = ExtResource("5_y63i3")
+script = ExtResource("6_l3x0i")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1272836777]
+[node name="margin" type="MarginContainer" parent="stat_spread" unique_id=1049998361]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 6
+
+[node name="vbox" type="VBoxContainer" parent="stat_spread/margin" unique_id=1272836777]
 layout_mode = 2
 
-[node name="row" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=287826394]
+[node name="row1" type="HBoxContainer" parent="stat_spread/margin/vbox" unique_id=287826394]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 
-[node name="Stage" type="TextureRect" parent="PanelContainer/VBoxContainer/row" unique_id=81644114]
+[node name="Stage" type="TextureRect" parent="stat_spread/margin/vbox/row1" unique_id=81644114]
 custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
 texture = ExtResource("5_366ee")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="icon2" type="TextureRect" parent="PanelContainer/VBoxContainer/row" unique_id=1436351571]
+[node name="HS1" type="HSeparator" parent="stat_spread/margin/vbox" unique_id=1267946804]
 layout_mode = 2
-texture = ExtResource("5_jx1pl")
-expand_mode = 3
-stretch_mode = 5
+theme = ExtResource("5_y63i3")
 
-[node name="row2" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=1670830360]
+[node name="row2" type="HBoxContainer" parent="stat_spread/margin/vbox" unique_id=1670830360]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 
-[node name="Stage" type="TextureRect" parent="PanelContainer/VBoxContainer/row2" unique_id=1912195198]
+[node name="Stage" type="TextureRect" parent="stat_spread/margin/vbox/row2" unique_id=1912195198]
 custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
 texture = ExtResource("7_y63i3")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="icon2" type="TextureRect" parent="PanelContainer/VBoxContainer/row2" unique_id=1961402295]
+[node name="HS2" type="HSeparator" parent="stat_spread/margin/vbox" unique_id=161073285]
+layout_mode = 2
+theme = ExtResource("5_y63i3")
+
+[node name="row3" type="HBoxContainer" parent="stat_spread/margin/vbox" unique_id=591491995]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+
+[node name="Stage" type="TextureRect" parent="stat_spread/margin/vbox/row3" unique_id=215885362]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+texture = ExtResource("9_abf7f")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="icon2" type="TextureRect" parent="stat_spread/margin/vbox/row3" unique_id=145493196]
+layout_mode = 2
+texture = ExtResource("5_jx1pl")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="HS3" type="HSeparator" parent="stat_spread/margin/vbox" unique_id=254469866]
+layout_mode = 2
+theme = ExtResource("5_y63i3")
+
+[node name="row4" type="HBoxContainer" parent="stat_spread/margin/vbox" unique_id=1140507086]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+
+[node name="Stage" type="TextureRect" parent="stat_spread/margin/vbox/row4" unique_id=83329372]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+texture = ExtResource("10_chx25")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="icon2" type="TextureRect" parent="stat_spread/margin/vbox/row4" unique_id=445493864]
 layout_mode = 2
 texture = ExtResource("5_jx1pl")
 expand_mode = 3

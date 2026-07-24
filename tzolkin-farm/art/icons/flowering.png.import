@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c668e1veyatay"
-path="res://.godot/imported/apple-fruit-apple-e6ec8ba6a6ccf1af58f6d52fc24bb863.png-56312422e8a2ed50e34abaf358cda5dc.ctex"
+uid="uid://dfwvfxnw81ut1"
+path="res://.godot/imported/flowering.png-3ea9dbd0f6690944b6d137c3fb26a370.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/apple-fruit-apple-e6ec8ba6a6ccf1af58f6d52fc24bb863.png"
-dest_files=["res://.godot/imported/apple-fruit-apple-e6ec8ba6a6ccf1af58f6d52fc24bb863.png-56312422e8a2ed50e34abaf358cda5dc.ctex"]
+source_file="res://art/icons/flowering.png"
+dest_files=["res://.godot/imported/flowering.png-3ea9dbd0f6690944b6d137c3fb26a370.ctex"]
 
 [params]
 

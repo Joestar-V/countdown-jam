@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3et1vavdqc33"
-path="res://.godot/imported/Sprout-Download-PNG-Isolated-Image-3149367666.png-5e2f33ce270965f445b66d845af14c37.ctex"
+uid="uid://cgknl3qcs48vw"
+path="res://.godot/imported/coin.png-87dfb76114ea64d1c36c0d6e0e6d02f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Sprout-Download-PNG-Isolated-Image-3149367666.png"
-dest_files=["res://.godot/imported/Sprout-Download-PNG-Isolated-Image-3149367666.png-5e2f33ce270965f445b66d845af14c37.ctex"]
+source_file="res://art/icons/coin.png"
+dest_files=["res://.godot/imported/coin.png-87dfb76114ea64d1c36c0d6e0e6d02f5.ctex"]
 
 [params]
 

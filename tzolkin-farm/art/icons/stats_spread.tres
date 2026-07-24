@@ -1,0 +1,19 @@
+[gd_resource type="Theme" format=3 uid="uid://spt7w6k7gskj"]
+
+[ext_resource type="Texture2D" uid="uid://bix4bj2bek2f6" path="res://art/icons/wooden_bg.png" id="1_w6hox"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7oix6"]
+bg_color = Color(0, 0, 0, 1)
+border_width_top = 2
+border_width_bottom = 2
+border_color = Color(0.18233654, 0.0075444905, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_imxm8"]
+texture = ExtResource("1_w6hox")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(-19.487183, 4.7179184, 522.92285, 494.97427)
+
+[resource]
+HSeparator/styles/separator = SubResource("StyleBoxFlat_7oix6")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_imxm8")

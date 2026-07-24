@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://d16yy8bmsed7p" path="res://resoures.gd" id="1_dq3qk"]
 [ext_resource type="Texture2D" uid="uid://djtu0hvb7daei" path="res://art/wooden-box-sign-clip-art-rustic-wood-cliparts-d0f3c6c1807ffe9c37a1fb44c4879316.png" id="2_b3q8k"]
 [ext_resource type="Texture2D" uid="uid://c52lyhhkw0f61" path="res://art/money-bag-stock-illustration-euclidean-vector-money-c72997542872df999eac2c6fb59797a3.png" id="3_clkgk"]
-[ext_resource type="Texture2D" uid="uid://c8yq733xmh0cc" path="res://art/1670075.png" id="4_xqxud"]
-[ext_resource type="Texture2D" uid="uid://c668e1veyatay" path="res://art/apple-fruit-apple-e6ec8ba6a6ccf1af58f6d52fc24bb863.png" id="5_b3q8k"]
+[ext_resource type="Texture2D" uid="uid://c8yq733xmh0cc" path="res://art/icons/fertil.png" id="4_xqxud"]
+[ext_resource type="Texture2D" uid="uid://c668e1veyatay" path="res://art/icons/food.png" id="5_b3q8k"]
 
 [sub_resource type="FontFile" id="FontFile_6tghx"]
 subpixel_positioning = 0

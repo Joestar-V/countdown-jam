@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgknl3qcs48vw"
-path="res://.godot/imported/dollar-coin-united-states-dollar-gold-coin-coins-661e5a6d1ec23b500bde5e7994d53199.png-4a0be444e0028c0f9a92dc2f641c4007.ctex"
+uid="uid://3et1vavdqc33"
+path="res://.godot/imported/Sprout.png-d870d69b713252b9d2caf0aaea822b53.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/dollar-coin-united-states-dollar-gold-coin-coins-661e5a6d1ec23b500bde5e7994d53199.png"
-dest_files=["res://.godot/imported/dollar-coin-united-states-dollar-gold-coin-coins-661e5a6d1ec23b500bde5e7994d53199.png-4a0be444e0028c0f9a92dc2f641c4007.ctex"]
+source_file="res://art/icons/Sprout.png"
+dest_files=["res://.godot/imported/Sprout.png-d870d69b713252b9d2caf0aaea822b53.ctex"]
 
 [params]
 
