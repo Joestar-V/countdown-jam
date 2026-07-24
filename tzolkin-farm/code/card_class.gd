@@ -66,10 +66,11 @@ func update_visuals():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-
+	
 	
 	if dragging:
 		global_position = get_global_mouse_position() - of
+		
 	elif !slotted:
 		global_position = homeSlot.global_position + Vector2(card_image.texture.get_width() / 6.0 , card_image.texture.get_height() / 6.0)
 	if spinning:
@@ -117,7 +118,7 @@ func _on_button_button_up() -> void:
 				goodies.add_child(crd)
 				crd.type = 3
 				crd.global_position = global_position
-				crd.card = i
+				crd.card = seedPacket
 				crd.move_to_resource(Game.game.seedkeeper.drawpile.pouch.global_position)
 				await get_tree().create_timer(.5).timeout
 				
@@ -225,7 +226,9 @@ func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket])
 func zoom():
 	if hovered == false:
 		hovered = true
-		stat_spread.show()
+		z_index += 10
+		if !dragging: stat_spread.show()
+		
 		scale = hover_scale
 		#create_tween().tween_property(self,"scale",hover_scale,0.2).set_trans(transition_type)
 		#await get_tree().create_timer(.2).timeout
@@ -233,6 +236,7 @@ func zoom():
 func unzoom():
 	if hovered == true:
 		hovered = false
+		z_index -= 10
 		stat_spread.hide()
 		scale = default_scale
 		#create_tween().tween_property(self,"scale",default_scale,0.15).set_trans(transition_type)

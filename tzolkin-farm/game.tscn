@@ -112,36 +112,37 @@ texture = ExtResource("4_e8heu")
 
 [node name="Wheel" parent="." unique_id=965928083 instance=ExtResource("1_feb5d")]
 position = Vector2(959.99994, 1376)
-scale = Vector2(12.000001, 12.000001)
+scale = Vector2(2.56, 2.56)
 metadata/_edit_lock_ = true
 
 [node name="symbols" type="Node2D" parent="." unique_id=1184561991]
-position = Vector2(504, 376)
+visible = false
+position = Vector2(966, 672)
 scale = Vector2(1.5, 1.5)
 
 [node name="Sprite2D2" type="Sprite2D" parent="symbols" unique_id=1904656237]
 texture_filter = 1
-position = Vector2(560, 293.33334)
+position = Vector2(255, 88.66667)
 texture = ExtResource("4_fc0e3")
 
 [node name="Sprite2D3" type="Sprite2D" parent="symbols" unique_id=1357566872]
 texture_filter = 1
-position = Vector2(431.99997, 208)
+position = Vector2(126.99997, 3.3333282)
 texture = ExtResource("4_j5wjh")
 
 [node name="Sprite2D4" type="Sprite2D" parent="symbols" unique_id=1255862214]
 texture_filter = 1
-position = Vector2(305.99997, 180.66666)
+position = Vector2(0.9999695, -24.000015)
 texture = ExtResource("5_vef74")
 
 [node name="Sprite2D5" type="Sprite2D" parent="symbols" unique_id=797456245]
 texture_filter = 1
-position = Vector2(176.00002, 207.99998)
+position = Vector2(-128.99998, 3.333313)
 texture = ExtResource("6_hve3p")
 
 [node name="Sprite2D6" type="Sprite2D" parent="symbols" unique_id=1899550781]
 texture_filter = 1
-position = Vector2(48.00001, 293.33334)
+position = Vector2(-257, 88.66667)
 texture = ExtResource("7_mfdv2")
 
 [node name="spots" type="Node2D" parent="." unique_id=451446717]

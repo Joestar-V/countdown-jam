@@ -19,6 +19,7 @@ func set_visuals():
 	if seed.sprout != Vector3i(0,0,0):
 		row_1.show()
 		add_icons(seed.sprout,row_1)
+		
 	if seed.flower != Vector3i(0,0,0):
 		row_2.show()
 		add_icons(seed.flower,row_2)

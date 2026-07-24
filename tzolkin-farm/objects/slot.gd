@@ -3,15 +3,28 @@ extends Node2D
 @onready var seed : Array[Card]
 @export var pos = 0
 @export_enum("Seed", "Sprout", "Flower", "Fruit", "Death") var stage = 0
+
+
+@onready var sprout = $visuals/sprout
+@onready var flowering = $visuals/flowering
+
+
 signal finished
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	match stage:
+		0: pass
+		1: sprout.show()
+		2: flowering.show()
+		3: pass
+		4: pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+	
+	
 func harvest_list():
 	var tempList : Array[Card]
 	for chud in seed:

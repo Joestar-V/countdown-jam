@@ -19,6 +19,13 @@ extends Node2D
 #@onready var handPos = 0
 const APPLE = preload("res://objects/crops/apple.tscn")
 const MAIZE = preload("res://objects/crops/maize.tscn")
+const BEANS = preload("uid://blmgteof8oxul")
+const POTATO = preload("uid://r3v57ntk4jk8")
+const SQUASH = preload("uid://0r2fv35jbeuj")
+const WHEAT = preload("uid://bd7dp4kyhp0y6")
+
+
+
 
 @onready var end_turn = $"End Turn"
 
@@ -63,9 +70,15 @@ func _ready() -> void:
 	Game.game = self
 	for i in 3:
 		seedkeeper.discard_pile.add_card(APPLE)
+		seedkeeper.discard_pile.add_card(SQUASH)
 	for i in 2:
 		seedkeeper.drawpile.add_card(APPLE)
 		seedkeeper.drawpile.add_card(MAIZE)
+		seedkeeper.drawpile.add_card(POTATO)
+
+	seedkeeper.drawpile.add_card(BEANS)
+	seedkeeper.drawpile.add_card(WHEAT)
+
 	seedkeeper.hand.handList.resize(3)
 	seedkeeper.draw_until_full()
 

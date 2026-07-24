@@ -8,9 +8,9 @@
 script = ExtResource("2_o2qsh")
 flower = Vector3i(3, 1, 0)
 fruit = Vector3i(4, 1, 0)
-card_name = "Maize"
+card_name = "Wheat"
 picture = ExtResource("3_4g7w1")
 water_cost = 3
 
-[node name="card_image" parent="." index="0" unique_id=551817306]
+[node name="card_image" parent="visual" parent_id_path=PackedInt32Array(153132487) index="0" unique_id=551817306]
 texture = ExtResource("3_4g7w1")
