@@ -47,6 +47,8 @@ var homeSlot
 var handPos = 0
 var seedPacket : PackedScene
 @export var water_cost := 1
+@onready var remaining = 0
+
 signal finished
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -95,10 +97,14 @@ func _on_button_button_down() -> void:
 		Game.game.red_text()
 	if slotted:
 		if !planted:
+			Game.game.dragging = true
+			Game.game.dragged = self
 			dragging = true
 			of = get_global_mouse_position() - global_position
 	else:
 		dragging = true
+		Game.game.dragging = true
+		Game.game.dragged = self
 		of = get_global_mouse_position() - global_position
 
 func _on_button_button_up() -> void:
@@ -132,6 +138,8 @@ func _on_button_button_up() -> void:
 	stat_spread.show()
 	Game.game.white_text()
 	dragging = false
+	Game.game.dragging = false
+	Game.game.dragged = null
 	if slotted:
 		global_position = slotPos
 
@@ -206,22 +214,21 @@ func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket])
 		foodlet.card = i
 		foodlet.move_to_resource(Game.game.seedkeeper.discard_pile.recycle_bin.global_position)
 		await get_tree().create_timer(.1).timeout
+	print(card_name)
+	print(goodies.get_children().size())
 	for kid in goodies.get_children():
+		
 		if kid:
-			await kid.finished
-	#var remaining := goodies.get_child_count()
-#
-	#for kid in goodies.get_children():
-		#kid.finished.connect(func():
-			#remaining -= 1
-		#)
-#
-	#while remaining > 0:
-		#await get_tree().process_frame
+			remaining += 1
+			kid.finished.connect(_on_kid_finished, CONNECT_ONE_SHOT)
+	while remaining > 0:
+		await get_tree().process_frame
 	Game.game.water += water_cost
 	destroy = true
 	finished.emit()
-
+func _on_kid_finished():
+	remaining -= 1
+	print("Remaining:", remaining)
 
 func zoom():
 	if hovered == false:

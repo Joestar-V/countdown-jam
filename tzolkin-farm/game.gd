@@ -14,7 +14,8 @@ extends Node2D
 @onready var shopping = false
 @onready var remaining 
 
-			
+@onready var dragging = false
+@onready var dragged : Card
 @onready  var actionNum = 1
 #@onready var handPos = 0
 const APPLE = preload("res://objects/crops/apple.tscn")
