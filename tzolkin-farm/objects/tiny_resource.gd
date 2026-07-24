@@ -3,6 +3,8 @@ extends Sprite2D
 
 var type = 0
 var card 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -12,8 +14,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
-func _on_move_component_movement_finished() -> void:
+func _on_move_component_movement_finished(targ = 0) -> void:
 	match type:
 		0:
 			Game.game.foodCount += 1
@@ -22,7 +23,12 @@ func _on_move_component_movement_finished() -> void:
 		2:
 			Game.game.fertCount += 1
 		3:
-			Game.game.seedkeeper.discard_pile.add_card(card)
+			match targ:
+				0:
+					Game.game.seedkeeper.discard_pile.add_card(card)
+				1:
+					Game.game.seedkeeper.drawpile.add_card(card)
+			
 	queue_free()
 func move_to_resource(dest):
 	await get_tree().create_timer(.1).timeout
