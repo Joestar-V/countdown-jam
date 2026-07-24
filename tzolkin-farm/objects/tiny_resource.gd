@@ -28,8 +28,9 @@ func _on_move_component_movement_finished(targ = 0) -> void:
 					Game.game.seedkeeper.discard_pile.add_card(card)
 				1:
 					Game.game.seedkeeper.drawpile.add_card(card)
-			
 	queue_free()
+	
+	
 func move_to_resource(dest):
 	await get_tree().create_timer(.1).timeout
 	move_component.start_moving_time(dest,.3)

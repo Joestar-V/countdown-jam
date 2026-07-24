@@ -14,9 +14,7 @@ signal finish_sorting
 func _ready() -> void:
 	pass
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+
 func draw_until_full(): 
 	var j = -1
 	for i in hand.handList:

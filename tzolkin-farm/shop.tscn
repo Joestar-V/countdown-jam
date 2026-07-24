@@ -158,58 +158,84 @@ text = "Reroll
 Stock"
 icon_alignment = 1
 
-[node name="GridContainer" type="GridContainer" parent="." unique_id=408591754]
+[node name="seed_shop" type="Control" parent="." unique_id=423650468]
+layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 798.00006
-offset_top = 366.00003
-offset_right = 1266.0
-offset_bottom = 1144.0
+offset_left = 752.0
+offset_top = 360.0
+offset_right = 752.0
+offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.655, 0.655)
-theme_override_constants/h_separation = 48
-theme_override_constants/v_separation = 32
-columns = 2
 
-[node name="handSlot1" type="TextureRect" parent="GridContainer" unique_id=1298018582]
+[node name="handSlot5" type="TextureRect" parent="seed_shop" unique_id=579644911]
 texture_filter = 1
-layout_mode = 2
+layout_mode = 0
+offset_left = 24.0
+offset_top = 344.0
+offset_right = 234.0
+offset_bottom = 582.0
+scale = Vector2(0.66, 0.66)
+texture = ExtResource("5_6lah5")
+stretch_mode = 2
+
+[node name="handSlot6" type="TextureRect" parent="seed_shop" unique_id=1392506651]
+texture_filter = 1
+layout_mode = 0
+offset_left = 200.0
+offset_top = 344.0
+offset_right = 410.0
+offset_bottom = 582.0
+scale = Vector2(0.66, 0.66)
+texture = ExtResource("5_6lah5")
+stretch_mode = 2
+
+[node name="handSlot3" type="TextureRect" parent="seed_shop" unique_id=440940400]
+texture_filter = 1
+layout_mode = 0
+offset_left = 24.0
+offset_top = 160.0
+offset_right = 234.0
+offset_bottom = 398.0
+scale = Vector2(0.66, 0.66)
+texture = ExtResource("5_6lah5")
+stretch_mode = 2
+
+[node name="handSlot4" type="TextureRect" parent="seed_shop" unique_id=186561810]
+texture_filter = 1
+layout_mode = 0
+offset_left = 200.0
+offset_top = 160.0
+offset_right = 410.0
+offset_bottom = 398.0
+scale = Vector2(0.66, 0.66)
+texture = ExtResource("5_6lah5")
+stretch_mode = 2
+
+[node name="handSlot1" type="TextureRect" parent="seed_shop" unique_id=1298018582]
+texture_filter = 1
+layout_mode = 0
+offset_left = 24.0
+offset_top = -24.0
+offset_right = 234.0
+offset_bottom = 214.0
+scale = Vector2(0.66, 0.66)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-offset_transform_visual_only = false
 texture = ExtResource("5_6lah5")
-stretch_mode = 4
+stretch_mode = 2
 
-[node name="handSlot2" type="TextureRect" parent="GridContainer" unique_id=500835319]
+[node name="handSlot2" type="TextureRect" parent="seed_shop" unique_id=500835319]
 texture_filter = 1
-layout_mode = 2
+layout_mode = 0
+offset_left = 200.0
+offset_top = -24.0
+offset_right = 410.0
+offset_bottom = 214.0
+scale = Vector2(0.66, 0.66)
 texture = ExtResource("5_6lah5")
-stretch_mode = 4
-
-[node name="handSlot3" type="TextureRect" parent="GridContainer" unique_id=440940400]
-texture_filter = 1
-layout_mode = 2
-texture = ExtResource("5_6lah5")
-stretch_mode = 4
-
-[node name="handSlot4" type="TextureRect" parent="GridContainer" unique_id=186561810]
-texture_filter = 1
-layout_mode = 2
-texture = ExtResource("5_6lah5")
-stretch_mode = 4
-
-[node name="handSlot5" type="TextureRect" parent="GridContainer" unique_id=579644911]
-texture_filter = 1
-layout_mode = 2
-texture = ExtResource("5_6lah5")
-stretch_mode = 4
-
-[node name="handSlot6" type="TextureRect" parent="GridContainer" unique_id=1392506651]
-texture_filter = 1
-layout_mode = 2
-texture = ExtResource("5_6lah5")
-stretch_mode = 4
+stretch_mode = 2

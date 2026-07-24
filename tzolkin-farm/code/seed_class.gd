@@ -27,7 +27,11 @@ func update_visuals():
 			card_border.modulate = Color(0.167, 0.838, 0.0, 1.0)
 		2:
 			card_border.modulate = Color(0.976, 0.898, 0.0, 1.0)
-	
+		
+	await get_tree().create_timer(.1).timeout
+	self.scale = default_scale
+		
+		
 func on_harvest_sprout():
 	harvest(0,0,0,[seedPacket]) 
 func on_harvest_flower():

@@ -1,10 +1,13 @@
 
-
-
-
-
 extends Node2D
 class_name Card
+@onready var shop := false
+var money_cost := 5
+#@onready var sell_value := 4
+
+@onready var default_scale = Vector2(0.5,0.5)
+@onready var hover_scale = Vector2(0.54,0.54)
+
 @onready var card_image: Sprite2D = $card_image
 @export var card_name : String 
 @export var picture : Texture 
@@ -41,10 +44,16 @@ var seedPacket : PackedScene
 func _ready():
 	seedPacket = load(scene_file_path)
 	print(seedPacket)
+	scale = default_scale
 	update_visuals()
+	
+	match rarity:
+		0: money_cost = 5
+		1: money_cost = 10
+		2: money_cost = 20
 
 func update_visuals():
-	pass
+	scale = default_scale
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -61,6 +70,16 @@ func _process(delta: float) -> void:
 
 
 func _on_button_button_down() -> void:
+	if shop:
+		
+		if Game.game.moneyCount >= money_cost:
+			pass
+		else:
+			modulate= Color(1.0, 1.0, 1.0, 1.0).darkened(0.30)
+			
+		return
+	
+	
 	if Game.game.water < water_cost and !slotted:
 		Game.game.red_text()
 	if slotted:
@@ -72,6 +91,17 @@ func _on_button_button_down() -> void:
 		of = get_global_mouse_position() - global_position
 
 func _on_button_button_up() -> void:
+	if shop:
+		print("fart")
+		if Game.game.moneyCount >= money_cost:
+			Game.game.moneyCount -= money_cost
+			Game.game.seedkeeper.drawpile.add_card(seedPacket)
+		else:
+			
+			#play noise aswell
+			modulate= Color(1.0, 1.0, 1.0, 1.0)
+		return
+	
 	Game.game.white_text()
 	dragging = false
 	if slotted:
@@ -138,6 +168,7 @@ func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket])
 		foodlet.global_position = global_position
 		foodlet.move_to_resource(Game.game.resources.fertilizer.global_position)
 		await get_tree().create_timer(.1).timeout
+		
 	for i in cards:
 		var foodlet = TINY_CARD.instantiate()
 		goodies.add_child(foodlet)
@@ -150,7 +181,7 @@ func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket])
 	destroy = true
 
 func zoom():
-	create_tween().tween_property(self,"scale",Vector2(0.53,0.53),0.2).set_trans(transition_type)
+	create_tween().tween_property(self,"scale",hover_scale,0.2).set_trans(transition_type)
 	
 func unzoom():
-	create_tween().tween_property(self,"scale",Vector2(0.5,0.5),0.15).set_trans(transition_type)
+	create_tween().tween_property(self,"scale",default_scale,0.15).set_trans(transition_type)
