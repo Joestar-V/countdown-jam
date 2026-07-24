@@ -4,20 +4,24 @@ extends Node2D
 @export var pos = 0
 @export_enum("Seed", "Sprout", "Flower", "Fruit", "Death") var stage = 0
 
+@onready var seed_slot = $visuals/seed
 
 @onready var sprout = $visuals/sprout
 @onready var flowering = $visuals/flowering
+@onready var death = $visuals/death
+
+@onready var fruiting = $visuals/fruiting
 
 
 signal finished
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	match stage:
-		0: pass
+		0: seed_slot.show()
 		1: sprout.show()
 		2: flowering.show()
-		3: pass
-		4: pass
+		3: fruiting.show()
+		4: death.show()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
