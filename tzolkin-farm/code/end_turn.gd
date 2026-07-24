@@ -8,7 +8,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Game.game.actions == 0:
-		pass #this is when it starts glowings
-	else:
-		pass
+	if Input.is_action_just_released("End Turn"):
+		emit_signal("pressed")
+		for seed in Game.game.seedkeeper.hand.get_children():
+			if seed.has_method("unzoom"):
+				seed.unzoom()
+	#if Game.game.actions == 0:
+		#pass #this is when it starts glowings
+	#else:
