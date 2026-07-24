@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bc45jocgbctkx"]
+
+[ext_resource type="Script" uid="uid://d1spd566j18lu" path="res://objects/days/half_day.gd" id="1_vy6c4"]
+
+[node name="Day" type="Node2D" unique_id=1162151081]
+script = ExtResource("1_vy6c4")
+title = "Half Day"
+description = "Bad day for picking! All harvests yields are halved."
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1499132609]
+scale = Vector2(0.1, 0.1)

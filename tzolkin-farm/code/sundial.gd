@@ -11,10 +11,13 @@ extends Marker2D
 @onready var dayList : Array[Day]
 @export var dayPool : Array[PackedScene]
 @onready var day_name: Label = $"day name"
+const NORMAL_DAY = preload("res://objects/days/normal_day.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	for i in dayPool.size():
+		dayPool.append(NORMAL_DAY)#this makes it so that the chance of finding a normal day is always 1/2 
+		#can use modulus to change this ratio
 func first_day():
 	currentDay = currentDay
 	for i in weekLength:
@@ -31,7 +34,11 @@ func restart():
 	#remake day list
 func advance_day():
 	currentDay += 1
-	Game.game.day =  dayList.pop_front()
-	day_name.text = Game.game.day.title
+	
 	if currentDay >= weekLength:
 		await Game.game.weekend()
+		Game.game.day = first_day()
+		day_name.text = Game.game.day.title
+	else:
+		Game.game.day =  dayList.pop_front()
+		day_name.text = Game.game.day.title
