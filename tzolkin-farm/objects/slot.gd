@@ -1,6 +1,6 @@
 extends Node2D
 @export var open = false
-@onready var seed 
+@onready var seed : Array[Card]
 @export var pos = 0
 @export_enum("Seed", "Sprout", "Flower", "Fruit", "Death") var stage = 0
 
@@ -12,3 +12,20 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+func harvest_list():
+	var tempList : Array[Card]
+	for chud in seed:
+		tempList.append(chud)
+	for chud in seed:
+		seed.erase(chud)
+	for chud in tempList:
+		match stage:
+			1:
+				await chud.on_harvest_sprout()
+			2:
+				await chud.on_harvest_flower()
+			3:
+				await chud.on_harvest_fruit()
+			4:
+				await chud.on_harvest_death()
+		

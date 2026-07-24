@@ -35,6 +35,8 @@ var planted = false
 var homeSlot 
 var handPos = 0
 var seedPacket : PackedScene
+@export var water_cost := 1
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	seedPacket = load(scene_file_path)
@@ -76,18 +78,21 @@ func _on_button_button_up() -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.name == "slotHole" and (moving):
 		slot = area.get_parent()
-		area.get_parent().seed = self
+		area.get_parent().seed.append(self)
 		slotted = true
 		slotPos = area.global_position
 		#turn_over.emit()
-	elif area.name == "slotHole" and (Game.game.fertCount >= area.get_parent().pos) and !Game.game.harvested:
+	elif area.name == "slotHole" and  Game.game.water < water_cost:
+		Game.game.red_text()
+	elif area.name == "slotHole" and (Game.game.fertCount >= area.get_parent().pos) and (Game.game.water >= water_cost) and !Game.game.harvested:
 		if slotted:
 			Game.game.fertCount += slot.pos
-
+			Game.game.water += water_cost
+		Game.game.water -= water_cost
 		Game.game.fertCount -= area.get_parent().pos
 		Game.game.actions -= 1
 		slot = area.get_parent()
-		area.get_parent().seed = self
+		area.get_parent().seed.append(self)
 		slotted = true
 		slotPos = area.global_position
 		#turn_over.emit()
@@ -97,14 +102,17 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.name == "slotHole" and moving:
 		moving -= 1
+	elif area.name == "slotHole" and !slotted:
+		Game.game.white_text()
 	elif area.name == "slotHole" and slotted and slot == area.get_parent():
 		Game.game.fertCount += slot.pos
+		Game.game.water += water_cost
 
 		slotted = false
 		slot = null
-		area.get_parent().seed = null
+		area.get_parent().seed.erase(self)
 		Game.game.actions += 1
-
+	
 
 
 func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket]):
@@ -139,7 +147,7 @@ func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket])
 		foodlet.card = i
 		foodlet.move_to_resource(Game.game.seedkeeper.discard_pile.recycle_bin.global_position)
 		await get_tree().create_timer(.1).timeout
-
+	Game.game.water += water_cost
 	destroy = true
 
 func zoom():

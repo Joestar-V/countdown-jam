@@ -5,11 +5,10 @@ extends Node2D
 @onready var handsize = 3
 @onready var discard_pile: Node2D = $DiscardPile
 const TINY_CARD = preload("res://objects/tiny_card.tscn")
-
+signal finish_sorting
 #card thats better when planted with more of itself
 #card that is good to harvest as a sprout but it doenst give back a seed when it does
 #sunflowers are advantageous at all parts of their life
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -61,4 +60,3 @@ func reshuffle():
 	for tiny in tinyList:
 		if tiny:
 			await tiny.animation_player.animation_finished
-		
