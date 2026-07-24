@@ -6,7 +6,6 @@ class_name Seed
 @onready var title_label = $title_label
 @onready var card_border = $card_border
 
-@onready var stat_spread = $stat_spread
 
 @export_enum("Cereal", "Vegetable", "Fruit", "Root", "Flower") var category = 0
 @export var sprout : Vector3i 

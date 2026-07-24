@@ -75,6 +75,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="stat_spread" type="PanelContainer" parent="." unique_id=1434047059]
+visible = false
 offset_left = 170.0
 offset_top = -176.0
 offset_right = 311.0

@@ -16,6 +16,9 @@ var money_cost := 5
 @export_multiline var tooltip : String = "this is the tooltip"
 @onready var transition_type = Tween.TransitionType.TRANS_SINE
 
+
+@onready var stat_spread = $stat_spread
+
 const TINY_FERT = preload("res://objects/tiny_fert.tscn")
 const TINY_FOOD = preload("res://objects/tiny_food.tscn")
 const TINY_MONEY = preload("res://objects/tiny_money.tscn")
@@ -78,7 +81,7 @@ func _on_button_button_down() -> void:
 			modulate= Color(1.0, 1.0, 1.0, 1.0).darkened(0.30)
 			
 		return
-	
+	stat_spread.hide()
 	
 	if Game.game.water < water_cost and !slotted:
 		Game.game.red_text()
@@ -102,6 +105,7 @@ func _on_button_button_up() -> void:
 			modulate= Color(1.0, 1.0, 1.0, 1.0)
 		return
 	
+	stat_spread.show()
 	Game.game.white_text()
 	dragging = false
 	if slotted:
@@ -181,7 +185,9 @@ func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket])
 	destroy = true
 
 func zoom():
+	stat_spread.show()
 	create_tween().tween_property(self,"scale",hover_scale,0.2).set_trans(transition_type)
 	
 func unzoom():
+	stat_spread.hide()
 	create_tween().tween_property(self,"scale",default_scale,0.15).set_trans(transition_type)
