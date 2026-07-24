@@ -9,6 +9,8 @@ extends Node2D
 @onready var resources: Node2D = $Resources
 @onready var harvested = false
 
+@onready var water_label = $WaterSupply/water_label
+
 
 			
 @onready  var actionNum = 1
@@ -17,6 +19,17 @@ const APPLE = preload("res://objects/crops/apple.tscn")
 @onready var end_turn = $"End Turn"
 
 
+
+@onready var water : int = 10:
+	set(value):
+		water = value
+		water_label.text = str(water) +"/"+ str(water_max)
+		
+@onready var water_max : int = 10:
+	set(value):
+		water_max = value
+		water_label.text = str(water) +"/"+ str(water_max)
+		
 @onready  var actions : int = 1:
 	set(value):
 		actions = value
@@ -26,9 +39,6 @@ const APPLE = preload("res://objects/crops/apple.tscn")
 		else:
 			end_turn.text = "End Day"
 			end_turn.disabled = false
-		
-		
-
 @onready var fertCount : int = 0:
 	set(value):
 		fertCount = value
@@ -41,7 +51,9 @@ const APPLE = preload("res://objects/crops/apple.tscn")
 	set(value):
 		foodCount = value
 		resources.food_label.text = str(foodCount)
-# Called when the node enters the scene tree for the first time.
+
+
+
 func _ready() -> void:
 	Game.game = self
 	for i in 3:
@@ -84,6 +96,7 @@ func _on_end_turn_pressed() -> void:
 	harvested = false
 	actions = actionNum
 	var i = 0
+	
 	#for slot in slotList:
 	#	i+= 1
 	#	if i >= spotList.size():

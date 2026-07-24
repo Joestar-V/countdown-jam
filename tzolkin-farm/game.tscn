@@ -55,6 +55,24 @@ _data = {
 font = ExtResource("26_xa8c5")
 font_size = 160
 
+[sub_resource type="LabelSettings" id="LabelSettings_l0oc6"]
+font = ExtResource("9_f1jbl")
+font_size = 160
+outline_size = 8
+outline_color = Color(1, 0.9137255, 0, 1)
+shadow_size = 0
+shadow_color = Color(0.32941177, 0.0627451, 0, 0.6862745)
+shadow_offset = Vector2(4, 5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xa8c5"]
+font = ExtResource("9_f1jbl")
+font_size = 44
+outline_size = 2
+outline_color = Color(1, 0.9137255, 0, 1)
+shadow_size = 0
+shadow_color = Color(0.32941177, 0.0627451, 0, 0.6862745)
+shadow_offset = Vector2(2, 3)
+
 [node name="Game" type="Node2D" unique_id=1509497783]
 script = ExtResource("1_vef74")
 
@@ -246,10 +264,6 @@ vertical_alignment = 1
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=411556663]
 libraries/ = SubResource("AnimationLibrary_mfdv2")
 
-[node name="Sun" type="Sprite2D" parent="." unique_id=132937313]
-position = Vector2(1774, 139)
-texture = ExtResource("12_iotsf")
-
 [node name="Shop" parent="." unique_id=9903558 instance=ExtResource("22_vaj68")]
 visible = false
 
@@ -264,25 +278,52 @@ disabled = true
 text = "Plant or Harvest"
 script = ExtResource("14_7sc4i")
 
-[node name="Label" type="Label" parent="." unique_id=1175126517]
+[node name="WaterSupply" type="Sprite2D" parent="." unique_id=2088411526]
+position = Vector2(848.5, 1002)
+scale = Vector2(0.20053476, 0.20053475)
+texture = ExtResource("27_5b14r")
+
+[node name="water_label" type="Label" parent="WaterSupply" unique_id=1175126517]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 904.5
-offset_top = 928.0
-offset_right = 1061.5
-offset_bottom = 1042.0
+offset_left = 92.25342
+offset_top = -882.147
+offset_right = 247.25342
+offset_bottom = -768.147
 grow_horizontal = 2
 grow_vertical = 0
+scale = Vector2(4.82, 4.82)
 size_flags_vertical = 8
 text = "10/10"
 label_settings = SubResource("LabelSettings_b64ip")
 
-[node name="WaterSupply" type="Sprite2D" parent="." unique_id=2088411526]
-position = Vector2(848.5, 992)
-scale = Vector2(0.20053476, 0.20053475)
-texture = ExtResource("27_5b14r")
+[node name="sundial" type="Marker2D" parent="." unique_id=1442074541]
+position = Vector2(1774, 139)
+
+[node name="Sun" type="Sprite2D" parent="sundial" unique_id=132937313]
+texture = ExtResource("12_iotsf")
+
+[node name="number" type="Label" parent="sundial" unique_id=1276219381]
+offset_left = -77.0
+offset_top = -169.0
+offset_right = 67.0
+offset_bottom = 111.0
+text = "7"
+label_settings = SubResource("LabelSettings_l0oc6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="days left" type="Label" parent="sundial" unique_id=1788936578]
+offset_left = -95.0
+offset_top = 31.0
+offset_right = 95.0
+offset_bottom = 108.0
+text = "days left"
+label_settings = SubResource("LabelSettings_xa8c5")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="End Turn" to="." method="_on_end_turn_pressed"]
