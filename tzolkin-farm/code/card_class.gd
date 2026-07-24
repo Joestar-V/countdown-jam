@@ -5,8 +5,11 @@ class_name Card
 var money_cost := 5
 #@onready var sell_value := 4
 
+
 @onready var default_scale = Vector2(0.5,0.5)
 @onready var hover_scale = Vector2(0.54,0.54)
+@onready var hovered = false
+
 
 @onready var card_image: Sprite2D = $card_image
 @export var card_name : String 
@@ -61,6 +64,8 @@ func update_visuals():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+
+	
 	if dragging:
 		global_position = get_global_mouse_position() - of
 	elif !slotted:
@@ -185,9 +190,21 @@ func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket])
 	destroy = true
 
 func zoom():
-	stat_spread.show()
-	create_tween().tween_property(self,"scale",hover_scale,0.2).set_trans(transition_type)
+	if hovered == false:
+		hovered = true
+		stat_spread.show()
+		scale = hover_scale
+		#create_tween().tween_property(self,"scale",hover_scale,0.2).set_trans(transition_type)
+		#await get_tree().create_timer(.2).timeout
+		
+
+	
 	
 func unzoom():
-	stat_spread.hide()
-	create_tween().tween_property(self,"scale",default_scale,0.15).set_trans(transition_type)
+	if hovered == true:
+		hovered = false
+		stat_spread.hide()
+		scale = default_scale
+		#create_tween().tween_property(self,"scale",default_scale,0.15).set_trans(transition_type)
+		#await get_tree().create_timer(.15).timeout
+		

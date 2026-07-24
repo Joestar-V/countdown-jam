@@ -17,6 +17,8 @@ extends Node2D
 @onready  var actionNum = 1
 #@onready var handPos = 0
 const APPLE = preload("res://objects/crops/apple.tscn")
+const MAIZE = preload("res://objects/crops/maize.tscn")
+
 @onready var end_turn = $"End Turn"
 
 @onready var calender: Marker2D = $sundial
@@ -60,8 +62,9 @@ func _ready() -> void:
 	Game.game = self
 	for i in 3:
 		seedkeeper.discard_pile.add_card(APPLE)
-	for i in 4:
+	for i in 2:
 		seedkeeper.drawpile.add_card(APPLE)
+		seedkeeper.drawpile.add_card(MAIZE)
 	seedkeeper.hand.handList.resize(3)
 	seedkeeper.draw_until_full()
 

@@ -78,7 +78,6 @@ shadow_offset = Vector2(2, 3)
 script = ExtResource("1_vef74")
 
 [node name="BG" type="Node2D" parent="." unique_id=18919031]
-metadata/_edit_lock_ = true
 
 [node name="bg" type="Sprite2D" parent="BG" unique_id=2051013424]
 position = Vector2(960, 539.99994)

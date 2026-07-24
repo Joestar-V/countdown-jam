@@ -120,7 +120,7 @@ horizontal_alignment = 1
 
 [node name="Food" type="Sprite2D" parent="." unique_id=1502495112]
 position = Vector2(186.00002, 68)
-scale = Vector2(0.06325564, 0.063255645)
+scale = Vector2(0.208, 0.208)
 texture = ExtResource("5_b3q8k")
 
 [node name="foodLabel" type="Label" parent="." unique_id=655861824]
