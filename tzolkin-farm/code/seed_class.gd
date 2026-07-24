@@ -6,7 +6,6 @@ class_name Seed
 @onready var title_label = $title_label
 @onready var card_border = $card_border
 
-@export var water_cost := 1
 
 @export_enum("Cereal", "Vegetable", "Fruit", "Root", "Flower") var category = 0
 @export_multiline var tooltip_sprout : String = "this is the sprout tooltip"

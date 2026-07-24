@@ -10,7 +10,6 @@ signal finish_sorting
 #card that is good to harvest as a sprout but it doenst give back a seed when it does
 #sunflowers are advantageous at all parts of their life
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
