@@ -44,7 +44,7 @@ const APPLE = preload("res://objects/crops/apple.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Game.game = self
-	for i in 10:
+	for i in 3:
 		seedkeeper.discard_pile.add_card(APPLE)
 	for i in 4:
 		seedkeeper.drawpile.add_card(APPLE)

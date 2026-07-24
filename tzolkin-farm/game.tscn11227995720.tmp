@@ -1,0 +1,250 @@
+[gd_scene format=3 uid="uid://dprbbbe0l5c2r"]
+
+[ext_resource type="PackedScene" uid="uid://rt7vegnmsa1o" path="res://objects/wheel.tscn" id="1_feb5d"]
+[ext_resource type="Script" uid="uid://cnu0x64ps4cho" path="res://game.gd" id="1_vef74"]
+[ext_resource type="PackedScene" uid="uid://dwffc1owgj0bq" path="res://objects/slot.tscn" id="2_e2o6t"]
+[ext_resource type="Texture2D" uid="uid://cuslkrq4nfwkr" path="res://art/b97505da0c981614338824d4b74f3e4c.jpg" id="2_hve3p"]
+[ext_resource type="Texture2D" uid="uid://bc6x6ul1kc1ak" path="res://art/trellis-latticework-fence-garden-house-boundary-fence-6db7dfdbb7ff9fb232adb861d5a887b6.png" id="3_mfdv2"]
+[ext_resource type="PackedScene" uid="uid://cx7f4liipktpg" path="res://objects/resources.tscn" id="4_7sc4i"]
+[ext_resource type="Texture2D" uid="uid://bgjicp81ynuu2" path="res://art/ui/moon.png" id="4_e8heu"]
+[ext_resource type="Texture2D" uid="uid://08vp65ahorar" path="res://art/skullsymbol.png" id="4_fc0e3"]
+[ext_resource type="Texture2D" uid="uid://dotkrdgaep1s7" path="res://art/fruitsymbol.png" id="4_j5wjh"]
+[ext_resource type="Texture2D" uid="uid://cot72hewwyhox" path="res://art/flowersymbol.png" id="5_vef74"]
+[ext_resource type="Texture2D" uid="uid://o2ax2jjy3s3x" path="res://art/sproutsymbol.png" id="6_hve3p"]
+[ext_resource type="Texture2D" uid="uid://c6v3lkqytohw1" path="res://art/seedlingsymbol.png" id="7_mfdv2"]
+[ext_resource type="FontFile" uid="uid://j8glluhsw0mx" path="res://art/ui/segoe-print-regular.ttf" id="9_f1jbl"]
+[ext_resource type="Texture2D" uid="uid://dwqwiqrv1jfri" path="res://art/ui/hand.png" id="9_hb5m1"]
+[ext_resource type="Script" uid="uid://d0po6tfbuhuc5" path="res://hand_image.gd" id="10_x5p1p"]
+[ext_resource type="Script" uid="uid://b706fq76tajfe" path="res://seed_keeper.gd" id="11_hb5m1"]
+[ext_resource type="Script" uid="uid://x0w1fuppocc7" path="res://code/discard_pile.gd" id="11_x5p1p"]
+[ext_resource type="Texture2D" uid="uid://c7qwdtv3x87xu" path="res://art/png-clipart-sun-sun-sun.png" id="12_iotsf"]
+[ext_resource type="Script" uid="uid://cob7t1n2bxrf5" path="res://code/drawpile.gd" id="12_x5p1p"]
+[ext_resource type="Texture2D" uid="uid://dxetedtnwmdu4" path="res://art/ui/seed_text.png" id="13_f1jbl"]
+[ext_resource type="Script" uid="uid://bhygk66ix8ajf" path="res://code/end_turn.gd" id="14_7sc4i"]
+[ext_resource type="Script" uid="uid://htg51x88dvwh" path="res://code/hand.gd" id="15_qhcbd"]
+[ext_resource type="Texture2D" uid="uid://b1npgnjyligff" path="res://art/ui/veg-pouch-2291429493.png" id="16_e8heu"]
+[ext_resource type="Texture2D" uid="uid://buy1h8xxb6wa8" path="res://art/ui/recycle-bin.png" id="17_rvswv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_imxm8"]
+font = ExtResource("9_f1jbl")
+font_size = 44
+outline_size = 9
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 9
+shadow_color = Color(0, 0, 0, 0.23529412)
+shadow_offset = Vector2(1, 2.425)
+
+[sub_resource type="Animation" id="Animation_vef74"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_hve3p"]
+resource_name = "wheelspin"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mfdv2"]
+_data = {
+&"RESET": SubResource("Animation_vef74"),
+&"wheelspin": SubResource("Animation_hve3p")
+}
+
+[sub_resource type="Theme" id="Theme_6tghx"]
+
+[node name="Game" type="Node2D" unique_id=1509497783]
+script = ExtResource("1_vef74")
+
+[node name="bg" type="Sprite2D" parent="." unique_id=2051013424]
+position = Vector2(960, 539.99994)
+scale = Vector2(1.5999998, 1.2)
+texture = ExtResource("2_hve3p")
+metadata/_edit_lock_ = true
+
+[node name="TrellisTop" type="Sprite2D" parent="." unique_id=1344825108]
+position = Vector2(961.1102, -381.06253)
+scale = Vector2(2.9922915, 2.9922922)
+texture = ExtResource("3_mfdv2")
+metadata/_edit_lock_ = true
+
+[node name="TrellisRight" type="Sprite2D" parent="." unique_id=992995480]
+position = Vector2(2305, 332.99997)
+rotation = 1.5707964
+scale = Vector2(2.9922915, 2.9922922)
+texture = ExtResource("3_mfdv2")
+metadata/_edit_lock_ = true
+
+[node name="TrellisLeft" type="Sprite2D" parent="." unique_id=1648527557]
+position = Vector2(-350.00003, 336.99997)
+rotation = 1.5707964
+scale = Vector2(2.9922915, 2.9922922)
+texture = ExtResource("3_mfdv2")
+metadata/_edit_lock_ = true
+
+[node name="Moon" type="Sprite2D" parent="." unique_id=1706999615]
+position = Vector2(1800.0001, 953)
+scale = Vector2(0.27174994, 0.27174994)
+texture = ExtResource("4_e8heu")
+
+[node name="Resources" parent="." unique_id=1812906870 instance=ExtResource("4_7sc4i")]
+position = Vector2(960, 0)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="SeedKeeper" type="Node2D" parent="." unique_id=743107986]
+script = ExtResource("11_hb5m1")
+
+[node name="Drawpile" type="Node2D" parent="SeedKeeper" unique_id=1586721062]
+script = ExtResource("12_x5p1p")
+
+[node name="pouch" type="Sprite2D" parent="SeedKeeper/Drawpile" unique_id=1662455865]
+position = Vector2(107.000015, 975)
+rotation = 0.42352977
+scale = Vector2(0.30831346, 0.30831343)
+texture = ExtResource("16_e8heu")
+
+[node name="draw_count" type="Label" parent="SeedKeeper/Drawpile" unique_id=1221162816]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 201.0
+offset_top = 844.0
+offset_right = 230.0
+offset_bottom = 914.0
+grow_vertical = 0
+text = "x"
+label_settings = SubResource("LabelSettings_imxm8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="hand" type="Sprite2D" parent="SeedKeeper" unique_id=1935885946]
+position = Vector2(53.000004, 724)
+scale = Vector2(0.5064725, 0.50647247)
+texture = ExtResource("9_hb5m1")
+script = ExtResource("10_x5p1p")
+
+[node name="Hand" type="VBoxContainer" parent="SeedKeeper" unique_id=1259071162]
+offset_left = 82.0
+offset_top = 113.0
+offset_right = 254.0
+offset_bottom = 721.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+offset_transform_enabled = true
+theme_override_constants/separation = 45
+alignment = 1
+script = ExtResource("15_qhcbd")
+
+[node name="handSlot1" type="TextureRect" parent="SeedKeeper/Hand" unique_id=2052180581]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("13_f1jbl")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="handSlot2" type="TextureRect" parent="SeedKeeper/Hand" unique_id=2111077351]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("13_f1jbl")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="handSlot3" type="TextureRect" parent="SeedKeeper/Hand" unique_id=590160374]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("13_f1jbl")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="DiscardPile" type="Node2D" parent="SeedKeeper" unique_id=318655749]
+script = ExtResource("11_x5p1p")
+
+[node name="RecycleBin" type="Sprite2D" parent="SeedKeeper/DiscardPile" unique_id=1200441947]
+position = Vector2(387, 970.00006)
+scale = Vector2(0.1809242, 0.19626692)
+texture = ExtResource("17_rvswv")
+
+[node name="discard_count" type="Label" parent="SeedKeeper/DiscardPile" unique_id=1739738977]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 459.0
+offset_top = 837.0
+offset_right = 491.0
+offset_bottom = 914.0
+grow_vertical = 0
+text = "x"
+label_settings = SubResource("LabelSettings_imxm8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="symbols" type="Node2D" parent="." unique_id=1184561991]
+position = Vector2(504, 392)
+scale = Vector2(1.5, 1.5)
+
+[node name="Sprite2D2" type="Sprite2D" parent="symbols" unique_id=1904656237]
+texture_filter = 1
+position = Vector2(529.3333, 262.6667)
+texture = ExtResource("4_fc0e3")
+
+[node name="Sprite2D3" type="Sprite2D" parent="symbols" unique_id=1357566872]
+texture_filter = 1
+position = Vector2(445.3333, 199.33333)
+texture = ExtResource("4_j5wjh")
+
+[node name="Sprite2D4" type="Sprite2D" parent="symbols" unique_id=1255862214]
+texture_filter = 1
+position = Vector2(305.99997, 180.66666)
+texture = ExtResource("5_vef74")
+
+[node name="Sprite2D5" type="Sprite2D" parent="symbols" unique_id=797456245]
+texture_filter = 1
+position = Vector2(207.33334, 206.66666)
+texture = ExtResource("6_hve3p")
+
+[node name="Sprite2D6" type="Sprite2D" parent="symbols" unique_id=1899550781]
+texture_filter = 1
+position = Vector2(107.33334, 264)
+texture = ExtResource("7_mfdv2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=411556663]
+libraries/ = SubResource("AnimationLibrary_mfdv2")
+
+[node name="Sun" type="Sprite2D" parent="." unique_id=132937313]
+position = Vector2(1774, 139)
+texture = ExtResource("12_iotsf")
+
+[node name="spots" type="Node2D" parent="." unique_id=451446717]
+
+[node name="Slot2" parent="spots" unique_id=658892514 instance=ExtResource("2_e2o6t")]
+position = Vector2(677, 931)
+open = true
+
+[node name="Slot3" parent="spots" unique_id=44547900 instance=ExtResource("2_e2o6t")]
+position = Vector2(811, 854)
+pos = 1
+stage = 1
+
+[node name="Slot4" parent="spots" unique_id=1877094531 instance=ExtResource("2_e2o6t")]
+position = Vector2(975, 819)
+pos = 2
+stage = 2
+
+[node name="Slot5" parent="spots" unique_id=714500809 instance=ExtResource("2_e2o6t")]
+position = Vector2(1127, 850)
+pos = 3
+stage = 3
+
+[node name="Slot6" parent="spots" unique_id=1471545763 instance=ExtResource("2_e2o6t")]
+position = Vector2(1255, 939)
+pos = 4
+stage = 4
+
+[node name="End Turn" type="Button" parent="." unique_id=1810491390]
+offset_left = 1693.0
+offset_top = 886.0
+offset_right = 1900.0
+offset_bottom = 1022.0
+theme = SubResource("Theme_6tghx")
+theme_override_font_sizes/font_size = 30
+text = "End Day"
+script = ExtResource("14_7sc4i")
+
+[node name="Wheel" parent="." unique_id=965928083 instance=ExtResource("1_feb5d")]
+position = Vector2(995, 1179)
+
+[connection signal="pressed" from="End Turn" to="." method="_on_end_turn_pressed"]

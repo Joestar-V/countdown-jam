@@ -41,8 +41,9 @@ func reshuffle():
 	var notfinished = true
 	discard_pile.pile.shuffle()
 	while !discard_pile.pile.is_empty():
+		print(discard_pile.pile.front())
 		var card = discard_pile.pile.pop_front()
-
+		print(card)
 		var tinycard = TINY_CARD.instantiate()
 		tinyList.append(tinycard)
 		add_child(tinycard)
