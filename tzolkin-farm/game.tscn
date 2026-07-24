@@ -25,6 +25,8 @@
 [ext_resource type="Texture2D" uid="uid://b1npgnjyligff" path="res://art/ui/veg-pouch-2291429493.png" id="16_e8heu"]
 [ext_resource type="Texture2D" uid="uid://buy1h8xxb6wa8" path="res://art/ui/recycle-bin.png" id="17_rvswv"]
 [ext_resource type="PackedScene" uid="uid://cluhqubl3e2e4" path="res://shop.tscn" id="22_vaj68"]
+[ext_resource type="FontFile" uid="uid://bsat78l3nbcp2" path="res://art/ui/Waterline.ttf" id="26_xa8c5"]
+[ext_resource type="Texture2D" uid="uid://b0vic0rrekw5e" path="res://art/ui/water_supply.png" id="27_5b14r"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_imxm8"]
 font = ExtResource("9_f1jbl")
@@ -49,29 +51,36 @@ _data = {
 
 [sub_resource type="Theme" id="Theme_6tghx"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_b64ip"]
+font = ExtResource("26_xa8c5")
+font_size = 160
+
 [node name="Game" type="Node2D" unique_id=1509497783]
 script = ExtResource("1_vef74")
 
-[node name="bg" type="Sprite2D" parent="." unique_id=2051013424]
+[node name="BG" type="Node2D" parent="." unique_id=18919031]
+metadata/_edit_lock_ = true
+
+[node name="bg" type="Sprite2D" parent="BG" unique_id=2051013424]
 position = Vector2(960, 539.99994)
 scale = Vector2(1.5999998, 1.2)
 texture = ExtResource("2_hve3p")
 metadata/_edit_lock_ = true
 
-[node name="TrellisTop" type="Sprite2D" parent="." unique_id=1344825108]
+[node name="TrellisTop" type="Sprite2D" parent="BG" unique_id=1344825108]
 position = Vector2(961.1102, -381.06253)
 scale = Vector2(2.9922915, 2.9922922)
 texture = ExtResource("3_mfdv2")
 metadata/_edit_lock_ = true
 
-[node name="TrellisRight" type="Sprite2D" parent="." unique_id=992995480]
+[node name="TrellisRight" type="Sprite2D" parent="BG" unique_id=992995480]
 position = Vector2(2305, 332.99997)
 rotation = 1.5707964
 scale = Vector2(2.9922915, 2.9922922)
 texture = ExtResource("3_mfdv2")
 metadata/_edit_lock_ = true
 
-[node name="TrellisLeft" type="Sprite2D" parent="." unique_id=1648527557]
+[node name="TrellisLeft" type="Sprite2D" parent="BG" unique_id=1648527557]
 position = Vector2(-350.00003, 336.99997)
 rotation = 1.5707964
 scale = Vector2(2.9922915, 2.9922922)
@@ -83,29 +92,64 @@ position = Vector2(1767.9999, 983.99994)
 scale = Vector2(0.4039375, 0.4039375)
 texture = ExtResource("4_e8heu")
 
+[node name="Wheel" parent="." unique_id=965928083 instance=ExtResource("1_feb5d")]
+position = Vector2(959.99994, 1376)
+scale = Vector2(12.000001, 12.000001)
+metadata/_edit_lock_ = true
+
+[node name="symbols" type="Node2D" parent="." unique_id=1184561991]
+position = Vector2(504, 376)
+scale = Vector2(1.5, 1.5)
+
+[node name="Sprite2D2" type="Sprite2D" parent="symbols" unique_id=1904656237]
+texture_filter = 1
+position = Vector2(560, 293.33334)
+texture = ExtResource("4_fc0e3")
+
+[node name="Sprite2D3" type="Sprite2D" parent="symbols" unique_id=1357566872]
+texture_filter = 1
+position = Vector2(431.99997, 208)
+texture = ExtResource("4_j5wjh")
+
+[node name="Sprite2D4" type="Sprite2D" parent="symbols" unique_id=1255862214]
+texture_filter = 1
+position = Vector2(305.99997, 180.66666)
+texture = ExtResource("5_vef74")
+
+[node name="Sprite2D5" type="Sprite2D" parent="symbols" unique_id=797456245]
+texture_filter = 1
+position = Vector2(176.00002, 207.99998)
+texture = ExtResource("6_hve3p")
+
+[node name="Sprite2D6" type="Sprite2D" parent="symbols" unique_id=1899550781]
+texture_filter = 1
+position = Vector2(48.00001, 293.33334)
+texture = ExtResource("7_mfdv2")
+
 [node name="spots" type="Node2D" parent="." unique_id=451446717]
+position = Vector2(10, 5)
 
 [node name="Slot2" parent="spots" unique_id=658892514 instance=ExtResource("2_e2o6t")]
-position = Vector2(608, 921.00006)
+position = Vector2(583, 945.00006)
 open = true
 
 [node name="Slot3" parent="spots" unique_id=44547900 instance=ExtResource("2_e2o6t")]
-position = Vector2(768, 832.00006)
+position = Vector2(764, 837.00006)
 pos = 1
 stage = 1
 
 [node name="Slot4" parent="spots" unique_id=1877094531 instance=ExtResource("2_e2o6t")]
-position = Vector2(960, 800.00006)
+position = Vector2(956, 801)
 pos = 2
 stage = 2
 
 [node name="Slot5" parent="spots" unique_id=714500809 instance=ExtResource("2_e2o6t")]
-position = Vector2(1152, 832)
+position = Vector2(1136, 837)
 pos = 3
 stage = 3
 
 [node name="Slot6" parent="spots" unique_id=1471545763 instance=ExtResource("2_e2o6t")]
-position = Vector2(1312, 921)
+position = Vector2(1316, 945)
 pos = 4
 stage = 4
 
@@ -140,7 +184,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="hand" type="Sprite2D" parent="SeedKeeper" unique_id=1935885946]
-position = Vector2(53.000004, 724)
+position = Vector2(56, 744)
 scale = Vector2(0.5064725, 0.50647247)
 texture = ExtResource("9_hb5m1")
 script = ExtResource("10_x5p1p")
@@ -199,35 +243,6 @@ label_settings = SubResource("LabelSettings_imxm8")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="symbols" type="Node2D" parent="." unique_id=1184561991]
-position = Vector2(504, 392)
-scale = Vector2(1.5, 1.5)
-
-[node name="Sprite2D2" type="Sprite2D" parent="symbols" unique_id=1904656237]
-texture_filter = 1
-position = Vector2(560, 293.33334)
-texture = ExtResource("4_fc0e3")
-
-[node name="Sprite2D3" type="Sprite2D" parent="symbols" unique_id=1357566872]
-texture_filter = 1
-position = Vector2(431.99997, 208)
-texture = ExtResource("4_j5wjh")
-
-[node name="Sprite2D4" type="Sprite2D" parent="symbols" unique_id=1255862214]
-texture_filter = 1
-position = Vector2(305.99997, 180.66666)
-texture = ExtResource("5_vef74")
-
-[node name="Sprite2D5" type="Sprite2D" parent="symbols" unique_id=797456245]
-texture_filter = 1
-position = Vector2(176.00002, 207.99998)
-texture = ExtResource("6_hve3p")
-
-[node name="Sprite2D6" type="Sprite2D" parent="symbols" unique_id=1899550781]
-texture_filter = 1
-position = Vector2(48.00001, 293.33334)
-texture = ExtResource("7_mfdv2")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=411556663]
 libraries/ = SubResource("AnimationLibrary_mfdv2")
 
@@ -237,13 +252,6 @@ texture = ExtResource("12_iotsf")
 
 [node name="Shop" parent="." unique_id=9903558 instance=ExtResource("22_vaj68")]
 visible = false
-
-[node name="Wheel" parent="." unique_id=965928083 instance=ExtResource("1_feb5d")]
-visible = false
-modulate = Color(1, 1, 1, 0.5647059)
-position = Vector2(960.00006, 1376)
-scale = Vector2(12, 12)
-metadata/_edit_lock_ = true
 
 [node name="End Turn" type="Button" parent="." unique_id=1810491390]
 offset_left = 1616.0
@@ -255,5 +263,26 @@ theme_override_font_sizes/font_size = 30
 disabled = true
 text = "Plant or Harvest"
 script = ExtResource("14_7sc4i")
+
+[node name="Label" type="Label" parent="." unique_id=1175126517]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 904.5
+offset_top = 928.0
+offset_right = 1061.5
+offset_bottom = 1042.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+text = "10/10"
+label_settings = SubResource("LabelSettings_b64ip")
+
+[node name="WaterSupply" type="Sprite2D" parent="." unique_id=2088411526]
+position = Vector2(848.5, 992)
+scale = Vector2(0.20053476, 0.20053475)
+texture = ExtResource("27_5b14r")
 
 [connection signal="pressed" from="End Turn" to="." method="_on_end_turn_pressed"]

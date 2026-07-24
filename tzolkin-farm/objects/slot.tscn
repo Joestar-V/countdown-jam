@@ -4,10 +4,10 @@
 [ext_resource type="Script" uid="uid://chs8vg2ajsjag" path="res://objects/slot.gd" id="1_ks62j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6tghx"]
-size = Vector2(13.333334, 12)
+size = Vector2(4.9230766, 4.9230766)
 
 [node name="Slot" type="Node2D" unique_id=658892514]
-scale = Vector2(3, 3)
+scale = Vector2(12, 12)
 script = ExtResource("1_ks62j")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=442416611]
@@ -18,5 +18,4 @@ texture = ExtResource("1_dsmf2")
 self_modulate = Color(1, 1, 1, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="slotHole" unique_id=1431792996]
-position = Vector2(1.5894572e-07, 0)
 shape = SubResource("RectangleShape2D_6tghx")
