@@ -13,7 +13,7 @@ extends Node2D
 @onready var shop: Node2D = $Shop
 @onready var shopping = false
 @onready var remaining 
-@onready var day : Day = null
+@onready var day : Day
 @onready var dragging = false
 @onready var dragged : Card
 @onready  var actionNum = 1
@@ -68,7 +68,6 @@ const WHEAT = preload("uid://bd7dp4kyhp0y6")
 		resources.food_label.text = str(foodCount)
 
 
-
 func _ready() -> void:
 	Game.game = self
 	for i in 3:
@@ -97,8 +96,8 @@ func _ready() -> void:
 		slot.pos = i
 		i += 1
 	remaining = slotList.size()
-
-
+	day = calender.first_day()
+	print(day.title)
 func red_text():
 	water_label.modulate = Color.RED
 func white_text():
