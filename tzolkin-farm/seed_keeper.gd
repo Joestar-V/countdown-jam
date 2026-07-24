@@ -27,6 +27,8 @@ func draw_until_full():
 		else:
 			if drawpile.pile.is_empty():
 				await reshuffle()
+			if drawpile.pile.is_empty():
+				return
 			var drawnCard = drawpile.pile.front().instantiate()
 			drawpile.pile.pop_front()
 			drawpile.draw_count.text = str(drawpile.pile.size())

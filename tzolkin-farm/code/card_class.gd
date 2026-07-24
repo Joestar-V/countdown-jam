@@ -37,7 +37,7 @@ var handPos = 0
 var seedPacket : PackedScene
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	seedPacket = load(get_scene_file_path())
+	seedPacket = load(scene_file_path)
 	print(seedPacket)
 	update_visuals()
 
