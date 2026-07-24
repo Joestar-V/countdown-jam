@@ -134,7 +134,7 @@ func _on_end_turn_pressed() -> void:
 
 func weekend():
 	for slot in slotList:
-		await slot.harvest_list()
+		slot.harvest_list()
 	await open_shop()
 	#reshuffle deck
 	calender.restart()
