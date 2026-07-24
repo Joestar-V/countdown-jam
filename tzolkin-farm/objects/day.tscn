@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://crhcqdcsfi6xb"]
 
 [ext_resource type="Script" uid="uid://0yaoyv2ly3hn" path="res://objects/day.gd" id="1_gnx1r"]
+[ext_resource type="Texture2D" uid="uid://c3hm65se0pyks" path="res://art/pngtree-x2-3d-deal-png-image_11100531.png" id="2_4a4rw"]
 
 [node name="Day" type="Node2D" unique_id=1162151081]
 script = ExtResource("1_gnx1r")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1499132609]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_4a4rw")

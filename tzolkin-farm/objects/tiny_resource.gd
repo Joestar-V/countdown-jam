@@ -3,25 +3,33 @@ extends Sprite2D
 signal finished
 var type = 0
 var card 
+var value = 1:
+	set(val):
+		value = val
+		scale = Vector2(scale.x * value,scale.y * value)
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	pass
+	
+func update_pic(cardPic):
+	texture = cardPic
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
 func _on_move_component_movement_finished(targ = 0) -> void:
+	
 	match type:
 		0:
-			Game.game.foodCount += 1
+			Game.game.foodCount += value
 		1: 
-			Game.game.moneyCount += 1
+			Game.game.moneyCount += value
 		2:
-			Game.game.fertCount += 1
+			Game.game.fertCount += value
 		3:
 			match targ:
 				0:

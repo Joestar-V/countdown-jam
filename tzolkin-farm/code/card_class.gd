@@ -49,6 +49,14 @@ var seedPacket : PackedScene
 @export var water_cost := 1
 @onready var remaining = 0
 
+
+var foodBonus = 0
+var moneyBonus = 0
+var fertBonus = 0
+var cardBonus : Array[Card]
+var foodMult = 1
+var moneyMult = 1
+var fertMult = 1
 signal finished
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -182,6 +190,15 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 
 
 func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket]):
+	#add bonuses
+	foodCount += foodBonus
+	moneyCount += moneyBonus
+	fertCount += fertBonus
+	for card in cardBonus:
+		if card:
+			cards.append(card)
+			
+	#make tiny resources
 	for i in foodCount:
 		var foodlet = TINY_FOOD.instantiate() 
 		goodies.add_child(foodlet)
@@ -189,6 +206,7 @@ func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket])
 		foodlet.finished.connect(_on_kid_finished, CONNECT_ONE_SHOT)
 		foodlet.global_position = global_position
 		foodlet.type = 0
+		foodlet.value = 1 * foodMult
 		foodlet.move_to_resource(Game.game.resources.food.global_position)
 		await get_tree().create_timer(.1).timeout
 
@@ -198,6 +216,7 @@ func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket])
 		remaining += 1
 		foodlet.finished.connect(_on_kid_finished, CONNECT_ONE_SHOT)
 		foodlet.type = 1
+		foodlet.value = 1 * moneyMult
 		foodlet.global_position = global_position
 		foodlet.move_to_resource(Game.game.resources.money_bag.global_position)
 		await get_tree().create_timer(.1).timeout
@@ -208,6 +227,7 @@ func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket])
 		remaining += 1
 		foodlet.finished.connect(_on_kid_finished, CONNECT_ONE_SHOT)
 		foodlet.type = 2
+		foodlet.value = 1 * fertMult
 		foodlet.global_position = global_position
 		foodlet.move_to_resource(Game.game.resources.fertilizer.global_position)
 		await get_tree().create_timer(.1).timeout
@@ -220,6 +240,7 @@ func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket])
 		foodlet.type = 3
 		foodlet.global_position = global_position
 		foodlet.card = i
+		foodlet.update_pic(card_image.texture)
 		foodlet.move_to_resource(Game.game.seedkeeper.discard_pile.recycle_bin.global_position)
 		await get_tree().create_timer(.1).timeout
 	print(card_name)

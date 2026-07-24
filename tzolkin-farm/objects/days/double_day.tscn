@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dy788pq7ankw6"]
+
+[ext_resource type="Script" uid="uid://lcnnvqa5odk0" path="res://objects/days/double_day.gd" id="1_y1tdo"]
+
+[node name="Day" type="Node2D" unique_id=1162151081]
+script = ExtResource("1_y1tdo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1499132609]
+scale = Vector2(0.1, 0.1)
