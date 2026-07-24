@@ -211,11 +211,11 @@ texture = ExtResource("12_iotsf")
 [node name="spots" type="Node2D" parent="." unique_id=451446717]
 
 [node name="Slot2" parent="spots" unique_id=658892514 instance=ExtResource("2_e2o6t")]
-position = Vector2(739, 904)
+position = Vector2(677, 931)
 open = true
 
 [node name="Slot3" parent="spots" unique_id=44547900 instance=ExtResource("2_e2o6t")]
-position = Vector2(854, 848)
+position = Vector2(811, 854)
 pos = 1
 stage = 1
 
@@ -225,12 +225,12 @@ pos = 2
 stage = 2
 
 [node name="Slot5" parent="spots" unique_id=714500809 instance=ExtResource("2_e2o6t")]
-position = Vector2(1088, 845)
+position = Vector2(1127, 850)
 pos = 3
 stage = 3
 
 [node name="Slot6" parent="spots" unique_id=1471545763 instance=ExtResource("2_e2o6t")]
-position = Vector2(1199, 905)
+position = Vector2(1255, 939)
 pos = 4
 stage = 4
 

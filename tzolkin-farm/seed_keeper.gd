@@ -24,11 +24,17 @@ func draw_until_full():
 		if i and i != null:
 			pass
 		else:
-			if !drawpile.pile.is_empty():
-				var drawnCard = drawpile.pile.front().instantiate()
-				drawpile.pile.pop_front()
-				hand.handList[j] = (drawnCard)
-				hand.add_child(drawnCard)
-				drawnCard.handPos = j
-				drawnCard.homeSlot = hand.slotList[j]
-				Game.game.seedList.append(drawnCard)
+			if drawpile.pile.is_empty():
+				reshuffle()
+			var drawnCard = drawpile.pile.front().instantiate()
+			drawpile.pile.pop_front()
+			hand.handList[j] = (drawnCard)
+			hand.add_child(drawnCard)
+			drawnCard.handPos = j
+			drawnCard.homeSlot = hand.slotList[j]
+			Game.game.seedList.append(drawnCard)
+			
+func reshuffle():
+	discard_pile.pile.shuffle()
+	#for i in discard_pile.pile:
+		

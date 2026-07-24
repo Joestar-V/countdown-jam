@@ -1,3 +1,8 @@
+
+
+
+
+
 extends Node2D
 class_name Card
 @onready var card_image: Sprite2D = $card_image
@@ -5,10 +10,8 @@ class_name Card
 @export var picture : Texture 
 @export_enum("Dirt Cheap", "Scarce", "One of a Kind") var rarity = 0
 
-@onready var transition_type = Tween.TransitionType.TRANS_SINE
-
-
 @export_multiline var tooltip : String = "this is the tooltip"
+@onready var transition_type = Tween.TransitionType.TRANS_SINE
 
 const TINY_FERT = preload("res://objects/tiny_fert.tscn")
 const TINY_FOOD = preload("res://objects/tiny_food.tscn")
@@ -137,9 +140,6 @@ func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket])
 		await get_tree().create_timer(.1).timeout
 
 	destroy = true
-
-
-
 
 func zoom():
 	create_tween().tween_property(self,"scale",Vector2(0.59,0.59),0.2).set_trans(transition_type)
