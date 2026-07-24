@@ -31,3 +31,4 @@ func draw_until_full():
 				hand.add_child(drawnCard)
 				drawnCard.handPos = j
 				drawnCard.homeSlot = hand.slotList[j]
+				Game.game.seedList.append(drawnCard)

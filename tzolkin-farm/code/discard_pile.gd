@@ -13,6 +13,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-func add_card(cardScene):
+func add_card(cardScene : PackedScene):
+	print(cardScene)
 	pile.append(cardScene)
 	discard_count.text = str(pile.size())

@@ -7,7 +7,7 @@ extends Node2D
 @onready var wheel: Node2D = $Wheel
 @onready var slotList: Array
 @onready var resources: Node2D = $Resources
-
+@onready var harvested = false
 @onready  var actions = 1
 @onready  var actionNum = 1
 #@onready var handPos = 0
@@ -33,9 +33,9 @@ func _ready() -> void:
 	seedkeeper.hand.handList.resize(3)
 	seedkeeper.draw_until_full()
 
-	for seed in seedkeeper.hand.get_children():
-		if seed is Card:
-			seedList.append(seed)
+	#for seed in seedkeeper.hand.get_children():
+		#if seed is Card:
+		#	seedList.append(seed)
 		#seed.turn_over.connect(_on_seed_turn_over)
 	#for spot in spots.get_children():
 	#	spotList.append(spot)
@@ -63,6 +63,7 @@ func _on_seed_turn_over() -> void:
 func _on_end_turn_pressed() -> void:
 	if actions > 0:
 		return
+	harvested = false
 	actions = actionNum
 	var i = 0
 	#for slot in slotList:

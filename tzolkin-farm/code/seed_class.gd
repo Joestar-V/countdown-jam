@@ -41,7 +41,8 @@ func on_harvest_death():
 
 func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket]) -> void:
 	Game.game.seedList.erase(self)
-	Game.game.actions -= 1
+	Game.game.actions = 0
+	Game.game.harvested = true
 	super(foodCount, moneyCount , fertCount, cards)
 	
 func _on_button_pressed() -> void:

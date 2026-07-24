@@ -73,7 +73,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		slotted = true
 		slotPos = area.global_position
 		#turn_over.emit()
-	elif area.name == "slotHole" and (Game.game.fertCount >= area.get_parent().pos):
+	elif area.name == "slotHole" and (Game.game.fertCount >= area.get_parent().pos) and !Game.game.harvested:
 		if slotted:
 			Game.game.fertCount += slot.pos
 
