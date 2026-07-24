@@ -22,7 +22,7 @@ const APPLE = preload("res://objects/crops/apple.tscn")
 
 @onready var water : int = 10:
 	set(value):
-		water = value
+		water = clamp(value, 0, water_max)
 		water_label.text = str(water) +"/"+ str(water_max)
 		
 @onready var water_max : int = 10:

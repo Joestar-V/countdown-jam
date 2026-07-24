@@ -102,8 +102,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.name == "slotHole" and moving:
 		moving -= 1
-	elif area.name == "slotHole" and !slotted:
-		Game.game.white_text()
+	
 	elif area.name == "slotHole" and slotted and slot == area.get_parent():
 		Game.game.fertCount += slot.pos
 		Game.game.water += water_cost
@@ -112,7 +111,8 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 		slot = null
 		area.get_parent().seed.erase(self)
 		Game.game.actions += 1
-	
+	elif area.name == "slotHole" and !slotted:
+		Game.game.white_text()
 
 
 func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket]):
