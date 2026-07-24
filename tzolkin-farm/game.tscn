@@ -2,15 +2,21 @@
 
 [ext_resource type="PackedScene" uid="uid://rt7vegnmsa1o" path="res://objects/wheel.tscn" id="1_feb5d"]
 [ext_resource type="Script" uid="uid://cnu0x64ps4cho" path="res://game.gd" id="1_vef74"]
+[ext_resource type="PackedScene" uid="uid://bd7dp4kyhp0y6" path="res://objects/crops/wheat.tscn" id="2_aa0lp"]
 [ext_resource type="PackedScene" uid="uid://dwffc1owgj0bq" path="res://objects/slot.tscn" id="2_e2o6t"]
 [ext_resource type="Texture2D" uid="uid://cuslkrq4nfwkr" path="res://art/b97505da0c981614338824d4b74f3e4c.jpg" id="2_hve3p"]
+[ext_resource type="PackedScene" uid="uid://0r2fv35jbeuj" path="res://objects/crops/squash.tscn" id="3_iu0sx"]
 [ext_resource type="Texture2D" uid="uid://bc6x6ul1kc1ak" path="res://art/trellis-latticework-fence-garden-house-boundary-fence-6db7dfdbb7ff9fb232adb861d5a887b6.png" id="3_mfdv2"]
+[ext_resource type="PackedScene" uid="uid://r3v57ntk4jk8" path="res://objects/crops/potato.tscn" id="4_4v2jo"]
 [ext_resource type="PackedScene" uid="uid://cx7f4liipktpg" path="res://objects/resources.tscn" id="4_7sc4i"]
 [ext_resource type="Texture2D" uid="uid://bgjicp81ynuu2" path="res://art/ui/moon.png" id="4_e8heu"]
 [ext_resource type="Texture2D" uid="uid://08vp65ahorar" path="res://art/skullsymbol.png" id="4_fc0e3"]
 [ext_resource type="Texture2D" uid="uid://dotkrdgaep1s7" path="res://art/fruitsymbol.png" id="4_j5wjh"]
+[ext_resource type="PackedScene" uid="uid://dcb4fgcxec42p" path="res://objects/crops/maize.tscn" id="5_l1i01"]
 [ext_resource type="Texture2D" uid="uid://cot72hewwyhox" path="res://art/flowersymbol.png" id="5_vef74"]
 [ext_resource type="Texture2D" uid="uid://o2ax2jjy3s3x" path="res://art/sproutsymbol.png" id="6_hve3p"]
+[ext_resource type="PackedScene" uid="uid://blmgteof8oxul" path="res://objects/crops/beans.tscn" id="6_r62pu"]
+[ext_resource type="PackedScene" uid="uid://h25xor7ms780" path="res://objects/crops/apple.tscn" id="7_klri6"]
 [ext_resource type="Texture2D" uid="uid://c6v3lkqytohw1" path="res://art/seedlingsymbol.png" id="7_mfdv2"]
 [ext_resource type="FontFile" uid="uid://j8glluhsw0mx" path="res://art/ui/segoe-print-regular.ttf" id="9_f1jbl"]
 [ext_resource type="Texture2D" uid="uid://dwqwiqrv1jfri" path="res://art/ui/hand.png" id="9_hb5m1"]
@@ -28,6 +34,8 @@
 [ext_resource type="FontFile" uid="uid://bsat78l3nbcp2" path="res://art/ui/Waterline.ttf" id="26_xa8c5"]
 [ext_resource type="Texture2D" uid="uid://b0vic0rrekw5e" path="res://art/ui/water_supply.png" id="27_5b14r"]
 [ext_resource type="Script" uid="uid://gpcfttc0alye" path="res://code/sundial.gd" id="27_bnpwn"]
+[ext_resource type="PackedScene" uid="uid://comv5efp05sc0" path="res://objects/days/normal_day.tscn" id="28_36jdj"]
+[ext_resource type="PackedScene" uid="uid://dy788pq7ankw6" path="res://objects/days/double_day.tscn" id="29_xfvwf"]
 
 [sub_resource type="Shader" id="Shader_mskdk"]
 code = "shader_type canvas_item;
@@ -135,6 +143,7 @@ shadow_offset = Vector2(2, 3)
 
 [node name="Game" type="Node2D" unique_id=1509497783]
 script = ExtResource("1_vef74")
+cardPool = Array[PackedScene]([ExtResource("2_aa0lp"), ExtResource("3_iu0sx"), ExtResource("4_4v2jo"), ExtResource("5_l1i01"), ExtResource("6_r62pu"), ExtResource("7_klri6")])
 
 [node name="BG" type="Node2D" parent="." unique_id=18919031]
 
@@ -370,6 +379,7 @@ position = Vector2(1774, 139)
 script = ExtResource("27_bnpwn")
 weekLength = 20
 finalDay = 55
+dayPool = Array[PackedScene]([ExtResource("28_36jdj"), ExtResource("29_xfvwf")])
 
 [node name="days" type="Node2D" parent="sundial" unique_id=2086929812]
 position = Vector2(-1774, -139)

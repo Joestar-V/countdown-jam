@@ -188,8 +188,14 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 		area.get_parent().seed.erase(self)
 		Game.game.actions += 1
 
-
+func adjacency_bonus():
+	#here check for any plant combos
+	pass
 func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket]):
+	#check for bonuses
+	adjacency_bonus()
+	Game.game.day.daily_bonus(self)
+	
 	#add bonuses
 	foodCount += foodBonus
 	moneyCount += moneyBonus

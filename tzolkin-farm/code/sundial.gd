@@ -9,11 +9,14 @@ extends Marker2D
 @export var week = 0
 @export var finalDay = 35
 @onready var dayList : Array[Day]
-
+@export var dayPool : Array[PackedScene]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	currentDay = currentDay
-
+	for i in weekLength:
+		dayList.append(dayPool.pick_random().instantiate())
+	Game.game.day =  dayList.pop_front()
+	print(Game.game.day.title)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -23,5 +26,6 @@ func restart():
 	#remake day list
 func advance_day():
 	currentDay += 1
+	Game.game.day =  dayList.pop_front()
 	if currentDay >= weekLength:
 		await Game.game.weekend()

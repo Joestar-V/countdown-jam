@@ -13,10 +13,12 @@ extends Node2D
 @onready var shop: Node2D = $Shop
 @onready var shopping = false
 @onready var remaining 
-
+@onready var day : Day = null
 @onready var dragging = false
 @onready var dragged : Card
 @onready  var actionNum = 1
+@export var cardPool : Array[PackedScene] #add new cards here, instantiate them 
+
 #@onready var handPos = 0
 const APPLE = preload("res://objects/crops/apple.tscn")
 const MAIZE = preload("res://objects/crops/maize.tscn")

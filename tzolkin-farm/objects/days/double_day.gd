@@ -9,3 +9,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+func daily_bonus(card : Card):
+	card.foodMult += 1
+	card.moneyMult += 1
+	card.fertMult += 1
