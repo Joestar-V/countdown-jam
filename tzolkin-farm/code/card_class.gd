@@ -117,7 +117,7 @@ func _on_button_button_up() -> void:
 				crd.global_position = global_position
 				crd.card = i
 				crd.move_to_resource(Game.game.seedkeeper.drawpile.pouch.global_position)
-				await get_tree().create_timer(.3).timeout
+				await get_tree().create_timer(.5).timeout
 				
 			queue_free()
 		else:
