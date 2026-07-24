@@ -29,5 +29,5 @@ func harvest_list():
 			4:
 				chud.on_harvest_death()
 		await chud.finished
-		
+	print("Slot", pos, "finished")
 	finished.emit()

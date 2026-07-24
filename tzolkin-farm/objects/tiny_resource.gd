@@ -28,8 +28,9 @@ func _on_move_component_movement_finished(targ = 0) -> void:
 					Game.game.seedkeeper.discard_pile.add_card(card)
 				1:
 					Game.game.seedkeeper.drawpile.add_card(card)
-	queue_free()
 	finished.emit()
+
+	queue_free()
 
 	
 	

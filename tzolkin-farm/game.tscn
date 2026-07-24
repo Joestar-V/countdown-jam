@@ -154,6 +154,7 @@ open = true
 [node name="Slot3" parent="spots" unique_id=44547900 instance=ExtResource("2_e2o6t")]
 position = Vector2(764, 837.00006)
 pos = 1
+stage = 1
 
 [node name="Slot4" parent="spots" unique_id=1877094531 instance=ExtResource("2_e2o6t")]
 position = Vector2(956, 801)

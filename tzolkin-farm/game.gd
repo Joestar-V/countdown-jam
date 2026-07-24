@@ -12,6 +12,7 @@ extends Node2D
 @onready var water_label = $WaterSupply/water_label
 @onready var shop: Node2D = $Shop
 @onready var shopping = false
+@onready var remaining 
 
 			
 @onready  var actionNum = 1
@@ -79,7 +80,8 @@ func _ready() -> void:
 		slotList.append(slot)
 		slot.pos = i
 		i += 1
-		
+	remaining = slotList.size()
+
 
 func red_text():
 	water_label.modulate = Color.RED
@@ -127,18 +129,25 @@ func _on_end_turn_pressed() -> void:
 				seed.slot.seed.erase(seed)
 				seed.slot = slotList[seed.slot.pos+1]
 				seed.slot.seed.append(seed)
-				seed.global_position = seed.slot.position
+				seed.global_position = seed.slot.global_position
 				seed.slotted = true
 				seed.moving = 2
 	seedkeeper.draw_until_full()
-	calender.advance_day()
+	await calender.advance_day()
 
+func _on_slot_finished():
+	remaining -= 1
+	print("Remaining:", remaining)
 func weekend():
+	
+	remaining = slotList.size()
 	for slot in slotList:
-		print(slot.stage)
+		slot.finished.connect(_on_slot_finished, CONNECT_ONE_SHOT)
 		slot.harvest_list()
-		await slot.finished
-	await open_shop()
+
+	while remaining > 0:
+		await get_tree().process_frame
+	open_shop() #this never gets called
 	#reshuffle deck
 	calender.restart()
 func open_shop():

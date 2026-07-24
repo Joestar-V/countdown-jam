@@ -137,7 +137,6 @@ func _on_button_button_up() -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.name == "slotHole" and (moving):
-		print(slot.seed)
 		slot = area.get_parent()
 		#area.get_parent().seed.append(self)
 		slotted = true
@@ -209,6 +208,15 @@ func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket])
 	for kid in goodies.get_children():
 		if kid:
 			await kid.finished
+	#var remaining := goodies.get_child_count()
+#
+	#for kid in goodies.get_children():
+		#kid.finished.connect(func():
+			#remaining -= 1
+		#)
+#
+	#while remaining > 0:
+		#await get_tree().process_frame
 	Game.game.water += water_cost
 	destroy = true
 	finished.emit()

@@ -24,4 +24,4 @@ func restart():
 func advance_day():
 	currentDay += 1
 	if currentDay >= weekLength:
-		Game.game.weekend()
+		await Game.game.weekend()
