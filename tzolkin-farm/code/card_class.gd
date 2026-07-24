@@ -136,7 +136,7 @@ func _on_button_button_up() -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.name == "slotHole" and (moving):
 		slot = area.get_parent()
-		area.get_parent().seed.append(self)
+		#area.get_parent().seed.append(self)
 		slotted = true
 		slotPos = area.global_position
 		#turn_over.emit()

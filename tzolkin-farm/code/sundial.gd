@@ -1,6 +1,6 @@
 extends Marker2D
 @onready var number: Label = $number
-@export var weekLength = 7
+@export var weekLength = 3
 
 @export var currentDay = 0:
 	set(value):
