@@ -4,11 +4,13 @@
 [ext_resource type="Script" uid="uid://cmu0u1ns2vy6o" path="res://objects/crops/wheat.gd" id="2_o2qsh"]
 [ext_resource type="Texture2D" uid="uid://owuapfg8esoh" path="res://art/card images/seed_wheat.png" id="3_4g7w1"]
 
-[node name="maize" unique_id=1742177086 instance=ExtResource("1_o2qsh")]
+[node name="wheat" unique_id=1742177086 instance=ExtResource("1_o2qsh")]
 script = ExtResource("2_o2qsh")
-water_cost = 3
+flower = Vector3i(3, 1, 0)
+fruit = Vector3i(4, 1, 0)
 card_name = "Maize"
 picture = ExtResource("3_4g7w1")
+water_cost = 3
 
 [node name="card_image" parent="." index="0" unique_id=551817306]
 texture = ExtResource("3_4g7w1")

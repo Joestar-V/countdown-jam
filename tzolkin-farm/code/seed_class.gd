@@ -8,10 +8,16 @@ class_name Seed
 
 
 @export_enum("Cereal", "Vegetable", "Fruit", "Root", "Flower") var category = 0
-@export_multiline var tooltip_sprout : String = "this is the sprout tooltip"
-@export_multiline var tooltip_flower : String = "this is the flower tooltip"
-@export_multiline var tooltip_fruit : String = "this is the fruit tooltip"
-@export_multiline var tooltip_death : String = "" #empty by default, maybe only appears if something has a death effect
+@export var sprout : Vector3i 
+@export var flower : Vector3i 
+@export var fruit : Vector3i
+@export var death : Vector3i
+
+
+@export var tooltip_sprout : String = ""
+@export var tooltip_flower : String = ""
+@export var tooltip_fruit : String = ""
+@export var tooltip_death : String = "" #empty by default, maybe only appears if something has a death effect
 
 func update_visuals():
 	#do stuf
@@ -33,13 +39,13 @@ func update_visuals():
 		
 		
 func on_harvest_sprout():
-	harvest(0,0,0,[seedPacket]) 
+	harvest(sprout.x,sprout.y,sprout.z,[seedPacket]) 
 func on_harvest_flower():
-	harvest(0,0,0,[seedPacket]) 
+	harvest(flower.x,flower.y,flower.z,[seedPacket]) 
 func on_harvest_fruit():
-	harvest(0,0,0,[seedPacket]) 
+	harvest(fruit.x,fruit.y,fruit.z,[seedPacket]) 
 func on_harvest_death():
-	harvest(0,0,0,[seedPacket]) 
+	harvest(death.x,death.y,death.z,[seedPacket]) 
 
 
 func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket]) -> void:

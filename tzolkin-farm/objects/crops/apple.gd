@@ -9,11 +9,3 @@ extends Seed
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
 #	pass
-func on_harvest_sprout():
-	harvest(0,0,1) 
-
-func on_harvest_flower():
-	harvest(0,3,0) 
-
-func on_harvest_fruit():
-	harvest(5,4,3) 

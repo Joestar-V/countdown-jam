@@ -265,6 +265,7 @@ vertical_alignment = 1
 libraries/ = SubResource("AnimationLibrary_mfdv2")
 
 [node name="Shop" parent="." unique_id=9903558 instance=ExtResource("22_vaj68")]
+visible = false
 
 [node name="End Turn" type="Button" parent="." unique_id=1810491390]
 offset_left = 1616.0

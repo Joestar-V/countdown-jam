@@ -2,15 +2,18 @@
 
 [ext_resource type="PackedScene" uid="uid://cwjxq2jehc60x" path="res://objects/seed.tscn" id="1_xhej6"]
 [ext_resource type="Script" uid="uid://dip6dggymj0i4" path="res://objects/crops/beans.gd" id="2_v124k"]
+[ext_resource type="Texture2D" uid="uid://cxm05j64n4som" path="res://art/card images/seed_bean.png" id="3_xhej6"]
 
 [node name="beans" unique_id=1742177086 instance=ExtResource("1_xhej6")]
 script = ExtResource("2_v124k")
-water_cost = 2
-category = 3
-tooltip_sprout = "this is the sprout tooltip"
-tooltip_flower = "this is the flower tooltip"
-tooltip_fruit = "this is the fruit tooltip"
-tooltip_death = ""
+category = 1
+sprout = Vector3i(0, 0, 1)
+flower = Vector3i(2, 0, 1)
+fruit = Vector3i(4, 0, 1)
+death = Vector3i(0, 0, 3)
 card_name = "Beans"
-rarity = 0
-tooltip = "this is the tooltip"
+picture = ExtResource("3_xhej6")
+water_cost = 2
+
+[node name="card_image" parent="." index="0" unique_id=551817306]
+texture = ExtResource("3_xhej6")

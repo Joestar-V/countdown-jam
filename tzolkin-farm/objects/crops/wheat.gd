@@ -1,8 +1,3 @@
 extends Seed
 
-
-func on_harvest_flower():
-	harvest(3,1,0) 
-
-func on_harvest_fruit():
-	harvest(4,1,0) 
+#WHEATATTT

@@ -6,16 +6,13 @@
 
 [node name="potato" unique_id=1742177086 instance=ExtResource("1_n05as")]
 script = ExtResource("2_n05as")
-water_cost = 2
 category = 3
-tooltip_sprout = "this is the sprout tooltip"
-tooltip_flower = "this is the flower tooltip"
-tooltip_fruit = "this is the fruit tooltip"
-tooltip_death = ""
+sprout = Vector3i(2, 0, 0)
+flower = Vector3i(3, 0, 0)
+fruit = Vector3i(4, 0, 0)
 card_name = "Potato"
 picture = ExtResource("3_4v5kv")
-rarity = 0
-tooltip = "this is the tooltip"
+water_cost = 2
 
 [node name="card_image" parent="." index="0" unique_id=551817306]
 texture = ExtResource("3_4v5kv")

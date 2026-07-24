@@ -2,12 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://cwjxq2jehc60x" path="res://objects/seed.tscn" id="1_biqk2"]
 [ext_resource type="Script" uid="uid://d1ne82b1h7rmp" path="res://objects/crops/maize.gd" id="2_biqk2"]
-[ext_resource type="Texture2D" uid="uid://owuapfg8esoh" path="res://art/card images/seed_wheat.png" id="3_dsn4b"]
+[ext_resource type="Texture2D" uid="uid://celji2o5r38kt" path="res://art/card images/seed_corn.png" id="3_biqk2"]
 
 [node name="miaze" unique_id=1742177086 instance=ExtResource("1_biqk2")]
 script = ExtResource("2_biqk2")
-water_cost = 2
+sprout = Vector3i(0, 1, 0)
+flower = Vector3i(0, 2, 0)
+fruit = Vector3i(0, 4, 0)
 card_name = "Maize"
+picture = ExtResource("3_biqk2")
+water_cost = 2
 
 [node name="card_image" parent="." index="0" unique_id=551817306]
-texture = ExtResource("3_dsn4b")
+texture = ExtResource("3_biqk2")
