@@ -48,12 +48,5 @@ func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket])
 func _on_button_pressed() -> void:
 	if slotted:
 		if slot.stage != 0 and Game.game.actions > 0:
-			match slot.stage:
-				1:
-					on_harvest_sprout()
-				2:
-					on_harvest_flower()
-				3:
-					on_harvest_fruit()
-				4:
-					on_harvest_death()
+			print(slot.seed)
+			slot.harvest_list()
