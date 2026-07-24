@@ -30,7 +30,7 @@ func _ready() -> void:
 	Game.game = self
 	for i in 10:
 		seedkeeper.discard_pile.add_card(APPLE)
-	for i in 1:
+	for i in 4:
 		seedkeeper.drawpile.add_card(APPLE)
 	seedkeeper.hand.handList.resize(3)
 	seedkeeper.draw_until_full()
@@ -104,6 +104,8 @@ func _on_end_turn_pressed() -> void:
 				seed.on_harvest_death() #harvest death here
 				seedList.erase(seed)
 				actions = 1
+				harvested = false
+
 			else:
 				seed.slot = slotList[seed.slot.pos+1]
 				seed.global_position = seed.slot.position

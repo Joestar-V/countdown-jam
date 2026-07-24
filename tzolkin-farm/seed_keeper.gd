@@ -40,17 +40,22 @@ func reshuffle():
 	var tinyList : Array
 	var notfinished = true
 	discard_pile.pile.shuffle()
-	for i in discard_pile.pile:
+	while !discard_pile.pile.is_empty():
+		var card = discard_pile.pile.pop_front()
+
 		var tinycard = TINY_CARD.instantiate()
 		tinyList.append(tinycard)
 		add_child(tinycard)
-		tinycard.card = i
+
+		tinycard.card = card
 		tinycard.type = 3
-		discard_pile.pile.erase(i)
+
 		discard_pile.discard_count.text = str(discard_pile.pile.size())
-		await get_tree().create_timer(.1).timeout
+
 		tinycard.animation_player.play("tiny_resource/recycle")
+		await get_tree().create_timer(0.1).timeout
 	
 	for tiny in tinyList:
-		await tiny.animation_player.animation_finished
+		if tiny:
+			await tiny.animation_player.animation_finished
 		
