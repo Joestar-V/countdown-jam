@@ -99,12 +99,15 @@ func _on_seed_turn_over() -> void:
 
 
 func _on_end_turn_pressed() -> void:
+	
 	if actions > 0:
 		return
 	harvested = false
 	actions = actionNum
 	var i = 0
-	
+	if shopping:
+		close_shop()
+		return
 	for seed in seedList:
 		if seed.slotted:
 			if !seed.planted:
@@ -122,6 +125,7 @@ func _on_end_turn_pressed() -> void:
 
 			else:
 				seed.slot = slotList[seed.slot.pos+1]
+				seed.slot.seed.append(seed)
 				seed.global_position = seed.slot.position
 				seed.slotted = true
 				seed.moving = 2
@@ -130,11 +134,15 @@ func _on_end_turn_pressed() -> void:
 
 func weekend():
 	for slot in slotList:
-		slot.harvest_list()
-	await openShop()
+		await slot.harvest_list()
+	await open_shop()
 	#reshuffle deck
 	calender.restart()
-func openShop():
+func open_shop():
 	shop.visible = true
+	shopping = true
 	#while shop.visible:
 	#	pass
+func close_shop():
+	shop.visible = false
+	shopping = false
