@@ -185,6 +185,8 @@ func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket])
 	for i in foodCount:
 		var foodlet = TINY_FOOD.instantiate() 
 		goodies.add_child(foodlet)
+		remaining += 1
+		foodlet.finished.connect(_on_kid_finished, CONNECT_ONE_SHOT)
 		foodlet.global_position = global_position
 		foodlet.type = 0
 		foodlet.move_to_resource(Game.game.resources.food.global_position)
@@ -193,6 +195,8 @@ func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket])
 	for i in moneyCount:
 		var foodlet = TINY_MONEY.instantiate()
 		goodies.add_child(foodlet)
+		remaining += 1
+		foodlet.finished.connect(_on_kid_finished, CONNECT_ONE_SHOT)
 		foodlet.type = 1
 		foodlet.global_position = global_position
 		foodlet.move_to_resource(Game.game.resources.money_bag.global_position)
@@ -201,6 +205,8 @@ func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket])
 	for i in fertCount:
 		var foodlet = TINY_FERT.instantiate()
 		goodies.add_child(foodlet)
+		remaining += 1
+		foodlet.finished.connect(_on_kid_finished, CONNECT_ONE_SHOT)
 		foodlet.type = 2
 		foodlet.global_position = global_position
 		foodlet.move_to_resource(Game.game.resources.fertilizer.global_position)
@@ -209,6 +215,8 @@ func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket])
 	for i in cards:
 		var foodlet = TINY_CARD.instantiate()
 		goodies.add_child(foodlet)
+		remaining += 1
+		foodlet.finished.connect(_on_kid_finished, CONNECT_ONE_SHOT)
 		foodlet.type = 3
 		foodlet.global_position = global_position
 		foodlet.card = i
@@ -216,11 +224,6 @@ func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket])
 		await get_tree().create_timer(.1).timeout
 	print(card_name)
 	print(goodies.get_children().size())
-	for kid in goodies.get_children():
-		
-		if kid:
-			remaining += 1
-			kid.finished.connect(_on_kid_finished, CONNECT_ONE_SHOT)
 	while remaining > 0:
 		await get_tree().process_frame
 	Game.game.water += water_cost
