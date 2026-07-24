@@ -10,7 +10,8 @@ extends Node2D
 @onready var harvested = false
 @onready var redtext = false
 @onready var water_label = $WaterSupply/water_label
-
+@onready var shop: Node2D = $Shop
+@onready var shopping = false
 
 			
 @onready  var actionNum = 1
@@ -18,6 +19,7 @@ extends Node2D
 const APPLE = preload("res://objects/crops/apple.tscn")
 @onready var end_turn = $"End Turn"
 
+@onready var calender: Marker2D = $sundial
 
 
 @onready var water : int = 10:
@@ -100,29 +102,6 @@ func _on_end_turn_pressed() -> void:
 	actions = actionNum
 	var i = 0
 	
-	#for slot in slotList:
-	#	i+= 1
-	#	if i >= spotList.size():
-	#		i  = 0
-	#	slot.global_position = spotList[i].global_position
-	
-	#slotList.pop_back()
-	#slotList.push_front(slotList)
-	#for slot in slotList:
-			#
-		#if slot.seed and slot.seed != null:
-			#
-			#if i >= slotList.size():
-				#slot.seed.slot = slotList.front()
-				#slotList.front().seed = slot.seed
-				#slot.seed.global_position = slotList.front().global_position
-				#slot.seed = null
-			#else:
-				#slot.seed.slot = slotList[slot+1]
-				#slotList[slot+1].seed = slot.seed
-				#slot.seed.global_position = slotList[slot+1].global_position
-				#slot.seed = null
-			
 	for seed in seedList:
 		if seed.slotted:
 			if !seed.planted:
@@ -144,3 +123,15 @@ func _on_end_turn_pressed() -> void:
 				seed.slotted = true
 				seed.moving = 2
 	seedkeeper.draw_until_full()
+	calender.advance_day()
+
+func weekend():
+	for slot in slotList:
+		slot.harvest_list()
+	await openShop()
+	#reshuffle deck
+	calender.restart()
+func openShop():
+	shop.visible = true
+	#while shop.visible:
+	#	pass
