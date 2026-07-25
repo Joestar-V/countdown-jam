@@ -14,3 +14,8 @@ func day_start():
 		if !seed.slotted:
 			seed.water_cost = 0
 			seed.update_visuals()
+func day_end():
+	for seed in Game.game.seedList:
+		if !seed.slotted:
+			seed.water_cost = seed.OG_water_cost
+			seed.update_visuals()
