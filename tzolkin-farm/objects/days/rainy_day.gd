@@ -8,7 +8,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	super(delta)
 func day_start():
 	for seed in Game.game.seedList:
 		if !seed.slotted:

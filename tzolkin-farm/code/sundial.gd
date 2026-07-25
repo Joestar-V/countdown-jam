@@ -8,16 +8,17 @@ extends Marker2D
 @onready var days: Node2D = $days
 @onready var total_rotation = 0.0
 
-@export var currentDay = 0:
+@onready var currentDay = 0:
 	set(value):
 		currentDay = value
 		number.text = str(weekLength - currentDay)
 @export var week = 0
-@export var finalDay = 35
+@onready var finalDay = 35
 @onready var dayList : Array[Day]
 @export var dayPool : Array[PackedScene]
 @onready var day_name: Label = $"day name"
 @onready var sun: Sprite2D = $Sun
+@onready var total_days : int = 0
 const QUOTA_DAY = preload("res://objects/days/quota_day.tscn")
 
 const NORMAL_DAY = preload("res://objects/days/normal_day.tscn")
@@ -47,6 +48,7 @@ func restart():
 	#remake day list
 	
 func advance_day():
+	total_days += 1
 	currentDay += 1
 	rotate_next()
 	if currentDay >= weekLength:

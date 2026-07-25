@@ -214,6 +214,7 @@ shadow_offset = Vector2(2, 3)
 [node name="Game" type="Node2D" unique_id=1509497783]
 script = ExtResource("1_vef74")
 card_pool = Array[PackedScene]([ExtResource("2_aa0lp"), ExtResource("3_iu0sx"), ExtResource("4_4v2jo"), ExtResource("5_l1i01"), ExtResource("6_r62pu"), ExtResource("7_klri6")])
+quota = null
 
 [node name="building_keeper" parent="." unique_id=929817058 instance=ExtResource("2_xa8c5")]
 
@@ -392,8 +393,10 @@ label_settings = SubResource("LabelSettings_b64ip")
 [node name="sundial" type="Marker2D" parent="." unique_id=1442074541]
 position = Vector2(1774, 139)
 script = ExtResource("27_bnpwn")
+weekLength = 10
+radius = null
 spacing_degrees = 17.0
-finalDay = 55
+week = null
 dayPool = Array[PackedScene]([ExtResource("29_xfvwf"), ExtResource("35_iu0sx"), ExtResource("36_4v2jo"), ExtResource("31_dhpj7")])
 
 [node name="Sun" type="Sprite2D" parent="sundial" unique_id=132937313]

@@ -24,4 +24,4 @@ func tinymize():
 	scale = Vector2(1.2,1.2)
 	bg.modulate = Color.WHITE
 
-#ideas: lucky day, flower day, fruit day, money day, weed day?, rainy day (double rotation), rainy day (free water)?, infestation (fruits halved, flowering bonus)
+#ideas: lucky day, flower day, fruit day, money day, weed day?, infestation (fruits halved, flowering bonus)

@@ -20,6 +20,7 @@ class_name gamer
 @export var card_pool : Array[PackedScene] #add new cards here, instantiate them 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var no_more_turn_ending = false
+@export var quota : int = 30
 #@onready var handPos = 0
 const APPLE = preload("res://objects/crops/apple.tscn")
 const MAIZE = preload("res://objects/crops/maize.tscn")
@@ -73,6 +74,7 @@ var current_state = STATE.PLAY
 
 func _ready() -> void:
 	Game.game = self
+	resources.update_quota(quota)
 	for i in 3:
 		seedkeeper.discard_pile.add_card(APPLE)
 		seedkeeper.discard_pile.add_card(SQUASH)
@@ -205,11 +207,18 @@ func weekend():
 		seedkeeper.hand.handList[seed.handPos] = null
 		seed.queue_free()
 		seedList.remove_at(i)
-		
-	open_shop() #this never gets called
-	#for spot in slotList:
-	#	spot.update_display()
 	
+	#if foodCount < quota:
+	#	game_over()
+	#if foodCount >= quota:
+	#	if calender.total_days >= calender.finalDay:
+	#		victory()
+	#	quota_pass()
+	
+	open_shop() #this never gets called
+		#for spot in slotList:
+		#	spot.update_display()
+		
 	calender.restart()
 	
 func open_shop():
@@ -241,4 +250,9 @@ func close_shop():
 	for build in building_keeper.buildings:
 		if !build.built: build.build_animation()
 	
-	
+func game_over():
+	print("lose")
+func victory():
+	print("lose")
+func quota_pass():
+	print("add quota animation here")
