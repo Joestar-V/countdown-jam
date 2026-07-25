@@ -3,16 +3,55 @@
 [ext_resource type="Texture2D" uid="uid://dw7w1cxv8o1vp" path="res://art/buildings/background.jpg" id="1_10ilk"]
 [ext_resource type="Script" uid="uid://dvosq684py78a" path="res://buildingkeeper.gd" id="1_qat6m"]
 [ext_resource type="Texture2D" uid="uid://bc6x6ul1kc1ak" path="res://art/trellis-latticework-fence-garden-house-boundary-fence-6db7dfdbb7ff9fb232adb861d5a887b6.png" id="2_qat6m"]
+[ext_resource type="Texture2D" uid="uid://ndi6b7jvp0vj" path="res://art/buildings/mr_sun.png" id="3_8k5kk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpml5"]
+atlas = ExtResource("3_8k5kk")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqemp"]
+atlas = ExtResource("3_8k5kk")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_013yr"]
+atlas = ExtResource("3_8k5kk")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gwce8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpml5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jqemp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_013yr")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="building_keeper" type="Node2D" unique_id=929817058]
 script = ExtResource("1_qat6m")
 
 [node name="bg" type="Sprite2D" parent="." unique_id=123178296]
-position = Vector2(959.99994, 504)
+position = Vector2(960, 459.295)
 scale = Vector2(0.61915505, 0.6220776)
 texture = ExtResource("1_10ilk")
 
+[node name="MrSun" type="AnimatedSprite2D" parent="." unique_id=775240405]
+texture_filter = 5
+position = Vector2(336, 132)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_gwce8")
+autoplay = "default"
+flip_h = true
+
 [node name="TrellisTop" type="Sprite2D" parent="." unique_id=667865205]
+visible = false
 position = Vector2(961.1102, -381.06253)
 scale = Vector2(2.9922915, 2.9922922)
 texture = ExtResource("2_qat6m")
@@ -33,9 +72,10 @@ texture = ExtResource("2_qat6m")
 metadata/_edit_lock_ = true
 
 [node name="plots" type="Node2D" parent="." unique_id=2092740011]
+position = Vector2(0, -41.32)
 
 [node name="plot1" type="Marker2D" parent="plots" unique_id=493686578]
-position = Vector2(396, 600)
+position = Vector2(408, 605.32)
 gizmo_extents = 148.0
 
 [node name="plot2" type="Marker2D" parent="plots" unique_id=212091260]

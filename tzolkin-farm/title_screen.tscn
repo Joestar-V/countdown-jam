@@ -103,7 +103,7 @@ scale = Vector2(0.58021396, 0.5802139)
 texture = ExtResource("7_jqemp")
 flip_h = true
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=438430625]
+[node name="tutorial" type="PanelContainer" parent="." unique_id=438430625]
 visible = false
 custom_minimum_size = Vector2(1200, 860)
 anchors_preset = 15
@@ -119,34 +119,34 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("4_xfn3p")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=2081237300]
+[node name="Marginal" type="MarginContainer" parent="tutorial" unique_id=2081237300]
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer" unique_id=630360865]
+[node name="HBox" type="HBoxContainer" parent="tutorial/Marginal" unique_id=630360865]
 layout_mode = 2
 theme_override_constants/separation = 60
 
-[node name="plant" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=1457302591]
+[node name="plant" type="VBoxContainer" parent="tutorial/Marginal/HBox" unique_id=1457302591]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 9
 
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/plant" unique_id=451289102]
+[node name="title" type="Label" parent="tutorial/Marginal/HBox/plant" unique_id=451289102]
 layout_mode = 2
 theme = ExtResource("4_xfn3p")
 text = "Plant"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="pix" type="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer/plant" unique_id=1305968556]
+[node name="pix" type="TextureRect" parent="tutorial/Marginal/HBox/plant" unique_id=1305968556]
 layout_mode = 2
 texture = ExtResource("10_rhgbh")
 
-[node name="desc" type="RichTextLabel" parent="PanelContainer/MarginContainer/HBoxContainer/plant" unique_id=1424044702]
+[node name="desc" type="RichTextLabel" parent="tutorial/Marginal/HBox/plant" unique_id=1424044702]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("4_xfn3p")
@@ -154,45 +154,45 @@ text = "zxcvzxcvzx
 "
 scroll_active = false
 
-[node name="harvest" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=50124259]
+[node name="harvest" type="VBoxContainer" parent="tutorial/Marginal/HBox" unique_id=50124259]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 9
 
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/harvest" unique_id=1821207443]
+[node name="title" type="Label" parent="tutorial/Marginal/HBox/harvest" unique_id=1821207443]
 layout_mode = 2
 theme = ExtResource("4_xfn3p")
 text = "Harvest"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="pix" type="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer/harvest" unique_id=1182143370]
+[node name="pix" type="TextureRect" parent="tutorial/Marginal/HBox/harvest" unique_id=1182143370]
 layout_mode = 2
 texture = ExtResource("11_skmiq")
 
-[node name="desc" type="RichTextLabel" parent="PanelContainer/MarginContainer/HBoxContainer/harvest" unique_id=406484797]
+[node name="desc" type="RichTextLabel" parent="tutorial/Marginal/HBox/harvest" unique_id=406484797]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("4_xfn3p")
 scroll_active = false
 
-[node name="Win" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=693330012]
+[node name="Win" type="VBoxContainer" parent="tutorial/Marginal/HBox" unique_id=693330012]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 9
 
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/Win" unique_id=1691331899]
+[node name="title" type="Label" parent="tutorial/Marginal/HBox/Win" unique_id=1691331899]
 layout_mode = 2
 theme = ExtResource("4_xfn3p")
 text = "Win!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="pix" type="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer/Win" unique_id=1281575173]
+[node name="pix" type="TextureRect" parent="tutorial/Marginal/HBox/Win" unique_id=1281575173]
 layout_mode = 2
 texture = ExtResource("12_lf08s")
 
-[node name="desc" type="RichTextLabel" parent="PanelContainer/MarginContainer/HBoxContainer/Win" unique_id=2057526845]
+[node name="desc" type="RichTextLabel" parent="tutorial/Marginal/HBox/Win" unique_id=2057526845]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("4_xfn3p")

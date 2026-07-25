@@ -65,6 +65,6 @@ Label/font_sizes/font_size = 55
 Label/fonts/font = ExtResource("1_5tgf4")
 Label/styles/normal = SubResource("StyleBoxTexture_l0oc6")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_5tgf4")
-RichTextLabel/font_sizes/normal_font_size = 32
+RichTextLabel/font_sizes/normal_font_size = 38
 RichTextLabel/fonts/normal_font = ExtResource("1_5tgf4")
 VBoxContainer/constants/separation = 15

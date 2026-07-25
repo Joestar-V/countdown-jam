@@ -9,14 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://r3v57ntk4jk8" path="res://objects/crops/potato.tscn" id="4_4v2jo"]
 [ext_resource type="PackedScene" uid="uid://cx7f4liipktpg" path="res://objects/resources.tscn" id="4_7sc4i"]
 [ext_resource type="Texture2D" uid="uid://bgjicp81ynuu2" path="res://art/ui/moon.png" id="4_e8heu"]
-[ext_resource type="Texture2D" uid="uid://08vp65ahorar" path="res://art/skullsymbol.png" id="4_fc0e3"]
-[ext_resource type="Texture2D" uid="uid://dotkrdgaep1s7" path="res://art/fruitsymbol.png" id="4_j5wjh"]
 [ext_resource type="PackedScene" uid="uid://dcb4fgcxec42p" path="res://objects/crops/maize.tscn" id="5_l1i01"]
-[ext_resource type="Texture2D" uid="uid://cot72hewwyhox" path="res://art/flowersymbol.png" id="5_vef74"]
-[ext_resource type="Texture2D" uid="uid://o2ax2jjy3s3x" path="res://art/sproutsymbol.png" id="6_hve3p"]
 [ext_resource type="PackedScene" uid="uid://blmgteof8oxul" path="res://objects/crops/beans.tscn" id="6_r62pu"]
 [ext_resource type="PackedScene" uid="uid://h25xor7ms780" path="res://objects/crops/apple.tscn" id="7_klri6"]
-[ext_resource type="Texture2D" uid="uid://c6v3lkqytohw1" path="res://art/seedlingsymbol.png" id="7_mfdv2"]
 [ext_resource type="FontFile" uid="uid://j8glluhsw0mx" path="res://art/ui/segoe-print-regular.ttf" id="9_f1jbl"]
 [ext_resource type="Texture2D" uid="uid://dwqwiqrv1jfri" path="res://art/ui/hand.png" id="9_hb5m1"]
 [ext_resource type="Script" uid="uid://d0po6tfbuhuc5" path="res://hand_image.gd" id="10_x5p1p"]
@@ -156,36 +151,6 @@ texture = ExtResource("4_e8heu")
 position = Vector2(959.99994, 1376)
 scale = Vector2(2.56, 2.56)
 metadata/_edit_lock_ = true
-
-[node name="symbols" type="Node2D" parent="." unique_id=1184561991]
-visible = false
-position = Vector2(966, 672)
-scale = Vector2(1.5, 1.5)
-
-[node name="Sprite2D2" type="Sprite2D" parent="symbols" unique_id=1904656237]
-texture_filter = 1
-position = Vector2(255, 88.66667)
-texture = ExtResource("4_fc0e3")
-
-[node name="Sprite2D3" type="Sprite2D" parent="symbols" unique_id=1357566872]
-texture_filter = 1
-position = Vector2(126.99997, 3.3333282)
-texture = ExtResource("4_j5wjh")
-
-[node name="Sprite2D4" type="Sprite2D" parent="symbols" unique_id=1255862214]
-texture_filter = 1
-position = Vector2(0.9999695, -24.000015)
-texture = ExtResource("5_vef74")
-
-[node name="Sprite2D5" type="Sprite2D" parent="symbols" unique_id=797456245]
-texture_filter = 1
-position = Vector2(-128.99998, 3.333313)
-texture = ExtResource("6_hve3p")
-
-[node name="Sprite2D6" type="Sprite2D" parent="symbols" unique_id=1899550781]
-texture_filter = 1
-position = Vector2(-257, 88.66667)
-texture = ExtResource("7_mfdv2")
 
 [node name="spots" type="Node2D" parent="." unique_id=451446717]
 position = Vector2(10, 5)
