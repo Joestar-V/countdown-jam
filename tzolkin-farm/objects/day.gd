@@ -27,3 +27,4 @@ func tinymize():
 	bg.modulate = Color.WHITE
 
 #ideas: lucky day, flower day, fruit day, money day, weed day?, infestation (fruits halved, flowering bonus)
+#tax day, bird day, feast day
