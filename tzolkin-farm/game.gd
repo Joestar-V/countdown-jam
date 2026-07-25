@@ -21,7 +21,11 @@ class_name gamer
 @export var building_pool : Array[PackedScene] #add new building here, instantiate them 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var no_more_turn_ending = false
-@export var quota : int = 30
+@export var quota : int = 30:
+	set(value):
+		quota = value
+		resources.quota_label.text = str(int(quota))
+@export var quota_increment : int = 10
 #@onready var handPos = 0
 const APPLE = preload("res://objects/crops/apple.tscn")
 const MAIZE = preload("res://objects/crops/maize.tscn")
@@ -69,7 +73,7 @@ var current_state = STATE.PLAY
 	set(value):
 		moneyCount = value
 		resources.money_label.text = str(int(value))
-@onready var foodCount : float = 25:
+@onready var foodCount : float = 26:
 	set(value):
 		foodCount = value
 		resources.food_label.text = str(int(foodCount))
@@ -212,13 +216,13 @@ func weekend():
 		seed.queue_free()
 		seedList.remove_at(i)
 	
-	if foodCount < quota:
+	if await quota_check():
 		
 		game_over()
 	else:
 		if calender.total_days >= calender.finalDay:
 			victory()
-		await quota_pass()
+		
 		open_shop() #this never gets called
 			#for spot in slotList:
 			#	spot.update_display()
@@ -249,6 +253,7 @@ func close_shop():
 	shop.visible = false
 
 	shopping = false
+	await quota_raise()
 	Game.game.current_state = Game.game.STATE.PLAY
 	Game.game.no_more_turn_ending = false
 	for build in building_keeper.buildings:
@@ -261,6 +266,27 @@ func game_over():
 	
 func victory():
 	print("lose")
-func quota_pass():
+func quota_check():
+	var tween = create_tween()
+	var win = false
+	if foodCount >= quota:
+		win = true
+	tween.tween_property(self, "foodCount", clamp(foodCount-quota,0,foodCount), 1.0)
 	
-	print("add quota animation here")
+	# Pause this function execution until the tween finishes
+	await tween.finished
+	if win:
+		resources.food_label.modulate = Color.GREEN
+		return(false)
+	else:
+		resources.food_label.modulate = Color.RED
+		return(true)
+	
+func quota_raise():
+	resources.food_label.modulate = Color.WHITE
+	var tween = create_tween()
+	
+	tween.tween_property(self, "quota", quota+quota_increment, .75)
+	
+	# Pause this function execution until the tween finishes
+	await tween.finished

@@ -162,7 +162,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		#area.get_parent().seed.append(self)
 		slotted = true
 		slotPos = area.global_position
-		#turn_over.emit()
+		#turn_over.emit() 	
 	elif area.name == "slotHole" and (Game.game.fertCount >= area.get_parent().pos) and (Game.game.water >= water_cost) and !Game.game.harvested:
 		if slotted:
 			slot.seed.erase(self)

@@ -436,6 +436,7 @@ vertical_alignment = 1
 libraries/ = SubResource("AnimationLibrary_mfdv2")
 
 [node name="Shop" parent="." unique_id=9903558 instance=ExtResource("22_vaj68")]
+visible = false
 position = Vector2(0, -1080)
 
 [node name="End Turn" type="Button" parent="." unique_id=1810491390]
@@ -474,7 +475,6 @@ label_settings = SubResource("LabelSettings_b64ip")
 [node name="sundial" type="Marker2D" parent="." unique_id=1442074541]
 position = Vector2(1774, 139)
 script = ExtResource("27_bnpwn")
-weekLength = 20
 spacing_degrees = 17.0
 dayPoolGood = Array[PackedScene]([ExtResource("29_xfvwf"), ExtResource("35_iu0sx"), ExtResource("31_dhpj7")])
 dayPoolBad = Array[PackedScene]([ExtResource("36_4v2jo"), ExtResource("40_klri6")])
