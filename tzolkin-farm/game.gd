@@ -141,6 +141,7 @@ func _on_end_turn_pressed() -> void:
 		if seed.slotted:
 			if !seed.planted:
 				seed.planted = true
+				day.plant(seed)
 				seedkeeper.hand.handList[seed.handPos] = null
 			#seed.spinning = true
 			print(seed.slot.pos)

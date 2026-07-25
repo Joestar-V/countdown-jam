@@ -224,7 +224,6 @@ shadow_offset = Vector2(2, 3)
 script = ExtResource("1_vef74")
 card_pool = Array[PackedScene]([ExtResource("2_aa0lp"), ExtResource("3_iu0sx"), ExtResource("4_4v2jo"), ExtResource("5_l1i01"), ExtResource("6_r62pu"), ExtResource("7_klri6")])
 building_pool = Array[PackedScene]([ExtResource("8_l1i01"), ExtResource("9_r62pu"), ExtResource("10_klri6"), ExtResource("11_eu6ph"), ExtResource("12_edr7y"), ExtResource("13_kq12w"), ExtResource("14_t46w6"), ExtResource("15_m28ev")])
-quota = null
 
 [node name="building_keeper" parent="." unique_id=929817058 instance=ExtResource("2_xa8c5")]
 
@@ -407,7 +406,7 @@ weekLength = 20
 spacing_degrees = 17.0
 dayPoolGood = Array[PackedScene]([ExtResource("29_xfvwf"), ExtResource("35_iu0sx"), ExtResource("31_dhpj7")])
 dayPoolBad = Array[PackedScene]([ExtResource("36_4v2jo"), ExtResource("40_klri6")])
-badDays = 10
+goodDays = 8
 
 [node name="Sun" type="Sprite2D" parent="sundial" unique_id=132937313]
 rotation = -0.1308997
