@@ -19,7 +19,7 @@ class_name gamer
 @onready  var actionNum = 1
 @export var card_pool : Array[PackedScene] #add new cards here, instantiate them 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-
+@onready var no_more_turn_ending = false
 #@onready var handPos = 0
 const APPLE = preload("res://objects/crops/apple.tscn")
 const MAIZE = preload("res://objects/crops/maize.tscn")
@@ -31,7 +31,6 @@ const TINY_CARD = preload("uid://p4aq67v85plf")
 
 enum STATE { PLAY, SHOP, POPUP }
 var current_state = STATE.PLAY  
-
 @onready var building_keeper = $building_keeper
 
 @onready var end_turn = $"End Turn"
@@ -121,11 +120,15 @@ func _on_seed_turn_over() -> void:
 
 
 func _on_end_turn_pressed() -> void:
-	
+	if no_more_turn_ending:
+		return
 	if actions > 0:
 		return
-	harvested = false
+	no_more_turn_ending = true
 	actions = actionNum
+
+	harvested = false
+	
 	var i = 0
 	if shopping:
 		close_shop()
@@ -155,7 +158,7 @@ func _on_end_turn_pressed() -> void:
 				seed.slot.update_display()
 	seedkeeper.draw_until_full()
 	await calender.advance_day()
-
+	
 func _on_slot_finished():
 	remaining -= 1
 	print("Remaining:", remaining)
@@ -205,11 +208,12 @@ func open_shop():
 	animation_player.play("shop_descend")
 	await animation_player.animation_finished
 	shopping = true
+	Game.game.no_more_turn_ending = false
 	#while shop.visible:
 	#	pass
 func close_shop():
 	Game.game.current_state = Game.game.STATE.POPUP
-	
+	Game.game.no_more_turn_ending = true
 	for hand in seedkeeper.hand.handList:
 		hand = null
 	seedkeeper.reshuffle()
@@ -221,7 +225,7 @@ func close_shop():
 
 	shopping = false
 	Game.game.current_state = Game.game.STATE.PLAY
-	
+	Game.game.no_more_turn_ending = false
 	for build in building_keeper.buildings:
 		if !build.built: build.build_animation()
 	

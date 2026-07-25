@@ -1,13 +1,29 @@
 [gd_scene format=3 uid="uid://tl6a1wadpqug"]
 
 [ext_resource type="Script" uid="uid://cgtfw78y2gt4p" path="res://objects/days/money_day.gd" id="1_3qgcb"]
+[ext_resource type="Texture2D" uid="uid://dkvw40uujwlti" path="res://art/icons/white-realistic-paper-round-shadow-png(1).png" id="2_dqige"]
 [ext_resource type="Texture2D" uid="uid://c52lyhhkw0f61" path="res://art/money-bag-stock-illustration-euclidean-vector-money-c72997542872df999eac2c6fb59797a3.png" id="2_iv1u5"]
 
 [node name="Day" type="Node2D" unique_id=1162151081]
+scale = Vector2(1.2, 1.2)
 script = ExtResource("1_3qgcb")
 title = "Market Day"
 description = "So many customers! All money yields are tripled today!"
 
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1347528961]
+position = Vector2(0, 5.4052196)
+scale = Vector2(0.165, 0.165)
+texture = ExtResource("2_dqige")
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1499132609]
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.06, 0.06)
 texture = ExtResource("2_iv1u5")
+
+[node name="Label" type="Label" parent="." unique_id=162673056]
+visible = false
+offset_left = -62.650795
+offset_top = -6.594823
+offset_right = -22.650795
+offset_bottom = 16.405178
+text = "000"
+metadata/_edit_use_anchors_ = true

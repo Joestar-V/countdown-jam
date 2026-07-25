@@ -2,10 +2,26 @@
 
 [ext_resource type="Script" uid="uid://0yaoyv2ly3hn" path="res://objects/day.gd" id="1_gnx1r"]
 [ext_resource type="Texture2D" uid="uid://c3hm65se0pyks" path="res://art/pngtree-x2-3d-deal-png-image_11100531.png" id="2_4a4rw"]
+[ext_resource type="Texture2D" uid="uid://dkvw40uujwlti" path="res://art/icons/white-realistic-paper-round-shadow-png(1).png" id="2_bag36"]
 
 [node name="Day" type="Node2D" unique_id=1162151081]
+scale = Vector2(1.2, 1.2)
 script = ExtResource("1_gnx1r")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=725902990]
+position = Vector2(0, 5.4052196)
+scale = Vector2(0.165, 0.165)
+texture = ExtResource("2_bag36")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1499132609]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_4a4rw")
+
+[node name="Label" type="Label" parent="." unique_id=817345381]
+visible = false
+offset_left = -62.650795
+offset_top = -6.594823
+offset_right = -22.650795
+offset_bottom = 16.405178
+text = "000"
+metadata/_edit_use_anchors_ = true

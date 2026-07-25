@@ -390,17 +390,15 @@ label_settings = SubResource("LabelSettings_b64ip")
 [node name="sundial" type="Marker2D" parent="." unique_id=1442074541]
 position = Vector2(1774, 139)
 script = ExtResource("27_bnpwn")
-weekLength = 10
 spacing_degrees = 17.0
 finalDay = 55
 dayPool = Array[PackedScene]([ExtResource("29_xfvwf"), ExtResource("35_iu0sx"), ExtResource("36_4v2jo")])
 
-[node name="days" type="Node2D" parent="sundial" unique_id=2086929812]
-position = Vector2(-1774, -139)
-
 [node name="Sun" type="Sprite2D" parent="sundial" unique_id=132937313]
 rotation = -0.1308997
 texture = ExtResource("12_iotsf")
+
+[node name="days" type="Node2D" parent="sundial" unique_id=2086929812]
 
 [node name="number" type="Label" parent="sundial" unique_id=1276219381]
 offset_left = -173.0

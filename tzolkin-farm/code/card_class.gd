@@ -68,7 +68,7 @@ func _ready():
 		0: money_cost = 1
 		1: money_cost = 2
 		2: money_cost = 3
-
+	
 func update_visuals():
 	scale = default_scale
 
