@@ -124,7 +124,6 @@ func _on_button_button_up() -> void:
 		if Game.game.moneyCount >= money_cost:
 			print("purchase")
 			Game.game.moneyCount -= money_cost
-			Game.game.seedkeeper.drawpile.add_card(seedPacket)
 			
 			$visual.hide()
 			
@@ -134,7 +133,9 @@ func _on_button_button_up() -> void:
 				crd.type = 3
 				crd.global_position = global_position
 				crd.card = seedPacket
-				crd.move_to_resource(Game.game.seedkeeper.drawpile.pouch.global_position)
+				crd.move_to_resource(Game.game.seedkeeper.discard_pile.recycle_bin.global_position)
+			
+			
 				await get_tree().create_timer(.5).timeout
 				
 			queue_free()

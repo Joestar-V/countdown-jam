@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cilgvgxj6yyax" path="res://art/ui/wood_board.png" id="2_fgaav"]
 [ext_resource type="FontFile" uid="uid://j8glluhsw0mx" path="res://art/ui/segoe-print-regular.ttf" id="3_6lah5"]
 [ext_resource type="Texture2D" uid="uid://dxetedtnwmdu4" path="res://art/ui/seed_text.png" id="5_6lah5"]
+[ext_resource type="Script" uid="uid://dmkefgk6ubjiv" path="res://code/shop_slot.gd" id="6_gmb2m"]
 
 [node name="Shop" type="Node2D" unique_id=9903558]
 script = ExtResource("1_fgaav")
@@ -155,7 +156,7 @@ offset_bottom = 235.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Reroll
-Stock"
+Stock ($5)"
 icon_alignment = 1
 
 [node name="seed_shop" type="Control" parent="." unique_id=423650468]
@@ -182,6 +183,7 @@ offset_bottom = 582.0
 scale = Vector2(0.66, 0.66)
 texture = ExtResource("5_6lah5")
 stretch_mode = 2
+script = ExtResource("6_gmb2m")
 
 [node name="handSlot6" type="TextureRect" parent="seed_shop" unique_id=1392506651]
 texture_filter = 1
@@ -193,6 +195,7 @@ offset_bottom = 582.0
 scale = Vector2(0.66, 0.66)
 texture = ExtResource("5_6lah5")
 stretch_mode = 2
+script = ExtResource("6_gmb2m")
 
 [node name="handSlot3" type="TextureRect" parent="seed_shop" unique_id=440940400]
 texture_filter = 1
@@ -204,6 +207,7 @@ offset_bottom = 398.0
 scale = Vector2(0.66, 0.66)
 texture = ExtResource("5_6lah5")
 stretch_mode = 2
+script = ExtResource("6_gmb2m")
 
 [node name="handSlot4" type="TextureRect" parent="seed_shop" unique_id=186561810]
 texture_filter = 1
@@ -215,6 +219,7 @@ offset_bottom = 398.0
 scale = Vector2(0.66, 0.66)
 texture = ExtResource("5_6lah5")
 stretch_mode = 2
+script = ExtResource("6_gmb2m")
 
 [node name="handSlot1" type="TextureRect" parent="seed_shop" unique_id=1298018582]
 texture_filter = 1
@@ -228,6 +233,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("5_6lah5")
 stretch_mode = 2
+script = ExtResource("6_gmb2m")
 
 [node name="handSlot2" type="TextureRect" parent="seed_shop" unique_id=500835319]
 texture_filter = 1
@@ -239,5 +245,7 @@ offset_bottom = 214.0
 scale = Vector2(0.66, 0.66)
 texture = ExtResource("5_6lah5")
 stretch_mode = 2
+script = ExtResource("6_gmb2m")
 
 [connection signal="pressed" from="peek" to="." method="_on_peek_pressed"]
+[connection signal="pressed" from="reroll" to="." method="_on_reroll_pressed"]

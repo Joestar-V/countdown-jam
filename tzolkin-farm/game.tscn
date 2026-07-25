@@ -212,7 +212,7 @@ shadow_offset = Vector2(2, 3)
 
 [node name="Game" type="Node2D" unique_id=1509497783]
 script = ExtResource("1_vef74")
-cardPool = Array[PackedScene]([ExtResource("2_aa0lp"), ExtResource("3_iu0sx"), ExtResource("4_4v2jo"), ExtResource("5_l1i01"), ExtResource("6_r62pu"), ExtResource("7_klri6")])
+card_pool = Array[PackedScene]([ExtResource("2_aa0lp"), ExtResource("3_iu0sx"), ExtResource("4_4v2jo"), ExtResource("5_l1i01"), ExtResource("6_r62pu"), ExtResource("7_klri6")])
 
 [node name="building_keeper" parent="." unique_id=929817058 instance=ExtResource("2_xa8c5")]
 

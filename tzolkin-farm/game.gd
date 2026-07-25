@@ -17,7 +17,7 @@ extends Node2D
 @onready var dragging = false
 @onready var dragged : Card
 @onready  var actionNum = 1
-@export var cardPool : Array[PackedScene] #add new cards here, instantiate them 
+@export var card_pool : Array[PackedScene] #add new cards here, instantiate them 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 #@onready var handPos = 0
@@ -102,6 +102,7 @@ func _ready() -> void:
 	remaining = slotList.size()
 	day = calender.first_day()
 	print(day.title)
+	shop.freeroll()
 func red_text():
 	water_label.modulate = Color.RED
 func white_text():
@@ -176,13 +177,12 @@ func weekend():
 			crd.type = 3
 			crd.global_position = seed.global_position
 			crd.card = seed.seedPacket
-			crd.move_to_resource(Game.game.seedkeeper.drawpile.pouch.global_position)
+			crd.move_to_resource(Game.game.seedkeeper.discard_pile.recycle_bin.global_position)
 			
 			
 	await get_tree().create_timer(.5).timeout
 	for i in range(seedList.size() - 1, -1, -1):
 		var seed = seedList[i]
-		seedkeeper.discard_pile.add_card(seed.seedPacket)
 		seedkeeper.hand.handList[seed.handPos] = null
 		seed.queue_free()
 		seedList.remove_at(i)
