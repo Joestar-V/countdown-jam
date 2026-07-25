@@ -239,3 +239,5 @@ offset_bottom = 214.0
 scale = Vector2(0.66, 0.66)
 texture = ExtResource("5_6lah5")
 stretch_mode = 2
+
+[connection signal="pressed" from="peek" to="." method="_on_peek_pressed"]

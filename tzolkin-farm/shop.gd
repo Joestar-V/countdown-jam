@@ -2,9 +2,10 @@ extends Node2D
 
 
 @onready var seed_shop = $seed_shop
+@onready var peek: Button = $peek
 
 const APPLE = preload("uid://h25xor7ms780")
-
+var invis = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for slot in seed_shop.get_children():
@@ -21,3 +22,17 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+
+func _on_peek_pressed() -> void:
+	if invis:
+		for child in get_children():
+			child.visible = true
+		invis = false
+	else:
+		invis = true
+		for child in get_children():
+			child.visible = false
+	peek.visible = true
+	#shop is still visible, idk if that interfers with trying to interact with the buildings
+	
