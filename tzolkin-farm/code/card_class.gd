@@ -51,13 +51,11 @@ var seedPacket : PackedScene
 @onready var remaining = 0
 
 
-var foodBonus = 0
-var moneyBonus = 0
-var fertBonus = 0
+var bonus := Vector3i(0,0,0)
+var mults:= Vector3(1,1,1)
+
 var cardBonus : Array[Card]
-var foodMult = 1.0
-var moneyMult = 1.0
-var fertMult = 1.0
+
 signal finished
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -199,9 +197,10 @@ func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket])
 	Game.game.day.daily_bonus(self)
 	
 	#add bonuses
-	foodCount += foodBonus
-	moneyCount += moneyBonus
-	fertCount += fertBonus
+	foodCount += bonus.x
+	moneyCount += bonus.y
+	fertCount += bonus.z
+	
 	for card in cardBonus:
 		if card:
 			cards.append(card)
@@ -214,7 +213,7 @@ func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket])
 		foodlet.finished.connect(_on_kid_finished, CONNECT_ONE_SHOT)
 		foodlet.global_position = global_position
 		foodlet.type = 0
-		foodlet.value = 1.0 * foodMult
+		foodlet.value = 1.0 * mults.x
 		foodlet.move_to_resource(Game.game.resources.food.global_position)
 		await get_tree().create_timer(.1).timeout
 
@@ -224,7 +223,7 @@ func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket])
 		remaining += 1
 		foodlet.finished.connect(_on_kid_finished, CONNECT_ONE_SHOT)
 		foodlet.type = 1
-		foodlet.value = 1.0 * moneyMult
+		foodlet.value = 1.0 * mults.y
 		foodlet.global_position = global_position
 		foodlet.move_to_resource(Game.game.resources.money_bag.global_position)
 		await get_tree().create_timer(.1).timeout
@@ -235,7 +234,7 @@ func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket])
 		remaining += 1
 		foodlet.finished.connect(_on_kid_finished, CONNECT_ONE_SHOT)
 		foodlet.type = 2
-		foodlet.value = 1.0 * fertMult
+		foodlet.value = 1.0 * mults.z
 		foodlet.global_position = global_position
 		foodlet.move_to_resource(Game.game.resources.fertilizer.global_position)
 		await get_tree().create_timer(.1).timeout

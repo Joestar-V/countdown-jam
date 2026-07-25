@@ -27,8 +27,8 @@ const BONUS_FOOD = preload("uid://3du4b373wpkw")
 const COIN = preload("uid://cgknl3qcs48vw")
 const FERTIL = preload("uid://c8yq733xmh0cc")
 const FOOD = preload("uid://c668e1veyatay")
-
-@onready var grid = $visuals/stat_display/stat_spread/margin/grid
+@onready var grid = $visuals/stats/stat_spread/margin/grid
+@onready var stats = $visuals/stats
 
 
 
@@ -49,7 +49,9 @@ func _process(delta: float) -> void:
 		if !glowing: glow()
 	else:
 		create_tween().tween_property(self.material,"shader_parameter/flash_amount",0.0,0.0001)
-
+	
+	update_display()
+	
 func glow():
 	glowing = true
 	await create_tween().tween_property(self.material,"shader_parameter/flash_amount",0.3,glow_time).set_trans(Tween.TRANS_SINE).finished
@@ -83,15 +85,24 @@ func update_display():
 	match stage:
 		1:  for sed : Seed in seed:
 			add_icons(sed.sprout)
-			add_bonus_icons(sed.sprout)
+			
 		2: for sed : Seed in seed:
 			add_icons(sed.flower)
-			add_bonus_icons(sed.flower)
+			
 		3: for sed : Seed in seed:
 			add_icons(sed.fruit)
-			add_bonus_icons(sed.flower)
-		4: death.show()
-	
+			
+		4: for sed : Seed in seed:
+			add_icons(sed.fruit)
+			
+	for sed : Seed in seed:
+		add_bonus_icons(sed.bonus)
+		
+		
+	if grid.get_child_count() == 0:
+		stats.hide()
+	else:
+		stats.show()
 	
 
 func add_icons(spread: Vector3i,target = grid):
