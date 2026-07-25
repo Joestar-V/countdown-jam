@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dt5p3ct3fwly3"]
 
-[ext_resource type="Script" uid="uid://dy1gskbm858m8" path="res://shop.gd" id="1_3u7xm"]
+[ext_resource type="Script" uid="uid://do6tyqicavivr" path="res://code/game_over.gd" id="1_k2vha"]
 [ext_resource type="Texture2D" uid="uid://dvoi5llrg8e0m" path="res://art/bgs/tank-piece-russian-s-war-ukraine_23-2149437838(1).png" id="2_woa3c"]
 [ext_resource type="Texture2D" uid="uid://cilgvgxj6yyax" path="res://art/ui/wood_board.png" id="3_dd2jf"]
 [ext_resource type="Texture2D" uid="uid://cifc54kl1l0vf" path="res://art/bgs/giphy_s.png" id="3_ku74v"]
@@ -8,9 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://bokqqtssoqmd8" path="res://art/ui/wood.png" id="4_nm4t2"]
 [ext_resource type="Theme" uid="uid://forf20kkm6ao" path="res://art/tutorial/tutorial_theme.tres" id="5_nm4t2"]
 
-[node name="Shop" type="Node2D" unique_id=9903558]
-script = ExtResource("1_3u7xm")
-reroll_cost = null
+[node name="gameover" type="Node2D" unique_id=9903558]
+script = ExtResource("1_k2vha")
 
 [node name="bg" type="Sprite2D" parent="." unique_id=103307646]
 position = Vector2(960, 536)

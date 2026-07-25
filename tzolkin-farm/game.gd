@@ -30,6 +30,7 @@ const POTATO = preload("uid://r3v57ntk4jk8")
 const SQUASH = preload("uid://0r2fv35jbeuj")
 const WHEAT = preload("uid://bd7dp4kyhp0y6")
 const TINY_CARD = preload("uid://p4aq67v85plf")
+@onready var gameover: Node2D = $Gameover
 
 
 enum STATE { PLAY, SHOP, POPUP }
@@ -68,7 +69,7 @@ var current_state = STATE.PLAY
 	set(value):
 		moneyCount = value
 		resources.money_label.text = str(int(value))
-@onready var foodCount : float = 0:
+@onready var foodCount : float = 25:
 	set(value):
 		foodCount = value
 		resources.food_label.text = str(int(foodCount))
@@ -212,17 +213,17 @@ func weekend():
 		seedList.remove_at(i)
 	
 	if foodCount < quota:
-		game_over()
-	#if foodCount >= quota:
-	#	if calender.total_days >= calender.finalDay:
-	#		victory()
-	#	quota_pass()
-	
-	open_shop() #this never gets called
-		#for spot in slotList:
-		#	spot.update_display()
 		
-	calender.restart()
+		game_over()
+	else:
+		if calender.total_days >= calender.finalDay:
+			victory()
+		await quota_pass()
+		open_shop() #this never gets called
+			#for spot in slotList:
+			#	spot.update_display()
+			
+		calender.restart()
 	
 func open_shop():
 	Game.game.current_state = Game.game.STATE.SHOP
@@ -254,8 +255,12 @@ func close_shop():
 		if !build.built: build.build_animation()
 	
 func game_over():
-	print("lose")
+	Game.game.current_state = Game.game.STATE.POPUP
+	animation_player.play("game_over")
+	gameover.visible = true
+	
 func victory():
 	print("lose")
 func quota_pass():
+	
 	print("add quota animation here")
