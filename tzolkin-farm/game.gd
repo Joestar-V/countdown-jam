@@ -221,3 +221,8 @@ func close_shop():
 
 	shopping = false
 	Game.game.current_state = Game.game.STATE.PLAY
+	
+	for build in building_keeper.buildings:
+		if !build.built: build.build_animation()
+	
+	
