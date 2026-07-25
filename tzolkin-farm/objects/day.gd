@@ -6,7 +6,10 @@ extends Node2D
 @export_multiline var description : String = "The last day of a season. If you don't meet the food quota, it's game over."
 @onready var bg: Sprite2D = $Sprite2D2
 @onready var label: Label = $Label
+@onready var button: Button = $Button
 
+func _ready() -> void:
+	button.tooltip_text = description
 func daily_bonus(card : Card):
 	return
 func _process(delta):

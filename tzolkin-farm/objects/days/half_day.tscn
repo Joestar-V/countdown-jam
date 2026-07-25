@@ -28,3 +28,21 @@ offset_right = -22.650795
 offset_bottom = 16.405178
 text = "000"
 metadata/_edit_use_anchors_ = true
+
+[node name="Control" type="Control" parent="." unique_id=1223483417]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+tooltip_text = "reeeeeeeeeeeeeeeeee"
+
+[node name="Button" type="Button" parent="." unique_id=1356431541]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 21.625656
+offset_bottom = 21.254059
+tooltip_text = "aaaaaaaaaaaaaaaa reeeeee"
+flat = true
+metadata/_edit_use_anchors_ = true

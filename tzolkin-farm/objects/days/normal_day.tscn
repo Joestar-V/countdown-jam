@@ -8,6 +8,7 @@
 scale = Vector2(1.2, 1.2)
 script = ExtResource("1_7tmpt")
 title = "Normal Day"
+description = "A bright and sunny day. Only as special as you make it."
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1086522056]
 position = Vector2(0, 5.4052196)
@@ -26,4 +27,23 @@ offset_top = -6.594823
 offset_right = -22.650795
 offset_bottom = 16.405178
 text = "000"
+metadata/_edit_use_anchors_ = true
+
+[node name="Control" type="Control" parent="." unique_id=1151604028]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+tooltip_text = "reeeeeeeeeeeeeeeeee"
+
+[node name="Button" type="Button" parent="." unique_id=1530156040]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 21.625656
+offset_bottom = 21.254059
+tooltip_text = "aaaaaaaaaaaaaaaa reeeeee"
+flat = true
 metadata/_edit_use_anchors_ = true
