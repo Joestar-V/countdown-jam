@@ -34,10 +34,13 @@ func update_visuals():
 	match rarity:
 		0:
 			card_border.modulate = Color(1.0, 1.0, 1.0, 1.0)
+			title_label.modulate = Color(0.133, 0.133, 0.133, 1.0)
 		1:
 			card_border.modulate = Color(0.167, 0.838, 0.0, 1.0)
+			title_label.modulate = Color(0.078, 0.478, 0.011, 1.0)
 		2:
 			card_border.modulate = Color(0.976, 0.898, 0.0, 1.0)
+			title_label.modulate = Color(0.69, 0.282, 0.0, 1.0)
 		
 	await get_tree().create_timer(.1).timeout
 	self.scale = default_scale
