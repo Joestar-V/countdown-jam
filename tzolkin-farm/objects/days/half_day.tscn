@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://bc45jocgbctkx"]
 
 [ext_resource type="Script" uid="uid://d1spd566j18lu" path="res://objects/days/half_day.gd" id="1_vy6c4"]
+[ext_resource type="Texture2D" uid="uid://c3hm65se0pyks" path="res://art/pngtree-x2-3d-deal-png-image_11100531.png" id="2_si06k"]
 
 [node name="Day" type="Node2D" unique_id=1162151081]
 script = ExtResource("1_vy6c4")
 title = "Half Day"
+image = ExtResource("2_si06k")
 description = "Bad day for picking! All harvests yields are halved."
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1499132609]
 scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_si06k")

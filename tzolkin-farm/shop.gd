@@ -13,6 +13,7 @@ func freeroll():
 	for slot in seed_shop.get_children():
 		if slot.seed:
 			slot.seed.queue_free()
+			
 		var seed = Game.game.card_pool.pick_random().instantiate()
 		self.add_child(seed)
 		slot.seed = seed

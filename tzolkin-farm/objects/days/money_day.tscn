@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://tl6a1wadpqug"]
 
 [ext_resource type="Script" uid="uid://cgtfw78y2gt4p" path="res://objects/days/money_day.gd" id="1_3qgcb"]
+[ext_resource type="Texture2D" uid="uid://c52lyhhkw0f61" path="res://art/money-bag-stock-illustration-euclidean-vector-money-c72997542872df999eac2c6fb59797a3.png" id="2_iv1u5"]
 
 [node name="Day" type="Node2D" unique_id=1162151081]
 script = ExtResource("1_3qgcb")
@@ -9,3 +10,4 @@ description = "So many customers! All money yields are tripled today!"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1499132609]
 scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_iv1u5")

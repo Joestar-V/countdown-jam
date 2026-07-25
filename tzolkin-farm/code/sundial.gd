@@ -2,6 +2,10 @@ extends Marker2D
 @onready var number: Label = $number
 @export var weekLength = 3
 
+@export var radius := 224.0
+@export var spacing_degrees := 30.0
+#TODO: Generate day icons in wheel. Get wheel physics working. Add adjacency bonuses. Add tools
+
 @export var currentDay = 0:
 	set(value):
 		currentDay = value
@@ -24,6 +28,7 @@ func first_day():
 	for i in weekLength:
 		dayList.append(dayPool.pick_random().instantiate())
 	day_name.text = dayList.front().title
+	create_circle()
 	return (dayList.pop_front())
 	
 
@@ -42,3 +47,17 @@ func advance_day():
 	else:
 		Game.game.day =  dayList.pop_front()
 		day_name.text = Game.game.day.title
+		
+
+
+func create_circle():
+	var i = 0
+	for day in dayList:
+		var angle = deg_to_rad(90 + i * spacing_degrees)
+		add_child(day)
+
+		day.position = Vector2(
+			cos(angle),
+			sin(angle)
+		) * radius
+		i += 1

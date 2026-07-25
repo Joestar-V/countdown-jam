@@ -86,6 +86,7 @@ func _process(delta: float) -> void:
 		global_position = slot.global_position
 	if destroy:
 		if !goodies.get_children():
+			slot.seed.erase(self)
 			queue_free()
 
 

@@ -98,19 +98,24 @@ func update_display():
 	
 	match stage:
 		1:  for sed : Seed in seed:
-			add_icons(sed.sprout)
+			if sed:
+				add_icons(sed.sprout)
 			
 		2: for sed : Seed in seed:
-			add_icons(sed.flower)
+			if sed:
+				add_icons(sed.flower)
 			
 		3: for sed : Seed in seed:
-			add_icons(sed.fruit)
+			if sed:
+				add_icons(sed.fruit)
 			
 		4: for sed : Seed in seed:
-			add_icons(sed.death)
+			if sed:
+				add_icons(sed.death)
 			
 	for sed : Seed in seed:
-		add_icons(sed.bonus,true)
+		if sed:
+			add_icons(sed.bonus,true)
 		
 		
 	if grid.get_child_count() > 0:
