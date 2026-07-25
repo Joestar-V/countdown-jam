@@ -10,6 +10,10 @@ extends Node2D
 
 func _ready() -> void:
 	button.tooltip_text = description
+	
+func plant(seed : Seed):
+	pass
+	
 func daily_bonus(card : Card):
 	return
 func day_start():

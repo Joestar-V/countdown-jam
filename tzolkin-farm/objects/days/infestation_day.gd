@@ -1,8 +1,16 @@
 extends Day
 
 
-func daily_bonus(card : Card):
-	pass
+func plant(seed : Seed):
+	if seed.slotted:
+		if seed.slot.stage == 2:
+			seed.mults *= 2
+		elif seed.slot.stage == 3:
+			seed.mults *= 0.5
+		seed.slot.update_display()
+	
+		
+		
 func day_start():
 	
 	for slot in Game.game.slotList:

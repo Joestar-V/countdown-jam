@@ -2,6 +2,10 @@ extends Day
 
 
 	
+func plant(seed : Seed):
+	if seed.slotted:
+		seed.mults *= 2
+		seed.slot.update_display()
 
 func day_start():
 	for seed in Game.game.seedList:

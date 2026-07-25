@@ -406,7 +406,7 @@ weekLength = 20
 spacing_degrees = 17.0
 dayPoolGood = Array[PackedScene]([ExtResource("29_xfvwf"), ExtResource("35_iu0sx"), ExtResource("31_dhpj7")])
 dayPoolBad = Array[PackedScene]([ExtResource("36_4v2jo"), ExtResource("40_klri6")])
-badDays = 10
+goodDays = 8
 
 [node name="Sun" type="Sprite2D" parent="sundial" unique_id=132937313]
 rotation = -0.1308997
