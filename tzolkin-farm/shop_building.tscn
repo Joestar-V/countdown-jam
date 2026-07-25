@@ -17,6 +17,7 @@ position = Vector2(100, 100)
 scale = Vector2(1.2, 1.2)
 
 [node name="stat_spread" type="PanelContainer" parent="visual" unique_id=857963739]
+visible = false
 offset_left = 99.16666
 offset_top = -68.33334
 offset_right = 369.16666
@@ -111,6 +112,21 @@ text = "Name"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="no_room" type="Label" parent="visual" unique_id=1782369282]
+visible = false
+offset_left = -123.333336
+offset_top = -53.33333
+offset_right = 126.66668
+offset_bottom = 43.66667
+theme = ExtResource("7_iw2m6")
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 37
+text = "NO ROOM"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Button" type="Button" parent="." unique_id=24369261]
 self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 8
@@ -124,6 +140,9 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+metadata/_edit_lock_ = true
 
+[connection signal="button_down" from="Button" to="." method="button_down"]
+[connection signal="button_up" from="Button" to="." method="button_up"]
 [connection signal="mouse_entered" from="Button" to="." method="zoom"]
 [connection signal="mouse_exited" from="Button" to="." method="unzoom"]

@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var plots = $plots
 @onready var buildings := []
-@onready var max_buildings := 4
+@onready var max_builds := 2
 #
 #const BARN = preload("uid://rhdfbuaejr7m")
 #const WINDMILL = preload("uid://rlxpw61la8um")
@@ -24,9 +24,15 @@ func _ready():
 	#add_building(COMPOSTER)
 #
 
+func add_building(building : Building):
+	for plot in plots.get_children():
+		if plot.get_child_count() == 0:
+			buildings.append(building)
+			plot.add_child(building)
+			building.on_built()
+			break
 
-
-func add_building(building : PackedScene):
+func add_building_packed(building : PackedScene):
 	for plot in plots.get_children():
 		if plot.get_child_count() == 0:
 			var built = building.instantiate()

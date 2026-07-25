@@ -45,7 +45,9 @@ func roll():
 			slot.building.queue_free()
 			
 		var build = SHOP_BUILDING.instantiate()
-		build.building_for_sale = Game.game.building_pool.pick_random().instantiate()
+		var instance = Game.game.building_pool.pick_random().instantiate()
+		build.building_for_sale = instance
+		build.add_child(instance)
 		slot.add_child(build)
 		slot.building = build
 		#build.default_scale *= 0.9

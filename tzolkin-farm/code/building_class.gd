@@ -1,6 +1,7 @@
 extends Node2D
 class_name Building
 
+#@onready var packed_scene : PackedScene
 @onready var built = false
 @export var building_name : String 
 @export var picture : Texture 
@@ -8,9 +9,18 @@ class_name Building
 
 @export_multiline var tooltip : String = "this is the tooltip"
 
+var money_cost 
+
+
+
 
 func _ready():
+	#packed_scene = load(scene_file_path)
 	modulate = Color(1.0, 1.0, 1.0, 0.0)
+	match rarity:
+		0: money_cost = 10
+		1: money_cost = 13
+		2: money_cost = 17
 
 func build_animation():
 	built = true
