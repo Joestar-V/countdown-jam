@@ -82,7 +82,7 @@ func _process(delta: float) -> void:
 	if dragging and Game.game.current_state == Game.game.STATE.PLAY:
 		global_position = get_global_mouse_position() - of
 		
-	elif !slotted:
+	elif !slotted and homeSlot:
 		global_position = homeSlot.global_position + Vector2(card_image.texture.get_width() / 6.0 , card_image.texture.get_height() / 6.0)
 	if spinning:
 		global_position = slot.global_position

@@ -12,15 +12,23 @@
 [ext_resource type="PackedScene" uid="uid://dcb4fgcxec42p" path="res://objects/crops/maize.tscn" id="5_l1i01"]
 [ext_resource type="PackedScene" uid="uid://blmgteof8oxul" path="res://objects/crops/beans.tscn" id="6_r62pu"]
 [ext_resource type="PackedScene" uid="uid://h25xor7ms780" path="res://objects/crops/apple.tscn" id="7_klri6"]
+[ext_resource type="PackedScene" uid="uid://rhdfbuaejr7m" path="res://objects/buildings/barn.tscn" id="8_l1i01"]
 [ext_resource type="FontFile" uid="uid://j8glluhsw0mx" path="res://art/ui/segoe-print-regular.ttf" id="9_f1jbl"]
 [ext_resource type="Texture2D" uid="uid://dwqwiqrv1jfri" path="res://art/ui/hand.png" id="9_hb5m1"]
+[ext_resource type="PackedScene" uid="uid://ds42iybef5saq" path="res://objects/buildings/chicken_coop.tscn" id="9_r62pu"]
+[ext_resource type="PackedScene" uid="uid://dealvndyjgyyq" path="res://objects/buildings/composter.tscn" id="10_klri6"]
 [ext_resource type="Script" uid="uid://d0po6tfbuhuc5" path="res://hand_image.gd" id="10_x5p1p"]
+[ext_resource type="PackedScene" uid="uid://6ii4tvrtdknv" path="res://objects/buildings/magic_garden.tscn" id="11_eu6ph"]
 [ext_resource type="Script" uid="uid://b706fq76tajfe" path="res://seed_keeper.gd" id="11_hb5m1"]
 [ext_resource type="Script" uid="uid://x0w1fuppocc7" path="res://code/discard_pile.gd" id="11_x5p1p"]
+[ext_resource type="PackedScene" uid="uid://bkuddae7q3vsc" path="res://objects/buildings/market.tscn" id="12_edr7y"]
 [ext_resource type="Texture2D" uid="uid://c7qwdtv3x87xu" path="res://art/png-clipart-sun-sun-sun.png" id="12_iotsf"]
 [ext_resource type="Script" uid="uid://cob7t1n2bxrf5" path="res://code/drawpile.gd" id="12_x5p1p"]
 [ext_resource type="Texture2D" uid="uid://dxetedtnwmdu4" path="res://art/ui/seed_text.png" id="13_f1jbl"]
+[ext_resource type="PackedScene" uid="uid://cgill5jo1aspp" path="res://objects/buildings/tool_shed.tscn" id="13_kq12w"]
 [ext_resource type="Script" uid="uid://bhygk66ix8ajf" path="res://code/end_turn.gd" id="14_7sc4i"]
+[ext_resource type="PackedScene" uid="uid://d2tli0e8em60a" path="res://objects/buildings/well.tscn" id="14_t46w6"]
+[ext_resource type="PackedScene" uid="uid://rlxpw61la8um" path="res://objects/buildings/windmill.tscn" id="15_m28ev"]
 [ext_resource type="Script" uid="uid://htg51x88dvwh" path="res://code/hand.gd" id="15_qhcbd"]
 [ext_resource type="Texture2D" uid="uid://b1npgnjyligff" path="res://art/ui/veg-pouch-2291429493.png" id="16_e8heu"]
 [ext_resource type="Texture2D" uid="uid://buy1h8xxb6wa8" path="res://art/ui/recycle-bin.png" id="17_rvswv"]
@@ -214,6 +222,7 @@ shadow_offset = Vector2(2, 3)
 [node name="Game" type="Node2D" unique_id=1509497783]
 script = ExtResource("1_vef74")
 card_pool = Array[PackedScene]([ExtResource("2_aa0lp"), ExtResource("3_iu0sx"), ExtResource("4_4v2jo"), ExtResource("5_l1i01"), ExtResource("6_r62pu"), ExtResource("7_klri6")])
+building_pool = Array[PackedScene]([ExtResource("8_l1i01"), ExtResource("9_r62pu"), ExtResource("10_klri6"), ExtResource("11_eu6ph"), ExtResource("12_edr7y"), ExtResource("13_kq12w"), ExtResource("14_t46w6"), ExtResource("15_m28ev")])
 quota = null
 
 [node name="building_keeper" parent="." unique_id=929817058 instance=ExtResource("2_xa8c5")]

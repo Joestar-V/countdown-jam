@@ -6,48 +6,35 @@
 [ext_resource type="Texture2D" uid="uid://bm1atreqf85he" path="res://art/tutorial/grass-and-soil-1536x1152-1989800210.jpg" id="4_1vo5l"]
 [ext_resource type="Texture2D" uid="uid://cmk1gr1h8vm0d" path="res://art/buildings/windmill.png" id="5_adrpk"]
 [ext_resource type="Texture2D" uid="uid://bokqqtssoqmd8" path="res://art/ui/wood.png" id="6_rlx3j"]
+[ext_resource type="Texture2D" uid="uid://bdrythlel8olc" path="res://art/ui/price_tag.png" id="7_cyh0b"]
 [ext_resource type="Theme" uid="uid://forf20kkm6ao" path="res://art/tutorial/tutorial_theme.tres" id="7_iw2m6"]
 
 [node name="shop_building" type="Node2D" unique_id=1936123814]
-scale = Vector2(1.4, 1.4)
 script = ExtResource("1_cyh0b")
 
-[node name="Button" type="Button" parent="." unique_id=24369261]
-self_modulate = Color(1, 1, 1, 0)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -96.0
-offset_top = -96.0
-offset_right = 96.0
-offset_bottom = 96.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
 [node name="visual" type="Node2D" parent="." unique_id=1058830285]
+position = Vector2(100, 100)
+scale = Vector2(1.2, 1.2)
 
 [node name="stat_spread" type="PanelContainer" parent="visual" unique_id=857963739]
-offset_left = -72.0
-offset_top = 96.0
-offset_right = 72.0
-offset_bottom = 177.0
+offset_left = 99.16666
+offset_top = -68.33334
+offset_right = 369.16666
+offset_bottom = 70.0
 theme = ExtResource("1_wqm4w")
 
 [node name="margin" type="MarginContainer" parent="visual/stat_spread" unique_id=934096149]
 layout_mode = 2
-theme_override_constants/margin_left = 3
-theme_override_constants/margin_top = 4
-theme_override_constants/margin_right = 3
-theme_override_constants/margin_bottom = 3
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
 
 [node name="desc" type="RichTextLabel" parent="visual/stat_spread/margin" unique_id=1954273963]
 layout_mode = 2
-theme_override_constants/line_separation = -5
+theme_override_constants/line_separation = -8
 theme_override_fonts/normal_font = ExtResource("3_3j672")
+theme_override_font_sizes/normal_font_size = 26
 text = "This provides extra gems on thursdays"
 fit_content = true
 scroll_active = false
@@ -74,7 +61,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="card_image" type="TextureRect" parent="visual/centre" unique_id=103733142]
-custom_minimum_size = Vector2(160, 150)
+custom_minimum_size = Vector2(160, 130)
 layout_mode = 2
 texture = ExtResource("5_adrpk")
 expand_mode = 2
@@ -85,6 +72,31 @@ position = Vector2(-7.6293945e-06, -3.8146973e-06)
 scale = Vector2(0.19, 0.19)
 texture = ExtResource("6_rlx3j")
 metadata/_edit_lock_ = true
+
+[node name="PriceTag" type="Sprite2D" parent="visual" unique_id=1866116144]
+texture_filter = 5
+position = Vector2(133.33333, -133.33334)
+texture = ExtResource("7_cyh0b")
+
+[node name="cost_tag" type="Label" parent="visual/PriceTag" unique_id=785518045]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = -66.0
+offset_right = -33.0
+offset_bottom = -16.999996
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.7494544
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_3j672")
+theme_override_font_sizes/font_size = 28
+text = "$20"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="title_label" type="Label" parent="visual" unique_id=862705834]
 offset_left = -84.0
@@ -98,3 +110,20 @@ theme_override_font_sizes/font_size = 24
 text = "Name"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=24369261]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 200.0
+offset_bottom = 195.83333
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[connection signal="mouse_entered" from="Button" to="." method="zoom"]
+[connection signal="mouse_exited" from="Button" to="." method="unzoom"]

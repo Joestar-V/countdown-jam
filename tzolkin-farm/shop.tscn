@@ -12,6 +12,7 @@
 
 [node name="Shop" type="Node2D" unique_id=9903558]
 script = ExtResource("1_fgaav")
+reroll_cost = null
 
 [node name="bg" type="Sprite2D" parent="." unique_id=103307646]
 position = Vector2(960, 536)
@@ -265,44 +266,43 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 408.0
+offset_left = 400.0
 offset_top = 360.0
-offset_right = 408.0
+offset_right = 400.0
 offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="handSlot5" type="TextureRect" parent="building_shop" unique_id=1736948762]
+[node name="slot3" type="TextureRect" parent="building_shop" unique_id=1736948762]
 texture_filter = 1
 layout_mode = 0
 offset_left = 24.0
-offset_top = 344.0
+offset_top = 368.0
 offset_right = 234.0
-offset_bottom = 582.0
+offset_bottom = 606.0
 scale = Vector2(0.66, 0.66)
 texture = ExtResource("7_myf4l")
 stretch_mode = 2
 script = ExtResource("6_gmb2m")
 
-[node name="handSlot3" type="TextureRect" parent="building_shop" unique_id=1256553416]
+[node name="slot2" type="TextureRect" parent="building_shop" unique_id=1256553416]
 texture_filter = 1
 layout_mode = 0
 offset_left = 24.0
-offset_top = 160.0
+offset_top = 184.0
 offset_right = 234.0
-offset_bottom = 398.0
+offset_bottom = 422.0
 scale = Vector2(0.66, 0.66)
 texture = ExtResource("7_myf4l")
 stretch_mode = 2
 script = ExtResource("6_gmb2m")
 
-[node name="handSlot1" type="TextureRect" parent="building_shop" unique_id=1995355968]
+[node name="slot1" type="TextureRect" parent="building_shop" unique_id=1995355968]
 texture_filter = 1
 layout_mode = 0
 offset_left = 24.0
-offset_top = -24.0
 offset_right = 234.0
-offset_bottom = 214.0
+offset_bottom = 238.0
 scale = Vector2(0.66, 0.66)
 size_flags_horizontal = 4
 size_flags_vertical = 4

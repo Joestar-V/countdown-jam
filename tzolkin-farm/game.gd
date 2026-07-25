@@ -18,6 +18,7 @@ class_name gamer
 @onready var dragged : Card
 @onready  var actionNum = 1
 @export var card_pool : Array[PackedScene] #add new cards here, instantiate them 
+@export var building_pool : Array[PackedScene] #add new building here, instantiate them 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var no_more_turn_ending = false
 @export var quota : int = 30
@@ -29,6 +30,7 @@ const POTATO = preload("uid://r3v57ntk4jk8")
 const SQUASH = preload("uid://0r2fv35jbeuj")
 const WHEAT = preload("uid://bd7dp4kyhp0y6")
 const TINY_CARD = preload("uid://p4aq67v85plf")
+
 
 enum STATE { PLAY, SHOP, POPUP }
 var current_state = STATE.PLAY  
@@ -103,7 +105,7 @@ func _ready() -> void:
 	remaining = slotList.size()
 	day = calender.first_day()
 	print(day.title)
-	shop.freeroll()
+	shop.init_shop()
 func red_text():
 	water_label.modulate = Color.RED
 func white_text():
@@ -223,7 +225,7 @@ func weekend():
 	
 func open_shop():
 	Game.game.current_state = Game.game.STATE.SHOP
-	shop.freeroll()
+	shop.init_shop()
 	shop.visible = true
 	
 	animation_player.play("shop_descend")

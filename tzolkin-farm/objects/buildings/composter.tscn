@@ -11,8 +11,8 @@ picture = ExtResource("3_ay6qu")
 rarity = 1
 
 [node name="picture" parent="." index="0" unique_id=1028298159]
-position = Vector2(8.622096, -39.576607)
-scale = Vector2(0.16653559, 0.1665356)
+position = Vector2(8.000003, -60)
+scale = Vector2(0.21176471, 0.21176475)
 texture = ExtResource("3_ay6qu")
 
 [node name="Marker2D" parent="." index="1" unique_id=233934269]

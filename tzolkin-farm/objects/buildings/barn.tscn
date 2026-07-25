@@ -7,6 +7,7 @@
 [node name="Barn" unique_id=90871590 instance=ExtResource("1_1f6tf")]
 script = ExtResource("2_1f6tf")
 building_name = "Barn"
+picture = ExtResource("3_afkeq")
 
 [node name="picture" parent="." index="0" unique_id=1028298159]
 position = Vector2(12.000001, -96.00001)

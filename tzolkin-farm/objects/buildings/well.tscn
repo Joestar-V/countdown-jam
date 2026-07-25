@@ -12,8 +12,8 @@ rarity = 2
 tooltip = "+3 max water"
 
 [node name="picture" parent="." index="0" unique_id=1028298159]
-position = Vector2(0, -107.99999)
-scale = Vector2(0.23431191, 0.23431192)
+position = Vector2(0, -84)
+scale = Vector2(0.19957355, 0.19957356)
 texture = ExtResource("3_1k2j0")
 
 [node name="Marker2D" parent="." index="1" unique_id=233934269]

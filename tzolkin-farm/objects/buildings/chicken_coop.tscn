@@ -8,8 +8,8 @@
 script = ExtResource("2_d7je2")
 
 [node name="picture" parent="." index="0" unique_id=1028298159]
-position = Vector2(1.0000038, -61.000004)
-scale = Vector2(0.3033915, 0.30339146)
+position = Vector2(2, -43)
+scale = Vector2(0.2832747, 0.28327468)
 texture = ExtResource("3_6um3c")
 
 [node name="Marker2D" parent="." index="1" unique_id=233934269]

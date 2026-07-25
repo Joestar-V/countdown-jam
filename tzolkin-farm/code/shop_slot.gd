@@ -1,5 +1,7 @@
 extends TextureRect
 @onready var seed : Card
+@onready var tool : Tool
+@onready var building 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
