@@ -129,7 +129,16 @@ func update_display():
 func add_icons(spreadI: Vector3i, mults: Vector3, bonus : bool = false,target = grid):
 	var spread = Vector3(spreadI.x,spreadI.y,spreadI.z)
 	if mults < Vector3(1,1,1):
+		print("str(spread)")
+		print(str(spread))
 		spread *= mults
+		
+		print("str(mults)")
+		print(str(mults))
+		print("str(spread_afte_mult)")
+		print(str(spread))
+		
+		print("==================")
 	for x in spread.x:
 		var food = TextureRect.new()
 		if bonus : food.texture = BONUS_FOOD

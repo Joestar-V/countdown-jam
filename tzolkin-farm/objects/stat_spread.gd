@@ -18,6 +18,10 @@ var icon_list := []
 
 
 func set_visuals():
+	
+	for icon in icon_list: if icon: icon.queue_free()
+		
+	
 	if seed.sprout != Vector3i(0,0,0):
 		row_1.show()
 		add_icons(seed.sprout,row_1)

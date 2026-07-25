@@ -55,6 +55,12 @@ func first_day():
 	create_circle()
 	dayList.front().biggify()
 	dayList.front().day_start()
+	
+	for building : Building in Game.game.building_keeper.buildings:
+		building.on_turn_start()
+	
+	
+	
 	return (dayList.pop_front())
 	
 
@@ -66,6 +72,7 @@ func restart():
 	
 func advance_day():
 	Game.game.day.day_end()
+	for building : Building in Game.game.building_keeper.buildings: building.on_turn_end()
 	total_days += 1
 	currentDay += 1
 	rotate_next()
@@ -83,6 +90,8 @@ func advance_day():
 		Game.game.day.biggify()
 		day_name.text = Game.game.day.title
 		Game.game.day.day_start()
+		for building : Building in Game.game.building_keeper.buildings: building.on_turn_start()
+		
 		Game.game.no_more_turn_ending = false
 		
 	

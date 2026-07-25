@@ -6,6 +6,7 @@
 
 [node name="Market" unique_id=90871590 instance=ExtResource("1_1doce")]
 script = ExtResource("2_1doce")
+bonus_coin = 1
 building_name = "Market Stand"
 picture = ExtResource("3_6q2a8")
 rarity = 1

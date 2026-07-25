@@ -9,7 +9,7 @@ extends Node2D
 #const CHICKEN_COOP = preload("uid://ds42iybef5saq")
 #const COMPOSTER = preload("uid://dealvndyjgyyq")
 #const MAGIC_GARDEN = preload("uid://6ii4tvrtdknv")
-#const MARKET = preload("uid://bkuddae7q3vsc")
+const MARKET = preload("uid://bkuddae7q3vsc")
 #const TOOL_SHED = preload("uid://cgill5jo1aspp")
 #const WELL = preload("uid://d2tli0e8em60a")
 
@@ -17,7 +17,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
-	#add_building(WELL)
+	#add_building_packed(MARKET)
 	#add_building(TOOL_SHED)
 	#add_building(BARN)
 	#add_building(CHICKEN_COOP)
