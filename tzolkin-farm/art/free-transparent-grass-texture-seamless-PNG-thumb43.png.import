@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxwnr5lji671h"
-path="res://.godot/imported/tempnotch.png-aaf381f6560508eda8101f6bc1fd7759.ctex"
+uid="uid://344glljs20sy"
+path="res://.godot/imported/free-transparent-grass-texture-seamless-PNG-thumb43.png-5977202c143d5127b0a507862c9fb688.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/tempnotch.png"
-dest_files=["res://.godot/imported/tempnotch.png-aaf381f6560508eda8101f6bc1fd7759.ctex"]
+source_file="res://art/free-transparent-grass-texture-seamless-PNG-thumb43.png"
+dest_files=["res://.godot/imported/free-transparent-grass-texture-seamless-PNG-thumb43.png-5977202c143d5127b0a507862c9fb688.ctex"]
 
 [params]
 

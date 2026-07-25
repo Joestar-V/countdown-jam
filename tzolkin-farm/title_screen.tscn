@@ -1,0 +1,202 @@
+[gd_scene format=3 uid="uid://yqry4jq27a45"]
+
+[ext_resource type="Script" uid="uid://bw885wpem04bl" path="res://title_screen.gd" id="1_013yr"]
+[ext_resource type="Texture2D" uid="uid://d3mruaw8r6s4n" path="res://art/bg-farmland-By-MaxyM-75311485.jpg" id="1_v6p8y"]
+[ext_resource type="Texture2D" uid="uid://344glljs20sy" path="res://art/free-transparent-grass-texture-seamless-PNG-thumb43.png" id="2_ak2if"]
+[ext_resource type="Theme" uid="uid://forf20kkm6ao" path="res://art/tutorial/tutorial_theme.tres" id="4_xfn3p"]
+[ext_resource type="Texture2D" uid="uid://ndi6b7jvp0vj" path="res://art/buildings/mr_sun.png" id="5_hafda"]
+[ext_resource type="Texture2D" uid="uid://bxpqs4v5img8y" path="res://art/buildings/textturizer.png" id="6_tpml5"]
+[ext_resource type="Texture2D" uid="uid://top4dpregn8j" path="res://art/ui/thumbs_up.png" id="7_jqemp"]
+[ext_resource type="Texture2D" uid="uid://c5qcjyweqmmit" path="res://art/tutorial/plant.png" id="10_rhgbh"]
+[ext_resource type="Texture2D" uid="uid://d2a18va2yprxt" path="res://art/tutorial/harvest.png" id="11_skmiq"]
+[ext_resource type="Texture2D" uid="uid://d3wiu3tijaojr" path="res://art/tutorial/sun.png" id="12_lf08s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpml5"]
+atlas = ExtResource("5_hafda")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqemp"]
+atlas = ExtResource("5_hafda")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_013yr"]
+atlas = ExtResource("5_hafda")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b64ip"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpml5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jqemp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_013yr")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Title Screen" type="Node2D" unique_id=240541915]
+script = ExtResource("1_013yr")
+
+[node name="bg" type="Sprite2D" parent="." unique_id=580465542]
+modulate = Color(0.79624295, 0.796243, 0.7962429, 1)
+position = Vector2(948, 516)
+texture = ExtResource("1_v6p8y")
+metadata/_edit_lock_ = true
+
+[node name="grass" type="Sprite2D" parent="." unique_id=1960610301]
+texture_repeat = 2
+position = Vector2(960.00006, 864)
+scale = Vector2(0.84, 0.84)
+texture = ExtResource("2_ak2if")
+region_enabled = true
+region_rect = Rect2(0, 0, 2423.2507, 600)
+
+[node name="Control" type="VBoxContainer" parent="." unique_id=1789050418]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 876.0
+offset_top = 600.0
+offset_right = 1044.0
+offset_bottom = 900.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_xfn3p")
+
+[node name="play_button" type="Button" parent="Control" unique_id=547649891]
+custom_minimum_size = Vector2(270, 100)
+layout_mode = 2
+theme = ExtResource("4_xfn3p")
+text = "PLAY"
+
+[node name="quit_button" type="Button" parent="Control" unique_id=2085722542]
+custom_minimum_size = Vector2(270, 100)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("4_xfn3p")
+text = "LEAVE"
+
+[node name="MrSun" type="AnimatedSprite2D" parent="." unique_id=11568429]
+texture_filter = 5
+position = Vector2(1656, 192)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_b64ip")
+autoplay = "default"
+frame_progress = 0.0075116544
+
+[node name="graphic design might be my talent yo" type="Sprite2D" parent="." unique_id=677838514]
+position = Vector2(960, 342)
+texture = ExtResource("6_tpml5")
+
+[node name="ThumbsUp" type="Sprite2D" parent="." unique_id=1644925816]
+modulate = Color(0.88, 1, 0.908, 1)
+position = Vector2(120, 732)
+scale = Vector2(0.58021396, 0.5802139)
+texture = ExtResource("7_jqemp")
+flip_h = true
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=438430625]
+visible = false
+custom_minimum_size = Vector2(1200, 860)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 348.0
+offset_top = 156.0
+offset_right = 1572.0
+offset_bottom = 960.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("4_xfn3p")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=2081237300]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer" unique_id=630360865]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="plant" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=1457302591]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 9
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/plant" unique_id=451289102]
+layout_mode = 2
+theme = ExtResource("4_xfn3p")
+text = "Plant"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="pix" type="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer/plant" unique_id=1305968556]
+layout_mode = 2
+texture = ExtResource("10_rhgbh")
+
+[node name="desc" type="RichTextLabel" parent="PanelContainer/MarginContainer/HBoxContainer/plant" unique_id=1424044702]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("4_xfn3p")
+text = "zxcvzxcvzx
+"
+scroll_active = false
+
+[node name="harvest" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=50124259]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 9
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/harvest" unique_id=1821207443]
+layout_mode = 2
+theme = ExtResource("4_xfn3p")
+text = "Harvest"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="pix" type="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer/harvest" unique_id=1182143370]
+layout_mode = 2
+texture = ExtResource("11_skmiq")
+
+[node name="desc" type="RichTextLabel" parent="PanelContainer/MarginContainer/HBoxContainer/harvest" unique_id=406484797]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("4_xfn3p")
+scroll_active = false
+
+[node name="Win" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=693330012]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 9
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/Win" unique_id=1691331899]
+layout_mode = 2
+theme = ExtResource("4_xfn3p")
+text = "Win!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="pix" type="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer/Win" unique_id=1281575173]
+layout_mode = 2
+texture = ExtResource("12_lf08s")
+
+[node name="desc" type="RichTextLabel" parent="PanelContainer/MarginContainer/HBoxContainer/Win" unique_id=2057526845]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("4_xfn3p")
+scroll_active = false
+
+[connection signal="pressed" from="Control/play_button" to="." method="play"]
+[connection signal="pressed" from="Control/quit_button" to="." method="quit"]

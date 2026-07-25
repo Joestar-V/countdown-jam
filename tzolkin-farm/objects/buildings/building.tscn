@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://buo3cu3g4ufdo"]
+
+[ext_resource type="Script" uid="uid://cwa4s10fseygp" path="res://code/building_class.gd" id="1_tli18"]
+[ext_resource type="Texture2D" uid="uid://cmk1gr1h8vm0d" path="res://art/buildings/windmill.png" id="2_0gk2u"]
+
+[node name="Building" type="Node2D" unique_id=90871590]
+script = ExtResource("1_tli18")
+metadata/_custom_type_script = "uid://cwa4s10fseygp"
+
+[node name="picture" type="Sprite2D" parent="." unique_id=1028298159]
+position = Vector2(0, -168.00002)
+scale = Vector2(0.27790698, 0.277907)
+texture = ExtResource("2_0gk2u")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=233934269]
+visible = false
+position = Vector2(-156, -384)
+gizmo_extents = 190.6

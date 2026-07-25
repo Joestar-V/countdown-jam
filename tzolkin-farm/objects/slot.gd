@@ -18,6 +18,7 @@ var glow_time = 0.8
 @onready var death = $visuals/death
 
 @onready var fruiting = $visuals/fruiting
+@onready var slot_hole = $slotHole
 
 
 signal finished
@@ -36,7 +37,7 @@ func _process(delta: float) -> void:
 	if (Game.game.dragging == true) and (Game.game.actions > 0) and (Game.game.water >= Game.game.dragged.water_cost) and (Game.game.fertCount >= self.pos): 
 		if !glowing: glow()
 	else:
-		create_tween().tween_property(self.material,"shader_parameter/flash_amount",0.0,0.0)
+		create_tween().tween_property(self.material,"shader_parameter/flash_amount",0.0,0.0001)
 
 func glow():
 	glowing = true

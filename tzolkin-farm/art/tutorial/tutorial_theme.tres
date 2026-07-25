@@ -1,0 +1,70 @@
+[gd_resource type="Theme" format=3 uid="uid://forf20kkm6ao"]
+
+[ext_resource type="FontFile" uid="uid://j8glluhsw0mx" path="res://art/ui/segoe-print-regular.ttf" id="1_5tgf4"]
+[ext_resource type="Texture2D" uid="uid://cmcd0lw2or86e" path="res://art/ui/wood_sign.png" id="2_db78v"]
+[ext_resource type="Texture2D" uid="uid://cilgvgxj6yyax" path="res://art/ui/wood_board.png" id="3_qw28s"]
+[ext_resource type="Texture2D" uid="uid://bm1atreqf85he" path="res://art/tutorial/grass-and-soil-1536x1152-1989800210.jpg" id="4_db78v"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tpml5"]
+load_path = "res://.godot/imported/wood_sign.png-6db492c3143256a517f4b3b5639daf57.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jqemp"]
+texture = SubResource("CompressedTexture2D_tpml5")
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(187.48718, 0, 659.38403, 317.0099)
+modulate_color = Color(0.27022207, 0.2702219, 0.27022174, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_013yr"]
+load_path = "res://.godot/imported/wood_sign.png-6db492c3143256a517f4b3b5639daf57.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8vmu4"]
+texture = SubResource("CompressedTexture2D_013yr")
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(187.48718, 0, 659.38403, 317.0099)
+modulate_color = Color(0.72464263, 0.7246426, 0.7246426, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w8foc"]
+texture = ExtResource("2_db78v")
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(187.48718, 0, 659.38403, 317.0099)
+modulate_color = Color(0.95596343, 0.9559633, 0.95596343, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xfn3p"]
+load_path = "res://.godot/imported/wood_sign.png-6db492c3143256a517f4b3b5639daf57.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rhgbh"]
+texture = SubResource("CompressedTexture2D_xfn3p")
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(187.48718, 0, 659.38403, 317.0099)
+modulate_color = Color(0.446777, 0.4467771, 0.44677675, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l0oc6"]
+texture = ExtResource("3_qw28s")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5tgf4"]
+texture = ExtResource("4_db78v")
+
+[resource]
+Button/colors/font_hover_color = Color(1, 0.8635, 0.61, 1)
+Button/colors/font_hover_pressed_color = Color(1, 0.8635, 0.61, 1)
+Button/colors/font_pressed_color = Color(1, 0.8000001, 0, 1)
+Button/font_sizes/font_size = 50
+Button/fonts/font = ExtResource("1_5tgf4")
+Button/styles/disabled = SubResource("StyleBoxTexture_jqemp")
+Button/styles/hover = SubResource("StyleBoxTexture_8vmu4")
+Button/styles/normal = SubResource("StyleBoxTexture_w8foc")
+Button/styles/pressed = SubResource("StyleBoxTexture_rhgbh")
+Label/colors/font_shadow_color = Color(0, 0, 0, 1)
+Label/constants/shadow_offset_x = 3
+Label/constants/shadow_offset_y = 3
+Label/font_sizes/font_size = 55
+Label/fonts/font = ExtResource("1_5tgf4")
+Label/styles/normal = SubResource("StyleBoxTexture_l0oc6")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_5tgf4")
+RichTextLabel/font_sizes/normal_font_size = 32
+RichTextLabel/fonts/normal_font = ExtResource("1_5tgf4")
+VBoxContainer/constants/separation = 15

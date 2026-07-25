@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://c8b2j657jvmhb"]
+
+[ext_resource type="Texture2D" uid="uid://dw7w1cxv8o1vp" path="res://art/buildings/background.jpg" id="1_10ilk"]
+[ext_resource type="Script" uid="uid://dvosq684py78a" path="res://buildingkeeper.gd" id="1_qat6m"]
+[ext_resource type="Texture2D" uid="uid://bc6x6ul1kc1ak" path="res://art/trellis-latticework-fence-garden-house-boundary-fence-6db7dfdbb7ff9fb232adb861d5a887b6.png" id="2_qat6m"]
+
+[node name="building_keeper" type="Node2D" unique_id=929817058]
+script = ExtResource("1_qat6m")
+
+[node name="bg" type="Sprite2D" parent="." unique_id=123178296]
+position = Vector2(959.99994, 504)
+scale = Vector2(0.61915505, 0.6220776)
+texture = ExtResource("1_10ilk")
+
+[node name="TrellisTop" type="Sprite2D" parent="." unique_id=667865205]
+position = Vector2(961.1102, -381.06253)
+scale = Vector2(2.9922915, 2.9922922)
+texture = ExtResource("2_qat6m")
+metadata/_edit_lock_ = true
+
+[node name="TrellisRight" type="Sprite2D" parent="." unique_id=943274645]
+position = Vector2(2305, 332.99997)
+rotation = 1.5707964
+scale = Vector2(2.9922915, 2.9922922)
+texture = ExtResource("2_qat6m")
+metadata/_edit_lock_ = true
+
+[node name="TrellisLeft" type="Sprite2D" parent="." unique_id=1238118838]
+position = Vector2(-350.00003, 336.99997)
+rotation = 1.5707964
+scale = Vector2(2.9922915, 2.9922922)
+texture = ExtResource("2_qat6m")
+metadata/_edit_lock_ = true
+
+[node name="plots" type="Node2D" parent="." unique_id=2092740011]
+
+[node name="plot1" type="Marker2D" parent="plots" unique_id=493686578]
+position = Vector2(396, 600)
+gizmo_extents = 148.0
+
+[node name="plot2" type="Marker2D" parent="plots" unique_id=212091260]
+position = Vector2(684, 576)
+gizmo_extents = 148.0
+
+[node name="plot3" type="Marker2D" parent="plots" unique_id=1837925921]
+position = Vector2(1272, 564)
+gizmo_extents = 148.0
+
+[node name="plot4" type="Marker2D" parent="plots" unique_id=1199000525]
+position = Vector2(1572, 588)
+gizmo_extents = 148.0
+
+[node name="plot5" type="Marker2D" parent="plots" unique_id=1916700286]
+position = Vector2(972, 612)
+gizmo_extents = 148.0
