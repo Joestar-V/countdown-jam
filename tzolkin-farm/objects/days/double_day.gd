@@ -2,6 +2,15 @@ extends Day
 
 
 	
-	
-func daily_bonus(card : Card):
-	card.mults *= 2
+
+func day_start():
+	for seed in Game.game.seedList:
+		if seed.slotted:
+			seed.mults *= 2
+			seed.slot.update_display()
+			
+func day_end():
+	for seed in Game.game.seedList:
+		if seed.slotted:
+			seed.mults *= 0.5
+			seed.slot.update_display()

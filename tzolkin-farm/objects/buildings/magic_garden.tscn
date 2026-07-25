@@ -12,7 +12,7 @@ rarity = 1
 tooltip = "Less bad things will happen"
 
 [node name="picture" parent="." index="0" unique_id=1028298159]
-position = Vector2(0, -84)
+position = Vector2(0, -63.999996)
 scale = Vector2(0.4524647, 0.45246467)
 texture = ExtResource("3_a05fj")
 

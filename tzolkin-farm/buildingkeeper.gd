@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var plots = $plots
 @onready var buildings := []
-@onready var max_builds := 2
+@onready var max_builds := 4
 #
 #const BARN = preload("uid://rhdfbuaejr7m")
 #const WINDMILL = preload("uid://rlxpw61la8um")

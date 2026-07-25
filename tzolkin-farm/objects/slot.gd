@@ -39,6 +39,7 @@ signal finished
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
+	
 	if stage == null:
 		stage = 0
 	
@@ -97,25 +98,22 @@ func update_display():
 		child.free()
 	
 	match stage:
-		1:  for sed : Seed in seed:
-			if sed:
-				add_icons(sed.sprout)
-			
-		2: for sed : Seed in seed:
-			if sed:
-				add_icons(sed.flower)
-			
-		3: for sed : Seed in seed:
-			if sed:
-				add_icons(sed.fruit)
-			
-		4: for sed : Seed in seed:
-			if sed:
-				add_icons(sed.death)
+		1:  for sed : Seed in seed: add_icons(sed.sprout,sed.mults)
+
+		2: for sed : Seed in seed: add_icons(sed.flower,sed.mults)
+
+		3: for sed : Seed in seed: add_icons(sed.fruit,sed.mults)
+
+		4: for sed : Seed in seed: add_icons(sed.death,sed.mults)
+			#if sed:
+				
 			
 	for sed : Seed in seed:
 		if sed:
-			add_icons(sed.bonus,true)
+			add_icons(sed.bonus,sed.mults,true)
+			
+	#for icon in grid:
+		
 		
 		
 	if grid.get_child_count() > 0:
@@ -128,7 +126,10 @@ func update_display():
 		
 	
 
-func add_icons(spread: Vector3i, bonus : bool = false,target = grid):
+func add_icons(spreadI: Vector3i, mults: Vector3, bonus : bool = false,target = grid):
+	var spread = Vector3(spreadI.x,spreadI.y,spreadI.z)
+	if mults < Vector3(1,1,1):
+		spread *= mults
 	for x in spread.x:
 		var food = TextureRect.new()
 		if bonus : food.texture = BONUS_FOOD
@@ -153,6 +154,10 @@ func add_icons(spread: Vector3i, bonus : bool = false,target = grid):
 		fert.stretch_mode = 5
 		fert.custom_minimum_size = min_size
 		target.add_child(fert)
+	
+	
+	#if mults > Vector3(1,1,1):
+		#add_icons(sed.bonus,sed.mults,true)
 
 
 	

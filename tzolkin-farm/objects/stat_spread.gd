@@ -6,6 +6,8 @@ const FERT_ICON = preload("uid://c8yq733xmh0cc")
 
 var seed : Seed
 
+var icon_list := []
+
 @onready var row_1 = $margin/vbox/row1
 @onready var hs_1 = $margin/vbox/HS1
 @onready var row_2 = $margin/vbox/row2
@@ -29,6 +31,8 @@ func set_visuals():
 	if seed.death != Vector3i(0,0,0):
 		row_4.show()
 		add_icons(seed.death,row_4)
+	
+	
 
 func add_icons(spread: Vector3i,target):
 	for x in spread.x:
@@ -37,15 +41,18 @@ func add_icons(spread: Vector3i,target):
 		food.expand_mode = 3
 		food.stretch_mode = 5
 		target.add_child(food)
+		icon_list.append(food)
 	for y in spread.y:
 		var coin = TextureRect.new()
 		coin.texture = COIN_ICON
 		coin.expand_mode = 3
 		coin.stretch_mode = 5
 		target.add_child(coin)
+		icon_list.append(coin)
 	for z in spread.z:
 		var fert = TextureRect.new()
 		fert.texture = FERT_ICON
 		fert.expand_mode = 3
 		fert.stretch_mode = 5
 		target.add_child(fert)
+		icon_list.append(fert)
