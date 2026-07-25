@@ -210,8 +210,8 @@ func weekend():
 		seed.queue_free()
 		seedList.remove_at(i)
 	
-	#if foodCount < quota:
-	#	game_over()
+	if foodCount < quota:
+		game_over()
 	#if foodCount >= quota:
 	#	if calender.total_days >= calender.finalDay:
 	#		victory()

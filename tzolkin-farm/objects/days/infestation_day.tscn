@@ -8,7 +8,7 @@
 script = ExtResource("2_min67")
 title = "Infestation Day"
 image = null
-description = "A swarm is on the loose! Crops yield half as much when fruiting, but twice as much when flowering!"
+description = "A swarm is on the loose! Sprouting plants will die today, but flowering plants will yield double!"
 
 [node name="Sprite2D" parent="." index="1" unique_id=1499132609]
 scale = Vector2(0.018, 0.018)

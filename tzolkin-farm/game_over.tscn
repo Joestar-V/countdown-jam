@@ -1,0 +1,238 @@
+[gd_scene format=3 uid="uid://dt5p3ct3fwly3"]
+
+[ext_resource type="Script" uid="uid://dy1gskbm858m8" path="res://shop.gd" id="1_3u7xm"]
+[ext_resource type="Texture2D" uid="uid://dvoi5llrg8e0m" path="res://art/bgs/tank-piece-russian-s-war-ukraine_23-2149437838(1).png" id="2_woa3c"]
+[ext_resource type="Texture2D" uid="uid://cilgvgxj6yyax" path="res://art/ui/wood_board.png" id="3_dd2jf"]
+[ext_resource type="Texture2D" uid="uid://cifc54kl1l0vf" path="res://art/bgs/giphy_s.png" id="3_ku74v"]
+[ext_resource type="FontFile" uid="uid://j8glluhsw0mx" path="res://art/ui/segoe-print-regular.ttf" id="4_ku74v"]
+[ext_resource type="Texture2D" uid="uid://bokqqtssoqmd8" path="res://art/ui/wood.png" id="4_nm4t2"]
+[ext_resource type="Theme" uid="uid://forf20kkm6ao" path="res://art/tutorial/tutorial_theme.tres" id="5_nm4t2"]
+
+[node name="Shop" type="Node2D" unique_id=9903558]
+script = ExtResource("1_3u7xm")
+reroll_cost = null
+
+[node name="bg" type="Sprite2D" parent="." unique_id=103307646]
+position = Vector2(960, 536)
+scale = Vector2(1.4250001, 1.425)
+texture = ExtResource("2_woa3c")
+metadata/_edit_lock_ = true
+
+[node name="GiphyS" type="Sprite2D" parent="." unique_id=1192726326]
+position = Vector2(960, 464.9683)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_ku74v")
+
+[node name="card_border" type="Sprite2D" parent="GiphyS" unique_id=813605132]
+position = Vector2(7.188965, -6.6549683)
+scale = Vector2(0.53680193, 0.53680193)
+texture = ExtResource("4_nm4t2")
+
+[node name="WoodBoard" type="Sprite2D" parent="." unique_id=566784769]
+position = Vector2(960, 176)
+texture = ExtResource("3_dd2jf")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="WoodBoard" unique_id=2130060524]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -771.5
+offset_top = -158.0
+offset_right = -19.5
+offset_bottom = -7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.39215687)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("4_ku74v")
+theme_override_font_sizes/font_size = 78
+text = "Game Over!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Seeds 4 sale" type="Sprite2D" parent="." unique_id=1790743632]
+position = Vector2(960, 701.6202)
+scale = Vector2(0.37578624, 0.37578627)
+texture = ExtResource("3_dd2jf")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Seeds 4 sale" unique_id=1374563502]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -771.5
+offset_top = -158.0
+offset_right = -19.5
+offset_bottom = -7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.39215687)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("4_ku74v")
+theme_override_font_sizes/font_size = 78
+text = "You went hungry!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buiildings 4 sale" type="Sprite2D" parent="." unique_id=1999968301]
+position = Vector2(598.51996, 355.69327)
+scale = Vector2(0.37578624, 0.37578627)
+texture = ExtResource("3_dd2jf")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Buiildings 4 sale" unique_id=1584114844]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -771.5
+offset_top = -158.0
+offset_right = -19.5
+offset_bottom = -7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.39215687)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("4_ku74v")
+theme_override_font_sizes/font_size = 78
+text = "Days Survived:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buiildings 4 sale2" type="Sprite2D" parent="." unique_id=1367767362]
+position = Vector2(600.94, 494.8433)
+scale = Vector2(0.37578624, 0.37578627)
+texture = ExtResource("3_dd2jf")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Buiildings 4 sale2" unique_id=370744365]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -771.5
+offset_top = -158.0
+offset_right = -19.5
+offset_bottom = -7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.39215687)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("4_ku74v")
+theme_override_font_sizes/font_size = 78
+text = "Crops Harvested"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buiildings 4 sale3" type="Sprite2D" parent="." unique_id=1940675751]
+position = Vector2(1336, 360.5333)
+scale = Vector2(0.37578624, 0.37578627)
+texture = ExtResource("3_dd2jf")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Buiildings 4 sale3" unique_id=1447104395]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -771.5
+offset_top = -158.0
+offset_right = -19.5
+offset_bottom = -7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.39215687)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("4_ku74v")
+theme_override_font_sizes/font_size = 78
+text = "Money Made"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buiildings 4 sale4" type="Sprite2D" parent="." unique_id=1538812740]
+position = Vector2(1336, 487.58328)
+scale = Vector2(0.37578624, 0.37578627)
+texture = ExtResource("3_dd2jf")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Buiildings 4 sale4" unique_id=1376228840]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -771.5
+offset_top = -158.0
+offset_right = -19.5
+offset_bottom = -7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.39215687)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("4_ku74v")
+theme_override_font_sizes/font_size = 78
+text = "Total Seeds"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="peek" type="Button" parent="." unique_id=1276272614]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1368.0
+offset_top = 124.0
+offset_right = 1496.0
+offset_bottom = 236.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme = ExtResource("5_nm4t2")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "Peek at 
+farm"
+icon_alignment = 1
+
+[node name="reroll" type="Button" parent="." unique_id=1635219617]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 896.0
+offset_top = 757.875
+offset_right = 1024.0
+offset_bottom = 869.875
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme = ExtResource("5_nm4t2")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = " Try again "
+icon_alignment = 1
+
+[connection signal="pressed" from="peek" to="." method="_on_peek_pressed"]
+[connection signal="pressed" from="reroll" to="." method="_on_reroll_pressed"]

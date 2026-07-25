@@ -41,6 +41,7 @@
 [ext_resource type="PackedScene" uid="uid://tl6a1wadpqug" path="res://objects/days/money_day.tscn" id="35_iu0sx"]
 [ext_resource type="PackedScene" uid="uid://bc45jocgbctkx" path="res://objects/days/half_day.tscn" id="36_4v2jo"]
 [ext_resource type="PackedScene" uid="uid://crqqa24taicv2" path="res://objects/days/infestation_day.tscn" id="40_klri6"]
+[ext_resource type="PackedScene" uid="uid://dt5p3ct3fwly3" path="res://game_over.tscn" id="42_eu6ph"]
 
 [sub_resource type="Shader" id="Shader_mskdk"]
 code = "shader_type canvas_item;
@@ -224,7 +225,6 @@ shadow_offset = Vector2(2, 3)
 script = ExtResource("1_vef74")
 card_pool = Array[PackedScene]([ExtResource("2_aa0lp"), ExtResource("3_iu0sx"), ExtResource("4_4v2jo"), ExtResource("5_l1i01"), ExtResource("6_r62pu"), ExtResource("7_klri6")])
 building_pool = Array[PackedScene]([ExtResource("8_l1i01"), ExtResource("9_r62pu"), ExtResource("10_klri6"), ExtResource("11_eu6ph"), ExtResource("12_edr7y"), ExtResource("13_kq12w"), ExtResource("14_t46w6"), ExtResource("15_m28ev")])
-quota = null
 
 [node name="building_keeper" parent="." unique_id=929817058 instance=ExtResource("2_xa8c5")]
 
@@ -364,7 +364,6 @@ vertical_alignment = 1
 libraries/ = SubResource("AnimationLibrary_mfdv2")
 
 [node name="Shop" parent="." unique_id=9903558 instance=ExtResource("22_vaj68")]
-visible = false
 position = Vector2(0, -1080)
 
 [node name="End Turn" type="Button" parent="." unique_id=1810491390]
@@ -445,5 +444,8 @@ label_settings = SubResource("LabelSettings_xa8c5")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="Gameover" parent="." unique_id=1795016673 instance=ExtResource("42_eu6ph")]
+visible = false
 
 [connection signal="pressed" from="End Turn" to="." method="_on_end_turn_pressed"]
