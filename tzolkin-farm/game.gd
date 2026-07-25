@@ -18,6 +18,7 @@ extends Node2D
 @onready var dragged : Card
 @onready  var actionNum = 1
 @export var cardPool : Array[PackedScene] #add new cards here, instantiate them 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 #@onready var handPos = 0
 const APPLE = preload("res://objects/crops/apple.tscn")
@@ -192,16 +193,23 @@ func weekend():
 func open_shop():
 	Game.game.current_state = Game.game.STATE.SHOP
 	shop.visible = true
+	
+	animation_player.play("shop_descend")
+	await animation_player.animation_finished
 	shopping = true
 	#while shop.visible:
 	#	pass
 func close_shop():
 	Game.game.current_state = Game.game.STATE.POPUP
-	shop.visible = false
-	shopping = false
+	
 	for hand in seedkeeper.hand.handList:
 		hand = null
 	seedkeeper.reshuffle()
 	seedkeeper.draw_until_full()
+	animation_player.play("shop_return")
+
+	await animation_player.animation_finished
+	shop.visible = false
+
+	shopping = false
 	Game.game.current_state = Game.game.STATE.PLAY
-	
