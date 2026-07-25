@@ -5,7 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://cilgvgxj6yyax" path="res://art/ui/wood_board.png" id="2_fgaav"]
 [ext_resource type="FontFile" uid="uid://j8glluhsw0mx" path="res://art/ui/segoe-print-regular.ttf" id="3_6lah5"]
 [ext_resource type="Texture2D" uid="uid://dxetedtnwmdu4" path="res://art/ui/seed_text.png" id="5_6lah5"]
+[ext_resource type="Theme" uid="uid://forf20kkm6ao" path="res://art/tutorial/tutorial_theme.tres" id="5_p5a0g"]
 [ext_resource type="Script" uid="uid://dmkefgk6ubjiv" path="res://code/shop_slot.gd" id="6_gmb2m"]
+[ext_resource type="Texture2D" uid="uid://dde7bm3vfm0m6" path="res://art/ui/house.png" id="7_myf4l"]
+[ext_resource type="Texture2D" uid="uid://xlxq8v1mh8pk" path="res://art/ui/tool.png" id="8_p5a0g"]
 
 [node name="Shop" type="Node2D" unique_id=9903558]
 script = ExtResource("1_fgaav")
@@ -99,13 +102,13 @@ text = "Renovations"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="tools 4 sale3" type="Sprite2D" parent="." unique_id=1924874673]
+[node name="tools 4 sale" type="Sprite2D" parent="." unique_id=1924874673]
 position = Vector2(1416, 304)
 scale = Vector2(0.37578624, 0.37578627)
 texture = ExtResource("2_fgaav")
 metadata/_edit_group_ = true
 
-[node name="Label" type="Label" parent="tools 4 sale3" unique_id=1151485895]
+[node name="Label" type="Label" parent="tools 4 sale" unique_id=1151485895]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -133,12 +136,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 1416.0
-offset_top = 123.5
-offset_right = 1544.0
-offset_bottom = 235.5
+offset_left = 1368.0
+offset_top = 124.0
+offset_right = 1496.0
+offset_bottom = 236.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 0
+theme = ExtResource("5_p5a0g")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
 text = "Peek at 
 farm"
 icon_alignment = 1
@@ -149,14 +156,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 368.0
-offset_top = 123.5
-offset_right = 496.0
-offset_bottom = 235.5
+offset_left = 424.0
+offset_top = 124.0
+offset_right = 552.0
+offset_bottom = 236.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 0
+theme = ExtResource("5_p5a0g")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
 text = "Reroll
-Stock ($5)"
+($5)"
 icon_alignment = 1
 
 [node name="seed_shop" type="Control" parent="." unique_id=423650468]
@@ -172,6 +183,44 @@ offset_right = 752.0
 offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="handSlot4" type="TextureRect" parent="seed_shop" unique_id=186561810]
+texture_filter = 1
+layout_mode = 0
+offset_left = 200.0
+offset_top = 160.0
+offset_right = 410.0
+offset_bottom = 398.0
+scale = Vector2(0.66, 0.66)
+texture = ExtResource("5_6lah5")
+stretch_mode = 2
+script = ExtResource("6_gmb2m")
+
+[node name="handSlot1" type="TextureRect" parent="seed_shop" unique_id=1298018582]
+texture_filter = 1
+layout_mode = 0
+offset_left = 24.0
+offset_top = -24.0
+offset_right = 234.0
+offset_bottom = 214.0
+scale = Vector2(0.66, 0.66)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_6lah5")
+stretch_mode = 2
+script = ExtResource("6_gmb2m")
+
+[node name="handSlot2" type="TextureRect" parent="seed_shop" unique_id=500835319]
+texture_filter = 1
+layout_mode = 0
+offset_left = 200.0
+offset_top = -24.0
+offset_right = 410.0
+offset_bottom = 214.0
+scale = Vector2(0.66, 0.66)
+texture = ExtResource("5_6lah5")
+stretch_mode = 2
+script = ExtResource("6_gmb2m")
 
 [node name="handSlot5" type="TextureRect" parent="seed_shop" unique_id=579644911]
 texture_filter = 1
@@ -209,19 +258,45 @@ texture = ExtResource("5_6lah5")
 stretch_mode = 2
 script = ExtResource("6_gmb2m")
 
-[node name="handSlot4" type="TextureRect" parent="seed_shop" unique_id=186561810]
+[node name="building_shop" type="Control" parent="." unique_id=2087605738]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 408.0
+offset_top = 360.0
+offset_right = 408.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="handSlot5" type="TextureRect" parent="building_shop" unique_id=1736948762]
 texture_filter = 1
 layout_mode = 0
-offset_left = 200.0
-offset_top = 160.0
-offset_right = 410.0
-offset_bottom = 398.0
+offset_left = 24.0
+offset_top = 344.0
+offset_right = 234.0
+offset_bottom = 582.0
 scale = Vector2(0.66, 0.66)
-texture = ExtResource("5_6lah5")
+texture = ExtResource("7_myf4l")
 stretch_mode = 2
 script = ExtResource("6_gmb2m")
 
-[node name="handSlot1" type="TextureRect" parent="seed_shop" unique_id=1298018582]
+[node name="handSlot3" type="TextureRect" parent="building_shop" unique_id=1256553416]
+texture_filter = 1
+layout_mode = 0
+offset_left = 24.0
+offset_top = 160.0
+offset_right = 234.0
+offset_bottom = 398.0
+scale = Vector2(0.66, 0.66)
+texture = ExtResource("7_myf4l")
+stretch_mode = 2
+script = ExtResource("6_gmb2m")
+
+[node name="handSlot1" type="TextureRect" parent="building_shop" unique_id=1995355968]
 texture_filter = 1
 layout_mode = 0
 offset_left = 24.0
@@ -231,19 +306,59 @@ offset_bottom = 214.0
 scale = Vector2(0.66, 0.66)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("5_6lah5")
+texture = ExtResource("7_myf4l")
 stretch_mode = 2
 script = ExtResource("6_gmb2m")
 
-[node name="handSlot2" type="TextureRect" parent="seed_shop" unique_id=500835319]
+[node name="tool_shop" type="Control" parent="." unique_id=825254780]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1320.0
+offset_top = 360.0
+offset_right = 1320.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="handSlot5" type="TextureRect" parent="tool_shop" unique_id=856353813]
 texture_filter = 1
 layout_mode = 0
-offset_left = 200.0
+offset_left = 24.0
+offset_top = 344.0
+offset_right = 234.0
+offset_bottom = 582.0
+scale = Vector2(0.66, 0.66)
+texture = ExtResource("8_p5a0g")
+stretch_mode = 2
+script = ExtResource("6_gmb2m")
+
+[node name="handSlot3" type="TextureRect" parent="tool_shop" unique_id=1940313650]
+texture_filter = 1
+layout_mode = 0
+offset_left = 24.0
+offset_top = 160.0
+offset_right = 234.0
+offset_bottom = 398.0
+scale = Vector2(0.66, 0.66)
+texture = ExtResource("8_p5a0g")
+stretch_mode = 2
+script = ExtResource("6_gmb2m")
+
+[node name="handSlot1" type="TextureRect" parent="tool_shop" unique_id=640964362]
+texture_filter = 1
+layout_mode = 0
+offset_left = 24.0
 offset_top = -24.0
-offset_right = 410.0
+offset_right = 234.0
 offset_bottom = 214.0
 scale = Vector2(0.66, 0.66)
-texture = ExtResource("5_6lah5")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("8_p5a0g")
 stretch_mode = 2
 script = ExtResource("6_gmb2m")
 

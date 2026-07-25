@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cgill5jo1aspp"]
+
+[ext_resource type="PackedScene" uid="uid://buo3cu3g4ufdo" path="res://objects/buildings/building.tscn" id="1_3wxqk"]
+[ext_resource type="Script" uid="uid://4xhu0wjne0c7" path="res://objects/buildings/tool_shed.gd" id="2_3wxqk"]
+[ext_resource type="Texture2D" uid="uid://bpec4c03pl6ia" path="res://art/buildings/toolshed.png" id="3_wboqe"]
+
+[node name="Shed" unique_id=90871590 instance=ExtResource("1_3wxqk")]
+script = ExtResource("2_3wxqk")
+
+[node name="picture" parent="." index="0" unique_id=1028298159]
+position = Vector2(-9.536743e-07, -72)
+scale = Vector2(0.34826642, 0.3482664)
+texture = ExtResource("3_wboqe")
+
+[node name="Marker2D" parent="." index="1" unique_id=233934269]
+visible = true

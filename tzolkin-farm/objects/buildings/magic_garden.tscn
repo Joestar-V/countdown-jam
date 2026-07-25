@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://6ii4tvrtdknv"]
+
+[ext_resource type="PackedScene" uid="uid://buo3cu3g4ufdo" path="res://objects/buildings/building.tscn" id="1_1cyvv"]
+[ext_resource type="Script" uid="uid://bh4fiql7ihr42" path="res://objects/buildings/magic_garden.gd" id="2_1cyvv"]
+[ext_resource type="Texture2D" uid="uid://de631skvvbrlf" path="res://art/buildings/magic_garden.png" id="3_a05fj"]
+
+[node name="Magic Garden" unique_id=90871590 instance=ExtResource("1_1cyvv")]
+script = ExtResource("2_1cyvv")
+building_name = "Magic Garden"
+picture = ExtResource("3_a05fj")
+rarity = 1
+tooltip = "Less bad things will happen"
+
+[node name="picture" parent="." index="0" unique_id=1028298159]
+position = Vector2(0, -84)
+scale = Vector2(0.4524647, 0.45246467)
+texture = ExtResource("3_a05fj")
+
+[node name="Marker2D" parent="." index="1" unique_id=233934269]
+visible = true

@@ -2,6 +2,8 @@ extends Card
 class_name Seed
 
 @onready var water_label = $visual/water_label
+@onready var cost_tag = $visual/PriceTag/cost_tag
+@onready var price_tag = $visual/PriceTag
 
 @onready var title_label = $visual/title_label
 
@@ -23,8 +25,11 @@ func update_visuals():
 	stat_spread.set_visuals()
 	water_label.text = str(water_cost)
 	title_label.text = card_name
+	cost_tag.text = "$" + str(money_cost)
 	if picture:
 		card_image.texture = picture
+		
+	
 	
 	match rarity:
 		0:
@@ -36,7 +41,7 @@ func update_visuals():
 		
 	await get_tree().create_timer(.1).timeout
 	self.scale = default_scale
-		
+	if shop: price_tag.show()
 		
 func on_harvest_sprout():
 	harvest(sprout.x,sprout.y,sprout.z,[seedPacket]) 

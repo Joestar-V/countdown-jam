@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dfwvfxnw81ut1" path="res://art/icons/flowering.png" id="7_y63i3"]
 [ext_resource type="Texture2D" uid="uid://dfa75bf7qeymp" path="res://art/icons/fruiting.png" id="9_abf7f"]
 [ext_resource type="Texture2D" uid="uid://e685hba5yd32" path="res://art/icons/death.png" id="10_chx25"]
+[ext_resource type="Texture2D" uid="uid://bdrythlel8olc" path="res://art/ui/price_tag.png" id="12_uagd8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i0yiy"]
 size = Vector2(158.30594, 198.21933)
@@ -45,6 +46,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+focus_mode = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="card_border" type="Sprite2D" parent="visual" unique_id=1675455252]
@@ -153,6 +155,32 @@ layout_mode = 2
 texture = ExtResource("10_chx25")
 expand_mode = 3
 stretch_mode = 5
+
+[node name="PriceTag" type="Sprite2D" parent="visual" unique_id=2043514287]
+visible = false
+texture_filter = 5
+position = Vector2(112, -133)
+texture = ExtResource("12_uagd8")
+
+[node name="cost_tag" type="Label" parent="visual/PriceTag" unique_id=1818759106]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = -66.0
+offset_right = -33.0
+offset_bottom = -16.999996
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.7494544
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_6rnm6")
+theme_override_font_sizes/font_size = 28
+text = "$20"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1163772541]
 self_modulate = Color(1, 1, 1, 0)

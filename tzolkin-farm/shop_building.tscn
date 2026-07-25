@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://bf43vioylcck1"]
+
+[ext_resource type="Script" uid="uid://byfpu02xw8nmm" path="res://shop_building.gd" id="1_cyh0b"]
+[ext_resource type="Theme" uid="uid://spt7w6k7gskj" path="res://art/icons/stats_spread.tres" id="1_wqm4w"]
+[ext_resource type="FontFile" uid="uid://j8glluhsw0mx" path="res://art/ui/segoe-print-regular.ttf" id="3_3j672"]
+[ext_resource type="Texture2D" uid="uid://bm1atreqf85he" path="res://art/tutorial/grass-and-soil-1536x1152-1989800210.jpg" id="4_1vo5l"]
+[ext_resource type="Texture2D" uid="uid://cmk1gr1h8vm0d" path="res://art/buildings/windmill.png" id="5_adrpk"]
+[ext_resource type="Texture2D" uid="uid://bokqqtssoqmd8" path="res://art/ui/wood.png" id="6_rlx3j"]
+[ext_resource type="Theme" uid="uid://forf20kkm6ao" path="res://art/tutorial/tutorial_theme.tres" id="7_iw2m6"]
+
+[node name="shop_building" type="Node2D" unique_id=1936123814]
+scale = Vector2(1.4, 1.4)
+script = ExtResource("1_cyh0b")
+
+[node name="Button" type="Button" parent="." unique_id=24369261]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -96.0
+offset_right = 96.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="visual" type="Node2D" parent="." unique_id=1058830285]
+
+[node name="stat_spread" type="PanelContainer" parent="visual" unique_id=857963739]
+offset_left = -72.0
+offset_top = 96.0
+offset_right = 72.0
+offset_bottom = 177.0
+theme = ExtResource("1_wqm4w")
+
+[node name="margin" type="MarginContainer" parent="visual/stat_spread" unique_id=934096149]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="desc" type="RichTextLabel" parent="visual/stat_spread/margin" unique_id=1954273963]
+layout_mode = 2
+theme_override_constants/line_separation = -5
+theme_override_fonts/normal_font = ExtResource("3_3j672")
+text = "This provides extra gems on thursdays"
+fit_content = true
+scroll_active = false
+
+[node name="card_bg" type="Sprite2D" parent="visual" unique_id=351298838]
+position = Vector2(-3.0517578e-05, -3.0517578e-05)
+scale = Vector2(0.191, 0.191)
+texture = ExtResource("4_1vo5l")
+region_enabled = true
+region_rect = Rect2(379.74988, 144.59448, 888.83057, 888.83057)
+metadata/_edit_lock_ = true
+
+[node name="centre" type="CenterContainer" parent="visual" unique_id=14430667]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.17804
+offset_top = -80.0
+offset_right = 93.17804
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="card_image" type="TextureRect" parent="visual/centre" unique_id=103733142]
+custom_minimum_size = Vector2(160, 150)
+layout_mode = 2
+texture = ExtResource("5_adrpk")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="card_border" type="Sprite2D" parent="visual" unique_id=782455147]
+position = Vector2(-7.6293945e-06, -3.8146973e-06)
+scale = Vector2(0.19, 0.19)
+texture = ExtResource("6_rlx3j")
+metadata/_edit_lock_ = true
+
+[node name="title_label" type="Label" parent="visual" unique_id=862705834]
+offset_left = -84.0
+offset_top = -115.0
+offset_right = 84.0
+offset_bottom = -73.0
+theme = ExtResource("7_iw2m6")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_3j672")
+theme_override_font_sizes/font_size = 24
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1

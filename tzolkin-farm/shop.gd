@@ -9,7 +9,15 @@ var invis = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
+	
 func freeroll():
+	#this is called on shop down
+	if invis: _on_peek_pressed()
+	
+	roll()
+		
+func roll():
+	
 	for slot in seed_shop.get_children():
 		if slot.seed:
 			slot.seed.queue_free()
@@ -23,24 +31,7 @@ func freeroll():
 		seed.z_index
 		seed.homeSlot = slot
 		seed.global_position = slot.global_position + ( slot.size/2)
-func reroll():
-	if Game.game.moneyCount >= reroll_cost:
-		Game.game.moneyCount -= reroll_cost
-		for slot in seed_shop.get_children():
-			if slot is TextureRect:
-				slot.seed.queue_free()
-				var seed = Game.game.card_pool.pick_random().instantiate()
-				self.add_child(seed)
-				seed.default_scale *= 0.9
-				seed.hover_scale *= 0.9
-				seed.shop = true
-				seed.z_index
-				seed.homeSlot = slot
-				seed.global_position = slot.global_position + ( slot.size/2)
 		
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 
 func _on_peek_pressed() -> void:
@@ -58,4 +49,6 @@ func _on_peek_pressed() -> void:
 
 
 func _on_reroll_pressed() -> void:
-	reroll()
+	if Game.game.moneyCount >= reroll_cost:
+		Game.game.moneyCount -= reroll_cost
+		roll()
