@@ -6,10 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://bbrjjtvhyqqba" path="res://art/ui/342387-1572240328.png" id="2_rw4v0"]
 [ext_resource type="Texture2D" uid="uid://cmcd0lw2or86e" path="res://art/ui/wood_sign.png" id="5_mskdk"]
 [ext_resource type="FontFile" uid="uid://j8glluhsw0mx" path="res://art/ui/segoe-print-regular.ttf" id="6_mskdk"]
+[ext_resource type="Texture2D" uid="uid://c668e1veyatay" path="res://art/icons/food.png" id="7_gai5o"]
 [ext_resource type="Texture2D" uid="uid://3et1vavdqc33" path="res://art/icons/Sprout.png" id="7_o2k68"]
 [ext_resource type="Texture2D" uid="uid://dfa75bf7qeymp" path="res://art/icons/fruiting.png" id="8_kybjj"]
 [ext_resource type="Texture2D" uid="uid://e685hba5yd32" path="res://art/icons/death.png" id="9_cbeh3"]
 [ext_resource type="Texture2D" uid="uid://dfwvfxnw81ut1" path="res://art/icons/flowering.png" id="9_qvykm"]
+[ext_resource type="Theme" uid="uid://spt7w6k7gskj" path="res://art/icons/stats_spread.tres" id="11_o2k68"]
+[ext_resource type="Script" uid="uid://c683rrddgkpnc" path="res://objects/stat_spread.gd" id="12_gai5o"]
 
 [sub_resource type="Shader" id="Shader_mskdk"]
 code = "shader_type canvas_item;
@@ -58,6 +61,9 @@ size = Vector2(4.9230766, 4.9230766)
 material = SubResource("ShaderMaterial_hvygb")
 scale = Vector2(12, 12)
 script = ExtResource("1_ks62j")
+open = null
+pos = null
+stage = null
 
 [node name="visuals" type="Node2D" parent="." unique_id=168028002]
 use_parent_material = true
@@ -83,6 +89,61 @@ position = Vector2(0, 0.6666666)
 scale = Vector2(0.029, 0.023250002)
 texture = ExtResource("2_ks62j")
 
+[node name="stats" type="Node2D" parent="visuals" unique_id=2038648202]
+visible = false
+position = Vector2(0, -16)
+scale = Vector2(0.085, 0.085)
+
+[node name="stat_spread" type="PanelContainer" parent="visuals/stats" unique_id=2129679915]
+custom_maximum_size = Vector2(321.295, -1)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -62.745102
+offset_top = -46.058792
+offset_right = 62.745102
+offset_bottom = 2.941208
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("11_o2k68")
+script = ExtResource("12_gai5o")
+
+[node name="margin" type="MarginContainer" parent="visuals/stats/stat_spread" unique_id=652967082]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 6
+
+[node name="vbox" type="GridContainer" parent="visuals/stats/stat_spread/margin" unique_id=900430249]
+layout_mode = 2
+columns = 3
+
+[node name="Stage" type="TextureRect" parent="visuals/stats/stat_spread/margin/vbox" unique_id=1218507382]
+custom_minimum_size = Vector2(37, 0)
+layout_mode = 2
+texture = ExtResource("7_gai5o")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Stage2" type="TextureRect" parent="visuals/stats/stat_spread/margin/vbox" unique_id=1411046058]
+custom_minimum_size = Vector2(37, 0)
+layout_mode = 2
+texture = ExtResource("7_gai5o")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Stage3" type="TextureRect" parent="visuals/stats/stat_spread/margin/vbox" unique_id=1615723615]
+custom_minimum_size = Vector2(37, 0)
+layout_mode = 2
+texture = ExtResource("7_gai5o")
+expand_mode = 4
+stretch_mode = 5
+
 [node name="WoodSign" type="Sprite2D" parent="visuals" unique_id=1071048682]
 use_parent_material = true
 position = Vector2(0, -12.250122)
@@ -90,13 +151,6 @@ scale = Vector2(0.027517233, 0.02856182)
 texture = ExtResource("5_mskdk")
 region_enabled = true
 region_rect = Rect2(303.487, 13.641022, 413.1281, 248.8847)
-
-[node name="GridContainer" type="GridContainer" parent="visuals" unique_id=437010508]
-use_parent_material = true
-offset_left = -5.75
-offset_top = -14.916659
-offset_right = 5.916667
-offset_bottom = -9.166659
 
 [node name="seed" type="Label" parent="visuals" unique_id=901106306]
 visible = false

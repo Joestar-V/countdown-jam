@@ -17,11 +17,17 @@ func update_visuals():
 func on_built():
 	pass
 
+func on_destroyed():
+	queue_free()
+
 func on_turn_start():
 	pass
 	
 func on_turn_end():
 	pass
 	
+func on_harvest():
+	pass
+
 func on_clicked():
 	pass

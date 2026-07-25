@@ -21,4 +21,5 @@ func add_building(building : PackedScene):
 			var built = building.instantiate()
 			buildings.append(built)
 			plot.add_child(built)
+			built.on_built()
 			break

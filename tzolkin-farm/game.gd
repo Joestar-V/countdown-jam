@@ -1,4 +1,5 @@
 extends Node2D
+class_name gamer
 
 @onready var seedList : Array
 @onready var seedkeeper: Node2D = $SeedKeeper
@@ -32,7 +33,7 @@ const TINY_CARD = preload("uid://p4aq67v85plf")
 enum STATE { PLAY, SHOP, POPUP }
 var current_state = STATE.PLAY  
 
-
+@onready var building_keeper = $building_keeper
 
 @onready var end_turn = $"End Turn"
 

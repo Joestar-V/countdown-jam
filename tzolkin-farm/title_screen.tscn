@@ -103,100 +103,132 @@ scale = Vector2(0.58021396, 0.5802139)
 texture = ExtResource("7_jqemp")
 flip_h = true
 
-[node name="tutorial" type="PanelContainer" parent="." unique_id=438430625]
+[node name="tutorial" type="VBoxContainer" parent="." unique_id=1704480746]
 visible = false
-custom_minimum_size = Vector2(1200, 860)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 348.0
-offset_top = 156.0
-offset_right = 1572.0
-offset_bottom = 960.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 252.0
+offset_top = 24.0
+offset_right = 1666.0
+offset_bottom = 1059.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("4_xfn3p")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
+
+[node name="tutorial_box" type="PanelContainer" parent="tutorial" unique_id=438430625]
+custom_minimum_size = Vector2(1200, 920)
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("4_xfn3p")
+metadata/_edit_group_ = true
 
-[node name="Marginal" type="MarginContainer" parent="tutorial" unique_id=2081237300]
+[node name="Marginal" type="MarginContainer" parent="tutorial/tutorial_box" unique_id=2081237300]
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="HBox" type="HBoxContainer" parent="tutorial/Marginal" unique_id=630360865]
+[node name="HBox" type="HBoxContainer" parent="tutorial/tutorial_box/Marginal" unique_id=630360865]
 layout_mode = 2
 theme_override_constants/separation = 60
 
-[node name="plant" type="VBoxContainer" parent="tutorial/Marginal/HBox" unique_id=1457302591]
+[node name="plant" type="VBoxContainer" parent="tutorial/tutorial_box/Marginal/HBox" unique_id=1457302591]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 9
 
-[node name="title" type="Label" parent="tutorial/Marginal/HBox/plant" unique_id=451289102]
+[node name="title" type="Label" parent="tutorial/tutorial_box/Marginal/HBox/plant" unique_id=451289102]
 layout_mode = 2
 theme = ExtResource("4_xfn3p")
 text = "Plant"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="pix" type="TextureRect" parent="tutorial/Marginal/HBox/plant" unique_id=1305968556]
+[node name="pix" type="TextureRect" parent="tutorial/tutorial_box/Marginal/HBox/plant" unique_id=1305968556]
 layout_mode = 2
 texture = ExtResource("10_rhgbh")
 
-[node name="desc" type="RichTextLabel" parent="tutorial/Marginal/HBox/plant" unique_id=1424044702]
+[node name="desc" type="RichTextLabel" parent="tutorial/tutorial_box/Marginal/HBox/plant" unique_id=1424044702]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("4_xfn3p")
-text = "zxcvzxcvzx
+text = "Drag your seeds into plots to plant them.
+
+After each day they'll
+advance to the
+next growth stage.
 "
 scroll_active = false
 
-[node name="harvest" type="VBoxContainer" parent="tutorial/Marginal/HBox" unique_id=50124259]
+[node name="harvest" type="VBoxContainer" parent="tutorial/tutorial_box/Marginal/HBox" unique_id=50124259]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 9
 
-[node name="title" type="Label" parent="tutorial/Marginal/HBox/harvest" unique_id=1821207443]
+[node name="title" type="Label" parent="tutorial/tutorial_box/Marginal/HBox/harvest" unique_id=1821207443]
 layout_mode = 2
 theme = ExtResource("4_xfn3p")
 text = "Harvest"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="pix" type="TextureRect" parent="tutorial/Marginal/HBox/harvest" unique_id=1182143370]
+[node name="pix" type="TextureRect" parent="tutorial/tutorial_box/Marginal/HBox/harvest" unique_id=1182143370]
 layout_mode = 2
 texture = ExtResource("11_skmiq")
+metadata/_edit_group_ = true
 
-[node name="desc" type="RichTextLabel" parent="tutorial/Marginal/HBox/harvest" unique_id=406484797]
+[node name="desc" type="RichTextLabel" parent="tutorial/tutorial_box/Marginal/HBox/harvest" unique_id=406484797]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("4_xfn3p")
+text = "Harvesting a plot will yield resources depending on the plant and growth stage.
+
+
+
+"
 scroll_active = false
 
-[node name="Win" type="VBoxContainer" parent="tutorial/Marginal/HBox" unique_id=693330012]
+[node name="Win" type="VBoxContainer" parent="tutorial/tutorial_box/Marginal/HBox" unique_id=693330012]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 9
 
-[node name="title" type="Label" parent="tutorial/Marginal/HBox/Win" unique_id=1691331899]
+[node name="title" type="Label" parent="tutorial/tutorial_box/Marginal/HBox/Win" unique_id=1691331899]
 layout_mode = 2
 theme = ExtResource("4_xfn3p")
 text = "Win!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="pix" type="TextureRect" parent="tutorial/Marginal/HBox/Win" unique_id=1281575173]
+[node name="pix" type="TextureRect" parent="tutorial/tutorial_box/Marginal/HBox/Win" unique_id=1281575173]
 layout_mode = 2
 texture = ExtResource("12_lf08s")
 
-[node name="desc" type="RichTextLabel" parent="tutorial/Marginal/HBox/Win" unique_id=2057526845]
+[node name="desc" type="RichTextLabel" parent="tutorial/tutorial_box/Marginal/HBox/Win" unique_id=2057526845]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("4_xfn3p")
+text = "After Planting or Harvesting end turn.
+
+After 20 days you'll need to pass the food quota or you'll starve.
+
+"
 scroll_active = false
+
+[node name="play_button" type="Button" parent="tutorial" unique_id=542830145]
+custom_minimum_size = Vector2(270, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("4_xfn3p")
+text = " PLAY (For real) "
 
 [connection signal="pressed" from="Control/play_button" to="." method="play"]
 [connection signal="pressed" from="Control/quit_button" to="." method="quit"]
+[connection signal="pressed" from="tutorial/play_button" to="." method="play"]
