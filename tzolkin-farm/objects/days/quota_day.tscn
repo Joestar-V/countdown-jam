@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ce82bnc5xyeu6"]
+
+[ext_resource type="PackedScene" uid="uid://crhcqdcsfi6xb" path="res://objects/day.tscn" id="1_rlm7r"]
+[ext_resource type="Script" uid="uid://doexusofgw4qa" path="res://objects/days/quota_day.gd" id="2_j5m4e"]
+
+[node name="Day" unique_id=1162151081 instance=ExtResource("1_rlm7r")]
+script = ExtResource("2_j5m4e")
+
+[node name="Sprite2D2" parent="." index="0" unique_id=725902990]
+modulate = Color(1, 0.03529412, 0, 1)
+
+[node name="Sprite2D" parent="." index="1" unique_id=1499132609]
+visible = false

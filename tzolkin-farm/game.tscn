@@ -121,7 +121,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
+"points": PackedFloat32Array(-1080, -0.0005, 0, 0.0005, 0),
 "times": PackedFloat32Array(0)
 }
 
@@ -353,6 +353,7 @@ libraries/ = SubResource("AnimationLibrary_mfdv2")
 
 [node name="Shop" parent="." unique_id=9903558 instance=ExtResource("22_vaj68")]
 visible = false
+position = Vector2(0, -1080)
 
 [node name="End Turn" type="Button" parent="." unique_id=1810491390]
 offset_left = 1616.0

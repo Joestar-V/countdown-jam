@@ -18,9 +18,10 @@ extends Marker2D
 @export var dayPool : Array[PackedScene]
 @onready var day_name: Label = $"day name"
 @onready var sun: Sprite2D = $Sun
+const QUOTA_DAY = preload("res://objects/days/quota_day.tscn")
 
 const NORMAL_DAY = preload("res://objects/days/normal_day.tscn")
-
+@onready var lastDay : Day
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for i in dayPool.size():
@@ -49,6 +50,9 @@ func advance_day():
 	currentDay += 1
 	rotate_next()
 	if currentDay >= weekLength:
+		Game.game.day.tinymize()
+		day_name.text = lastDay.title
+		lastDay.biggify()
 		await Game.game.weekend()
 		Game.game.day = first_day()
 		day_name.text = Game.game.day.title
@@ -75,7 +79,7 @@ func rotate_next():
 		.set_ease(Tween.EASE_OUT)
 	total_rotation = target_rotation
 func reset_rotate():
-	
+	lastDay.tinymize()
 	create_tween() \
 		.tween_property(sun, "rotation", 0, 0.3) \
 		.set_trans(Tween.TRANS_SINE) \
@@ -86,7 +90,7 @@ func reset_rotate():
 		.set_ease(Tween.EASE_OUT)
 	total_rotation = 0
 func create_circle():
-	var i = 0
+	var i = 0 
 	for day in dayList:
 		var angle = deg_to_rad(90 + i * spacing_degrees)
 		days.add_child(day)
@@ -96,3 +100,13 @@ func create_circle():
 			sin(angle)
 		) * radius
 		i += 1
+	var day = QUOTA_DAY.instantiate()
+	days.add_child(day)
+	var angle = deg_to_rad(90 + dayList.size() * spacing_degrees)
+
+	day.position = Vector2(
+		cos(angle),
+		sin(angle)
+	) * radius
+	i += 1
+	lastDay = day
