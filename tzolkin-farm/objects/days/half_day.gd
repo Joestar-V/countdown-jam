@@ -9,5 +9,14 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
 #	pass
-func daily_bonus(card : Card):
-	card.mults /= 2 #is that how that works?
+func day_start():
+	for seed in Game.game.seedList:
+		if seed.slotted:
+			seed.mults *= 1/2
+			seed.slot.update_display()
+			
+func day_end():
+	for seed in Game.game.seedList:
+		if seed.slotted:
+			seed.mults *= 2
+			seed.slot.update_display()

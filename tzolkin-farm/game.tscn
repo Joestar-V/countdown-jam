@@ -40,6 +40,7 @@
 [ext_resource type="PackedScene" uid="uid://cns8mp3ajmi25" path="res://objects/days/rainy_day.tscn" id="31_dhpj7"]
 [ext_resource type="PackedScene" uid="uid://tl6a1wadpqug" path="res://objects/days/money_day.tscn" id="35_iu0sx"]
 [ext_resource type="PackedScene" uid="uid://bc45jocgbctkx" path="res://objects/days/half_day.tscn" id="36_4v2jo"]
+[ext_resource type="PackedScene" uid="uid://crqqa24taicv2" path="res://objects/days/infestation_day.tscn" id="40_klri6"]
 
 [sub_resource type="Shader" id="Shader_mskdk"]
 code = "shader_type canvas_item;
@@ -402,10 +403,10 @@ label_settings = SubResource("LabelSettings_b64ip")
 [node name="sundial" type="Marker2D" parent="." unique_id=1442074541]
 position = Vector2(1774, 139)
 script = ExtResource("27_bnpwn")
-weekLength = 10
+weekLength = 20
 spacing_degrees = 17.0
 dayPoolGood = Array[PackedScene]([ExtResource("29_xfvwf"), ExtResource("35_iu0sx"), ExtResource("31_dhpj7")])
-dayPoolBad = Array[PackedScene]([ExtResource("36_4v2jo")])
+dayPoolBad = Array[PackedScene]([ExtResource("36_4v2jo"), ExtResource("40_klri6")])
 
 [node name="Sun" type="Sprite2D" parent="sundial" unique_id=132937313]
 rotation = -0.1308997
