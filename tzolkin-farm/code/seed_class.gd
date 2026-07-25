@@ -48,12 +48,16 @@ func update_visuals():
 		
 func on_harvest_sprout():
 	harvest(sprout.x,sprout.y,sprout.z,[seedPacket]) 
+	slot.update_display()
 func on_harvest_flower():
 	harvest(flower.x,flower.y,flower.z,[seedPacket]) 
+	slot.update_display()
 func on_harvest_fruit():
 	harvest(fruit.x,fruit.y,fruit.z,[seedPacket]) 
+	slot.update_display()
 func on_harvest_death():
 	harvest(death.x,death.y,death.z,[seedPacket]) 
+	slot.update_display()
 
 
 func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket]) -> void:

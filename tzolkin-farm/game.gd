@@ -155,24 +155,38 @@ func _on_end_turn_pressed() -> void:
 				seed.global_position = seed.slot.global_position
 				seed.slotted = true
 				seed.moving = 2
-				seed.slot.update_display()
+				#seed.slot.update_display()
+			
+	
+	for slot in slotList:
+		slot.update_display()
+		
 	seedkeeper.draw_until_full()
 	await calender.advance_day()
 	
 func _on_slot_finished():
 	remaining -= 1
 	print("Remaining:", remaining)
+
+
 func weekend():
 	
+	
+	
 	remaining = slotList.size()
+	
+	for slot in slotList: slot.update_display()
+	await get_tree().create_timer(0.45).timeout
+	
 	for slot in slotList:
 		slot.finished.connect(_on_slot_finished, CONNECT_ONE_SHOT)
+		
 		slot.harvest_list()
-
+		
+		
 	while remaining > 0:
 		await get_tree().process_frame
 	for seed in seedList:
-		
 		seed.visual.hide()
 			
 		for i in 1:
@@ -185,9 +199,6 @@ func weekend():
 			
 	
 	
-	for spot in slotList:
-		spot.update_display()
-	
 	await get_tree().create_timer(.5).timeout
 	for i in range(seedList.size() - 1, -1, -1):
 		var seed = seedList[i]
@@ -196,7 +207,8 @@ func weekend():
 		seedList.remove_at(i)
 		
 	open_shop() #this never gets called
-	
+	#for spot in slotList:
+	#	spot.update_display()
 	
 	calender.restart()
 	
