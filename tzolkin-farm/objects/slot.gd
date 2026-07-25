@@ -20,6 +20,17 @@ var glow_time = 0.8
 @onready var fruiting = $visuals/fruiting
 @onready var slot_hole = $slotHole
 
+const BONUS_COIN = preload("uid://ctjcjrrw23c5v")
+const BONUS_FERTIL = preload("uid://7ohukfd6rqda")
+const BONUS_FOOD = preload("uid://3du4b373wpkw")
+
+const COIN = preload("uid://cgknl3qcs48vw")
+const FERTIL = preload("uid://c8yq733xmh0cc")
+const FOOD = preload("uid://c668e1veyatay")
+
+@onready var grid = $visuals/stat_display/stat_spread/margin/grid
+
+
 
 signal finished
 # Called when the node enters the scene tree for the first time.
@@ -64,3 +75,63 @@ func harvest_list():
 		await chud.finished
 	print("Slot", pos, "finished")
 	finished.emit()
+
+func update_display():
+	for child in grid.get_children():
+		child.queue_free()
+	
+	match stage:
+		1:  for sed : Seed in seed:
+			add_icons(sed.sprout)
+			add_bonus_icons(sed.sprout)
+		2: for sed : Seed in seed:
+			add_icons(sed.flower)
+			add_bonus_icons(sed.flower)
+		3: for sed : Seed in seed:
+			add_icons(sed.fruit)
+			add_bonus_icons(sed.flower)
+		4: death.show()
+	
+	
+
+func add_icons(spread: Vector3i,target = grid):
+	for x in spread.x:
+		var food = TextureRect.new()
+		food.texture = FOOD
+		food.expand_mode = 4
+		food.stretch_mode = 5
+		target.add_child(food)
+	for y in spread.y:
+		var coin = TextureRect.new()
+		coin.texture = COIN
+		coin.expand_mode = 4
+		coin.stretch_mode = 5
+		target.add_child(coin)
+	for z in spread.z:
+		var fert = TextureRect.new()
+		fert.texture = FERTIL
+		fert.expand_mode = 4
+		fert.stretch_mode = 5
+		target.add_child(fert)
+
+func add_bonus_icons(spread: Vector3i,target = grid):
+	for x in spread.x:
+		var food = TextureRect.new()
+		food.texture = BONUS_FOOD
+		food.expand_mode = 4
+		food.stretch_mode = 5
+		target.add_child(food)
+	for y in spread.y:
+		var coin = TextureRect.new()
+		coin.texture = BONUS_COIN
+		coin.expand_mode = 4
+		coin.stretch_mode = 5
+		target.add_child(coin)
+	for z in spread.z:
+		var fert = TextureRect.new()
+		fert.texture = BONUS_FERTIL
+		fert.expand_mode = 4
+		fert.stretch_mode = 5
+		target.add_child(fert)
+
+	
