@@ -4,7 +4,7 @@ extends Marker2D
 
 @export var radius := 224.0
 @export var spacing_degrees := 30.0
-#TODO: Make upright. Fix node icons. Add tooltips. Add more days. add gameover.  Get wheel physics working. Add adjacency bonuses. Add tools
+#TODO:  Add tooltips. Add more days. add gameover.  Get wheel physics working. Add adjacency bonuses. Add tools
 @onready var days: Node2D = $days
 @onready var total_rotation = 0.0
 
