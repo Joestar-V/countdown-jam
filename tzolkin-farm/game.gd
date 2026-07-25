@@ -193,6 +193,7 @@ func weekend():
 	calender.restart()
 func open_shop():
 	Game.game.current_state = Game.game.STATE.SHOP
+	shop.freeroll()
 	shop.visible = true
 	
 	animation_player.play("shop_descend")
