@@ -59,3 +59,4 @@ func _on_button_pressed() -> void:
 		if slot.stage != 0 and Game.game.actions > 0:
 			print(slot.seed)
 			slot.harvest_list()
+			#slot.update_display()

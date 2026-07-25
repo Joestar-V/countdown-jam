@@ -9,9 +9,11 @@ const FLASH = preload("uid://c4r08uebnce3l")
 var glowing := false
 var glow_time = 0.8
 
+@onready var min_size = Vector2(37,37)
+
 @onready var dirt = $visuals/dirt
 
-@onready var seed_slot = $visuals/seed
+@onready var seed_text = $visuals/seed
 
 @onready var sprout = $visuals/sprout
 @onready var flowering = $visuals/flowering
@@ -27,8 +29,9 @@ const BONUS_FOOD = preload("uid://3du4b373wpkw")
 const COIN = preload("uid://cgknl3qcs48vw")
 const FERTIL = preload("uid://c8yq733xmh0cc")
 const FOOD = preload("uid://c668e1veyatay")
-@onready var grid = $visuals/stats/stat_spread/margin/grid
+
 @onready var stats = $visuals/stats
+@onready var grid = $visuals/stats/stat_spread/margin/grid
 
 
 
@@ -36,12 +39,18 @@ signal finished
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
+	if stage == null:
+		stage = 0
+	
 	match stage:
-		0: seed_slot.show()
+		0: seed_text.show()
 		1: sprout.show()
 		2: flowering.show()
 		3: fruiting.show()
 		4: death.show()
+		
+	#stats.show()
+	#add_icons(Vector3i(1,1,1))
 
 
 func _process(delta: float) -> void:
@@ -50,7 +59,7 @@ func _process(delta: float) -> void:
 	else:
 		create_tween().tween_property(self.material,"shader_parameter/flash_amount",0.0,0.0001)
 	
-	update_display()
+	
 	
 func glow():
 	glowing = true
@@ -77,10 +86,15 @@ func harvest_list():
 		await chud.finished
 	print("Slot", pos, "finished")
 	finished.emit()
+	#update_display()
+	
+	#if grid.get_child_count() > 0:
+	#	stats.show()
 
 func update_display():
+	
 	for child in grid.get_children():
-		child.queue_free()
+		child.free()
 	
 	match stage:
 		1:  for sed : Seed in seed:
@@ -93,56 +107,47 @@ func update_display():
 			add_icons(sed.fruit)
 			
 		4: for sed : Seed in seed:
-			add_icons(sed.fruit)
+			add_icons(sed.death)
 			
 	for sed : Seed in seed:
-		add_bonus_icons(sed.bonus)
+		add_icons(sed.bonus,true)
 		
 		
-	if grid.get_child_count() == 0:
-		stats.hide()
-	else:
+	if grid.get_child_count() > 0:
 		stats.show()
+		
+	else:
+		stats.hide()
+	
+	
+		
 	
 
-func add_icons(spread: Vector3i,target = grid):
+func add_icons(spread: Vector3i, bonus : bool = false,target = grid):
 	for x in spread.x:
 		var food = TextureRect.new()
-		food.texture = FOOD
+		if bonus : food.texture = BONUS_FOOD
+		else : food.texture = FOOD
 		food.expand_mode = 4
 		food.stretch_mode = 5
+		food.custom_minimum_size = min_size
 		target.add_child(food)
 	for y in spread.y:
 		var coin = TextureRect.new()
-		coin.texture = COIN
+		if bonus : coin.texture = BONUS_COIN
+		else : coin.texture = COIN
 		coin.expand_mode = 4
 		coin.stretch_mode = 5
+		coin.custom_minimum_size = min_size
 		target.add_child(coin)
 	for z in spread.z:
 		var fert = TextureRect.new()
-		fert.texture = FERTIL
+		if bonus : fert.texture = BONUS_FERTIL
+		else : fert.texture = FERTIL
 		fert.expand_mode = 4
 		fert.stretch_mode = 5
+		fert.custom_minimum_size = min_size
 		target.add_child(fert)
 
-func add_bonus_icons(spread: Vector3i,target = grid):
-	for x in spread.x:
-		var food = TextureRect.new()
-		food.texture = BONUS_FOOD
-		food.expand_mode = 4
-		food.stretch_mode = 5
-		target.add_child(food)
-	for y in spread.y:
-		var coin = TextureRect.new()
-		coin.texture = BONUS_COIN
-		coin.expand_mode = 4
-		coin.stretch_mode = 5
-		target.add_child(coin)
-	for z in spread.z:
-		var fert = TextureRect.new()
-		fert.texture = BONUS_FERTIL
-		fert.expand_mode = 4
-		fert.stretch_mode = 5
-		target.add_child(fert)
 
 	

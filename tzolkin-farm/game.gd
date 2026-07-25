@@ -4,7 +4,6 @@ class_name gamer
 @onready var seedList : Array
 @onready var seedkeeper: Node2D = $SeedKeeper
 @onready var spots: Node2D = $spots
-@onready var spotList : Array
 @onready var wheel: Node2D = $Wheel
 @onready var slotList: Array
 @onready var resources: Node2D = $Resources
@@ -153,6 +152,7 @@ func _on_end_turn_pressed() -> void:
 				seed.global_position = seed.slot.global_position
 				seed.slotted = true
 				seed.moving = 2
+				seed.slot.update_display()
 	seedkeeper.draw_until_full()
 	await calender.advance_day()
 
@@ -180,7 +180,11 @@ func weekend():
 			crd.card = seed.seedPacket
 			crd.move_to_resource(Game.game.seedkeeper.discard_pile.recycle_bin.global_position)
 			
-			
+	
+	
+	for spot in slotList:
+		spot.update_display()
+	
 	await get_tree().create_timer(.5).timeout
 	for i in range(seedList.size() - 1, -1, -1):
 		var seed = seedList[i]
@@ -190,7 +194,9 @@ func weekend():
 		
 	open_shop() #this never gets called
 	
+	
 	calender.restart()
+	
 func open_shop():
 	Game.game.current_state = Game.game.STATE.SHOP
 	shop.freeroll()

@@ -18,6 +18,7 @@ func _ready() -> void:
 	for i in dayPool.size():
 		dayPool.append(NORMAL_DAY)#this makes it so that the chance of finding a normal day is always 1/2 
 		#can use modulus to change this ratio
+		
 func first_day():
 	currentDay = currentDay
 	for i in weekLength:
@@ -26,12 +27,11 @@ func first_day():
 	return (dayList.pop_front())
 	
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	
 func restart():
 	currentDay = 0
 	#remake day list
+	
 func advance_day():
 	currentDay += 1
 	

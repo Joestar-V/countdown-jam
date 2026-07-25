@@ -168,6 +168,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		Game.game.actions -= 1
 		slot = area.get_parent()
 		area.get_parent().seed.append(self)
+		area.get_parent().update_display()
 		slotted = true
 		slotPos = area.global_position
 		#turn_over.emit()
@@ -186,11 +187,14 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 		slotted = false
 		slot = null
 		area.get_parent().seed.erase(self)
+		area.get_parent().update_display()
 		Game.game.actions += 1
 
 func adjacency_bonus():
 	#here check for any plant combos
 	pass
+	
+	
 func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket]):
 	#check for bonuses
 	adjacency_bonus()
