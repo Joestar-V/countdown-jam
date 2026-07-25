@@ -62,12 +62,14 @@ func _ready():
 	seedPacket = load(scene_file_path)
 	print(seedPacket)
 	scale = default_scale
-	update_visuals()
+	
 	
 	match rarity:
-		0: money_cost = 1
-		1: money_cost = 2
-		2: money_cost = 3
+		0: money_cost = 5
+		1: money_cost = 10
+		2: money_cost = 15
+		
+	update_visuals()
 	
 func update_visuals():
 	scale = default_scale
