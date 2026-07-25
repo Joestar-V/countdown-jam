@@ -403,10 +403,9 @@ label_settings = SubResource("LabelSettings_b64ip")
 position = Vector2(1774, 139)
 script = ExtResource("27_bnpwn")
 weekLength = 10
-radius = null
 spacing_degrees = 17.0
-week = null
-dayPool = Array[PackedScene]([ExtResource("29_xfvwf"), ExtResource("35_iu0sx"), ExtResource("36_4v2jo"), ExtResource("31_dhpj7")])
+dayPoolGood = Array[PackedScene]([ExtResource("29_xfvwf"), ExtResource("35_iu0sx"), ExtResource("31_dhpj7")])
+dayPoolBad = Array[PackedScene]([ExtResource("36_4v2jo")])
 
 [node name="Sun" type="Sprite2D" parent="sundial" unique_id=132937313]
 rotation = -0.1308997

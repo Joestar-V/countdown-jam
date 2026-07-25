@@ -15,7 +15,9 @@ extends Marker2D
 @export var week = 0
 @onready var finalDay = 35
 @onready var dayList : Array[Day]
-@export var dayPool : Array[PackedScene]
+@export var dayPoolGood : Array[PackedScene]
+@export var dayPoolBad : Array[PackedScene]
+
 @onready var day_name: Label = $"day name"
 @onready var sun: Sprite2D = $Sun
 @onready var total_days : int = 0
@@ -23,17 +25,32 @@ const QUOTA_DAY = preload("res://objects/days/quota_day.tscn")
 
 const NORMAL_DAY = preload("res://objects/days/normal_day.tscn")
 @onready var lastDay : Day
+
+@export var goodDays : int = 5
+@export var badDays : int = 3 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	for i in dayPool.size():
-		dayPool.append(NORMAL_DAY)#this makes it so that the chance of finding a normal day is always 1/2 
+	#for i in dayPool.size():
+	#	dayPool.append(NORMAL_DAY)#this makes it so that the chance of finding a normal day is always 1/2 
 		#can use modulus to change this ratio
+	pass
 func _process(delta):
 	pass
 func first_day():
 	currentDay = currentDay
+	var j = 0
+	var k = 0
 	for i in weekLength:
-		dayList.append(dayPool.pick_random().instantiate())
+		if j < goodDays:
+			dayList.append(dayPoolGood.pick_random().instantiate())
+			j += 1
+		elif k < badDays:
+			dayList.append(dayPoolBad.pick_random().instantiate())
+			k += 1
+		else:
+			dayList.append(NORMAL_DAY.instantiate())
+	dayList.shuffle()
 	day_name.text = dayList.front().title
 	create_circle()
 	dayList.front().biggify()
@@ -48,6 +65,7 @@ func restart():
 	#remake day list
 	
 func advance_day():
+	Game.game.day.day_end()
 	total_days += 1
 	currentDay += 1
 	rotate_next()

@@ -48,6 +48,7 @@ var homeSlot
 var handPos = 0
 var seedPacket : PackedScene
 @export var water_cost := 1
+@onready var OG_water_cost = 0
 @onready var remaining = 0
 
 
@@ -62,7 +63,7 @@ func _ready():
 	seedPacket = load(scene_file_path)
 	print(seedPacket)
 	scale = default_scale
-	
+	OG_water_cost = water_cost
 	
 	match rarity:
 		0: money_cost = 5
