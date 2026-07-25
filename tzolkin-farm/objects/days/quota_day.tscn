@@ -11,12 +11,3 @@ modulate = Color(1, 0.03529412, 0, 1)
 
 [node name="Sprite2D" parent="." index="1" unique_id=1499132609]
 visible = false
-
-[node name="Button" type="Button" parent="." index="4" unique_id=1654575567]
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 21.625656
-offset_bottom = 21.254059
-tooltip_text = "aaaaaaaaaaaaaaaa reeeeee"
-flat = true
-metadata/_edit_use_anchors_ = true

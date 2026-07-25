@@ -29,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://b0vic0rrekw5e" path="res://art/ui/water_supply.png" id="27_5b14r"]
 [ext_resource type="Script" uid="uid://gpcfttc0alye" path="res://code/sundial.gd" id="27_bnpwn"]
 [ext_resource type="PackedScene" uid="uid://dy788pq7ankw6" path="res://objects/days/double_day.tscn" id="29_xfvwf"]
+[ext_resource type="PackedScene" uid="uid://cns8mp3ajmi25" path="res://objects/days/rainy_day.tscn" id="31_dhpj7"]
 [ext_resource type="PackedScene" uid="uid://tl6a1wadpqug" path="res://objects/days/money_day.tscn" id="35_iu0sx"]
 [ext_resource type="PackedScene" uid="uid://bc45jocgbctkx" path="res://objects/days/half_day.tscn" id="36_4v2jo"]
 
@@ -393,7 +394,7 @@ position = Vector2(1774, 139)
 script = ExtResource("27_bnpwn")
 spacing_degrees = 17.0
 finalDay = 55
-dayPool = Array[PackedScene]([ExtResource("29_xfvwf"), ExtResource("35_iu0sx"), ExtResource("36_4v2jo")])
+dayPool = Array[PackedScene]([ExtResource("29_xfvwf"), ExtResource("35_iu0sx"), ExtResource("36_4v2jo"), ExtResource("31_dhpj7")])
 
 [node name="Sun" type="Sprite2D" parent="sundial" unique_id=132937313]
 rotation = -0.1308997

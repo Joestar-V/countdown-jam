@@ -12,6 +12,8 @@ func _ready() -> void:
 	button.tooltip_text = description
 func daily_bonus(card : Card):
 	return
+func day_start():
+	pass
 func _process(delta):
 	rotation = -get_parent().rotation
 func biggify():

@@ -34,3 +34,12 @@ offset_top = -20.0
 offset_right = 20.0
 offset_bottom = 20.0
 tooltip_text = "reeeeeeeeeeeeeeeeee"
+
+[node name="Button" type="Button" parent="." unique_id=662817220]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 21.625656
+offset_bottom = 21.254059
+tooltip_text = "aaaaaaaaaaaaaaaa reeeeee"
+flat = true
+metadata/_edit_use_anchors_ = true

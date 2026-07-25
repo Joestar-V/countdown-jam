@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://d1spd566j18lu" path="res://objects/days/half_day.gd" id="1_vy6c4"]
 [ext_resource type="Texture2D" uid="uid://c3hm65se0pyks" path="res://art/pngtree-x2-3d-deal-png-image_11100531.png" id="2_si06k"]
 [ext_resource type="Texture2D" uid="uid://dkvw40uujwlti" path="res://art/icons/white-realistic-paper-round-shadow-png(1).png" id="3_hhf8u"]
+[ext_resource type="Texture2D" uid="uid://dp1j0ujqsyagn" path="res://art/dayicons/8809153.png" id="4_iikru"]
 
 [node name="Day" type="Node2D" unique_id=1162151081]
 scale = Vector2(1.2, 1.2)
@@ -17,8 +18,8 @@ scale = Vector2(0.165, 0.165)
 texture = ExtResource("3_hhf8u")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1499132609]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_si06k")
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("4_iikru")
 
 [node name="Label" type="Label" parent="." unique_id=567150553]
 visible = false

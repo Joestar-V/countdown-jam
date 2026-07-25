@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cns8mp3ajmi25"]
+
+[ext_resource type="PackedScene" uid="uid://crhcqdcsfi6xb" path="res://objects/day.tscn" id="1_1imev"]
+[ext_resource type="Script" uid="uid://db7iywjtyujyw" path="res://objects/days/rainy_day.gd" id="2_a4by4"]
+[ext_resource type="Texture2D" uid="uid://dqa3au006x35n" path="res://art/dayicons/pngtree-d-isolated-render-of-a-rain-icon-with-high-quality-and-png-image_20808894.png" id="2_mhha8"]
+
+[node name="Day" unique_id=1162151081 instance=ExtResource("1_1imev")]
+script = ExtResource("2_a4by4")
+title = "Rainy Day"
+description = "Rain blesses your land! It costs no water to plant today!"
+
+[node name="Sprite2D" parent="." index="1" unique_id=1499132609]
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("2_mhha8")

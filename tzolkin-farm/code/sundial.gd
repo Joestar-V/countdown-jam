@@ -4,7 +4,7 @@ extends Marker2D
 
 @export var radius := 224.0
 @export var spacing_degrees := 30.0
-#TODO:  Add tooltips. Add more days. add gameover.  Get wheel physics working. Add adjacency bonuses. Add tools
+#TODO:  Add more days. add gameover.  Get wheel physics working. Add adjacency bonuses. Add tools
 @onready var days: Node2D = $days
 @onready var total_rotation = 0.0
 
@@ -36,7 +36,7 @@ func first_day():
 	day_name.text = dayList.front().title
 	create_circle()
 	dayList.front().biggify()
-
+	dayList.front().day_start()
 	return (dayList.pop_front())
 	
 
@@ -62,7 +62,9 @@ func advance_day():
 		Game.game.day =  dayList.pop_front()
 		Game.game.day.biggify()
 		day_name.text = Game.game.day.title
+		Game.game.day.day_start()
 		Game.game.no_more_turn_ending = false
+		
 	
 		
 func rotate_next():
