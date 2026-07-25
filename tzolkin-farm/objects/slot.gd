@@ -156,8 +156,34 @@ func add_icons(spreadI: Vector3i, mults: Vector3, bonus : bool = false,target = 
 		target.add_child(fert)
 	
 	
-	#if mults > Vector3(1,1,1):
-		#add_icons(sed.bonus,sed.mults,true)
+	if mults > Vector3(1,1,1):
+		var spread_mult = -spread + (spread * mults)
+		bonus = true
+		
+		for x in spread_mult.x:
+			var food = TextureRect.new()
+			if bonus : food.texture = BONUS_FOOD
+			else : food.texture = FOOD
+			food.expand_mode = 4
+			food.stretch_mode = 5
+			food.custom_minimum_size = min_size
+			target.add_child(food)
+		for y in spread_mult.y:
+			var coin = TextureRect.new()
+			if bonus : coin.texture = BONUS_COIN
+			else : coin.texture = COIN
+			coin.expand_mode = 4
+			coin.stretch_mode = 5
+			coin.custom_minimum_size = min_size
+			target.add_child(coin)
+		for z in spread_mult.z:
+			var fert = TextureRect.new()
+			if bonus : fert.texture = BONUS_FERTIL
+			else : fert.texture = FERTIL
+			fert.expand_mode = 4
+			fert.stretch_mode = 5
+			fert.custom_minimum_size = min_size
+			target.add_child(fert)
 
 
 	
