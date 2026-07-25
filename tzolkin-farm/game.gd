@@ -179,10 +179,12 @@ func weekend():
 			
 			
 	await get_tree().create_timer(.5).timeout
-	for seed in seedList:
+	for i in range(seedList.size() - 1, -1, -1):
+		var seed = seedList[i]
 		seedkeeper.discard_pile.add_card(seed.seedPacket)
-		seedList.erase(seed)
+		seedkeeper.hand.handList[seed.handPos] = null
 		seed.queue_free()
+		seedList.remove_at(i)
 		
 	open_shop() #this never gets called
 	
@@ -197,6 +199,8 @@ func close_shop():
 	Game.game.current_state = Game.game.STATE.POPUP
 	shop.visible = false
 	shopping = false
+	for hand in seedkeeper.hand.handList:
+		hand = null
 	seedkeeper.reshuffle()
 	seedkeeper.draw_until_full()
 	Game.game.current_state = Game.game.STATE.PLAY
