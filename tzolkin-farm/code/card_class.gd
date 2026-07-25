@@ -4,6 +4,7 @@ class_name Card
 @onready var shop := false
 var money_cost := 5
 #@onready var sell_value := 4
+@onready var visual: Node2D = $visual
 
 @onready var move_component = $MoveComponent
 
@@ -54,9 +55,9 @@ var foodBonus = 0
 var moneyBonus = 0
 var fertBonus = 0
 var cardBonus : Array[Card]
-var foodMult = 1
-var moneyMult = 1
-var fertMult = 1
+var foodMult = 1.0
+var moneyMult = 1.0
+var fertMult = 1.0
 signal finished
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -78,7 +79,7 @@ func update_visuals():
 func _process(delta: float) -> void:
 	
 	
-	if dragging:
+	if dragging and Game.game.current_state == Game.game.STATE.PLAY:
 		global_position = get_global_mouse_position() - of
 		
 	elif !slotted:
@@ -91,7 +92,7 @@ func _process(delta: float) -> void:
 
 
 func _on_button_button_down() -> void:
-	if shop:
+	if shop and Game.game.current_state == Game.game.STATE.POPUP:
 		
 		if Game.game.moneyCount >= money_cost:
 			pass
@@ -100,20 +101,20 @@ func _on_button_button_down() -> void:
 			
 		return
 	stat_spread.hide()
-	
-	if Game.game.water < water_cost and !slotted:
-		Game.game.red_text()
-	if slotted:
-		if !planted:
+	if Game.game.current_state == Game.game.STATE.PLAY :
+		if Game.game.water < water_cost and !slotted:
+			Game.game.red_text()
+		if slotted:
+			if !planted:
+				Game.game.dragging = true
+				Game.game.dragged = self
+				dragging = true
+				of = get_global_mouse_position() - global_position
+		else:
+			dragging = true
 			Game.game.dragging = true
 			Game.game.dragged = self
-			dragging = true
 			of = get_global_mouse_position() - global_position
-	else:
-		dragging = true
-		Game.game.dragging = true
-		Game.game.dragged = self
-		of = get_global_mouse_position() - global_position
 
 func _on_button_button_up() -> void:
 		#maybe entering an area doesnt slot you right away, it just sets a potential slot and when you let go it slots you
@@ -212,7 +213,7 @@ func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket])
 		foodlet.finished.connect(_on_kid_finished, CONNECT_ONE_SHOT)
 		foodlet.global_position = global_position
 		foodlet.type = 0
-		foodlet.value = 1 * foodMult
+		foodlet.value = 1.0 * foodMult
 		foodlet.move_to_resource(Game.game.resources.food.global_position)
 		await get_tree().create_timer(.1).timeout
 
@@ -222,7 +223,7 @@ func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket])
 		remaining += 1
 		foodlet.finished.connect(_on_kid_finished, CONNECT_ONE_SHOT)
 		foodlet.type = 1
-		foodlet.value = 1 * moneyMult
+		foodlet.value = 1.0 * moneyMult
 		foodlet.global_position = global_position
 		foodlet.move_to_resource(Game.game.resources.money_bag.global_position)
 		await get_tree().create_timer(.1).timeout
@@ -233,7 +234,7 @@ func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket])
 		remaining += 1
 		foodlet.finished.connect(_on_kid_finished, CONNECT_ONE_SHOT)
 		foodlet.type = 2
-		foodlet.value = 1 * fertMult
+		foodlet.value = 1.0 * fertMult
 		foodlet.global_position = global_position
 		foodlet.move_to_resource(Game.game.resources.fertilizer.global_position)
 		await get_tree().create_timer(.1).timeout

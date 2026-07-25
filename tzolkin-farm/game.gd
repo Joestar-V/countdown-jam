@@ -26,7 +26,10 @@ const BEANS = preload("uid://blmgteof8oxul")
 const POTATO = preload("uid://r3v57ntk4jk8")
 const SQUASH = preload("uid://0r2fv35jbeuj")
 const WHEAT = preload("uid://bd7dp4kyhp0y6")
+const TINY_CARD = preload("uid://p4aq67v85plf")
 
+enum STATE { PLAY, SHOP, POPUP }
+var current_state = STATE.PLAY  
 
 
 
@@ -54,18 +57,18 @@ const WHEAT = preload("uid://bd7dp4kyhp0y6")
 		else:
 			end_turn.text = "End Day"
 			end_turn.disabled = false
-@onready var fertCount : int = 0:
+@onready var fertCount : float = 0:
 	set(value):
 		fertCount = value
-		resources.fertilizer_label.text = str(value)
-@onready var moneyCount : int = 0:
+		resources.fertilizer_label.text = str(int(value))
+@onready var moneyCount : float = 0:
 	set(value):
 		moneyCount = value
-		resources.money_label.text = str(value)
-@onready var foodCount : int = 0:
+		resources.money_label.text = str(int(value))
+@onready var foodCount : float = 0:
 	set(value):
 		foodCount = value
-		resources.food_label.text = str(foodCount)
+		resources.food_label.text = str(int(foodCount))
 
 
 func _ready() -> void:
@@ -162,14 +165,39 @@ func weekend():
 
 	while remaining > 0:
 		await get_tree().process_frame
+	for seed in seedList:
+		
+		seed.visual.hide()
+			
+		for i in 1:
+			var crd = TINY_CARD.instantiate()
+			seed.goodies.add_child(crd)
+			crd.type = 3
+			crd.global_position = seed.global_position
+			crd.card = seed.seedPacket
+			crd.move_to_resource(Game.game.seedkeeper.drawpile.pouch.global_position)
+			
+			
+	await get_tree().create_timer(.5).timeout
+	for seed in seedList:
+		seedkeeper.discard_pile.add_card(seed.seedPacket)
+		seedList.erase(seed)
+		seed.queue_free()
+		
 	open_shop() #this never gets called
-	#reshuffle deck
+	
 	calender.restart()
 func open_shop():
+	Game.game.current_state = Game.game.STATE.SHOP
 	shop.visible = true
 	shopping = true
 	#while shop.visible:
 	#	pass
 func close_shop():
+	Game.game.current_state = Game.game.STATE.POPUP
 	shop.visible = false
 	shopping = false
+	seedkeeper.reshuffle()
+	seedkeeper.draw_until_full()
+	Game.game.current_state = Game.game.STATE.PLAY
+	
