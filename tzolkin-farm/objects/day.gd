@@ -1,9 +1,9 @@
 class_name Day
 extends Node2D
 
-@export var title = "Ordinary Day"
+@export var title = "Quota Day"
 @export var image : Texture
-@export_multiline var description : String = "A beautiful, sunny day. Only as special as you make it."
+@export_multiline var description : String = "The last day of a season. If you don't meet the food quota, it's game over."
 @onready var bg: Sprite2D = $Sprite2D2
 @onready var label: Label = $Label
 
