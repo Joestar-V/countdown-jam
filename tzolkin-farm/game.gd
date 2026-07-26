@@ -9,7 +9,9 @@ class_name gamer
 @onready var seedList : Array
 @onready var seedkeeper: Node2D = $SeedKeeper
 @onready var spots: Node2D = $spots
-@onready var wheel: Node2D = $Wheel
+@onready var spinwheel: Node2D = $Wheel
+@onready var wheel: Node2D = $RealWheel
+
 @onready var slotList: Array
 @onready var resources: Node2D = $Resources
 @onready var harvested = false
@@ -139,6 +141,7 @@ func _ready() -> void:
 		i += 1
 	remaining = slotList.size()
 	day = calender.first_day()
+	wheel.create_circle()
 	print(day.title)
 	shop.init_shop()
 	
@@ -179,6 +182,14 @@ func _on_end_turn_pressed() -> void:
 	if shopping:
 		close_shop()
 		return
+			
+			
+	for slot in slotList:
+		if slot.pos == 4:
+			await slot.harvest_list()
+	harvested = false
+	actions = actionNum
+	no_more_turn_ending = true
 	for seed in seedList:
 		if seed.slotted:
 			if !seed.planted:
@@ -190,31 +201,28 @@ func _on_end_turn_pressed() -> void:
 			print(seed.slot.pos)
 			print(slotList.size())
 			
-			if seed.slot.pos >= slotList.size()-1:
-				seed.on_harvest_death() #harvest death here
-				await seed.finished
-				await seed.finished
-				
-				actions = 1
-				harvested = false
-				seed.slot.update_display()
-				
-			else:
-				seed.slot.seed.erase(seed)
-				seed.slot.update_layout()
-				seed.slot = slotList[seed.slot.pos+1]
-				seed.slot.seed.append(seed)
-				seed.slot.update_layout() #starfruit
-				seed.global_position = seed.slot.global_position
-				seed.slotted = true
-				seed.moving = 2
-				#seed.slot.update_display()
 			
-	
+				
+			#seed.slot.update_layout()
+			seed.next_slot = slotList[seed.slot.pos+1]
+			#seed.slot.update_layout() #starfruit
+			#seed.global_position = seed.slot.global_position
+			seed.slotted = true
+			seed.moving = 2
+			#seed.slot.update_display()
+	wheel.rotate_next()
+	await wheel.finished
+	for seed in seedList:
+		if seed.planted:
+			
+			seed.slot.seed.erase(seed)
+			seed.slot = seed.next_slot
+			seed.slot.seed.append(seed)
 	for slot in slotList:
 		slot.update_display()
-		
-	seedkeeper.draw_until_full()
+		slot.update_layout()
+	
+	await seedkeeper.draw_until_full()
 	await calender.advance_day()
 	
 func _on_slot_finished():
@@ -240,6 +248,8 @@ func weekend():
 		
 	while remaining > 0:
 		await get_tree().process_frame
+	dragging = false
+	dragged = null
 	for seed in seedList:
 		seed.visual.hide()
 			
@@ -272,6 +282,7 @@ func weekend():
 				#	spot.update_display()
 				
 			calender.restart()
+			wheel.reset_rotate()
 	
 func open_shop():
 	Game.game.current_state = Game.game.STATE.SHOP

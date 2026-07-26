@@ -41,6 +41,7 @@ var dragging = false
 var of = Vector2(0,0)
 var slotPos = Vector2(0,0)
 var slot 
+var next_slot
 var slotted = false
 var spinning
 var moving = 0
@@ -51,8 +52,8 @@ var seedPacket : PackedScene
 @export var water_cost := 1
 @onready var OG_water_cost = 0
 @onready var remaining = 0
-
-
+var og_parent
+var rotato = false
 var bonus := Vector3i(0,0,0)
 var mults:= Vector3(1,1,1)
 
@@ -83,7 +84,9 @@ func _process(delta: float) -> void:
 	
 	if dragging and Game.game.current_state == Game.game.STATE.PLAY:
 		global_position = get_global_mouse_position() - of
-		
+	elif rotato:
+		rotation = -get_parent().rotation
+
 	elif !slotted and homeSlot:
 		global_position = homeSlot.global_position + Vector2(card_image.texture.get_width() / 6.0 , card_image.texture.get_height() / 6.0)
 	if spinning:
@@ -97,6 +100,8 @@ func _process(delta: float) -> void:
 
 
 func _on_button_button_down() -> void:
+	if rotato:
+		return
 	if shop and Game.game.current_state == Game.game.STATE.POPUP:
 		
 		if Game.game.moneyCount >= money_cost:
@@ -160,7 +165,9 @@ func _on_button_button_up() -> void:
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.name == "slotHole" and (moving):
+	if rotato:
+		pass
+	elif area.name == "slotHole" and (moving):
 		slot = area.get_parent()
 		#area.get_parent().seed.append(self)
 		slotted = true
@@ -190,7 +197,9 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
-	if area.name == "slotHole" and moving:
+	if rotato:
+		pass
+	elif area.name == "slotHole" and moving:
 		
 		moving -= 1
 	
@@ -290,12 +299,13 @@ func _on_kid_finished():
 	print("Remaining:", remaining)
 
 func zoom():
-	if hovered == false:
-		hovered = true
-		z_index = stack_index + 100
-		if !dragging: stat_spread.show()
-		
-		scale = hover_scale
+	if !rotato:
+		if hovered == false:
+			hovered = true
+			z_index = stack_index + 100
+			if !dragging: stat_spread.show()
+			
+			scale = hover_scale
 		#create_tween().tween_property(self,"scale",hover_scale,0.2).set_trans(transition_type)
 		#await get_tree().create_timer(.2).timeout
 	

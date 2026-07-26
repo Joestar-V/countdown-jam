@@ -36,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://buy1h8xxb6wa8" path="res://art/ui/recycle-bin.png" id="17_rvswv"]
 [ext_resource type="PackedScene" uid="uid://bwbd6340j740s" path="res://objects/buildings/pig_pen.tscn" id="18_mljfx"]
 [ext_resource type="PackedScene" uid="uid://bw3epfysqhd7k" path="res://objects/buildings/water_wheel.tscn" id="19_qpefm"]
+[ext_resource type="Script" uid="uid://wanjkf673j7x" path="res://objects/wheel.gd" id="22_qpefm"]
 [ext_resource type="PackedScene" uid="uid://cluhqubl3e2e4" path="res://shop.tscn" id="22_vaj68"]
 [ext_resource type="Texture2D" uid="uid://b0vic0rrekw5e" path="res://art/ui/water_supply.png" id="27_5b14r"]
 [ext_resource type="Script" uid="uid://gpcfttc0alye" path="res://code/sundial.gd" id="27_bnpwn"]
@@ -467,6 +468,11 @@ stage = 4
 [node name="Resources" parent="." unique_id=1812906870 instance=ExtResource("4_7sc4i")]
 position = Vector2(960, 0)
 scale = Vector2(0.99999994, 0.99999994)
+
+[node name="RealWheel" type="Node2D" parent="." unique_id=1549002412]
+position = Vector2(960, 1376)
+script = ExtResource("22_qpefm")
+radius = 550.0
 
 [node name="SeedKeeper" type="Node2D" parent="." unique_id=743107986]
 script = ExtResource("11_hb5m1")

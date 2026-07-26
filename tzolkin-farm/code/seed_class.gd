@@ -67,7 +67,7 @@ func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket])
 	super(foodCount, moneyCount , fertCount, cards)
 	
 func _on_button_pressed() -> void:
-	if slotted:
+	if slotted and !rotato:
 		if slot.stage != 0 and Game.game.actions > 0:
 			print(slot.seed)
 			slot.harvest_list()

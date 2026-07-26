@@ -80,13 +80,6 @@ position = Vector2(-3.5527137e-15, -2.5833335)
 scale = Vector2(0.036, 0.02372439)
 texture = ExtResource("2_rw4v0")
 
-[node name="dirt" type="Sprite2D" parent="visuals" unique_id=442416611]
-texture_filter = 1
-use_parent_material = true
-position = Vector2(0, 0.6666666)
-scale = Vector2(0.029, 0.023250002)
-texture = ExtResource("2_ks62j")
-
 [node name="stats" type="Node2D" parent="visuals" unique_id=2038648202]
 visible = false
 position = Vector2(0, -16)
@@ -120,17 +113,24 @@ theme_override_constants/margin_bottom = 6
 layout_mode = 2
 columns = 3
 
+[node name="dirt" type="Sprite2D" parent="visuals" unique_id=442416611]
+texture_filter = 1
+use_parent_material = true
+position = Vector2(0, 0.6666666)
+scale = Vector2(0.029, 0.023250002)
+texture = ExtResource("2_ks62j")
+
 [node name="WoodSign" type="Sprite2D" parent="visuals" unique_id=1071048682]
 use_parent_material = true
 position = Vector2(0, -12.250122)
-scale = Vector2(0.027517233, 0.02856182)
+scale = Vector2(0.027517235, 0.028561821)
 texture = ExtResource("5_mskdk")
 region_enabled = true
 region_rect = Rect2(303.487, 13.641022, 413.1281, 248.8847)
 
 [node name="seed" type="Label" parent="visuals" unique_id=901106306]
 visible = false
-offset_left = -4.6666665
+offset_left = -4.666667
 offset_top = -15.833334
 offset_right = 121.374985
 offset_bottom = 68.166664

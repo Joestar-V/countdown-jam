@@ -66,10 +66,10 @@ func _process(delta: float) -> void:
 func update_layout():
 	var i = 0
 	for seedy in seed:
-		if !seedy.dragging :
+		if !seedy.dragging and !seedy.rotato:
 			seedy.z_index = i
 			seedy.unzoom()
-			seedy.fieldSlot = self
+			seedy.fieldSlot = self #it always seems to be the middle one that is considered first? even when harvesting
 			seedy.home_position = global_position + Vector2(0, -CARD_OFFSET * (seed.size() - 1 - i))
 			if !seedy.dragging:
 				seedy.global_position = seedy.home_position

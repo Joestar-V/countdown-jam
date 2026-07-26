@@ -6,6 +6,8 @@ extends Node2D
 @onready var discard_pile: Node2D = $DiscardPile
 const TINY_CARD = preload("res://objects/tiny_card.tscn")
 signal finish_sorting
+@onready var remaining = 0
+
 #card thats better when planted with more of itself
 #card that is good to harvest as a sprout but it doenst give back a seed when it does
 #sunflowers are advantageous at all parts of their life
@@ -14,7 +16,9 @@ signal finish_sorting
 func _ready() -> void:
 	pass
 
-
+func _on_kid_finished():
+	remaining -= 1
+	
 func draw_until_full(): 
 	var j = -1
 	for i in hand.handList:
@@ -25,6 +29,7 @@ func draw_until_full():
 			if drawpile.pile.is_empty():
 				await reshuffle()
 			if drawpile.pile.is_empty():
+				finish_sorting.emit()
 				return
 			var drawnCard = drawpile.pile.front().instantiate()
 			drawpile.pile.pop_front()
@@ -35,6 +40,8 @@ func draw_until_full():
 			drawnCard.homeSlot = hand.slotList[j]
 			Game.game.seedList.append(drawnCard)
 			for bld in Game.game.building_keeper.buildings: bld.on_seed_init(drawnCard)
+	
+	
 			
 func reshuffle():
 	var tinyList : Array
@@ -50,12 +57,12 @@ func reshuffle():
 
 		tinycard.card = card
 		tinycard.type = 3
-
+		remaining += 1
+		tinycard.finished.connect(_on_kid_finished, CONNECT_ONE_SHOT)
 		discard_pile.discard_count.text = str(discard_pile.pile.size())
 
 		tinycard.animation_player.play("tiny_resource/recycle")
 		await get_tree().create_timer(0.1).timeout
 	
-	for tiny in tinyList:
-		if tiny:
-			await tiny.animation_player.animation_finished
+	while remaining > 0:
+		await get_tree().process_frame
