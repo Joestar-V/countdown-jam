@@ -82,14 +82,10 @@ gizmo_extents = 148.0
 position = Vector2(684, 576)
 gizmo_extents = 148.0
 
-[node name="plot3" type="Marker2D" parent="plots" unique_id=1837925921]
-position = Vector2(1272, 564)
+[node name="plot3" type="Marker2D" parent="plots" unique_id=1916700286]
+position = Vector2(1092, 569.32)
 gizmo_extents = 148.0
 
-[node name="plot4" type="Marker2D" parent="plots" unique_id=1199000525]
-position = Vector2(1572, 588)
-gizmo_extents = 148.0
-
-[node name="plot5" type="Marker2D" parent="plots" unique_id=1916700286]
-position = Vector2(972, 612)
+[node name="plot4" type="Marker2D" parent="plots" unique_id=1837925921]
+position = Vector2(1416, 593.32)
 gizmo_extents = 148.0

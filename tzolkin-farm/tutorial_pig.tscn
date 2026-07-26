@@ -20,13 +20,43 @@
 [ext_resource type="Texture2D" uid="uid://cgknl3qcs48vw" path="res://art/icons/coin.png" id="14_to63i"]
 [ext_resource type="Texture2D" uid="uid://drv0likx0r56a" path="res://art/tutorial/Screenshot 2026-07-26 031108.png" id="15_bpd62"]
 [ext_resource type="Texture2D" uid="uid://ctjcjrrw23c5v" path="res://art/icons/bonus_coin.png" id="15_to63i"]
+[ext_resource type="Texture2D" uid="uid://bgk8bgdcv2nfq" path="res://art/ui/arrow_anim.png" id="21_bpd62"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_b64ip"]
 font = ExtResource("2_srqgs")
-font_size = 24
+font_size = 26
 shadow_size = 7
 shadow_color = Color(0, 0, 0, 0.7529412)
 shadow_offset = Vector2(1, 2.085)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eup64"]
+atlas = ExtResource("21_bpd62")
+region = Rect2(0, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hkjlw"]
+atlas = ExtResource("21_bpd62")
+region = Rect2(80, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pxex"]
+atlas = ExtResource("21_bpd62")
+region = Rect2(160, 0, 80, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b64ip"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eup64")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hkjlw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pxex")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Pig" type="Node2D" unique_id=664733262]
 script = ExtResource("1_speqt")
@@ -535,14 +565,23 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -187.0
-offset_top = -15.0
-offset_right = 188.0
-offset_bottom = 40.0
+offset_left = -255.0
+offset_top = -9.0
+offset_right = 230.0
+offset_bottom = 46.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Click me to toggle the tutorial!"
 label_settings = SubResource("LabelSettings_b64ip")
 horizontal_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=635613194]
+visible = false
+texture_filter = 5
+position = Vector2(-69, 5)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_b64ip")
+frame_progress = 0.7458675
+flip_v = true
 
 [connection signal="pressed" from="pig" to="." method="_on_pig_pressed"]

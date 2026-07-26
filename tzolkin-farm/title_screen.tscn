@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cnmxg7kyvcdfl" path="res://art/ui/ping.png" id="3_skmiq"]
 [ext_resource type="Theme" uid="uid://forf20kkm6ao" path="res://art/tutorial/tutorial_theme.tres" id="4_xfn3p"]
 [ext_resource type="Texture2D" uid="uid://ndi6b7jvp0vj" path="res://art/buildings/mr_sun.png" id="5_hafda"]
+[ext_resource type="Script" uid="uid://ccpgrrgioedjc" path="res://volume_slider.gd" id="6_n1yhu"]
 [ext_resource type="Texture2D" uid="uid://bxpqs4v5img8y" path="res://art/buildings/textturizer.png" id="6_tpml5"]
 [ext_resource type="Texture2D" uid="uid://top4dpregn8j" path="res://art/ui/thumbs_up.png" id="7_jqemp"]
 [ext_resource type="Texture2D" uid="uid://c5qcjyweqmmit" path="res://art/tutorial/plant.png" id="10_rhgbh"]
@@ -13,6 +14,14 @@
 [ext_resource type="Texture2D" uid="uid://d2a18va2yprxt" path="res://art/tutorial/harvest.png" id="11_skmiq"]
 [ext_resource type="Texture2D" uid="uid://d3wiu3tijaojr" path="res://art/tutorial/sun.png" id="12_lf08s"]
 [ext_resource type="Texture2D" uid="uid://c5v7bcvqfvkdu" path="res://art/doodles/lord berdy.png" id="13_lf08s"]
+[ext_resource type="FontFile" uid="uid://j8glluhsw0mx" path="res://art/ui/segoe-print-regular.ttf" id="28_x063l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_b64ip"]
+font = ExtResource("28_x063l")
+font_size = 23
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1, 2.215)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tpml5"]
 atlas = ExtResource("5_hafda")
@@ -91,6 +100,48 @@ layout_mode = 2
 size_flags_vertical = 4
 theme = ExtResource("4_xfn3p")
 text = "LEAVE"
+
+[node name="Control2_ Resonance" type="VBoxContainer" parent="." unique_id=1087801853]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 888.0
+offset_top = 852.0
+offset_right = 1056.0
+offset_bottom = 1022.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control2_ Resonance" unique_id=1590443975]
+layout_mode = 2
+text = "Music"
+label_settings = SubResource("LabelSettings_b64ip")
+
+[node name="HSlider" type="HSlider" parent="Control2_ Resonance" unique_id=1886757107]
+layout_mode = 2
+max_value = 4.0
+step = 0.0
+value = 2.0
+tick_count = 5
+script = ExtResource("6_n1yhu")
+bus_name = "Music"
+
+[node name="Label2" type="Label" parent="Control2_ Resonance" unique_id=1065649919]
+layout_mode = 2
+text = "
+Sound Effects"
+label_settings = SubResource("LabelSettings_b64ip")
+
+[node name="HSlider2" type="HSlider" parent="Control2_ Resonance" unique_id=237217247]
+layout_mode = 2
+max_value = 4.0
+step = 0.0
+value = 2.0
+tick_count = 5
+script = ExtResource("6_n1yhu")
+bus_name = "Sound Effects"
 
 [node name="MrSun" type="AnimatedSprite2D" parent="." unique_id=11568429]
 texture_filter = 5
