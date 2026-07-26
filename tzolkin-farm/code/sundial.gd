@@ -19,6 +19,9 @@ extends Marker2D
 @export var dayPoolBad : Array[PackedScene]
 
 @onready var day_name: Label = $"day name"
+@onready var day_desc = $"day desc"
+
+
 @onready var sun: Sprite2D = $Sun
 @onready var total_days : int = 0
 const QUOTA_DAY = preload("res://objects/days/quota_day.tscn")
@@ -52,6 +55,7 @@ func first_day():
 	dayList.shuffle()
 	dayList.push_front(NORMAL_DAY.instantiate())
 	day_name.text = dayList.front().title
+	day_desc.text = dayList.front().description
 	create_circle()
 	dayList.front().biggify()
 	dayList.front().day_start()
@@ -78,6 +82,7 @@ func firster_day():
 	dayList.shuffle()
 	dayList.push_front(NORMAL_DAY.instantiate())
 	day_name.text = dayList.front().title
+	day_desc.text = dayList.front().description
 	create_circle()
 	dayList.front().biggify()
 	dayList.front().day_start()
@@ -104,16 +109,19 @@ func advance_day():
 	if currentDay >= weekLength:
 		Game.game.day.tinymize()
 		day_name.text = lastDay.title
+		day_desc.text = lastDay.description
 		lastDay.biggify()
 		await Game.game.weekend()
 		Game.game.day = firster_day()
 		day_name.text = Game.game.day.title
+		day_desc.text = Game.game.day.description
 		
 	else:
 		Game.game.day.tinymize()
 		Game.game.day =  dayList.pop_front()
 		Game.game.day.biggify()
 		day_name.text = Game.game.day.title
+		day_desc.text = Game.game.day.description
 		Game.game.day.day_start()
 		for building : Building in Game.game.building_keeper.buildings: building.on_turn_start()
 		
