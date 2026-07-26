@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://36egsxredcru"]
+
+[ext_resource type="PackedScene" uid="uid://cwjxq2jehc60x" path="res://objects/seed.tscn" id="1_bh288"]
+[ext_resource type="Script" uid="uid://cqctxfremkh01" path="res://objects/crops/grape.gd" id="2_bh288"]
+[ext_resource type="Texture2D" uid="uid://bk1df7uufc8d4" path="res://art/card images/seed_grapevine.png" id="3_skq3y"]
+
+[node name="grape" unique_id=1742177086 instance=ExtResource("1_bh288")]
+script = ExtResource("2_bh288")
+flower = Vector3i(0, 0, 1)
+fruit = Vector3i(2, 0, 0)
+death = Vector3i(0, 0, 6)
+card_name = "Grape Vine"
+picture = ExtResource("3_skq3y")
+rarity = 1
+water_cost = 4
+
+[node name="card_image" parent="visual" parent_id_path=PackedInt32Array(153132487) index="0" unique_id=551817306]
+texture = ExtResource("3_skq3y")

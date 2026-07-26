@@ -7,6 +7,7 @@ extends Node2D
 
 @onready var week_end_sound = $week_end_sound
 @onready var playlist = $playlist
+@onready var purchase_sound = $purchase_sound
 
 func _process(delta):
 	if Input.is_action_just_released("Click"): play_pop()
@@ -25,6 +26,9 @@ func play_food():
 	
 func play_fert():
 	fert_sound.play()
+
+func play_purchase():
+	purchase_sound.play()
 
 func play_week_start(): 
 	playlist.stream_paused = true

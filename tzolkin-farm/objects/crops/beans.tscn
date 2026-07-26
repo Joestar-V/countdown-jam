@@ -10,9 +10,9 @@ category = 1
 sprout = Vector3i(0, 0, 1)
 flower = Vector3i(2, 0, 1)
 fruit = Vector3i(4, 0, 0)
-death = Vector3i(0, 0, 2)
 card_name = "Beans"
 picture = ExtResource("3_xhej6")
+rarity = 1
 water_cost = 2
 
 [node name="card_image" parent="visual" parent_id_path=PackedInt32Array(153132487) index="0" unique_id=551817306]

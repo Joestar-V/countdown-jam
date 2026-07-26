@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bocx4he5lux4"]
+
+[ext_resource type="PackedScene" uid="uid://cwjxq2jehc60x" path="res://objects/seed.tscn" id="1_e22v8"]
+[ext_resource type="Script" uid="uid://buuljjpv1gbxk" path="res://objects/crops/carrot.gd" id="2_e22v8"]
+[ext_resource type="Texture2D" uid="uid://bt5kdynveig0q" path="res://art/card images/seed_carrot.png" id="3_5lj0e"]
+
+[node name="Carrot" unique_id=1742177086 instance=ExtResource("1_e22v8")]
+script = ExtResource("2_e22v8")
+category = 3
+sprout = Vector3i(0, 1, 0)
+flower = Vector3i(2, 0, 0)
+fruit = Vector3i(0, 3, 0)
+card_name = "Carrot"
+picture = ExtResource("3_5lj0e")
+
+[node name="card_image" parent="visual" parent_id_path=PackedInt32Array(153132487) index="0" unique_id=551817306]
+texture = ExtResource("3_5lj0e")
+
+[node name="Area2D" parent="." index="2" unique_id=1163772541]
+visible = false

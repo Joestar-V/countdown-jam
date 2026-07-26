@@ -12,11 +12,14 @@
 [ext_resource type="PackedScene" uid="uid://dcb4fgcxec42p" path="res://objects/crops/maize.tscn" id="5_l1i01"]
 [ext_resource type="PackedScene" uid="uid://blmgteof8oxul" path="res://objects/crops/beans.tscn" id="6_r62pu"]
 [ext_resource type="PackedScene" uid="uid://h25xor7ms780" path="res://objects/crops/apple.tscn" id="7_klri6"]
+[ext_resource type="PackedScene" uid="uid://1tmmnytr3fd2" path="res://objects/crops/cactus.tscn" id="8_kq12w"]
 [ext_resource type="PackedScene" uid="uid://rhdfbuaejr7m" path="res://objects/buildings/barn.tscn" id="8_l1i01"]
 [ext_resource type="FontFile" uid="uid://j8glluhsw0mx" path="res://art/ui/segoe-print-regular.ttf" id="9_f1jbl"]
 [ext_resource type="Texture2D" uid="uid://dwqwiqrv1jfri" path="res://art/ui/hand.png" id="9_hb5m1"]
+[ext_resource type="PackedScene" uid="uid://36egsxredcru" path="res://objects/crops/grape.tscn" id="9_m28ev"]
 [ext_resource type="PackedScene" uid="uid://ds42iybef5saq" path="res://objects/buildings/chicken_coop.tscn" id="9_r62pu"]
 [ext_resource type="PackedScene" uid="uid://dealvndyjgyyq" path="res://objects/buildings/composter.tscn" id="10_klri6"]
+[ext_resource type="PackedScene" uid="uid://bocx4he5lux4" path="res://objects/crops/carrot.tscn" id="10_lwlx3"]
 [ext_resource type="Script" uid="uid://d0po6tfbuhuc5" path="res://hand_image.gd" id="10_x5p1p"]
 [ext_resource type="PackedScene" uid="uid://6ii4tvrtdknv" path="res://objects/buildings/magic_garden.tscn" id="11_eu6ph"]
 [ext_resource type="Script" uid="uid://b706fq76tajfe" path="res://seed_keeper.gd" id="11_hb5m1"]
@@ -296,7 +299,7 @@ shadow_offset = Vector2(2, 3)
 
 [node name="Game" type="Node2D" unique_id=1509497783]
 script = ExtResource("1_vef74")
-card_pool = Array[PackedScene]([ExtResource("2_aa0lp"), ExtResource("3_iu0sx"), ExtResource("4_4v2jo"), ExtResource("5_l1i01"), ExtResource("6_r62pu"), ExtResource("7_klri6")])
+card_pool = Array[PackedScene]([ExtResource("2_aa0lp"), ExtResource("3_iu0sx"), ExtResource("4_4v2jo"), ExtResource("5_l1i01"), ExtResource("6_r62pu"), ExtResource("7_klri6"), ExtResource("8_kq12w"), ExtResource("9_m28ev"), ExtResource("10_lwlx3")])
 building_pool = Array[PackedScene]([ExtResource("8_l1i01"), ExtResource("9_r62pu"), ExtResource("10_klri6"), ExtResource("11_eu6ph"), ExtResource("12_edr7y"), ExtResource("13_kq12w"), ExtResource("14_t46w6"), ExtResource("15_m28ev")])
 
 [node name="building_keeper" parent="." unique_id=929817058 instance=ExtResource("2_xa8c5")]

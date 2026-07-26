@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://1tmmnytr3fd2"]
+
+[ext_resource type="PackedScene" uid="uid://cwjxq2jehc60x" path="res://objects/seed.tscn" id="1_r6k67"]
+[ext_resource type="Script" uid="uid://cshrkqw5nqjhq" path="res://objects/crops/cactus.gd" id="2_8kbmo"]
+[ext_resource type="Texture2D" uid="uid://b5yqqrbsegsg0" path="res://art/card images/seed_cactus.png" id="3_r6k67"]
+
+[node name="Cactus" unique_id=1742177086 instance=ExtResource("1_r6k67")]
+script = ExtResource("2_8kbmo")
+category = 2
+sprout = Vector3i(1, 0, 0)
+flower = Vector3i(1, 0, 0)
+fruit = Vector3i(2, 1, 0)
+death = Vector3i(0, 1, 0)
+card_name = "Prickly Pear"
+picture = ExtResource("3_r6k67")
+rarity = 1
+tooltip = "Cheap"
+water_cost = 0
+
+[node name="card_image" parent="visual" parent_id_path=PackedInt32Array(153132487) index="0" unique_id=551817306]
+texture = ExtResource("3_r6k67")
+
+[node name="Area2D" parent="." index="2" unique_id=1163772541]
+visible = false
