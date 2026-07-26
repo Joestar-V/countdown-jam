@@ -128,7 +128,6 @@ func advance_day():
 		day_name.text = Game.game.day.title
 		day_desc.text = Game.game.day.description
 		Game.game.day.day_start()
-		Game.game.current_state = Game.game.STATE.PLAY
 		for building : Building in Game.game.building_keeper.buildings: building.on_turn_start()
 		
 		Game.game.no_more_turn_ending = false

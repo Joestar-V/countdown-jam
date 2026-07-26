@@ -1,8 +1,6 @@
 extends Node2D
 class_name gamer
 
-#todo: finish tutorials, fix zoom? add adjaceny or more cards
-
 @onready var jukebox = $jukebox
 @onready var moon = $moon_group
 @onready var end_turn = $"moon_group/Moon/End Turn"
@@ -188,7 +186,7 @@ func _on_end_turn_pressed() -> void:
 		close_shop()
 		return
 			
-	current_state = STATE.POPUP
+			
 	for slot in slotList:
 		if slot.pos == 4:
 			await slot.harvest_list()
