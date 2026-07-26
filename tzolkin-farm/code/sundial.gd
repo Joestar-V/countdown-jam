@@ -46,10 +46,14 @@ func first_day():
 	currentDay = currentDay
 	var j = 0
 	var k = 0
+	
 	for i in weekLength-1:
-		if j < goodDays + badDays:
+		if j < goodDays:
 			dayList.append(dayPoolGood.pick_random().instantiate())
 			j += 1
+		elif k < badDays:
+			dayList.append(dayPoolBad.pick_random().instantiate())
+			k += 1
 		else:
 			dayList.append(NORMAL_DAY.instantiate())
 	dayList.shuffle()

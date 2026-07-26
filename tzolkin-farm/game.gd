@@ -95,7 +95,7 @@ var current_state = STATE.PLAY
 		moneyCount = value
 		resources.money_label.text = str(int(value))
 		
-@onready var foodCount : float = 200:
+@onready var foodCount : float = 30:
 	set(value):
 		#if value > foodCount:
 			#jukebox.play_food()
@@ -153,7 +153,10 @@ func white_text():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	total_seeds = seedkeeper.drawpile.pile.size() + seedkeeper.discard_pile.pile.size() + seedList.size()
-
+	if dragging:
+			end_turn.disabled = true
+	else:
+		end_turn.disabled = false
 func _on_seed_turn_over() -> void:
 	pass
 	
@@ -199,6 +202,7 @@ func _on_end_turn_pressed() -> void:
 				seed.slot.seed.erase(seed)
 				seed.slot = slotList[seed.slot.pos+1]
 				seed.slot.seed.append(seed)
+				seed.slot.update_layout() #starfruit
 				seed.global_position = seed.slot.global_position
 				seed.slotted = true
 				seed.moving = 2
@@ -277,6 +281,9 @@ func open_shop():
 	await animation_player.animation_finished
 	shopping = true
 	Game.game.no_more_turn_ending = false
+	actions = 0
+
+	harvested = false
 	#while shop.visible:
 	#	pass
 func close_shop():

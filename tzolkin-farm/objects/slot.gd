@@ -21,7 +21,7 @@ var glow_time = 0.8
 
 @onready var fruiting = $visuals/fruiting
 @onready var slot_hole = $slotHole
-
+@onready var temp_seed : Array[Card]
 const BONUS_COIN = preload("uid://ctjcjrrw23c5v")
 const BONUS_FERTIL = preload("uid://7ohukfd6rqda")
 const BONUS_FOOD = preload("uid://3du4b373wpkw")
@@ -29,7 +29,7 @@ const BONUS_FOOD = preload("uid://3du4b373wpkw")
 const COIN = preload("uid://cgknl3qcs48vw")
 const FERTIL = preload("uid://c8yq733xmh0cc")
 const FOOD = preload("uid://c668e1veyatay")
-
+const CARD_OFFSET := 30.0
 @onready var stats = $visuals/stats
 @onready var grid = $visuals/stats/stat_spread/margin/grid
 
@@ -55,14 +55,41 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	if Game.game.current_state == Game.game.STATE.PLAY:
-		if (Game.game.dragging == true) and (Game.game.harvested == false) and (Game.game.dragged) and (Game.game.water >= Game.game.dragged.water_cost) and (Game.game.fertCount >= self.pos): 
-			if !glowing: glow()
-		else:
-			create_tween().tween_property(self.material,"shader_parameter/flash_amount",0.0,0.0001)
-		
-		
+	if (Game.game.dragging == true) and (Game.game.harvested == false) and (Game.game.water >= Game.game.dragged.water_cost) and (Game.game.fertCount >= self.pos): 
+		if !glowing: glow()
+	else:
+		create_tween().tween_property(self.material,"shader_parameter/flash_amount",0.0,0.0001)
+	if seed != temp_seed:
+		update_layout()
+		temp_seed = seed.duplicate()
 	
+func update_layout():
+	var i = 0
+	for seedy in seed:
+		if !seedy.dragging :
+			seedy.z_index = i
+			seedy.fieldSlot = self
+			seedy.home_position = global_position + Vector2(0, -CARD_OFFSET * (seed.size() - 1 - i))
+			seedy.global_position = seedy.home_position
+			seedy.stack_index = i
+			seedy.z_index = i
+			i += 1
+func next_card():
+	if seed.size() <= 1:
+		return
+
+	var seedy = seed.pop_back()
+	seed.push_front(seedy)
+	var c = seed.pop_back()
+	seed.push_front(c)
+	update_layout()
+func previous_card():
+	if seed.size() <= 1:
+		return
+
+	var seedy = seed.pop_front()
+	seed.push_back(seedy)
+	update_layout()
 func glow():
 	glowing = true
 	await create_tween().tween_property(self.material,"shader_parameter/flash_amount",0.3,glow_time).set_trans(Tween.TRANS_SINE).finished
@@ -197,3 +224,11 @@ func add_icons(spreadI: Vector3i, mults: Vector3, bonus : bool = false,target = 
 
 
 	
+
+
+func _on_slot_hole_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.is_pressed():
+		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
+			next_card()
+		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+			previous_card()

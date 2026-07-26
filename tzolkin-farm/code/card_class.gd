@@ -22,6 +22,7 @@ var money_cost := 5
 @export_multiline var tooltip : String = "this is the tooltip"
 @onready var transition_type = Tween.TransitionType.TRANS_SINE
 
+@onready var fieldSlot 
 
 @onready var stat_spread = $visual/stat_spread
 
@@ -35,7 +36,7 @@ const TINY_CARD = preload("res://objects/tiny_card.tscn")
 var destroy = false
 
 signal turn_over
-
+var stack_index := 0
 var dragging = false
 var of = Vector2(0,0)
 var slotPos = Vector2(0,0)
@@ -56,7 +57,7 @@ var bonus := Vector3i(0,0,0)
 var mults:= Vector3(1,1,1)
 
 var cardBonus : Array[Card]
-
+var home_position : Vector2
 signal finished
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -86,7 +87,7 @@ func _process(delta: float) -> void:
 	elif !slotted and homeSlot:
 		global_position = homeSlot.global_position + Vector2(card_image.texture.get_width() / 6.0 , card_image.texture.get_height() / 6.0)
 	if spinning:
-		global_position = slot.global_position
+		global_position = home_position
 	if destroy:
 		if !goodies.get_children():
 			slot.seed.erase(self)
@@ -174,7 +175,10 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		Game.game.fertCount -= area.get_parent().pos
 		Game.game.actions -= 1
 		slot = area.get_parent()
-		area.get_parent().seed.append(self)
+		
+		if !slot.seed.has(self):
+			slot.seed.append(self)
+		slot.update_layout()
 		area.get_parent().update_display()
 		slotted = true
 		slotPos = area.global_position
@@ -284,7 +288,7 @@ func _on_kid_finished():
 func zoom():
 	if hovered == false:
 		hovered = true
-		z_index += 10
+		z_index = stack_index + 100
 		if !dragging: stat_spread.show()
 		
 		scale = hover_scale
@@ -294,7 +298,7 @@ func zoom():
 func unzoom():
 	if hovered == true:
 		hovered = false
-		z_index -= 10
+		z_index = stack_index
 		stat_spread.hide()
 		scale = default_scale
 		#create_tween().tween_property(self,"scale",default_scale,0.15).set_trans(transition_type)

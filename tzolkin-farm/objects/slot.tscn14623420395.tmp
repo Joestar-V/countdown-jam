@@ -53,10 +53,7 @@ font = ExtResource("6_mskdk")
 font_size = 29
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6tghx"]
-size = Vector2(6.9166665, 6.6891026)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvygb"]
-size = Vector2(12.5, 18.939102)
+size = Vector2(4.9230766, 4.9230766)
 
 [node name="Slot" type="Node2D" unique_id=658892514]
 material = SubResource("ShaderMaterial_hvygb")
@@ -174,14 +171,4 @@ texture = ExtResource("9_cbeh3")
 self_modulate = Color(1, 1, 1, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="slotHole" unique_id=1431792996]
-position = Vector2(0.04166659, -0.40544868)
 shape = SubResource("RectangleShape2D_6tghx")
-
-[node name="slotHole2" type="Area2D" parent="." unique_id=1537384222]
-self_modulate = Color(1, 1, 1, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="slotHole2" unique_id=591630577]
-position = Vector2(0, -6.4166665)
-shape = SubResource("RectangleShape2D_hvygb")
-
-[connection signal="input_event" from="slotHole2" to="." method="_on_slot_hole_input_event"]

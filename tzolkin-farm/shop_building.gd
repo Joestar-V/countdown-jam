@@ -75,7 +75,7 @@ func zoom():
 		visual.scale = hover_scale
 		#create_tween().tween_property(self,"scale",hover_scale,0.2).set_trans(transition_type)
 		#await get_tree().create_timer(.2).timeout
-	
+		
 func unzoom():
 	if hovered == true:
 		hovered = false
