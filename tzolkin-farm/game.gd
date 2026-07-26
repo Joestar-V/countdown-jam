@@ -3,6 +3,7 @@ class_name gamer
 
 @onready var jukebox = $jukebox
 @onready var moon = $moon_group
+@onready var end_turn = $"moon_group/Moon/End Turn"
 
 
 @onready var seedList : Array
@@ -45,7 +46,6 @@ enum STATE { PLAY, SHOP, POPUP }
 var current_state = STATE.PLAY  
 @onready var building_keeper = $building_keeper
 
-@onready var end_turn = $"moon_group/End Turn"
 
 @onready var calender: Marker2D = $sundial
 @onready var total_apples = 0
@@ -73,7 +73,7 @@ var current_state = STATE.PLAY
 			end_turn.disabled = true
 			moon.glow_stop()
 		else:
-			end_turn.text = "End Day"
+			end_turn.text = "End Day\n(E or Space)"
 			end_turn.disabled = false
 			moon.glow()
 @onready var fertCount : float = 0:

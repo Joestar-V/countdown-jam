@@ -370,7 +370,7 @@ shader_parameter/number_of_images = Vector2(1, 1)
 [sub_resource type="Theme" id="Theme_lwlx3"]
 Button/colors/font_color = Color(0, 0, 0, 1)
 Button/colors/font_disabled_color = Color(0, 0, 0, 0.49803922)
-Button/colors/font_hover_color = Color(0.19434926, 0.19434929, 0.1943492, 1)
+Button/colors/font_hover_color = Color(0.33660746, 0.3366077, 0.33660752, 1)
 Button/colors/font_pressed_color = Color(0.19076231, 0.19076234, 0.19076225, 1)
 Button/font_sizes/font_size = 36
 Button/fonts/font = ExtResource("9_f1jbl")
@@ -541,20 +541,27 @@ visible = false
 position = Vector2(0, -1080)
 
 [node name="moon_group" type="Node2D" parent="." unique_id=1657950665]
-position = Vector2(1716, 1020)
+position = Vector2(1716, 1080)
 script = ExtResource("34_87ddb")
 
 [node name="Moon" type="Sprite2D" parent="moon_group" unique_id=1706999615]
 material = SubResource("ShaderMaterial_lwlx3")
-position = Vector2(-3.015625, 9.984375)
 scale = Vector2(0.37796873, 0.37796873)
 texture = ExtResource("4_e8heu")
 
-[node name="End Turn" type="Button" parent="moon_group" unique_id=1810491390]
-offset_left = -159.0
-offset_top = -178.0
-offset_right = 146.0
-offset_bottom = 64.0
+[node name="End Turn" type="Button" parent="moon_group/Moon" unique_id=1810491390]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -899.5044
+offset_top = -944.4812
+offset_right = -594.5044
+offset_bottom = -702.4812
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.63, 2.63)
 theme = SubResource("Theme_lwlx3")
 disabled = true
 text = "Plant or Harvest"
@@ -636,4 +643,4 @@ position = Vector2(0, -1080)
 
 [node name="jukebox" parent="." unique_id=129333911 instance=ExtResource("43_edr7y")]
 
-[connection signal="pressed" from="moon_group/End Turn" to="." method="_on_end_turn_pressed"]
+[connection signal="pressed" from="moon_group/Moon/End Turn" to="." method="_on_end_turn_pressed"]
