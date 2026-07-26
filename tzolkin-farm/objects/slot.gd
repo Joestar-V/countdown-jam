@@ -119,7 +119,7 @@ func harvest_list():
 			await chud.finished
 	print("Slot", pos, "finished")
 	finished.emit()
-	#update_display()
+	update_display()
 	
 	#if grid.get_child_count() > 0:
 	#	stats.show()

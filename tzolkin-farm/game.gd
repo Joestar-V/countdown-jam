@@ -114,16 +114,17 @@ func _ready() -> void:
 	
 	Game.game = self
 	resources.update_quota(quota)
-	#for i in 3:
+	for i in 3:
+		seedkeeper.drawpile.add_card(POTATO)
 		#seedkeeper.discard_pile.add_card(APPLE)
 		#seedkeeper.discard_pile.add_card(SQUASH)
 	for i in 2:
-		
+		seedkeeper.drawpile.add_card(APPLE)
 		seedkeeper.drawpile.add_card(MAIZE)
-		seedkeeper.drawpile.add_card(POTATO)
+		
 
-	seedkeeper.drawpile.add_card(APPLE)
-	seedkeeper.drawpile.add_card(GRAPE)
+	
+	seedkeeper.drawpile.add_card(BEANS)
 	
 	seedkeeper.hand.handList.resize(3)
 	seedkeeper.draw_until_full()
