@@ -198,8 +198,10 @@ func _on_end_turn_pressed() -> void:
 				actions = 1
 				harvested = false
 				seed.slot.update_display()
+				
 			else:
 				seed.slot.seed.erase(seed)
+				seed.slot.update_layout()
 				seed.slot = slotList[seed.slot.pos+1]
 				seed.slot.seed.append(seed)
 				seed.slot.update_layout() #starfruit
@@ -218,7 +220,6 @@ func _on_end_turn_pressed() -> void:
 func _on_slot_finished():
 	remaining -= 1
 	print("Remaining:", remaining)
-
 
 func weekend():
 	

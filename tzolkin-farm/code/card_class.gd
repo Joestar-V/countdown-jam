@@ -91,6 +91,7 @@ func _process(delta: float) -> void:
 	if destroy:
 		if !goodies.get_children():
 			slot.seed.erase(self)
+			slot.update_layout()
 			queue_free()
 			finished.emit()
 
@@ -168,6 +169,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	elif area.name == "slotHole" and (Game.game.fertCount >= area.get_parent().pos) and (Game.game.water >= water_cost) and !Game.game.harvested:
 		if slotted:
 			slot.seed.erase(self)
+			slot.update_layout()
 			slot.update_display()
 			Game.game.fertCount += slot.pos
 			Game.game.water += water_cost
@@ -178,6 +180,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		
 		if !slot.seed.has(self):
 			slot.seed.append(self)
+			slot.update_layout()
 		slot.update_layout()
 		area.get_parent().update_display()
 		slotted = true
@@ -198,6 +201,7 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 		slotted = false
 		slot = null
 		area.get_parent().seed.erase(self)
+		area.get_parent().update_layout()
 		area.get_parent().update_display()
 		Game.game.actions += 1
 
