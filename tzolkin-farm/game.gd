@@ -11,7 +11,7 @@ class_name gamer
 @onready var spots: Node2D = $spots
 @onready var spinwheel: Node2D = $Wheel
 @onready var wheel: Node2D = $RealWheel
-
+@onready var frozen = false
 @onready var slotList: Array
 @onready var resources: Node2D = $Resources
 @onready var harvested = false
@@ -115,17 +115,17 @@ func _ready() -> void:
 	Game.game = self
 	resources.update_quota(quota)
 	for i in 3:
-		seedkeeper.drawpile.add_card(POTATO)
+		seedkeeper.discard_pile.add_card(POTATO)
 		#seedkeeper.discard_pile.add_card(APPLE)
 		#seedkeeper.discard_pile.add_card(SQUASH)
 	for i in 2:
-		seedkeeper.drawpile.add_card(APPLE)
-		seedkeeper.drawpile.add_card(MAIZE)
+		seedkeeper.discard_pile.add_card(APPLE)
+		seedkeeper.discard_pile.add_card(MAIZE)
 		
 
 	
-	seedkeeper.drawpile.add_card(BEANS)
-	
+	seedkeeper.discard_pile.add_card(BEANS)
+	#seedkeeper.reshuffle()
 	seedkeeper.hand.handList.resize(3)
 	seedkeeper.draw_until_full()
 
@@ -188,43 +188,50 @@ func _on_end_turn_pressed() -> void:
 		return
 			
 	current_state = STATE.POPUP
-	for slot in slotList:
-		if slot.pos == 4:
-			await slot.harvest_list()
-	harvested = false
-	actions = actionNum
-	no_more_turn_ending = true
-	for seed in seedList:
-		if seed.slotted:
-			if !seed.planted:
-				seed.planted = true
-				day.plant(seed)
-				for building in building_keeper.buildings: building.plant(seed)
-				seedkeeper.hand.handList[seed.handPos] = null
-			#seed.spinning = true
-			print(seed.slot.pos)
-			print(slotList.size())
-			
-			
+	if frozen:
+		frozen = false
+		harvested = false
+		actions = actionNum
+		no_more_turn_ending = true
+	else:
+		for slot in slotList:
+			if slot.pos == 4:
+				await slot.harvest_list()
+		harvested = false
+		actions = actionNum
+		no_more_turn_ending = true
+		for seed in seedList:
+			if seed.slotted:
+				if !seed.planted:
+					seed.planted = true
+					day.plant(seed)
+					for building in building_keeper.buildings: building.plant(seed)
+					seedkeeper.hand.handList[seed.handPos] = null
+				#seed.spinning = true
+				print(seed.slot.pos)
+				print(slotList.size())
 				
-			#seed.slot.update_layout()
-			seed.next_slot = slotList[seed.slot.pos+1]
-			#seed.slot.update_layout() #starfruit
-			#seed.global_position = seed.slot.global_position
-			seed.slotted = true
-			seed.moving = 2
-			#seed.slot.update_display()
-	wheel.rotate_next()
-	await wheel.finished
-	for seed in seedList:
-		if seed.planted:
-			
-			seed.slot.seed.erase(seed)
-			seed.slot = seed.next_slot
-			seed.slot.seed.append(seed)
-	for slot in slotList:
-		slot.update_display()
-		slot.update_layout()
+				
+					
+				#seed.slot.update_layout()
+				seed.next_slot = slotList[seed.slot.pos+1]
+				#seed.slot.update_layout() #starfruit
+				#seed.global_position = seed.slot.global_position
+				seed.slotted = true
+				seed.moving = 2
+				#seed.slot.update_display()
+		
+		wheel.rotate_next()
+		await wheel.finished
+		for seed in seedList:
+			if seed.planted:
+				
+				seed.slot.seed.erase(seed)
+				seed.slot = seed.next_slot
+				seed.slot.seed.append(seed)
+		for slot in slotList:
+			slot.update_display()
+			slot.update_layout()
 	
 	await seedkeeper.draw_until_full()
 	await calender.advance_day()

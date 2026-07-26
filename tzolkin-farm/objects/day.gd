@@ -29,6 +29,3 @@ func biggify():
 func tinymize():
 	scale = Vector2(1.2,1.2)
 	bg.modulate = Color.WHITE
-
-#ideas: lucky day, flower day, fruit day, money day, weed day?, 
-#, bird day, feast day, windy day
