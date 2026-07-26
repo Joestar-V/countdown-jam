@@ -66,9 +66,9 @@ func _ready():
 	OG_water_cost = water_cost
 	
 	match rarity:
-		0: money_cost = 4
-		1: money_cost = 6
-		2: money_cost = 9
+		0: money_cost = 5
+		1: money_cost = 8
+		2: money_cost = 12
 		
 	update_visuals()
 	

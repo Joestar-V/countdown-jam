@@ -8,7 +8,7 @@
 script = ExtResource("2_bh288")
 flower = Vector3i(0, 0, 1)
 fruit = Vector3i(2, 0, 0)
-death = Vector3i(0, 0, 6)
+death = Vector3i(0, 6, 0)
 card_name = "Grape Vine"
 picture = ExtResource("3_skq3y")
 rarity = 1
