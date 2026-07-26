@@ -29,43 +29,45 @@ func update_visuals():
 	cost_tag.text = "$"+ str(building_for_sale.money_cost)
 
 func button_down():
-	if Game.game.moneyCount >= building_for_sale.money_cost:
-		#buy
-		pass
-	else:
-		modulate= Color(1.0, 1.0, 1.0, 1.0).darkened(0.30)
+	if Game.game.current_state == Game.game.STATE.SHOP:
+		if Game.game.moneyCount >= building_for_sale.money_cost:
+			#buy
+			pass
+		else:
+			modulate= Color(1.0, 1.0, 1.0, 1.0).darkened(0.30)
 
 
 
 func button_up():
-	if Game.game.moneyCount >= building_for_sale.money_cost:
-		if Game.game.building_keeper.buildings.size() >= Game.game.building_keeper.max_builds:
-			print("NO ROOM")
-			no_room.show()
-			await get_tree().create_timer(1.2).timeout
-			no_room.hide()
-			return
-		#buy
-		Game.game.jukebox.play_purchase()
-		Game.game.moneyCount -= building_for_sale.money_cost
-		remove_child(building_for_sale)
-		Game.game.building_keeper.add_building(building_for_sale)
-		building_for_sale = null
-		queue_free()
-		#
-		
-		#for i in 1:
-				#var crd = TINY_CARD.instantiate()
-				#goodies.add_child(crd)
-				#crd.type = 3
-				#crd.global_position = global_position
-				#crd.card = seedPacket
-				#crd.move_to_resource(Game.game.seedkeeper.discard_pile.recycle_bin.global_position)
-		#
-		#
-	else:
-		modulate= Color(1.0, 1.0, 1.0, 1.0)
-		#dont buy
+	if Game.game.current_state == Game.game.STATE.SHOP:
+		if Game.game.moneyCount >= building_for_sale.money_cost:
+			if Game.game.building_keeper.buildings.size() >= Game.game.building_keeper.max_builds:
+				print("NO ROOM")
+				no_room.show()
+				await get_tree().create_timer(1.2).timeout
+				no_room.hide()
+				return
+			#buy
+			Game.game.jukebox.play_purchase()
+			Game.game.moneyCount -= building_for_sale.money_cost
+			remove_child(building_for_sale)
+			Game.game.building_keeper.add_building(building_for_sale)
+			building_for_sale = null
+			queue_free()
+			#
+			
+			#for i in 1:
+					#var crd = TINY_CARD.instantiate()
+					#goodies.add_child(crd)
+					#crd.type = 3
+					#crd.global_position = global_position
+					#crd.card = seedPacket
+					#crd.move_to_resource(Game.game.seedkeeper.discard_pile.recycle_bin.global_position)
+			#
+			#
+		else:
+			modulate= Color(1.0, 1.0, 1.0, 1.0)
+			#dont buy
 
 func zoom():
 	if hovered == false:

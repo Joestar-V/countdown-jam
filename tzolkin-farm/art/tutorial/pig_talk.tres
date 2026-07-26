@@ -1,0 +1,36 @@
+[gd_resource type="Theme" format=3 uid="uid://cl31kwm7al21l"]
+
+[ext_resource type="Texture2D" uid="uid://cmcd0lw2or86e" path="res://art/ui/wood_sign.png" id="1_6rrsi"]
+[ext_resource type="FontFile" uid="uid://j8glluhsw0mx" path="res://art/ui/segoe-print-regular.ttf" id="2_2uuji"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lnpnc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rhgbh"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fq7gc"]
+load_path = "res://.godot/imported/wood_sign.png-6db492c3143256a517f4b3b5639daf57.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x4jld"]
+texture = SubResource("CompressedTexture2D_fq7gc")
+modulate_color = Color(0.7038081, 0.7038078, 0.7038079, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_34d55"]
+texture = ExtResource("1_6rrsi")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jkagj"]
+texture = ExtResource("1_6rrsi")
+modulate_color = Color(0.581033, 0.58103293, 0.5810329, 1)
+
+[resource]
+default_font = ExtResource("2_2uuji")
+default_font_size = 0
+PanelContainer/styles/panel = SubResource("StyleBoxEmpty_lnpnc")
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+RichTextLabel/constants/line_separation = -5
+RichTextLabel/font_sizes/normal_font_size = 29
+TabContainer/constants/tab_separation = 8
+TabContainer/font_sizes/font_size = 38
+TabContainer/styles/panel = SubResource("StyleBoxEmpty_rhgbh")
+TabContainer/styles/tab_hovered = SubResource("StyleBoxTexture_x4jld")
+TabContainer/styles/tab_selected = SubResource("StyleBoxTexture_34d55")
+TabContainer/styles/tab_unselected = SubResource("StyleBoxTexture_jkagj")

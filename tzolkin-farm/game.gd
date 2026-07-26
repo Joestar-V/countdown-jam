@@ -169,6 +169,9 @@ func _on_seed_turn_over() -> void:
 
 
 func _on_end_turn_pressed() -> void:
+	if Game.game.current_state == Game.game.STATE.POPUP:
+		return
+	
 	if no_more_turn_ending:
 		return
 	if actions > 0:

@@ -57,20 +57,23 @@ func roll():
 
 
 func _on_peek_pressed() -> void:
-	if invis:
-		for child in get_children():
-			child.visible = true
-		invis = false
-	else:
-		invis = true
-		for child in get_children():
-			child.visible = false
-	peek.visible = true
-	#shop is still visible, idk if that interfers with trying to interact with the buildings
-	
+	if Game.game.current_state == Game.game.STATE.SHOP:
+		
+		if invis:
+			for child in get_children():
+				child.visible = true
+			invis = false
+		else:
+			invis = true
+			for child in get_children():
+				child.visible = false
+		peek.visible = true
+		#shop is still visible, idk if that interfers with trying to interact with the buildings
+		
 
 
 func _on_reroll_pressed() -> void:
-	if Game.game.moneyCount >= reroll_cost:
-		Game.game.moneyCount -= reroll_cost
-		roll()
+	if Game.game.current_state == Game.game.STATE.SHOP:
+		if Game.game.moneyCount >= reroll_cost:
+			Game.game.moneyCount -= reroll_cost
+			roll()

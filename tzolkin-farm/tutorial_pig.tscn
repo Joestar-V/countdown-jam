@@ -1,0 +1,545 @@
+[gd_scene format=3 uid="uid://bwvig1vigtla1"]
+
+[ext_resource type="Texture2D" uid="uid://cnmxg7kyvcdfl" path="res://art/ui/ping.png" id="1_8q052"]
+[ext_resource type="Script" uid="uid://cvcip4ywyk6f2" path="res://tutorial_pig.gd" id="1_speqt"]
+[ext_resource type="Theme" uid="uid://cl31kwm7al21l" path="res://art/tutorial/pig_talk.tres" id="2_0fc1b"]
+[ext_resource type="Texture2D" uid="uid://cj33gtr5n7haf" path="res://art/ui/speech_bubble.png" id="2_i8qb4"]
+[ext_resource type="FontFile" uid="uid://j8glluhsw0mx" path="res://art/ui/segoe-print-regular.ttf" id="2_srqgs"]
+[ext_resource type="Texture2D" uid="uid://c5v7bcvqfvkdu" path="res://art/doodles/lord berdy.png" id="4_du753"]
+[ext_resource type="Texture2D" uid="uid://c5qcjyweqmmit" path="res://art/tutorial/plant.png" id="5_2i0mj"]
+[ext_resource type="Texture2D" uid="uid://c7qwdtv3x87xu" path="res://art/png-clipart-sun-sun-sun.png" id="5_x4jld"]
+[ext_resource type="Texture2D" uid="uid://c668e1veyatay" path="res://art/icons/food.png" id="6_34d55"]
+[ext_resource type="Texture2D" uid="uid://d2a18va2yprxt" path="res://art/tutorial/harvest.png" id="6_jy61p"]
+[ext_resource type="Texture2D" uid="uid://b4w1jcdjfaccx" path="res://art/doodles/sun.png" id="6_wf288"]
+[ext_resource type="Texture2D" uid="uid://c52lyhhkw0f61" path="res://art/money-bag-stock-illustration-euclidean-vector-money-c72997542872df999eac2c6fb59797a3.png" id="7_jkagj"]
+[ext_resource type="Texture2D" uid="uid://c8yq733xmh0cc" path="res://art/icons/fertil.png" id="8_wf288"]
+[ext_resource type="Texture2D" uid="uid://7hh7wq0dek2v" path="res://art/ui/ping_hover.png" id="9_2i0mj"]
+[ext_resource type="BitMap" uid="uid://dnf8chb2qu0vj" path="res://art/ui/ping_bitmap.png" id="9_mt0qh"]
+[ext_resource type="Texture2D" uid="uid://mjn0t6gexnd7" path="res://art/tutorial/calendar.png" id="12_wf288"]
+[ext_resource type="Texture2D" uid="uid://clh7t83ufmt0g" path="res://art/tutorial/water.png" id="14_15i87"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_b64ip"]
+font = ExtResource("2_srqgs")
+font_size = 24
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 0.42745098)
+
+[node name="Pig" type="Node2D" unique_id=664733262]
+script = ExtResource("1_speqt")
+
+[node name="darknes" type="ColorRect" parent="." unique_id=1138573348]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2543.0
+offset_top = -1443.0
+offset_right = 1266.0
+offset_bottom = 1035.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.27450982)
+
+[node name="SpeechBubble" type="Sprite2D" parent="." unique_id=1832462740]
+texture_filter = 5
+position = Vector2(-737.00006, -157.51624)
+scale = Vector2(2, 2)
+texture = ExtResource("2_i8qb4")
+
+[node name="TabContainer" type="TabContainer" parent="." unique_id=632675964]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1244.4421
+offset_top = -544.0
+offset_right = -260.8943
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_0fc1b")
+tab_alignment = 1
+current_tab = 3
+clip_tabs = false
+metadata/_edit_group_ = true
+
+[node name="Basics" type="PanelContainer" parent="TabContainer" unique_id=1608177991]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_0fc1b")
+metadata/_edit_group_ = true
+metadata/_tab_index = 0
+
+[node name="Marginal" type="MarginContainer" parent="TabContainer/Basics" unique_id=600503190]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 34
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBox" type="HBoxContainer" parent="TabContainer/Basics/Marginal" unique_id=1747023789]
+layout_mode = 2
+theme_override_constants/separation = -51
+
+[node name="plant" type="VBoxContainer" parent="TabContainer/Basics/Marginal/HBox" unique_id=344194379]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 9
+size_flags_stretch_ratio = 2.87
+
+[node name="desc" type="RichTextLabel" parent="TabContainer/Basics/Marginal/HBox/plant" unique_id=149976520]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_0fc1b")
+text = "Oh No!
+Lord Berdy has stolen all the food in the land!
+Its up to You and your crops to stop everyone from starving!
+
+To do so, you’ll need to grow enough food to meet the hunger quota every 20 days.
+
+
+"
+scroll_active = false
+
+[node name="Sprite2D" type="Sprite2D" parent="TabContainer/Basics/Marginal/HBox/plant" unique_id=822132868]
+texture_filter = 5
+position = Vector2(226.44214, 454)
+scale = Vector2(2, 2)
+texture = ExtResource("4_du753")
+
+[node name="Win" type="VBoxContainer" parent="TabContainer/Basics/Marginal/HBox" unique_id=289722419]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 9
+
+[node name="desc" type="RichTextLabel" parent="TabContainer/Basics/Marginal/HBox/Win" unique_id=1617792242]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_0fc1b")
+text = "
+
+
+
+
+
+Every day you have to either plant seeds or harvest crops to gain food, money and fertilizer
+
+"
+scroll_active = false
+
+[node name="sun" type="Sprite2D" parent="TabContainer/Basics/Marginal/HBox/Win" unique_id=1342229879]
+position = Vector2(144.91211, 139.51001)
+scale = Vector2(0.49, 0.49)
+texture = ExtResource("5_x4jld")
+
+[node name="sun5" type="Sprite2D" parent="TabContainer/Basics/Marginal/HBox/Win" unique_id=601075774]
+position = Vector2(143.01778, 136.45325)
+scale = Vector2(0.4876904, 0.49452725)
+texture = ExtResource("6_wf288")
+
+[node name="sun2" type="Sprite2D" parent="TabContainer/Basics/Marginal/HBox/Win" unique_id=1645684459]
+position = Vector2(-229.11784, 407.865)
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("6_34d55")
+
+[node name="sun3" type="Sprite2D" parent="TabContainer/Basics/Marginal/HBox/Win" unique_id=557959534]
+position = Vector2(-180.02289, 482.865)
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("7_jkagj")
+
+[node name="sun4" type="Sprite2D" parent="TabContainer/Basics/Marginal/HBox/Win" unique_id=133218520]
+position = Vector2(-121.55789, 557.785)
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("8_wf288")
+
+[node name="Planting" type="PanelContainer" parent="TabContainer" unique_id=1756030544]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_0fc1b")
+metadata/_edit_group_ = true
+metadata/_tab_index = 1
+
+[node name="Marginal" type="MarginContainer" parent="TabContainer/Planting" unique_id=377544819]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 34
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBox" type="HBoxContainer" parent="TabContainer/Planting/Marginal" unique_id=449149973]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="plant" type="VBoxContainer" parent="TabContainer/Planting/Marginal/HBox" unique_id=900386674]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 9
+size_flags_stretch_ratio = 2.87
+
+[node name="Water" type="Sprite2D" parent="TabContainer/Planting/Marginal/HBox/plant" unique_id=1447426512]
+position = Vector2(137.44214, 544)
+scale = Vector2(0.757, 0.757)
+texture = ExtResource("14_15i87")
+region_enabled = true
+region_rect = Rect2(43.5, 50.5, 355, 155.5)
+
+[node name="desc" type="RichTextLabel" parent="TabContainer/Planting/Marginal/HBox/plant" unique_id=715627296]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_0fc1b")
+text = "To plant, drag seeds from your hand into the leftmost wheel plot.
+
+You can plant as many seeds as you want until you reach the water supply limit."
+scroll_active = false
+
+[node name="plant3" type="VBoxContainer" parent="TabContainer/Planting/Marginal/HBox" unique_id=280873636]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 9
+size_flags_stretch_ratio = 2.87
+
+[node name="desc" type="RichTextLabel" parent="TabContainer/Planting/Marginal/HBox/plant3" unique_id=1806612999]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_0fc1b")
+text = "Once your seeds are planted, you must end your turn by clicking on the moon.
+
+Once the day ends you plants will grow, advancing their position on the wheel
+
+"
+scroll_active = false
+
+[node name="plant2" type="VBoxContainer" parent="TabContainer/Planting/Marginal/HBox" unique_id=1233905535]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 9
+size_flags_stretch_ratio = 2.87
+
+[node name="desc" type="RichTextLabel" parent="TabContainer/Planting/Marginal/HBox/plant2" unique_id=198099792]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_0fc1b")
+text = "Fertilizer can be used to plant seeds further right on the wheel,
+the cost scales with the distance.
+
+"
+scroll_active = false
+
+[node name="Sprite2D" type="Sprite2D" parent="TabContainer/Planting/Marginal/HBox/plant2" unique_id=1015016453]
+texture_filter = 5
+position = Vector2(141.44214, 441)
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("5_2i0mj")
+region_enabled = true
+region_rect = Rect2(0, 0, 418, 374.5)
+
+[node name="Fertil" type="Sprite2D" parent="TabContainer/Planting/Marginal/HBox/plant2" unique_id=2003235267]
+position = Vector2(-26.557861, 27)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("8_wf288")
+
+[node name="Sprite2D" type="Sprite2D" parent="TabContainer/Planting" unique_id=312049734]
+
+[node name="Harvesting" type="PanelContainer" parent="TabContainer" unique_id=696657225]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_0fc1b")
+metadata/_edit_group_ = true
+metadata/_tab_index = 2
+
+[node name="Marginal" type="MarginContainer" parent="TabContainer/Harvesting" unique_id=1284641345]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 34
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBox" type="HBoxContainer" parent="TabContainer/Harvesting/Marginal" unique_id=1946205384]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="plant" type="VBoxContainer" parent="TabContainer/Harvesting/Marginal/HBox" unique_id=2011956040]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 9
+size_flags_stretch_ratio = 2.87
+
+[node name="desc" type="RichTextLabel" parent="TabContainer/Harvesting/Marginal/HBox/plant" unique_id=1820741916]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_0fc1b")
+text = "To harvest a plot, click on it!
+
+Harvesting will yield resources from all of the crops on the plot.
+Harvesting takes your turn.
+
+Crops can either give Food, Money, or Fertilizer."
+scroll_active = false
+
+[node name="plant3" type="VBoxContainer" parent="TabContainer/Harvesting/Marginal/HBox" unique_id=693407422]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 9
+size_flags_stretch_ratio = 2.87
+
+[node name="desc" type="RichTextLabel" parent="TabContainer/Harvesting/Marginal/HBox/plant3" unique_id=259788345]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_0fc1b")
+text = "Food is eaten to live, if you run out you’ll starve.
+
+Money is used at the Shop to buy new seeds or upgrades.
+
+Fertilizer can boost the growth of crops
+(See “Planting”)."
+scroll_active = false
+
+[node name="Fertil" type="Sprite2D" parent="TabContainer/Harvesting/Marginal/HBox/plant3" unique_id=1762830190]
+position = Vector2(-19.517914, 448.04013)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("8_wf288")
+
+[node name="food" type="Sprite2D" parent="TabContainer/Harvesting/Marginal/HBox/plant3" unique_id=1300473755]
+position = Vector2(-24.517914, 25.040009)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("6_34d55")
+
+[node name="money" type="Sprite2D" parent="TabContainer/Harvesting/Marginal/HBox/plant3" unique_id=237829038]
+position = Vector2(-24.517914, 215.00002)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("7_jkagj")
+
+[node name="plant2" type="VBoxContainer" parent="TabContainer/Harvesting/Marginal/HBox" unique_id=520065533]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 9
+size_flags_stretch_ratio = 2.87
+
+[node name="desc" type="RichTextLabel" parent="TabContainer/Harvesting/Marginal/HBox/plant2" unique_id=1553230819]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_0fc1b")
+text = "Make sure to check the Calendar! Planning harvests around good and bad days can be very crucial!
+"
+scroll_active = false
+
+[node name="Sprite2D" type="Sprite2D" parent="TabContainer/Harvesting/Marginal/HBox/plant2" unique_id=77492955]
+texture_filter = 5
+position = Vector2(146.44214, 417)
+scale = Vector2(0.3988889, 0.39888892)
+texture = ExtResource("12_wf288")
+region_enabled = true
+region_rect = Rect2(53.33206, 3.5431366, 818.1876, 570.7099)
+
+[node name="Shop" type="PanelContainer" parent="TabContainer" unique_id=37422591]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_0fc1b")
+metadata/_edit_group_ = true
+metadata/_tab_index = 3
+
+[node name="Marginal" type="MarginContainer" parent="TabContainer/Shop" unique_id=229024651]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 34
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBox" type="HBoxContainer" parent="TabContainer/Shop/Marginal" unique_id=1945059629]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="plant" type="VBoxContainer" parent="TabContainer/Shop/Marginal/HBox" unique_id=204985824]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 9
+size_flags_stretch_ratio = 2.87
+
+[node name="desc" type="RichTextLabel" parent="TabContainer/Shop/Marginal/HBox/plant" unique_id=856089855]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_0fc1b")
+text = "At the end of each 20 day cycle, the farmer’s market will occur!
+
+Use this chance to buy new seeds and buildings with your hard earned coin.
+"
+scroll_active = false
+
+[node name="plant3" type="VBoxContainer" parent="TabContainer/Shop/Marginal/HBox" unique_id=1445223620]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 9
+size_flags_stretch_ratio = 2.87
+
+[node name="desc" type="RichTextLabel" parent="TabContainer/Shop/Marginal/HBox/plant3" unique_id=1581620235]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_0fc1b")
+text = "Food is eaten to live, if you run out you’ll starve.
+
+Money is used at the Shop to buy new seeds or upgrades.
+
+Fertilizer can boost the growth of crops
+(See “Planting”)."
+scroll_active = false
+
+[node name="Fertil" type="Sprite2D" parent="TabContainer/Shop/Marginal/HBox/plant3" unique_id=1547961863]
+position = Vector2(-19.517914, 448.04013)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("8_wf288")
+
+[node name="food" type="Sprite2D" parent="TabContainer/Shop/Marginal/HBox/plant3" unique_id=1968409420]
+position = Vector2(-24.517914, 25.040009)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("6_34d55")
+
+[node name="money" type="Sprite2D" parent="TabContainer/Shop/Marginal/HBox/plant3" unique_id=378572647]
+position = Vector2(-24.517914, 215.00002)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("7_jkagj")
+
+[node name="plant2" type="VBoxContainer" parent="TabContainer/Shop/Marginal/HBox" unique_id=481490467]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 9
+size_flags_stretch_ratio = 2.87
+
+[node name="desc" type="RichTextLabel" parent="TabContainer/Shop/Marginal/HBox/plant2" unique_id=1161402870]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_0fc1b")
+text = "Make sure to check the Calendar! Planning harvests around good and bad days can be very crucial!
+"
+scroll_active = false
+
+[node name="Sprite2D" type="Sprite2D" parent="TabContainer/Shop/Marginal/HBox/plant2" unique_id=1919591888]
+texture_filter = 5
+position = Vector2(141.44214, 441)
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("6_jy61p")
+region_enabled = true
+region_rect = Rect2(0, 0, 418, 374.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="TabContainer/Shop" unique_id=1617049156]
+
+[node name="Pigs" type="PanelContainer" parent="TabContainer" unique_id=1998067952]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_0fc1b")
+metadata/_tab_index = 4
+
+[node name="SpeechBubble" type="Sprite2D" parent="TabContainer/Pigs" unique_id=1917500136]
+texture_filter = 5
+position = Vector2(366, 338)
+scale = Vector2(1.225, 1.225)
+texture = ExtResource("2_i8qb4")
+
+[node name="pig" type="Sprite2D" parent="TabContainer/Pigs/SpeechBubble" unique_id=243334566]
+position = Vector2(368.27896, 51.758118)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("1_8q052")
+
+[node name="SpeechBubble2" type="Sprite2D" parent="TabContainer/Pigs/SpeechBubble/pig" unique_id=126167690]
+texture_filter = 5
+position = Vector2(-3325.007, -485.90167)
+scale = Vector2(4.675, 4.675)
+texture = ExtResource("2_i8qb4")
+
+[node name="pig" type="Sprite2D" parent="TabContainer/Pigs/SpeechBubble/pig/SpeechBubble2" unique_id=1624104833]
+position = Vector2(368.27896, 51.758118)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("1_8q052")
+
+[node name="SpeechBubble2" type="Sprite2D" parent="TabContainer/Pigs/SpeechBubble/pig/SpeechBubble2/pig" unique_id=291865711]
+texture_filter = 5
+position = Vector2(-3192.0908, -447.59106)
+scale = Vector2(4.05, 4.05)
+texture = ExtResource("2_i8qb4")
+
+[node name="pig" type="Sprite2D" parent="TabContainer/Pigs/SpeechBubble/pig/SpeechBubble2/pig/SpeechBubble2" unique_id=474061496]
+position = Vector2(368.27896, 51.758118)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("1_8q052")
+
+[node name="SpeechBubble2" type="Sprite2D" parent="TabContainer/Pigs/SpeechBubble/pig/SpeechBubble2/pig/SpeechBubble2/pig" unique_id=2030327047]
+texture_filter = 5
+position = Vector2(-3144.904, -590.66345)
+scale = Vector2(3.53, 3.53)
+texture = ExtResource("2_i8qb4")
+
+[node name="pig" type="Sprite2D" parent="TabContainer/Pigs/SpeechBubble/pig/SpeechBubble2/pig/SpeechBubble2/pig/SpeechBubble2" unique_id=111240572]
+position = Vector2(368.27896, 51.758118)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("1_8q052")
+
+[node name="SpeechBubble2" type="Sprite2D" parent="TabContainer/Pigs/SpeechBubble/pig/SpeechBubble2/pig/SpeechBubble2/pig/SpeechBubble2/pig" unique_id=1045318597]
+texture_filter = 5
+position = Vector2(-3246.3984, -514.1206)
+scale = Vector2(3.855, 3.855)
+texture = ExtResource("2_i8qb4")
+
+[node name="pig" type="Sprite2D" parent="TabContainer/Pigs/SpeechBubble/pig/SpeechBubble2/pig/SpeechBubble2/pig/SpeechBubble2/pig/SpeechBubble2" unique_id=331547040]
+position = Vector2(368.27896, 51.758118)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("1_8q052")
+
+[node name="SpeechBubble2" type="Sprite2D" parent="TabContainer/Pigs/SpeechBubble/pig/SpeechBubble2/pig/SpeechBubble2/pig/SpeechBubble2/pig/SpeechBubble2/pig" unique_id=2145816738]
+texture_filter = 5
+position = Vector2(-3246.3984, -514.1206)
+scale = Vector2(3.855, 3.855)
+texture = ExtResource("2_i8qb4")
+
+[node name="pig" type="Sprite2D" parent="TabContainer/Pigs/SpeechBubble/pig/SpeechBubble2/pig/SpeechBubble2/pig/SpeechBubble2/pig/SpeechBubble2/pig/SpeechBubble2" unique_id=581106708]
+position = Vector2(368.27896, 51.758118)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("1_8q052")
+
+[node name="pig" type="TextureButton" parent="." unique_id=1928714481]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.29907
+offset_top = -134.0
+offset_right = 160.29907
+offset_bottom = 134.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+texture_normal = ExtResource("1_8q052")
+texture_pressed = ExtResource("1_8q052")
+texture_hover = ExtResource("9_2i0mj")
+texture_disabled = ExtResource("1_8q052")
+texture_focused = ExtResource("1_8q052")
+texture_click_mask = ExtResource("9_mt0qh")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="click me!" type="Label" parent="pig" unique_id=574341231]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -187.0
+offset_top = -15.0
+offset_right = 188.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Click me to toggle the tutorial!"
+label_settings = SubResource("LabelSettings_b64ip")
+horizontal_alignment = 1
+
+[connection signal="pressed" from="pig" to="." method="_on_pig_pressed"]
