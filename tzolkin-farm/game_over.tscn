@@ -110,6 +110,30 @@ text = "Days Survived:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Label2" type="Label" parent="Buiildings 4 sale" unique_id=1596836041]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -771.5
+offset_top = -7.4999695
+offset_right = -19.49997
+offset_bottom = 143.00003
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.39215687)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 9
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("4_ku74v")
+theme_override_font_sizes/font_size = 78
+text = "25"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Buiildings 4 sale2" type="Sprite2D" parent="." unique_id=1367767362]
 position = Vector2(600.94, 494.8433)
 scale = Vector2(0.37578624, 0.37578627)
@@ -135,6 +159,30 @@ theme_override_constants/shadow_outline_size = 0
 theme_override_fonts/font = ExtResource("4_ku74v")
 theme_override_font_sizes/font_size = 78
 text = "Crops Harvested"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Buiildings 4 sale2" unique_id=316375135]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -771.5
+offset_top = -7.4999695
+offset_right = -19.49997
+offset_bottom = 143.00003
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.39215687)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 9
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("4_ku74v")
+theme_override_font_sizes/font_size = 78
+text = "25"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -166,6 +214,30 @@ text = "Money Made"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Label2" type="Label" parent="Buiildings 4 sale3" unique_id=433925491]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -771.5
+offset_top = -7.4999695
+offset_right = -19.49997
+offset_bottom = 143.00003
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.39215687)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 9
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("4_ku74v")
+theme_override_font_sizes/font_size = 78
+text = "25"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Buiildings 4 sale4" type="Sprite2D" parent="." unique_id=1538812740]
 position = Vector2(1336, 487.58328)
 scale = Vector2(0.37578624, 0.37578627)
@@ -191,6 +263,30 @@ theme_override_constants/shadow_outline_size = 0
 theme_override_fonts/font = ExtResource("4_ku74v")
 theme_override_font_sizes/font_size = 78
 text = "Total Seeds"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Buiildings 4 sale4" unique_id=1840162757]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -771.5
+offset_top = -7.4999695
+offset_right = -19.49997
+offset_bottom = 143.00003
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.39215687)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 9
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("4_ku74v")
+theme_override_font_sizes/font_size = 78
+text = "25"
 horizontal_alignment = 1
 vertical_alignment = 1
 

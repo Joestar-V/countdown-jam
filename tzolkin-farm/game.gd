@@ -47,7 +47,12 @@ var current_state = STATE.PLAY
 @onready var end_turn = $"End Turn"
 
 @onready var calender: Marker2D = $sundial
-
+@onready var total_apples = 0
+@onready var money_total = 0
+@onready var harvest_total = 0
+@onready var total_days = 0
+@onready var total_seeds = 0
+@onready var vicroy: Node2D = $vicroy
 
 @onready var water : int = 10:
 	set(value):
@@ -70,22 +75,29 @@ var current_state = STATE.PLAY
 			end_turn.disabled = false
 @onready var fertCount : float = 0:
 	set(value):
+		
 		#if value > fertCount:
 			#jukebox.play_fert()
 		fertCount = value
 		resources.fertilizer_label.text = str(int(value))
-@onready var moneyCount : float = 0:
+@onready var moneyCount : float = 16:
 	set(value):
+		if moneyCount < value:
+			money_total += value - moneyCount
 		#if value > moneyCount:
 			#jukebox.play_coin()
 		moneyCount = value
 		resources.money_label.text = str(int(value))
+		
 @onready var foodCount : float = 26:
 	set(value):
 		#if value > foodCount:
 			#jukebox.play_food()
+		if foodCount < value:
+			total_apples += value - foodCount
 		foodCount = value
 		resources.food_label.text = str(int(foodCount))
+
 
 
 func _ready() -> void:
@@ -104,7 +116,7 @@ func _ready() -> void:
 
 	seedkeeper.drawpile.add_card(BEANS)
 	seedkeeper.drawpile.add_card(WHEAT)
-
+	
 	seedkeeper.hand.handList.resize(3)
 	seedkeeper.draw_until_full()
 
@@ -130,7 +142,7 @@ func white_text():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	total_seeds = seedkeeper.drawpile.pile.size() + seedkeeper.discard_pile.pile.size() + seedList.size()
 
 func _on_seed_turn_over() -> void:
 	pass
@@ -236,12 +248,12 @@ func weekend():
 	else:
 		if calender.total_days >= calender.finalDay:
 			victory()
-		
-		open_shop() #this never gets called
-			#for spot in slotList:
-			#	spot.update_display()
-			
-		calender.restart()
+		else:
+			open_shop() #this never gets called
+				#for spot in slotList:
+				#	spot.update_display()
+				
+			calender.restart()
 	
 func open_shop():
 	Game.game.current_state = Game.game.STATE.SHOP
@@ -279,10 +291,14 @@ func close_shop():
 func game_over():
 	Game.game.current_state = Game.game.STATE.POPUP
 	animation_player.play("game_over")
+	gameover.set_up_stats(0)
 	gameover.visible = true
 	
 func victory():
-	print("lose")
+	Game.game.current_state = Game.game.STATE.POPUP
+	vicroy.set_up_stats(1)
+	animation_player.play("win")
+	vicroy.visible = true
 func quota_check():
 	var tween = create_tween()
 	var win = false

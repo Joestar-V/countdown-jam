@@ -1,6 +1,6 @@
 extends Marker2D
 @onready var number: Label = $number
-@export var weekLength = 3
+@export var weekLength = 20
 
 @export var radius := 224.0
 @export var spacing_degrees := 30.0
@@ -13,7 +13,7 @@ extends Marker2D
 		currentDay = value
 		number.text = str(weekLength - currentDay)
 @export var week = 0
-@onready var finalDay = 35
+@onready var finalDay = weekLength*5
 @onready var dayList : Array[Day]
 @export var dayPoolGood : Array[PackedScene]
 @export var dayPoolBad : Array[PackedScene]
@@ -75,6 +75,7 @@ func advance_day():
 	Game.game.day.day_end()
 	for building : Building in Game.game.building_keeper.buildings: building.on_turn_end()
 	total_days += 1
+	Game.game.total_days += 1
 	currentDay += 1
 	rotate_next()
 	if currentDay >= weekLength:

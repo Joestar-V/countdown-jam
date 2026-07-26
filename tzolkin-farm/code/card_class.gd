@@ -271,6 +271,8 @@ func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket])
 	while remaining > 0:
 		await get_tree().process_frame
 	Game.game.water += water_cost
+	Game.game.harvest_total += 1
+
 	destroy = true
 	finished.emit()
 func _on_kid_finished():
