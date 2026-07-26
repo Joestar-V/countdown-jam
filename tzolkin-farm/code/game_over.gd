@@ -13,7 +13,7 @@ var invis = false
 @onready var crops_harvested: Label = $"Buiildings 4 sale2/Label2"
 @onready var moeny_gathered: Label = $"Buiildings 4 sale3/Label2"
 @onready var total_seeds: Label = $"Buiildings 4 sale4/Label2"
-
+signal finished
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -47,7 +47,6 @@ func _on_reroll_pressed() -> void:
 
 func _on_continue_pressed():
 	hide()
-	Game.game.calender.finalDay *= 20
-	Game.game.current_state = Game.game.STATE.PLAY
-	Game.game.open_shop()
+	Game.game.calender.finalDay = 9999
+	finished.emit()
 	

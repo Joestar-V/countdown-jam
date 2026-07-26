@@ -287,13 +287,13 @@ func weekend():
 	else:
 		if calender.total_days >= calender.finalDay:
 			victory()
-		else:
-			open_shop() #this never gets called
-				#for spot in slotList:
-				#	spot.update_display()
-				
-			calender.restart()
-			wheel.reset_rotate()
+			await vicroy.finished
+		open_shop() #this never gets called
+			#for spot in slotList:
+			#	spot.update_display()
+			
+		calender.restart()
+		wheel.reset_rotate()
 	
 func open_shop():
 	Game.game.current_state = Game.game.STATE.SHOP
