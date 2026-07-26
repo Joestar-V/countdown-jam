@@ -1,6 +1,9 @@
 extends Node2D
 class_name gamer
 
+@onready var jukebox = $jukebox
+
+
 @onready var seedList : Array
 @onready var seedkeeper: Node2D = $SeedKeeper
 @onready var spots: Node2D = $spots

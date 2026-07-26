@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b8yhqr7p1vdn2"
+path="res://.godot/imported/Harry McClintock - The Big Rock Candy Mountains [ORIGINAL] -  [1928]. - mrblindfreddy9999.mp3-6b70db0b5c748cf44ee6e6cc9bc86e94.mp3str"
+
+[deps]
+
+source_file="res://art/music/Harry McClintock - The Big Rock Candy Mountains [ORIGINAL] -  [1928]. - mrblindfreddy9999.mp3"
+dest_files=["res://.godot/imported/Harry McClintock - The Big Rock Candy Mountains [ORIGINAL] -  [1928]. - mrblindfreddy9999.mp3-6b70db0b5c748cf44ee6e6cc9bc86e94.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -42,6 +42,7 @@
 [ext_resource type="PackedScene" uid="uid://bc45jocgbctkx" path="res://objects/days/half_day.tscn" id="36_4v2jo"]
 [ext_resource type="PackedScene" uid="uid://crqqa24taicv2" path="res://objects/days/infestation_day.tscn" id="40_klri6"]
 [ext_resource type="PackedScene" uid="uid://dt5p3ct3fwly3" path="res://game_over.tscn" id="42_eu6ph"]
+[ext_resource type="PackedScene" uid="uid://xf2rwelqu76p" path="res://jukebox.tscn" id="43_edr7y"]
 
 [sub_resource type="Shader" id="Shader_mskdk"]
 code = "shader_type canvas_item;
@@ -520,5 +521,7 @@ autowrap_mode = 2
 [node name="Gameover" parent="." unique_id=1795016673 instance=ExtResource("42_eu6ph")]
 visible = false
 position = Vector2(0, -1080)
+
+[node name="jukebox" parent="." unique_id=129333911 instance=ExtResource("43_edr7y")]
 
 [connection signal="pressed" from="End Turn" to="." method="_on_end_turn_pressed"]

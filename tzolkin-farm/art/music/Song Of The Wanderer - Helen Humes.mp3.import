@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cgdfm63go6tvt"
+path="res://.godot/imported/Song Of The Wanderer - Helen Humes.mp3-ece1c0d94141f1ae6c993374bb56e77b.mp3str"
+
+[deps]
+
+source_file="res://art/music/Song Of The Wanderer - Helen Humes.mp3"
+dest_files=["res://.godot/imported/Song Of The Wanderer - Helen Humes.mp3-ece1c0d94141f1ae6c993374bb56e77b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
