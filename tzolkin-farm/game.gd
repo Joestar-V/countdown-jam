@@ -38,6 +38,9 @@ const BEANS = preload("uid://blmgteof8oxul")
 const POTATO = preload("uid://r3v57ntk4jk8")
 const SQUASH = preload("uid://0r2fv35jbeuj")
 const WHEAT = preload("uid://bd7dp4kyhp0y6")
+const GRAPE = preload("uid://36egsxredcru")
+
+
 const TINY_CARD = preload("uid://p4aq67v85plf")
 @onready var gameover: Node2D = $Gameover
 
@@ -118,7 +121,7 @@ func _ready() -> void:
 		seedkeeper.drawpile.add_card(POTATO)
 
 	seedkeeper.drawpile.add_card(APPLE)
-	seedkeeper.drawpile.add_card(BEANS)
+	seedkeeper.drawpile.add_card(GRAPE)
 	
 	seedkeeper.hand.handList.resize(3)
 	seedkeeper.draw_until_full()
@@ -138,6 +141,10 @@ func _ready() -> void:
 	day = calender.first_day()
 	print(day.title)
 	shop.init_shop()
+	
+	for build in building_keeper.buildings:
+		if !build.built: build.build_animation()
+	
 func red_text():
 	water_label.modulate = Color.RED
 func white_text():
@@ -174,6 +181,7 @@ func _on_end_turn_pressed() -> void:
 			if !seed.planted:
 				seed.planted = true
 				day.plant(seed)
+				for building in building_keeper.buildings: building.plant(seed)
 				seedkeeper.hand.handList[seed.handPos] = null
 			#seed.spinning = true
 			print(seed.slot.pos)

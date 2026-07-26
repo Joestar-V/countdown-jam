@@ -6,9 +6,11 @@
 
 [node name="Composter" unique_id=90871590 instance=ExtResource("1_t78bv")]
 script = ExtResource("2_t78bv")
+bonus_fert = null
 building_name = "Composter"
 picture = ExtResource("3_ay6qu")
 rarity = 1
+tooltip = "Gives 0-2 Fertilizer whenever a crop dies"
 
 [node name="picture" parent="." index="0" unique_id=1028298159]
 position = Vector2(8.000003, -60)

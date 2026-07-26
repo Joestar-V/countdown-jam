@@ -10,7 +10,7 @@ bonus_coin = 1
 building_name = "Market Stand"
 picture = ExtResource("3_6q2a8")
 rarity = 1
-tooltip = "mo money"
+tooltip = "Fruiting plants yield double the money"
 
 [node name="picture" parent="." index="0" unique_id=1028298159]
 position = Vector2(1.9073486e-06, -93.00001)

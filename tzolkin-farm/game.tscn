@@ -414,9 +414,9 @@ shadow_offset = Vector2(2, 3)
 line_spacing = -10.68
 font = ExtResource("9_f1jbl")
 font_size = 24
-shadow_size = 5
+shadow_size = 4
 shadow_color = Color(0, 0, 0, 0.5019608)
-shadow_offset = Vector2(1, 4.085)
+shadow_offset = Vector2(1, 3.625)
 
 [node name="Game" type="Node2D" unique_id=1509497783]
 script = ExtResource("1_vef74")

@@ -89,20 +89,21 @@ font_size = 40
 script = ExtResource("1_dq3qk")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=315299929]
-position = Vector2(0, -359)
+position = Vector2(0, -270.333)
 rotation = 3.1415927
+scale = Vector2(0.8212364, 0.8212364)
 texture = ExtResource("2_b3q8k")
 
 [node name="MoneyBag" type="Sprite2D" parent="." unique_id=1913849032]
-position = Vector2(-172.6435, 66.772)
+position = Vector2(-88.64349, 66.772)
 scale = Vector2(0.167, 0.167)
 texture = ExtResource("3_clkgk")
 
 [node name="moneyLabel" type="Label" parent="." unique_id=2076725046]
-offset_left = -114.0
-offset_top = 43.0
-offset_right = -46.0
-offset_bottom = 100.0
+offset_left = -30.0
+offset_top = 42.99999
+offset_right = 38.0
+offset_bottom = 112.999985
 theme_override_fonts/font = SubResource("FontFile_6tghx")
 theme_override_font_sizes/font_size = 42
 text = "5"
@@ -110,15 +111,15 @@ label_settings = SubResource("LabelSettings_xfvwf")
 horizontal_alignment = 1
 
 [node name="Fertilizer" type="Sprite2D" parent="." unique_id=574834322]
-position = Vector2(-438.25003, 68.75002)
+position = Vector2(-325.25, 68.750015)
 scale = Vector2(0.18652345, 0.18652345)
 texture = ExtResource("4_xqxud")
 
 [node name="fertilizerLabel" type="Label" parent="." unique_id=1936361274]
-offset_left = -389.0
-offset_top = 43.0
-offset_right = -321.0
-offset_bottom = 113.0
+offset_left = -275.99994
+offset_top = 42.999992
+offset_right = -207.99994
+offset_bottom = 112.99999
 theme_override_fonts/font = SubResource("FontFile_6tghx")
 theme_override_font_sizes/font_size = 42
 text = "0"
@@ -126,15 +127,15 @@ label_settings = SubResource("LabelSettings_xfvwf")
 horizontal_alignment = 1
 
 [node name="Food" type="Sprite2D" parent="." unique_id=1502495112]
-position = Vector2(186.00002, 68)
-scale = Vector2(0.208, 0.208)
+position = Vector2(147, 66)
+scale = Vector2(0.243, 0.243)
 texture = ExtResource("5_b3q8k")
 
 [node name="foodLabel" type="Label" parent="." unique_id=655861824]
-offset_left = 329.0
-offset_top = 4.0
-offset_right = 397.0
-offset_bottom = 121.0
+offset_left = 223.0
+offset_top = 19.0
+offset_right = 291.0
+offset_bottom = 136.0
 theme_override_fonts/font = SubResource("FontFile_6tghx")
 theme_override_font_sizes/font_size = 42
 text = "0"
@@ -142,17 +143,17 @@ label_settings = SubResource("LabelSettings_xfvwf")
 horizontal_alignment = 1
 
 [node name="Line2D" type="Line2D" parent="." unique_id=87763950]
-position = Vector2(324, 68)
-points = PackedVector2Array(1, -2, 62, -3, 74, -3)
+position = Vector2(255, 82)
+points = PackedVector2Array(-6, 23, -0.2902069, 19.486343, 58, -24, 77, -35)
 width = 5.0
 begin_cap_mode = 2
 end_cap_mode = 2
 
 [node name="foodLabel2" type="Label" parent="." unique_id=999662135]
-offset_left = 327.0
-offset_top = 57.0
-offset_right = 395.0
-offset_bottom = 174.0
+offset_left = 294.0
+offset_top = 63.0
+offset_right = 362.0
+offset_bottom = 180.0
 theme_override_fonts/font = SubResource("FontFile_6tghx")
 theme_override_font_sizes/font_size = 42
 text = "30"
