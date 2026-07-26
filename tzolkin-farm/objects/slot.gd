@@ -68,9 +68,11 @@ func update_layout():
 	for seedy in seed:
 		if !seedy.dragging :
 			seedy.z_index = i
+			seedy.unzoom()
 			seedy.fieldSlot = self
 			seedy.home_position = global_position + Vector2(0, -CARD_OFFSET * (seed.size() - 1 - i))
-			seedy.global_position = seedy.home_position
+			if !seedy.dragging:
+				seedy.global_position = seedy.home_position
 			seedy.stack_index = i
 			seedy.z_index = i
 			i += 1
@@ -102,6 +104,7 @@ func harvest_list():
 		tempList.append(chud)
 	for chud in seed:
 		seed.erase(chud)
+		
 	for chud in tempList:
 		match stage:
 			1:
