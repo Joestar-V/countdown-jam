@@ -590,6 +590,7 @@ offset_bottom = -702.4812
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2.63, 2.63)
+focus_mode = 0
 theme = SubResource("Theme_lwlx3")
 disabled = true
 text = "Plant or Harvest"
