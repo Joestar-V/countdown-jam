@@ -7,7 +7,7 @@
 [node name="Day" type="Node2D" unique_id=1162151081]
 scale = Vector2(1.2, 1.2)
 script = ExtResource("1_3qgcb")
-title = "Market Day"
+title = "Fortune Day"
 description = "So many customers! All money yields are tripled today!"
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1347528961]

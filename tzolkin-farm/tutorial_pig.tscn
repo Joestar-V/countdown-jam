@@ -9,14 +9,17 @@
 [ext_resource type="Texture2D" uid="uid://c5qcjyweqmmit" path="res://art/tutorial/plant.png" id="5_2i0mj"]
 [ext_resource type="Texture2D" uid="uid://c7qwdtv3x87xu" path="res://art/png-clipart-sun-sun-sun.png" id="5_x4jld"]
 [ext_resource type="Texture2D" uid="uid://c668e1veyatay" path="res://art/icons/food.png" id="6_34d55"]
-[ext_resource type="Texture2D" uid="uid://d2a18va2yprxt" path="res://art/tutorial/harvest.png" id="6_jy61p"]
 [ext_resource type="Texture2D" uid="uid://b4w1jcdjfaccx" path="res://art/doodles/sun.png" id="6_wf288"]
 [ext_resource type="Texture2D" uid="uid://c52lyhhkw0f61" path="res://art/money-bag-stock-illustration-euclidean-vector-money-c72997542872df999eac2c6fb59797a3.png" id="7_jkagj"]
 [ext_resource type="Texture2D" uid="uid://c8yq733xmh0cc" path="res://art/icons/fertil.png" id="8_wf288"]
 [ext_resource type="Texture2D" uid="uid://7hh7wq0dek2v" path="res://art/ui/ping_hover.png" id="9_2i0mj"]
 [ext_resource type="BitMap" uid="uid://dnf8chb2qu0vj" path="res://art/ui/ping_bitmap.png" id="9_mt0qh"]
 [ext_resource type="Texture2D" uid="uid://mjn0t6gexnd7" path="res://art/tutorial/calendar.png" id="12_wf288"]
+[ext_resource type="Texture2D" uid="uid://bt1yck5oxcw36" path="res://art/tutorial/Screenshot 2026-07-26 030538.png" id="13_vr7dg"]
 [ext_resource type="Texture2D" uid="uid://clh7t83ufmt0g" path="res://art/tutorial/water.png" id="14_15i87"]
+[ext_resource type="Texture2D" uid="uid://cgknl3qcs48vw" path="res://art/icons/coin.png" id="14_to63i"]
+[ext_resource type="Texture2D" uid="uid://drv0likx0r56a" path="res://art/tutorial/Screenshot 2026-07-26 031108.png" id="15_bpd62"]
+[ext_resource type="Texture2D" uid="uid://ctjcjrrw23c5v" path="res://art/icons/bonus_coin.png" id="15_to63i"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_b64ip"]
 font = ExtResource("2_srqgs")
@@ -60,11 +63,12 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_0fc1b")
 tab_alignment = 1
-current_tab = 0
+current_tab = 3
 clip_tabs = false
 metadata/_edit_group_ = true
 
 [node name="Basics" type="PanelContainer" parent="TabContainer" unique_id=1608177991]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -94,10 +98,10 @@ layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_0fc1b")
 text = "Oh No!
-Lord Berdy has stolen all the food in the land!
-Its up to You and your crops to stop everyone from starving!
+Lord Berdy has stolen all the food in the land! Its up to You and your crops to stop everyone from starving! 
 
-To do so, you’ll need to grow enough food to meet the hunger quota every 20 days.
+You’ll need to grow enough food to meet the hunger quota every 20 days. Try and reach 
+100 days!
 
 
 "
@@ -338,7 +342,6 @@ region_enabled = true
 region_rect = Rect2(53.33206, 3.5431366, 818.1876, 570.7099)
 
 [node name="Shop" type="PanelContainer" parent="TabContainer" unique_id=37422591]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -367,11 +370,15 @@ size_flags_stretch_ratio = 2.87
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_0fc1b")
-text = "At the end of each 20 day cycle, the farmer’s market will occur!
+text = "The farmer's market opens after each quota cycle.
 
-Use this chance to buy new seeds and buildings with your hard earned coin.
 "
 scroll_active = false
+
+[node name="Sprite2D" type="Sprite2D" parent="TabContainer/Shop/Marginal/HBox/plant" unique_id=734473146]
+position = Vector2(129.53369, 374.32553)
+scale = Vector2(0.715, 0.715)
+texture = ExtResource("13_vr7dg")
 
 [node name="plant3" type="VBoxContainer" parent="TabContainer/Shop/Marginal/HBox" unique_id=1445223620]
 layout_mode = 2
@@ -383,28 +390,27 @@ size_flags_stretch_ratio = 2.87
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_0fc1b")
-text = "Food is eaten to live, if you run out you’ll starve.
+text = "Use this chance to buy new seeds and buildings with your hard earned coin.
 
-Money is used at the Shop to buy new seeds or upgrades.
+Buying new seeds gives access to new plants and lets you plant more.
 
-Fertilizer can boost the growth of crops
-(See “Planting”)."
+Buildings can give unique bonuses. Hover over one to see what it does!"
 scroll_active = false
 
-[node name="Fertil" type="Sprite2D" parent="TabContainer/Shop/Marginal/HBox/plant3" unique_id=1547961863]
-position = Vector2(-19.517914, 448.04013)
-scale = Vector2(0.09, 0.09)
-texture = ExtResource("8_wf288")
-
-[node name="food" type="Sprite2D" parent="TabContainer/Shop/Marginal/HBox/plant3" unique_id=1968409420]
-position = Vector2(-24.517914, 25.040009)
-scale = Vector2(0.09, 0.09)
-texture = ExtResource("6_34d55")
-
 [node name="money" type="Sprite2D" parent="TabContainer/Shop/Marginal/HBox/plant3" unique_id=378572647]
-position = Vector2(-24.517914, 215.00002)
+position = Vector2(-42.557953, 116.37995)
 scale = Vector2(0.09, 0.09)
 texture = ExtResource("7_jkagj")
+
+[node name="money2" type="Sprite2D" parent="TabContainer/Shop/Marginal/HBox/plant3" unique_id=284953045]
+position = Vector2(287.90472, 162.47417)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("14_to63i")
+
+[node name="money3" type="Sprite2D" parent="TabContainer/Shop/Marginal/HBox/plant3" unique_id=1946657329]
+position = Vector2(560.9647, 169.02518)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("15_to63i")
 
 [node name="plant2" type="VBoxContainer" parent="TabContainer/Shop/Marginal/HBox" unique_id=481490467]
 layout_mode = 2
@@ -416,17 +422,13 @@ size_flags_stretch_ratio = 2.87
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_0fc1b")
-text = "Make sure to check the Calendar! Planning harvests around good and bad days can be very crucial!
-"
+text = "Make the most of Fortune Day and cash crops to have lots of money!"
 scroll_active = false
 
-[node name="Sprite2D" type="Sprite2D" parent="TabContainer/Shop/Marginal/HBox/plant2" unique_id=1919591888]
-texture_filter = 5
-position = Vector2(141.44214, 441)
-scale = Vector2(0.64, 0.64)
-texture = ExtResource("6_jy61p")
-region_enabled = true
-region_rect = Rect2(0, 0, 418, 374.5)
+[node name="Sprite2D2" type="Sprite2D" parent="TabContainer/Shop/Marginal/HBox/plant2" unique_id=1349260420]
+position = Vector2(112.569214, 405.65845)
+scale = Vector2(0.69, 0.69)
+texture = ExtResource("15_bpd62")
 
 [node name="Sprite2D" type="Sprite2D" parent="TabContainer/Shop" unique_id=1617049156]
 
