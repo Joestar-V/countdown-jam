@@ -189,10 +189,12 @@ func _on_end_turn_pressed() -> void:
 			
 			if seed.slot.pos >= slotList.size()-1:
 				seed.on_harvest_death() #harvest death here
-
+				await seed.finished
+				await seed.finished
+				
 				actions = 1
 				harvested = false
-
+				seed.slot.update_display()
 			else:
 				seed.slot.seed.erase(seed)
 				seed.slot = slotList[seed.slot.pos+1]

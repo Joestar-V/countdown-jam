@@ -91,6 +91,7 @@ func _process(delta: float) -> void:
 		if !goodies.get_children():
 			slot.seed.erase(self)
 			queue_free()
+			finished.emit()
 
 
 func _on_button_button_down() -> void:
@@ -275,6 +276,7 @@ func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket])
 
 	destroy = true
 	finished.emit()
+	
 func _on_kid_finished():
 	remaining -= 1
 	print("Remaining:", remaining)

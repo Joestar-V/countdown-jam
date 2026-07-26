@@ -58,6 +58,7 @@ func on_harvest_fruit():
 func on_harvest_death():
 	harvest(death.x,death.y,death.z,[seedPacket]) 
 	slot.update_display()
+	
 
 
 func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket]) -> void:
