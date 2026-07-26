@@ -70,19 +70,28 @@ var current_state = STATE.PLAY
 			end_turn.disabled = false
 @onready var fertCount : float = 0:
 	set(value):
+		#if value > fertCount:
+			#jukebox.play_fert()
 		fertCount = value
 		resources.fertilizer_label.text = str(int(value))
 @onready var moneyCount : float = 0:
 	set(value):
+		#if value > moneyCount:
+			#jukebox.play_coin()
 		moneyCount = value
 		resources.money_label.text = str(int(value))
 @onready var foodCount : float = 26:
 	set(value):
+		#if value > foodCount:
+			#jukebox.play_food()
 		foodCount = value
 		resources.food_label.text = str(int(foodCount))
 
 
 func _ready() -> void:
+	
+	jukebox.play_week_start()
+	
 	Game.game = self
 	resources.update_quota(quota)
 	for i in 3:
@@ -185,6 +194,8 @@ func _on_slot_finished():
 func weekend():
 	
 	
+	jukebox.play_week_end()
+	
 	
 	remaining = slotList.size()
 	
@@ -261,6 +272,9 @@ func close_shop():
 	Game.game.no_more_turn_ending = false
 	for build in building_keeper.buildings:
 		if !build.built: build.build_animation()
+		
+	
+	Game.game.jukebox.play_week_start()
 	
 func game_over():
 	Game.game.current_state = Game.game.STATE.POPUP

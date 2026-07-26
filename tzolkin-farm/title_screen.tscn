@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bxpqs4v5img8y" path="res://art/buildings/textturizer.png" id="6_tpml5"]
 [ext_resource type="Texture2D" uid="uid://top4dpregn8j" path="res://art/ui/thumbs_up.png" id="7_jqemp"]
 [ext_resource type="Texture2D" uid="uid://c5qcjyweqmmit" path="res://art/tutorial/plant.png" id="10_rhgbh"]
+[ext_resource type="PackedScene" uid="uid://xf2rwelqu76p" path="res://jukebox.tscn" id="11_rhgbh"]
 [ext_resource type="Texture2D" uid="uid://d2a18va2yprxt" path="res://art/tutorial/harvest.png" id="11_skmiq"]
 [ext_resource type="Texture2D" uid="uid://d3wiu3tijaojr" path="res://art/tutorial/sun.png" id="12_lf08s"]
 
@@ -228,6 +229,8 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("4_xfn3p")
 text = " PLAY (For real) "
+
+[node name="jukebox" parent="." unique_id=129333911 instance=ExtResource("11_rhgbh")]
 
 [connection signal="pressed" from="Control/play_button" to="." method="play"]
 [connection signal="pressed" from="Control/quit_button" to="." method="quit"]

@@ -37,6 +37,8 @@ func _ready() -> void:
 	pass
 func _process(delta):
 	pass
+	
+	
 func first_day():
 	currentDay = currentDay
 	var j = 0
@@ -58,7 +60,6 @@ func first_day():
 	
 	for building : Building in Game.game.building_keeper.buildings:
 		building.on_turn_start()
-	
 	
 	
 	return (dayList.pop_front())
@@ -120,6 +121,7 @@ func reset_rotate():
 		.set_trans(Tween.TRANS_SINE) \
 		.set_ease(Tween.EASE_OUT)
 	total_rotation = 0
+	
 func create_circle():
 	var i = 0 
 	for day in dayList:

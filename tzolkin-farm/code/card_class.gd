@@ -226,6 +226,7 @@ func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket])
 		foodlet.value = 1.0 * mults.x
 		foodlet.move_to_resource(Game.game.resources.food.global_position)
 		await get_tree().create_timer(.1).timeout
+		Game.game.jukebox.play_food()
 
 	for i in moneyCount:
 		var foodlet = TINY_MONEY.instantiate()
@@ -237,6 +238,7 @@ func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket])
 		foodlet.global_position = global_position
 		foodlet.move_to_resource(Game.game.resources.money_bag.global_position)
 		await get_tree().create_timer(.1).timeout
+		Game.game.jukebox.play_coin()
 
 	for i in fertCount:
 		var foodlet = TINY_FERT.instantiate()
@@ -248,6 +250,7 @@ func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket])
 		foodlet.global_position = global_position
 		foodlet.move_to_resource(Game.game.resources.fertilizer.global_position)
 		await get_tree().create_timer(.1).timeout
+		Game.game.jukebox.play_fert()
 		
 	for i in cards:
 		var foodlet = TINY_CARD.instantiate()
@@ -260,6 +263,9 @@ func harvest(foodCount = 0, moneyCount = 0, fertCount = 0, cards = [seedPacket])
 		foodlet.update_pic(card_image.texture)
 		foodlet.move_to_resource(Game.game.seedkeeper.discard_pile.recycle_bin.global_position)
 		await get_tree().create_timer(.1).timeout
+		
+		
+		
 	print(card_name)
 	print(goodies.get_children().size())
 	while remaining > 0:

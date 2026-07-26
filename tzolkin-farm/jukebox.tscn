@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://cgdfm63go6tvt" path="res://art/music/Song Of The Wanderer - Helen Humes.mp3" id="7_mrf30"]
 [ext_resource type="AudioStream" uid="uid://ce2yy4rb6tnw4" path="res://art/sfx/coin.mp3" id="8_xfhbl"]
 [ext_resource type="AudioStream" uid="uid://dwoysn1sctjae" path="res://art/sfx/bite.mp3" id="9_ft11j"]
+[ext_resource type="AudioStream" uid="uid://bmyhaq0enysi5" path="res://art/sfx/pop.mp3" id="9_mrf30"]
 [ext_resource type="AudioStream" uid="uid://u2y4e3v0d6c5" path="res://art/sfx/resources3.mp3" id="10_ft11j"]
 [ext_resource type="AudioStream" uid="uid://bw21ktqe7m7la" path="res://art/sfx/week_start.mp3" id="11_jhwru"]
 [ext_resource type="AudioStream" uid="uid://bgiqrc68bhrqr" path="res://art/sfx/week_end.mp3" id="12_mrf30"]
@@ -35,30 +36,37 @@ bus = &"Music"
 [node name="coin_sound" type="AudioStreamPlayer" parent="." unique_id=320478624]
 stream = ExtResource("8_xfhbl")
 volume_db = -5.0
-pitch_scale = 0.88
+pitch_scale = 0.96
+max_polyphony = 25
+bus = &"Sound Effects"
+
+[node name="pop_sound" type="AudioStreamPlayer" parent="." unique_id=1675924727]
+stream = ExtResource("9_mrf30")
+volume_db = -10.067
+pitch_scale = 1.66
 max_polyphony = 25
 bus = &"Sound Effects"
 
 [node name="chomp_sound" type="AudioStreamPlayer" parent="." unique_id=1337564754]
 stream = ExtResource("9_ft11j")
-volume_db = -3.622
+volume_db = -4.0
 pitch_scale = 0.98
 max_polyphony = 25
 bus = &"Sound Effects"
 
 [node name="fert_sound" type="AudioStreamPlayer" parent="." unique_id=1799148411]
 stream = ExtResource("10_ft11j")
-volume_db = -4.139
+volume_db = -7.0
 pitch_scale = 0.9
 max_polyphony = 25
 bus = &"Sound Effects"
 
 [node name="week_start_sound" type="AudioStreamPlayer" parent="." unique_id=1247890595]
 stream = ExtResource("11_jhwru")
-volume_db = -3.622
+volume_db = -8.0
 bus = &"Sound Effects"
 
 [node name="week_end_sound" type="AudioStreamPlayer" parent="." unique_id=302211773]
 stream = ExtResource("12_mrf30")
-volume_db = -3.622
+volume_db = -8.0
 bus = &"Sound Effects"
