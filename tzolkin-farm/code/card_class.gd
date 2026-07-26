@@ -80,7 +80,8 @@ func update_visuals():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
+	if !hovered:
+		unzoom()
 	
 	if dragging and Game.game.current_state == Game.game.STATE.PLAY:
 		global_position = get_global_mouse_position() - of
@@ -312,9 +313,9 @@ func zoom():
 func unzoom():
 	if hovered == true:
 		hovered = false
-		z_index = stack_index
-		stat_spread.hide()
-		scale = default_scale
+	z_index = stack_index
+	stat_spread.hide()
+	scale = default_scale
 		#create_tween().tween_property(self,"scale",default_scale,0.15).set_trans(transition_type)
 		#await get_tree().create_timer(.15).timeout
 

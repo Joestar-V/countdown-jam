@@ -15,12 +15,9 @@ func day_start():
 	
 	for slot in Game.game.slotList:
 		if slot.stage == 1:
-			var tempList : Array[Card]
-			for chud in slot.seed:
-				tempList.append(chud)
-			slot.seed.clear()
-			for chud in tempList:
-				chud.on_harvest_death()
+			slot.stage = 4
+			await slot.harvest_list()
+			slot.stage = 1
 			Game.game.actions = Game.game.actionNum
 			Game.game.harvested = false
 	for seed in Game.game.seedList:

@@ -106,16 +106,17 @@ func harvest_list():
 		seed.erase(chud)
 		
 	for chud in tempList:
-		match stage:
-			1:
-				chud.on_harvest_sprout()
-			2:
-				chud.on_harvest_flower()
-			3:
-				chud.on_harvest_fruit()
-			4:
-				chud.on_harvest_death()
-		await chud.finished
+		if chud:
+			match stage:
+				1:
+					chud.on_harvest_sprout()
+				2:
+					chud.on_harvest_flower()
+				3:
+					chud.on_harvest_fruit()
+				4:
+					chud.on_harvest_death()
+			await chud.finished
 	print("Slot", pos, "finished")
 	finished.emit()
 	#update_display()

@@ -684,6 +684,7 @@ position = Vector2(0, -1080)
 [node name="jukebox" parent="." unique_id=129333911 instance=ExtResource("43_edr7y")]
 
 [node name="Pig" parent="." unique_id=98465191 instance=ExtResource("52_tb2lt")]
+z_index = 12
 position = Vector2(1713, 717)
 
 [connection signal="pressed" from="moon_group/Moon/End Turn" to="." method="_on_end_turn_pressed"]
