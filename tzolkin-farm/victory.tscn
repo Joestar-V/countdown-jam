@@ -312,15 +312,15 @@ text = "Peek at
 farm"
 icon_alignment = 1
 
-[node name="reroll" type="Button" parent="." unique_id=1635219617]
+[node name="continue" type="Button" parent="." unique_id=1635219617]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 869.5
+offset_left = 696.0
 offset_top = 815.9551
-offset_right = 1050.5
+offset_right = 941.0
 offset_bottom = 927.9551
 grow_horizontal = 2
 grow_vertical = 2
@@ -328,8 +328,28 @@ focus_mode = 0
 theme = ExtResource("7_1s7n3")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 32
-text = " Play again? :) "
+text = "Keep Going? :)"
+icon_alignment = 1
+
+[node name="reroll" type="Button" parent="." unique_id=1682419066]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 984.0
+offset_top = 815.9551
+offset_right = 1229.0
+offset_bottom = 927.9551
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme = ExtResource("7_1s7n3")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "Leave :o "
 icon_alignment = 1
 
 [connection signal="pressed" from="peek" to="." method="_on_peek_pressed"]
+[connection signal="pressed" from="continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="reroll" to="." method="_on_reroll_pressed"]

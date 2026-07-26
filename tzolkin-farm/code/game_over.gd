@@ -43,3 +43,11 @@ func set_up_stats(win_or_lose = 0):
 
 func _on_reroll_pressed() -> void:
 	get_tree().change_scene_to_file("res://title_screen.tscn")
+
+
+func _on_continue_pressed():
+	hide()
+	Game.game.calender.finalDay *= 20
+	Game.game.current_state = Game.game.STATE.PLAY
+	Game.game.open_shop()
+	
