@@ -7,6 +7,8 @@ var slot_index = 0
 @export var spacing_degrees :=21.5
 @onready var total_rotation = 0.0
 @onready var spinwheel
+
+@export var speed := 0.5 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
@@ -26,11 +28,11 @@ func rotate_next():
 			seed.reparent(self,true)
 
 	create_tween() \
-		.tween_property(spinwheel, "rotation", target_rotation, 1) \
+		.tween_property(spinwheel, "rotation", target_rotation, speed) \
 		.set_trans(Tween.TRANS_SINE) \
 		.set_ease(Tween.EASE_OUT)
 	var tweener = create_tween() \
-		.tween_property(self, "rotation", target_rotation, 1) \
+		.tween_property(self, "rotation", target_rotation, speed) \
 		.set_trans(Tween.TRANS_SINE) \
 		.set_ease(Tween.EASE_OUT)
 	await tweener.finished

@@ -12,11 +12,12 @@ var shown = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	close()
+	pass
+	#open()
 
 
 func open():
-	last_state = Game.game.current_state
+	if Game.game: last_state = Game.game.current_state
 	Game.game.current_state = Game.game.STATE.POPUP
 	
 	shown = true
