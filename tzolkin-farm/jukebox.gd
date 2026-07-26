@@ -13,7 +13,7 @@ func _process(delta):
 	if Input.is_action_just_released("Click"): play_pop()
 
 func play_title_theme():
-	coin_sound.play()
+	pass
 
 func play_pop():
 	pop_sound.play()

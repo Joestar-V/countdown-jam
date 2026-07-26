@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="tzolkin farm"
-run/main_scene="uid://dprbbbe0l5c2r"
+run/main_scene="uid://yqry4jq27a45"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
