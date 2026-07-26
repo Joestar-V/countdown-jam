@@ -52,6 +52,7 @@
 [ext_resource type="PackedScene" uid="uid://xf2rwelqu76p" path="res://jukebox.tscn" id="43_edr7y"]
 [ext_resource type="PackedScene" uid="uid://bt0ykjpq0e388" path="res://objects/days/worm_day.tscn" id="46_2tki7"]
 [ext_resource type="PackedScene" uid="uid://dadbskbdfk5st" path="res://victory.tscn" id="46_lwlx3"]
+[ext_resource type="PackedScene" uid="uid://cuscajfcwb2vn" path="res://objects/days/windfall_day.tscn" id="47_ib7ph"]
 [ext_resource type="Theme" uid="uid://forf20kkm6ao" path="res://art/tutorial/tutorial_theme.tres" id="47_mljfx"]
 [ext_resource type="PackedScene" uid="uid://b6smcvok25ou3" path="res://objects/days/heat_day.tscn" id="48_gh0px"]
 [ext_resource type="PackedScene" uid="uid://bn26lu7x5th63" path="res://objects/days/tax_day.tscn" id="49_v33yl"]
@@ -625,7 +626,7 @@ label_settings = ExtResource("37_lwlx3")
 position = Vector2(1717, 139)
 script = ExtResource("27_bnpwn")
 spacing_degrees = 17.0
-dayPoolGood = Array[PackedScene]([ExtResource("29_xfvwf"), ExtResource("35_iu0sx"), ExtResource("31_dhpj7"), ExtResource("46_2tki7")])
+dayPoolGood = Array[PackedScene]([ExtResource("29_xfvwf"), ExtResource("35_iu0sx"), ExtResource("31_dhpj7"), ExtResource("46_2tki7"), ExtResource("47_ib7ph")])
 dayPoolBad = Array[PackedScene]([ExtResource("36_4v2jo"), ExtResource("40_klri6"), ExtResource("48_gh0px"), ExtResource("49_v33yl")])
 
 [node name="Sun" type="Sprite2D" parent="sundial" unique_id=132937313]
