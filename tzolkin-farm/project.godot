@@ -10,9 +10,11 @@ config_version=5
 
 [application]
 
-config/name="tzolkin farm"
+config/name="Spin Mill Hil"
 run/main_scene="uid://yqry4jq27a45"
 config/features=PackedStringArray("4.7", "GL Compatibility")
+boot_splash/bg_color=Color(0.06693602, 0.26520637, 0.47297305, 1)
+boot_splash/image="uid://cnmxg7kyvcdfl"
 config/icon="res://icon.svg"
 
 [audio]

@@ -87,7 +87,7 @@ text = "Reroll
 icon_alignment = 1
 
 [node name="Seeds 4 sale" type="Sprite2D" parent="." unique_id=1790743632]
-position = Vector2(1160, 375.375)
+position = Vector2(1144, 375.375)
 scale = Vector2(0.37578624, 0.37578627)
 texture = ExtResource("2_fgaav")
 metadata/_edit_group_ = true
@@ -115,7 +115,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Buiildings 4 sale" type="Sprite2D" parent="." unique_id=1999968301]
-position = Vector2(764.6235, 375.5)
+position = Vector2(668.6235, 375.5)
 scale = Vector2(0.37578624, 0.37578627)
 texture = ExtResource("2_fgaav")
 metadata/_edit_group_ = true
@@ -149,10 +149,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 960.0
-offset_top = 431.375
-offset_right = 960.0
-offset_bottom = 431.375
+offset_left = 880.0
+offset_top = 528.0
+offset_right = 880.0
+offset_bottom = 528.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -197,10 +197,10 @@ script = ExtResource("6_gmb2m")
 [node name="handSlot5" type="TextureRect" parent="seed_shop" unique_id=579644911]
 texture_filter = 1
 layout_mode = 0
-offset_left = 24.0
-offset_top = 344.0
-offset_right = 234.0
-offset_bottom = 582.0
+offset_left = 395.99997
+offset_top = 160.62502
+offset_right = 606.0
+offset_bottom = 398.625
 scale = Vector2(0.66, 0.66)
 texture = ExtResource("5_6lah5")
 stretch_mode = 2
@@ -209,10 +209,10 @@ script = ExtResource("6_gmb2m")
 [node name="handSlot6" type="TextureRect" parent="seed_shop" unique_id=1392506651]
 texture_filter = 1
 layout_mode = 0
-offset_left = 208.0
-offset_top = 344.125
-offset_right = 418.0
-offset_bottom = 582.125
+offset_left = 396.0
+offset_top = -23.37497
+offset_right = 606.0
+offset_bottom = 214.62503
 scale = Vector2(0.66, 0.66)
 texture = ExtResource("5_6lah5")
 stretch_mode = 2
@@ -237,9 +237,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 664.0
+offset_left = 568.0
 offset_top = 447.5
-offset_right = 664.0
+offset_right = 568.0
 offset_bottom = 447.5
 grow_horizontal = 2
 grow_vertical = 2

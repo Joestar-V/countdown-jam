@@ -7,8 +7,8 @@
 [ext_resource type="Theme" uid="uid://forf20kkm6ao" path="res://art/tutorial/tutorial_theme.tres" id="4_xfn3p"]
 [ext_resource type="Texture2D" uid="uid://ndi6b7jvp0vj" path="res://art/buildings/mr_sun.png" id="5_hafda"]
 [ext_resource type="Script" uid="uid://ccpgrrgioedjc" path="res://volume_slider.gd" id="6_n1yhu"]
-[ext_resource type="Texture2D" uid="uid://bxpqs4v5img8y" path="res://art/buildings/textturizer.png" id="6_tpml5"]
 [ext_resource type="Texture2D" uid="uid://top4dpregn8j" path="res://art/ui/thumbs_up.png" id="7_jqemp"]
+[ext_resource type="Texture2D" uid="uid://cwcar1h7bi4i0" path="res://art/ui/textturizer (2).png" id="9_q7w76"]
 [ext_resource type="Texture2D" uid="uid://c5qcjyweqmmit" path="res://art/tutorial/plant.png" id="10_rhgbh"]
 [ext_resource type="PackedScene" uid="uid://xf2rwelqu76p" path="res://jukebox.tscn" id="11_rhgbh"]
 [ext_resource type="Texture2D" uid="uid://d2a18va2yprxt" path="res://art/tutorial/harvest.png" id="11_skmiq"]
@@ -153,7 +153,7 @@ frame_progress = 0.0075116544
 
 [node name="graphic design might be my talent yo" type="Sprite2D" parent="." unique_id=677838514]
 position = Vector2(960, 413)
-texture = ExtResource("6_tpml5")
+texture = ExtResource("9_q7w76")
 
 [node name="ThumbsUp" type="Sprite2D" parent="." unique_id=1644925816]
 modulate = Color(0.88, 1, 0.908, 1)
