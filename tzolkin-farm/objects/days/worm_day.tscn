@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bt0ykjpq0e388"]
+
+[ext_resource type="PackedScene" uid="uid://dy788pq7ankw6" path="res://objects/days/double_day.tscn" id="1_cwwsh"]
+[ext_resource type="Script" uid="uid://b5l477vm2q7mv" path="res://objects/days/worm_day.gd" id="2_cwwsh"]
+[ext_resource type="Texture2D" uid="uid://onjpgl46fpf5" path="res://art/dayicons/6-2-worms-png-picture.png" id="3_vvxsy"]
+
+[node name="Day2" unique_id=1162151081 instance=ExtResource("1_cwwsh")]
+script = ExtResource("2_cwwsh")
+title = "Worm Day"
+image = ExtResource("3_vvxsy")
+description = "Decomposers are here to help! All plants that die today will turn into fertilizer!"
+
+[node name="Sprite2D" parent="." index="1" unique_id=1499132609]
+scale = Vector2(0.098, 0.098)
+texture = ExtResource("3_vvxsy")
