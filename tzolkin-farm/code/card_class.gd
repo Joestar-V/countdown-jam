@@ -126,7 +126,7 @@ func _on_button_button_up() -> void:
 		if Game.game.moneyCount >= money_cost:
 			print("purchase")
 			Game.game.moneyCount -= money_cost
-			
+			Game.game.jukebox.play_purchase()
 			$visual.hide()
 			
 			for i in 1:
