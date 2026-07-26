@@ -36,13 +36,15 @@
 [ext_resource type="Texture2D" uid="uid://b1npgnjyligff" path="res://art/ui/veg-pouch-2291429493.png" id="16_e8heu"]
 [ext_resource type="Texture2D" uid="uid://buy1h8xxb6wa8" path="res://art/ui/recycle-bin.png" id="17_rvswv"]
 [ext_resource type="PackedScene" uid="uid://cluhqubl3e2e4" path="res://shop.tscn" id="22_vaj68"]
-[ext_resource type="FontFile" uid="uid://bsat78l3nbcp2" path="res://art/ui/Waterline.ttf" id="26_xa8c5"]
 [ext_resource type="Texture2D" uid="uid://b0vic0rrekw5e" path="res://art/ui/water_supply.png" id="27_5b14r"]
 [ext_resource type="Script" uid="uid://gpcfttc0alye" path="res://code/sundial.gd" id="27_bnpwn"]
 [ext_resource type="PackedScene" uid="uid://dy788pq7ankw6" path="res://objects/days/double_day.tscn" id="29_xfvwf"]
 [ext_resource type="PackedScene" uid="uid://cns8mp3ajmi25" path="res://objects/days/rainy_day.tscn" id="31_dhpj7"]
+[ext_resource type="Shader" uid="uid://d0nplp3vpe078" path="res://objects/buildings/outline.gdshader" id="34_0de7l"]
+[ext_resource type="Script" uid="uid://cyhm3nyhlaruo" path="res://moon_group.gd" id="34_87ddb"]
 [ext_resource type="PackedScene" uid="uid://tl6a1wadpqug" path="res://objects/days/money_day.tscn" id="35_iu0sx"]
 [ext_resource type="PackedScene" uid="uid://bc45jocgbctkx" path="res://objects/days/half_day.tscn" id="36_4v2jo"]
+[ext_resource type="LabelSettings" uid="uid://che3qh6cg3x0q" path="res://art/ui/water_label.tres" id="37_lwlx3"]
 [ext_resource type="PackedScene" uid="uid://crqqa24taicv2" path="res://objects/days/infestation_day.tscn" id="40_klri6"]
 [ext_resource type="PackedScene" uid="uid://dt5p3ct3fwly3" path="res://game_over.tscn" id="42_eu6ph"]
 [ext_resource type="PackedScene" uid="uid://xf2rwelqu76p" path="res://jukebox.tscn" id="43_edr7y"]
@@ -346,11 +348,37 @@ _data = {
 &"win": SubResource("Animation_0de7l")
 }
 
-[sub_resource type="Theme" id="Theme_6tghx"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lwlx3"]
+shader = ExtResource("34_0de7l")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+shader_parameter/pattern = 1
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_b64ip"]
-font = ExtResource("26_xa8c5")
-font_size = 160
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_87ddb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mljfx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qpefm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lwlx3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0de7l"]
+
+[sub_resource type="Theme" id="Theme_lwlx3"]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_disabled_color = Color(0, 0, 0, 0.49803922)
+Button/colors/font_hover_color = Color(0.19434926, 0.19434929, 0.1943492, 1)
+Button/colors/font_pressed_color = Color(0.19076231, 0.19076234, 0.19076225, 1)
+Button/font_sizes/font_size = 36
+Button/fonts/font = ExtResource("9_f1jbl")
+Button/styles/disabled = SubResource("StyleBoxEmpty_87ddb")
+Button/styles/focus = SubResource("StyleBoxEmpty_mljfx")
+Button/styles/hover = SubResource("StyleBoxEmpty_qpefm")
+Button/styles/normal = SubResource("StyleBoxEmpty_lwlx3")
+Button/styles/pressed = SubResource("StyleBoxEmpty_0de7l")
 
 [sub_resource type="LabelSettings" id="LabelSettings_l0oc6"]
 font = ExtResource("9_f1jbl")
@@ -376,11 +404,7 @@ card_pool = Array[PackedScene]([ExtResource("2_aa0lp"), ExtResource("3_iu0sx"), 
 building_pool = Array[PackedScene]([ExtResource("8_l1i01"), ExtResource("9_r62pu"), ExtResource("10_klri6"), ExtResource("11_eu6ph"), ExtResource("12_edr7y"), ExtResource("13_kq12w"), ExtResource("14_t46w6"), ExtResource("15_m28ev")])
 
 [node name="building_keeper" parent="." unique_id=929817058 instance=ExtResource("2_xa8c5")]
-
-[node name="Moon" type="Sprite2D" parent="." unique_id=1706999615]
-position = Vector2(1767.9999, 983.99994)
-scale = Vector2(0.4039375, 0.4039375)
-texture = ExtResource("4_e8heu")
+metadata/_edit_lock_ = true
 
 [node name="Wheel" parent="." unique_id=965928083 instance=ExtResource("1_feb5d")]
 position = Vector2(959.99994, 1376)
@@ -516,13 +540,22 @@ libraries/ = SubResource("AnimationLibrary_mfdv2")
 visible = false
 position = Vector2(0, -1080)
 
-[node name="End Turn" type="Button" parent="." unique_id=1810491390]
-offset_left = 1616.0
-offset_top = 904.0
-offset_right = 1906.0
-offset_bottom = 1040.0
-theme = SubResource("Theme_6tghx")
-theme_override_font_sizes/font_size = 30
+[node name="moon_group" type="Node2D" parent="." unique_id=1657950665]
+position = Vector2(1716, 1020)
+script = ExtResource("34_87ddb")
+
+[node name="Moon" type="Sprite2D" parent="moon_group" unique_id=1706999615]
+material = SubResource("ShaderMaterial_lwlx3")
+position = Vector2(-3.015625, 9.984375)
+scale = Vector2(0.37796873, 0.37796873)
+texture = ExtResource("4_e8heu")
+
+[node name="End Turn" type="Button" parent="moon_group" unique_id=1810491390]
+offset_left = -159.0
+offset_top = -178.0
+offset_right = 146.0
+offset_bottom = 64.0
+theme = SubResource("Theme_lwlx3")
 disabled = true
 text = "Plant or Harvest"
 script = ExtResource("14_7sc4i")
@@ -538,16 +571,16 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 92.25342
-offset_top = -882.147
-offset_right = 247.25342
-offset_bottom = -768.147
+offset_left = 73.25342
+offset_top = -752.007
+offset_right = 266.25342
+offset_bottom = -665.007
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(4.82, 4.82)
 size_flags_vertical = 8
 text = "10/10"
-label_settings = SubResource("LabelSettings_b64ip")
+label_settings = ExtResource("37_lwlx3")
 
 [node name="sundial" type="Marker2D" parent="." unique_id=1442074541]
 position = Vector2(1774, 139)
@@ -603,4 +636,4 @@ position = Vector2(0, -1080)
 
 [node name="jukebox" parent="." unique_id=129333911 instance=ExtResource("43_edr7y")]
 
-[connection signal="pressed" from="End Turn" to="." method="_on_end_turn_pressed"]
+[connection signal="pressed" from="moon_group/End Turn" to="." method="_on_end_turn_pressed"]

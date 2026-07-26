@@ -8,6 +8,3 @@ func _process(delta: float) -> void:
 		for seed in Game.game.seedkeeper.hand.get_children():
 			if seed.has_method("unzoom"):
 				seed.unzoom()
-	#if Game.game.actions == 0:
-		#pass #this is when it starts glowings
-	#else:

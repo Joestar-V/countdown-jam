@@ -2,6 +2,7 @@ extends Node2D
 class_name gamer
 
 @onready var jukebox = $jukebox
+@onready var moon = $moon_group
 
 
 @onready var seedList : Array
@@ -44,7 +45,7 @@ enum STATE { PLAY, SHOP, POPUP }
 var current_state = STATE.PLAY  
 @onready var building_keeper = $building_keeper
 
-@onready var end_turn = $"End Turn"
+@onready var end_turn = $"moon_group/End Turn"
 
 @onready var calender: Marker2D = $sundial
 @onready var total_apples = 0
@@ -70,9 +71,11 @@ var current_state = STATE.PLAY
 		if actions > 0:
 			end_turn.text = "Plant or Harvest"
 			end_turn.disabled = true
+			moon.glow_stop()
 		else:
 			end_turn.text = "End Day"
 			end_turn.disabled = false
+			moon.glow()
 @onready var fertCount : float = 0:
 	set(value):
 		
