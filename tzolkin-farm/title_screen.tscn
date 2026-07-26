@@ -1,243 +1,686 @@
 [gd_scene format=3 uid="uid://yqry4jq27a45"]
 
-[ext_resource type="Script" uid="uid://bw885wpem04bl" path="res://title_screen.gd" id="1_013yr"]
-[ext_resource type="Texture2D" uid="uid://d3mruaw8r6s4n" path="res://art/bg-farmland-By-MaxyM-75311485.jpg" id="1_v6p8y"]
-[ext_resource type="Texture2D" uid="uid://344glljs20sy" path="res://art/free-transparent-grass-texture-seamless-PNG-thumb43.png" id="2_ak2if"]
-[ext_resource type="Texture2D" uid="uid://cnmxg7kyvcdfl" path="res://art/ui/ping.png" id="3_skmiq"]
+[ext_resource type="Script" uid="uid://cnu0x64ps4cho" path="res://game.gd" id="1_33rjx"]
+[ext_resource type="PackedScene" uid="uid://bd7dp4kyhp0y6" path="res://objects/crops/wheat.tscn" id="2_712p8"]
+[ext_resource type="PackedScene" uid="uid://0r2fv35jbeuj" path="res://objects/crops/squash.tscn" id="3_8jlou"]
 [ext_resource type="Theme" uid="uid://forf20kkm6ao" path="res://art/tutorial/tutorial_theme.tres" id="4_xfn3p"]
-[ext_resource type="Texture2D" uid="uid://ndi6b7jvp0vj" path="res://art/buildings/mr_sun.png" id="5_hafda"]
-[ext_resource type="Texture2D" uid="uid://bxpqs4v5img8y" path="res://art/buildings/textturizer.png" id="6_tpml5"]
-[ext_resource type="Texture2D" uid="uid://top4dpregn8j" path="res://art/ui/thumbs_up.png" id="7_jqemp"]
-[ext_resource type="Texture2D" uid="uid://c5qcjyweqmmit" path="res://art/tutorial/plant.png" id="10_rhgbh"]
+[ext_resource type="PackedScene" uid="uid://r3v57ntk4jk8" path="res://objects/crops/potato.tscn" id="4_yira3"]
+[ext_resource type="PackedScene" uid="uid://dcb4fgcxec42p" path="res://objects/crops/maize.tscn" id="5_45n5y"]
+[ext_resource type="PackedScene" uid="uid://blmgteof8oxul" path="res://objects/crops/beans.tscn" id="6_t0o2v"]
+[ext_resource type="PackedScene" uid="uid://h25xor7ms780" path="res://objects/crops/apple.tscn" id="7_wbykb"]
+[ext_resource type="PackedScene" uid="uid://1tmmnytr3fd2" path="res://objects/crops/cactus.tscn" id="8_8b66d"]
+[ext_resource type="PackedScene" uid="uid://36egsxredcru" path="res://objects/crops/grape.tscn" id="9_j4cdl"]
+[ext_resource type="PackedScene" uid="uid://bocx4he5lux4" path="res://objects/crops/carrot.tscn" id="10_nk7ig"]
 [ext_resource type="PackedScene" uid="uid://xf2rwelqu76p" path="res://jukebox.tscn" id="11_rhgbh"]
-[ext_resource type="Texture2D" uid="uid://d2a18va2yprxt" path="res://art/tutorial/harvest.png" id="11_skmiq"]
-[ext_resource type="Texture2D" uid="uid://d3wiu3tijaojr" path="res://art/tutorial/sun.png" id="12_lf08s"]
+[ext_resource type="PackedScene" uid="uid://rhdfbuaejr7m" path="res://objects/buildings/barn.tscn" id="11_ufrs2"]
+[ext_resource type="PackedScene" uid="uid://ds42iybef5saq" path="res://objects/buildings/chicken_coop.tscn" id="12_trt42"]
+[ext_resource type="PackedScene" uid="uid://dealvndyjgyyq" path="res://objects/buildings/composter.tscn" id="13_5u2kn"]
+[ext_resource type="PackedScene" uid="uid://6ii4tvrtdknv" path="res://objects/buildings/magic_garden.tscn" id="14_yd73f"]
+[ext_resource type="PackedScene" uid="uid://bkuddae7q3vsc" path="res://objects/buildings/market.tscn" id="15_fgfk5"]
+[ext_resource type="PackedScene" uid="uid://d2tli0e8em60a" path="res://objects/buildings/well.tscn" id="16_dqmf8"]
+[ext_resource type="PackedScene" uid="uid://rlxpw61la8um" path="res://objects/buildings/windmill.tscn" id="17_7mj6u"]
+[ext_resource type="PackedScene" uid="uid://bwbd6340j740s" path="res://objects/buildings/pig_pen.tscn" id="18_yk8xu"]
+[ext_resource type="PackedScene" uid="uid://bw3epfysqhd7k" path="res://objects/buildings/water_wheel.tscn" id="19_k3f8o"]
+[ext_resource type="PackedScene" uid="uid://c8b2j657jvmhb" path="res://buildingkeeper.tscn" id="20_2rdnc"]
+[ext_resource type="PackedScene" uid="uid://rt7vegnmsa1o" path="res://objects/wheel.tscn" id="21_70vcq"]
+[ext_resource type="PackedScene" uid="uid://dwffc1owgj0bq" path="res://objects/slot.tscn" id="22_j0t2q"]
+[ext_resource type="PackedScene" uid="uid://cx7f4liipktpg" path="res://objects/resources.tscn" id="23_uspro"]
+[ext_resource type="Script" uid="uid://wanjkf673j7x" path="res://objects/wheel.gd" id="24_hwjys"]
+[ext_resource type="Script" uid="uid://b706fq76tajfe" path="res://seed_keeper.gd" id="25_e7hm7"]
+[ext_resource type="Script" uid="uid://cob7t1n2bxrf5" path="res://code/drawpile.gd" id="26_3dbds"]
+[ext_resource type="Texture2D" uid="uid://b1npgnjyligff" path="res://art/ui/veg-pouch-2291429493.png" id="27_po78x"]
+[ext_resource type="FontFile" uid="uid://j8glluhsw0mx" path="res://art/ui/segoe-print-regular.ttf" id="28_x063l"]
+[ext_resource type="Texture2D" uid="uid://dwqwiqrv1jfri" path="res://art/ui/hand.png" id="29_m4vpe"]
+[ext_resource type="Script" uid="uid://d0po6tfbuhuc5" path="res://hand_image.gd" id="30_l2use"]
+[ext_resource type="Script" uid="uid://htg51x88dvwh" path="res://code/hand.gd" id="31_eg01s"]
+[ext_resource type="Texture2D" uid="uid://dxetedtnwmdu4" path="res://art/ui/seed_text.png" id="32_ur8me"]
+[ext_resource type="Script" uid="uid://x0w1fuppocc7" path="res://code/discard_pile.gd" id="33_k76wc"]
+[ext_resource type="Texture2D" uid="uid://buy1h8xxb6wa8" path="res://art/ui/recycle-bin.png" id="34_xie5c"]
+[ext_resource type="PackedScene" uid="uid://cluhqubl3e2e4" path="res://shop.tscn" id="35_wpaos"]
+[ext_resource type="Script" uid="uid://cyhm3nyhlaruo" path="res://moon_group.gd" id="36_gtnbq"]
+[ext_resource type="Shader" uid="uid://d0nplp3vpe078" path="res://objects/buildings/outline.gdshader" id="37_u5uom"]
+[ext_resource type="Texture2D" uid="uid://bgjicp81ynuu2" path="res://art/ui/moon.png" id="38_ssbu3"]
+[ext_resource type="Script" uid="uid://bhygk66ix8ajf" path="res://code/end_turn.gd" id="39_n80r2"]
+[ext_resource type="Texture2D" uid="uid://b0vic0rrekw5e" path="res://art/ui/water_supply.png" id="40_6ygip"]
+[ext_resource type="LabelSettings" uid="uid://che3qh6cg3x0q" path="res://art/ui/water_label.tres" id="41_i7i3j"]
+[ext_resource type="Script" uid="uid://gpcfttc0alye" path="res://code/sundial.gd" id="42_e63gj"]
+[ext_resource type="PackedScene" uid="uid://dy788pq7ankw6" path="res://objects/days/double_day.tscn" id="43_voc1i"]
+[ext_resource type="PackedScene" uid="uid://tl6a1wadpqug" path="res://objects/days/money_day.tscn" id="44_io8pq"]
+[ext_resource type="PackedScene" uid="uid://cns8mp3ajmi25" path="res://objects/days/rainy_day.tscn" id="45_6k4pp"]
+[ext_resource type="PackedScene" uid="uid://bc45jocgbctkx" path="res://objects/days/half_day.tscn" id="46_mce57"]
+[ext_resource type="PackedScene" uid="uid://crqqa24taicv2" path="res://objects/days/infestation_day.tscn" id="47_qnd6l"]
+[ext_resource type="Texture2D" uid="uid://c7qwdtv3x87xu" path="res://art/png-clipart-sun-sun-sun.png" id="48_2qg06"]
+[ext_resource type="PackedScene" uid="uid://dt5p3ct3fwly3" path="res://game_over.tscn" id="50_xsvbq"]
+[ext_resource type="PackedScene" uid="uid://dadbskbdfk5st" path="res://victory.tscn" id="51_r68vj"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tpml5"]
-atlas = ExtResource("5_hafda")
-region = Rect2(0, 0, 100, 100)
+[sub_resource type="Shader" id="Shader_mskdk"]
+code = "shader_type canvas_item;
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jqemp"]
-atlas = ExtResource("5_hafda")
-region = Rect2(100, 0, 100, 100)
+uniform vec4 flash_color : source_color = vec4(1.0, 1.0, 1.0, 1.0);
+uniform float flash_amount : hint_range(0.0, 1.0) = 0.0;
+uniform bool solid_flash = false;
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_013yr"]
-atlas = ExtResource("5_hafda")
-region = Rect2(200, 0, 100, 100)
+void fragment() {
+    vec4 base = texture(TEXTURE, UV);
+    
+    if (solid_flash) {
+        // Force solid flash color
+        COLOR = vec4(flash_color.rgb, base.a);
+    }
+    else if (flash_amount > 0.0) {
+        // Flash amount now goes all the way to solid at 1.0
+        COLOR.rgb = mix(base.rgb, flash_color.rgb, flash_amount);
+        COLOR.a = base.a;
+    }
+    else {
+        COLOR = base;
+    }
+}
+//void light() {
+//	// Called for every pixel for every light affecting the CanvasItem.
+//	// Uncomment to replace the default light processing function with this one.
+//}
+"
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_b64ip"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tpml5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jqemp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_013yr")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5b14r"]
+shader = SubResource("Shader_mskdk")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_amount = 0.0
+shader_parameter/solid_flash = false
 
-[node name="Title Screen" type="Node2D" unique_id=240541915]
-script = ExtResource("1_013yr")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bnpwn"]
+shader = SubResource("Shader_mskdk")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_amount = 0.0
+shader_parameter/solid_flash = false
 
-[node name="bg" type="Sprite2D" parent="." unique_id=580465542]
-modulate = Color(0.79624295, 0.796243, 0.7962429, 1)
-position = Vector2(948, 516)
-texture = ExtResource("1_v6p8y")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_36jdj"]
+shader = SubResource("Shader_mskdk")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_amount = 0.0
+shader_parameter/solid_flash = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xfvwf"]
+shader = SubResource("Shader_mskdk")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_amount = 0.0
+shader_parameter/solid_flash = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dhpj7"]
+shader = SubResource("Shader_mskdk")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_amount = 0.0
+shader_parameter/solid_flash = false
+
+[sub_resource type="LabelSettings" id="LabelSettings_imxm8"]
+font = ExtResource("28_x063l")
+font_size = 44
+outline_size = 9
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 9
+shadow_color = Color(0, 0, 0, 0.23529412)
+shadow_offset = Vector2(1, 2.425)
+
+[sub_resource type="Animation" id="Animation_vef74"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shop:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shop:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1080, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Gameover:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Gameover:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1080, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Gameover:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("vicroy:position:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("vicroy:position:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1080, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("vicroy:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_eu6ph"]
+resource_name = "game_over"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gameover:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Gameover:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(-1080, -0.25, 0, 0.25, 0, 56.999996, -0.16666667, -189.5, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Gameover:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_xfvwf"]
+resource_name = "shop_descend"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shop:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shop:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(-1080, -0.25, 0, 0.25, 0, 0, -0.16666667, -180, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_dhpj7"]
+resource_name = "shop_return"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shop:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shop:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -1080, -0.16666667, 180, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_hve3p"]
+resource_name = "wheelspin"
+
+[sub_resource type="Animation" id="Animation_0de7l"]
+resource_name = "win"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("vicroy:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("vicroy:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(-1080, -0.25, 0, 0.25, 0, 47.28, -0.16666667, -189.5, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("vicroy:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mfdv2"]
+_data = {
+&"RESET": SubResource("Animation_vef74"),
+&"game_over": SubResource("Animation_eu6ph"),
+&"shop_descend": SubResource("Animation_xfvwf"),
+&"shop_return": SubResource("Animation_dhpj7"),
+&"wheelspin": SubResource("Animation_hve3p"),
+&"win": SubResource("Animation_0de7l")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lwlx3"]
+shader = ExtResource("37_u5uom")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+shader_parameter/pattern = 1
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_87ddb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mljfx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qpefm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lwlx3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0de7l"]
+
+[sub_resource type="Theme" id="Theme_lwlx3"]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_disabled_color = Color(0, 0, 0, 0.49803922)
+Button/colors/font_hover_color = Color(0.33660746, 0.3366077, 0.33660752, 1)
+Button/colors/font_pressed_color = Color(0.19076231, 0.19076234, 0.19076225, 1)
+Button/font_sizes/font_size = 36
+Button/fonts/font = ExtResource("28_x063l")
+Button/styles/disabled = SubResource("StyleBoxEmpty_87ddb")
+Button/styles/focus = SubResource("StyleBoxEmpty_mljfx")
+Button/styles/hover = SubResource("StyleBoxEmpty_qpefm")
+Button/styles/normal = SubResource("StyleBoxEmpty_lwlx3")
+Button/styles/pressed = SubResource("StyleBoxEmpty_0de7l")
+
+[sub_resource type="LabelSettings" id="LabelSettings_l0oc6"]
+font = ExtResource("28_x063l")
+font_size = 160
+outline_size = 8
+outline_color = Color(1, 0.9137255, 0, 1)
+shadow_size = 0
+shadow_color = Color(0.32941177, 0.0627451, 0, 0.6862745)
+shadow_offset = Vector2(4, 5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xa8c5"]
+line_spacing = -2.79
+font = ExtResource("28_x063l")
+font_size = 44
+outline_size = 2
+outline_color = Color(1, 0.9137255, 0, 1)
+shadow_size = 0
+shadow_color = Color(0.32941177, 0.0627451, 0, 0.6862745)
+shadow_offset = Vector2(2, 3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_87ddb"]
+line_spacing = -2.79
+font = ExtResource("28_x063l")
+font_size = 39
+outline_size = 2
+outline_color = Color(1, 0.9137255, 0, 1)
+shadow_size = 0
+shadow_color = Color(0.32941177, 0.0627451, 0, 0.6862745)
+shadow_offset = Vector2(2, 3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mljfx"]
+line_spacing = -10.68
+font = ExtResource("28_x063l")
+font_size = 24
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.5019608)
+shadow_offset = Vector2(1, 3.625)
+
+[node name="Game" type="Node2D" unique_id=1509497783]
+script = ExtResource("1_33rjx")
+card_pool = Array[PackedScene]([ExtResource("2_712p8"), ExtResource("3_8jlou"), ExtResource("4_yira3"), ExtResource("5_45n5y"), ExtResource("6_t0o2v"), ExtResource("7_wbykb"), ExtResource("8_8b66d"), ExtResource("9_j4cdl"), ExtResource("10_nk7ig")])
+building_pool = Array[PackedScene]([ExtResource("11_ufrs2"), ExtResource("12_trt42"), ExtResource("13_5u2kn"), ExtResource("14_yd73f"), ExtResource("15_fgfk5"), ExtResource("16_dqmf8"), ExtResource("17_7mj6u"), ExtResource("18_yk8xu"), ExtResource("19_k3f8o")])
+
+[node name="building_keeper" parent="." unique_id=929817058 instance=ExtResource("20_2rdnc")]
 metadata/_edit_lock_ = true
 
-[node name="Ping" type="Sprite2D" parent="." unique_id=1256366829]
-position = Vector2(1596, 839.99994)
-scale = Vector2(0.32289723, 0.32289726)
-texture = ExtResource("3_skmiq")
+[node name="Wheel" parent="." unique_id=965928083 instance=ExtResource("21_70vcq")]
+position = Vector2(959.99994, 1376)
+scale = Vector2(2.56, 2.56)
+metadata/_edit_lock_ = true
 
-[node name="grass" type="Sprite2D" parent="." unique_id=1960610301]
-texture_repeat = 2
-position = Vector2(960.00006, 864)
-scale = Vector2(0.84, 0.84)
-texture = ExtResource("2_ak2if")
-region_enabled = true
-region_rect = Rect2(0, 0, 2423.2507, 600)
+[node name="spots" type="Node2D" parent="." unique_id=451446717]
+position = Vector2(10, 5)
 
-[node name="Control" type="VBoxContainer" parent="." unique_id=1789050418]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 876.0
-offset_top = 600.0
-offset_right = 1044.0
-offset_bottom = 900.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("4_xfn3p")
+[node name="Slot2" parent="spots" unique_id=658892514 instance=ExtResource("22_j0t2q")]
+material = SubResource("ShaderMaterial_5b14r")
+position = Vector2(583, 945.00006)
+open = true
 
-[node name="play_button" type="Button" parent="Control" unique_id=547649891]
-custom_minimum_size = Vector2(270, 100)
+[node name="Slot3" parent="spots" unique_id=44547900 instance=ExtResource("22_j0t2q")]
+material = SubResource("ShaderMaterial_bnpwn")
+position = Vector2(764, 837.00006)
+pos = 1
+stage = 1
+
+[node name="Slot4" parent="spots" unique_id=1877094531 instance=ExtResource("22_j0t2q")]
+material = SubResource("ShaderMaterial_36jdj")
+position = Vector2(956, 801)
+pos = 2
+stage = 2
+
+[node name="Slot5" parent="spots" unique_id=714500809 instance=ExtResource("22_j0t2q")]
+material = SubResource("ShaderMaterial_xfvwf")
+position = Vector2(1136, 837)
+pos = 3
+stage = 3
+
+[node name="Slot6" parent="spots" unique_id=1471545763 instance=ExtResource("22_j0t2q")]
+material = SubResource("ShaderMaterial_dhpj7")
+position = Vector2(1316, 945)
+pos = 4
+stage = 4
+
+[node name="Resources" parent="." unique_id=1812906870 instance=ExtResource("23_uspro")]
+position = Vector2(960, 0)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="RealWheel" type="Node2D" parent="." unique_id=1549002412]
+position = Vector2(960, 1376)
+script = ExtResource("24_hwjys")
+radius = 550.0
+
+[node name="SeedKeeper" type="Node2D" parent="." unique_id=743107986]
+script = ExtResource("25_e7hm7")
+
+[node name="Drawpile" type="Node2D" parent="SeedKeeper" unique_id=1586721062]
+script = ExtResource("26_3dbds")
+
+[node name="pouch" type="Sprite2D" parent="SeedKeeper/Drawpile" unique_id=1662455865]
+position = Vector2(87.000015, 975)
+rotation = 0.42352977
+scale = Vector2(0.30831346, 0.30831343)
+texture = ExtResource("27_po78x")
+
+[node name="draw_count" type="Label" parent="SeedKeeper/Drawpile" unique_id=1221162816]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 181.0
+offset_top = 837.0
+offset_right = 210.0
+offset_bottom = 914.0
+grow_vertical = 0
+text = "x"
+label_settings = SubResource("LabelSettings_imxm8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="hand" type="Sprite2D" parent="SeedKeeper" unique_id=1935885946]
+position = Vector2(56.000004, 752)
+scale = Vector2(0.5064725, 0.50647247)
+texture = ExtResource("29_m4vpe")
+script = ExtResource("30_l2use")
+
+[node name="Hand" type="VBoxContainer" parent="SeedKeeper" unique_id=1259071162]
+offset_left = 82.0
+offset_top = 113.0
+offset_right = 254.0
+offset_bottom = 721.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+offset_transform_enabled = true
+theme_override_constants/separation = 45
+alignment = 1
+script = ExtResource("31_eg01s")
+
+[node name="handSlot1" type="TextureRect" parent="SeedKeeper/Hand" unique_id=2052180581]
+texture_filter = 1
 layout_mode = 2
-theme = ExtResource("4_xfn3p")
-text = "PLAY"
+texture = ExtResource("32_ur8me")
+expand_mode = 4
+stretch_mode = 5
 
-[node name="quit_button" type="Button" parent="Control" unique_id=2085722542]
-custom_minimum_size = Vector2(270, 100)
+[node name="handSlot2" type="TextureRect" parent="SeedKeeper/Hand" unique_id=2111077351]
+texture_filter = 1
 layout_mode = 2
-size_flags_vertical = 4
-theme = ExtResource("4_xfn3p")
-text = "LEAVE"
+texture = ExtResource("32_ur8me")
+expand_mode = 4
+stretch_mode = 5
 
-[node name="MrSun" type="AnimatedSprite2D" parent="." unique_id=11568429]
-texture_filter = 5
-position = Vector2(1656, 192)
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_b64ip")
-autoplay = "default"
-frame_progress = 0.0075116544
+[node name="handSlot3" type="TextureRect" parent="SeedKeeper/Hand" unique_id=590160374]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("32_ur8me")
+expand_mode = 4
+stretch_mode = 5
 
-[node name="graphic design might be my talent yo" type="Sprite2D" parent="." unique_id=677838514]
-position = Vector2(960, 342)
-texture = ExtResource("6_tpml5")
+[node name="DiscardPile" type="Node2D" parent="SeedKeeper" unique_id=318655749]
+script = ExtResource("33_k76wc")
 
-[node name="ThumbsUp" type="Sprite2D" parent="." unique_id=1644925816]
-modulate = Color(0.88, 1, 0.908, 1)
-position = Vector2(120, 732)
-scale = Vector2(0.58021396, 0.5802139)
-texture = ExtResource("7_jqemp")
-flip_h = true
+[node name="RecycleBin" type="Sprite2D" parent="SeedKeeper/DiscardPile" unique_id=1200441947]
+position = Vector2(343.89832, 953.62506)
+scale = Vector2(0.14677277, 0.15921938)
+texture = ExtResource("34_xie5c")
 
-[node name="tutorial" type="VBoxContainer" parent="." unique_id=1704480746]
+[node name="discard_count" type="Label" parent="SeedKeeper/DiscardPile" unique_id=1739738977]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 401.81607
+offset_top = 837.0
+offset_right = 433.81607
+offset_bottom = 914.0
+grow_vertical = 0
+text = "x"
+label_settings = SubResource("LabelSettings_imxm8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=411556663]
+libraries/ = SubResource("AnimationLibrary_mfdv2")
+
+[node name="Shop" parent="." unique_id=9903558 instance=ExtResource("35_wpaos")]
 visible = false
+position = Vector2(0, -1080)
+
+[node name="moon_group" type="Node2D" parent="." unique_id=1657950665]
+position = Vector2(1717, 1080)
+script = ExtResource("36_gtnbq")
+
+[node name="Moon" type="Sprite2D" parent="moon_group" unique_id=1706999615]
+material = SubResource("ShaderMaterial_lwlx3")
+scale = Vector2(0.37796873, 0.37796873)
+texture = ExtResource("38_ssbu3")
+
+[node name="End Turn" type="Button" parent="moon_group/Moon" unique_id=1810491390]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 252.0
-offset_top = 24.0
-offset_right = 1666.0
-offset_bottom = 1059.0
+offset_left = -899.5044
+offset_top = -944.4812
+offset_right = -594.5044
+offset_bottom = -702.4812
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("4_xfn3p")
-metadata/_edit_use_anchors_ = true
-metadata/_edit_group_ = true
+scale = Vector2(2.63, 2.63)
+theme = SubResource("Theme_lwlx3")
+disabled = true
+text = "Plant or Harvest"
+script = ExtResource("39_n80r2")
 
-[node name="tutorial_box" type="PanelContainer" parent="tutorial" unique_id=438430625]
-custom_minimum_size = Vector2(1200, 920)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme = ExtResource("4_xfn3p")
-metadata/_edit_group_ = true
+[node name="WaterSupply" type="Sprite2D" parent="." unique_id=2088411526]
+position = Vector2(848.5, 1002)
+scale = Vector2(0.20053476, 0.20053475)
+texture = ExtResource("40_6ygip")
 
-[node name="Marginal" type="MarginContainer" parent="tutorial/tutorial_box" unique_id=2081237300]
-layout_mode = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
+[node name="water_label" type="Label" parent="WaterSupply" unique_id=1175126517]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 73.25342
+offset_top = -752.007
+offset_right = 266.25342
+offset_bottom = -665.007
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(4.82, 4.82)
+size_flags_vertical = 8
+text = "10/10"
+label_settings = ExtResource("41_i7i3j")
 
-[node name="HBox" type="HBoxContainer" parent="tutorial/tutorial_box/Marginal" unique_id=630360865]
-layout_mode = 2
-theme_override_constants/separation = 60
+[node name="sundial" type="Marker2D" parent="." unique_id=1442074541]
+position = Vector2(1717, 139)
+script = ExtResource("42_e63gj")
+weekLength = 4
+spacing_degrees = 17.0
+dayPoolGood = Array[PackedScene]([ExtResource("43_voc1i"), ExtResource("44_io8pq"), ExtResource("45_6k4pp")])
+dayPoolBad = Array[PackedScene]([ExtResource("46_mce57"), ExtResource("47_qnd6l")])
 
-[node name="plant" type="VBoxContainer" parent="tutorial/tutorial_box/Marginal/HBox" unique_id=1457302591]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 9
+[node name="Sun" type="Sprite2D" parent="sundial" unique_id=132937313]
+rotation = -0.1308997
+texture = ExtResource("48_2qg06")
 
-[node name="title" type="Label" parent="tutorial/tutorial_box/Marginal/HBox/plant" unique_id=451289102]
-layout_mode = 2
-theme = ExtResource("4_xfn3p")
-text = "Plant"
+[node name="days" type="Node2D" parent="sundial" unique_id=2086929812]
+
+[node name="number" type="Label" parent="sundial" unique_id=1276219381]
+offset_left = -173.0
+offset_top = -169.0
+offset_right = 157.0
+offset_bottom = 111.0
+text = "7"
+label_settings = SubResource("LabelSettings_l0oc6")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="pix" type="TextureRect" parent="tutorial/tutorial_box/Marginal/HBox/plant" unique_id=1305968556]
-layout_mode = 2
-texture = ExtResource("10_rhgbh")
-
-[node name="desc" type="RichTextLabel" parent="tutorial/tutorial_box/Marginal/HBox/plant" unique_id=1424044702]
-layout_mode = 2
-size_flags_vertical = 3
-theme = ExtResource("4_xfn3p")
-text = "Drag your seeds into plots to plant them.
-
-After each day they'll
-advance to the
-next growth stage.
-"
-scroll_active = false
-
-[node name="harvest" type="VBoxContainer" parent="tutorial/tutorial_box/Marginal/HBox" unique_id=50124259]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 9
-
-[node name="title" type="Label" parent="tutorial/tutorial_box/Marginal/HBox/harvest" unique_id=1821207443]
-layout_mode = 2
-theme = ExtResource("4_xfn3p")
-text = "Harvest"
+[node name="days left" type="Label" parent="sundial" unique_id=1788936578]
+offset_left = -95.0
+offset_top = 31.0
+offset_right = 95.0
+offset_bottom = 108.0
+text = "days left"
+label_settings = SubResource("LabelSettings_xa8c5")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="pix" type="TextureRect" parent="tutorial/tutorial_box/Marginal/HBox/harvest" unique_id=1182143370]
-layout_mode = 2
-texture = ExtResource("11_skmiq")
-metadata/_edit_group_ = true
-
-[node name="desc" type="RichTextLabel" parent="tutorial/tutorial_box/Marginal/HBox/harvest" unique_id=406484797]
-layout_mode = 2
-size_flags_vertical = 3
-theme = ExtResource("4_xfn3p")
-text = "Harvesting a plot will yield resources depending on the plant and growth stage.
-
-
-
-"
-scroll_active = false
-
-[node name="Win" type="VBoxContainer" parent="tutorial/tutorial_box/Marginal/HBox" unique_id=693330012]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 9
-
-[node name="title" type="Label" parent="tutorial/tutorial_box/Marginal/HBox/Win" unique_id=1691331899]
-layout_mode = 2
-theme = ExtResource("4_xfn3p")
-text = "Win!"
+[node name="day name" type="Label" parent="sundial" unique_id=2001576224]
+offset_left = -169.0
+offset_top = 245.0
+offset_right = 179.0
+offset_bottom = 322.0
+text = "Normal Day"
+label_settings = SubResource("LabelSettings_87ddb")
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
-[node name="pix" type="TextureRect" parent="tutorial/tutorial_box/Marginal/HBox/Win" unique_id=1281575173]
-layout_mode = 2
-texture = ExtResource("12_lf08s")
-
-[node name="desc" type="RichTextLabel" parent="tutorial/tutorial_box/Marginal/HBox/Win" unique_id=2057526845]
-layout_mode = 2
-size_flags_vertical = 3
+[node name="day desc" type="Label" parent="sundial" unique_id=397313586]
+offset_left = -192.0
+offset_top = 305.0
+offset_right = 204.0
+offset_bottom = 413.0
 theme = ExtResource("4_xfn3p")
-text = "After Planting or Harvesting end turn.
+text = "A bright and sunny day. Only as special as you make it."
+label_settings = SubResource("LabelSettings_mljfx")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
-After 20 days you'll need to pass the food quota or you'll starve.
+[node name="Gameover" parent="." unique_id=1795016673 instance=ExtResource("50_xsvbq")]
+visible = false
+position = Vector2(0, -1080)
 
-"
-scroll_active = false
-
-[node name="play_button" type="Button" parent="tutorial" unique_id=542830145]
-custom_minimum_size = Vector2(270, 100)
-layout_mode = 2
-size_flags_horizontal = 4
-theme = ExtResource("4_xfn3p")
-text = " PLAY (For real) "
+[node name="vicroy" parent="." unique_id=958708689 instance=ExtResource("51_r68vj")]
+visible = false
+position = Vector2(0, -1080)
 
 [node name="jukebox" parent="." unique_id=129333911 instance=ExtResource("11_rhgbh")]
 
-[connection signal="pressed" from="Control/play_button" to="." method="play"]
-[connection signal="pressed" from="Control/quit_button" to="." method="quit"]
-[connection signal="pressed" from="tutorial/play_button" to="." method="play"]
+[connection signal="pressed" from="moon_group/Moon/End Turn" to="." method="_on_end_turn_pressed"]

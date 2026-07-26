@@ -52,7 +52,7 @@
 [ext_resource type="PackedScene" uid="uid://xf2rwelqu76p" path="res://jukebox.tscn" id="43_edr7y"]
 [ext_resource type="PackedScene" uid="uid://dadbskbdfk5st" path="res://victory.tscn" id="46_lwlx3"]
 [ext_resource type="Theme" uid="uid://forf20kkm6ao" path="res://art/tutorial/tutorial_theme.tres" id="47_mljfx"]
-[ext_resource type="PackedScene" uid="uid://bwvig1vigtla1" path="res://tutorial_pig.tscn" id="52_tb2lt"]
+[ext_resource type="PackedScene" uid="uid://bwvig1vigtla1" path="res://tutorial_pig.tscn" id="53_cfc7e"]
 
 [sub_resource type="Shader" id="Shader_mskdk"]
 code = "shader_type canvas_item;
@@ -614,12 +614,13 @@ grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(4.82, 4.82)
 size_flags_vertical = 8
-text = "9/9"
+text = "10/10"
 label_settings = ExtResource("37_lwlx3")
 
 [node name="sundial" type="Marker2D" parent="." unique_id=1442074541]
 position = Vector2(1717, 139)
 script = ExtResource("27_bnpwn")
+weekLength = 4
 spacing_degrees = 17.0
 dayPoolGood = Array[PackedScene]([ExtResource("29_xfvwf"), ExtResource("35_iu0sx"), ExtResource("31_dhpj7")])
 dayPoolBad = Array[PackedScene]([ExtResource("36_4v2jo"), ExtResource("40_klri6")])
@@ -683,7 +684,7 @@ position = Vector2(0, -1080)
 
 [node name="jukebox" parent="." unique_id=129333911 instance=ExtResource("43_edr7y")]
 
-[node name="Pig" parent="." unique_id=98465191 instance=ExtResource("52_tb2lt")]
-position = Vector2(1713, 717)
+[node name="Pig" parent="." unique_id=664733262 instance=ExtResource("53_cfc7e")]
+position = Vector2(1717, 732.6401)
 
 [connection signal="pressed" from="moon_group/Moon/End Turn" to="." method="_on_end_turn_pressed"]
