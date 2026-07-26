@@ -1,0 +1,239 @@
+[gd_scene format=3 uid="uid://dadbskbdfk5st"]
+
+[ext_resource type="Script" uid="uid://do6tyqicavivr" path="res://code/game_over.gd" id="1_u1yty"]
+[ext_resource type="Texture2D" uid="uid://bxydy1giej0i2" path="res://art/bgs/360_F_218356901_sD5osSEexqWCL0MQWuSdCh3awhmh9mer.jpg" id="2_u1yty"]
+[ext_resource type="Texture2D" uid="uid://b8ejycvav18qm" path="res://art/bgs/vecteezy_happy-farmer-giving-thumbs-up-in-wheat-field-agriculture_65940962.jpg" id="3_msd2c"]
+[ext_resource type="Texture2D" uid="uid://bokqqtssoqmd8" path="res://art/ui/wood.png" id="4_v245v"]
+[ext_resource type="Texture2D" uid="uid://cilgvgxj6yyax" path="res://art/ui/wood_board.png" id="5_pg2b1"]
+[ext_resource type="FontFile" uid="uid://j8glluhsw0mx" path="res://art/ui/segoe-print-regular.ttf" id="6_j3yce"]
+[ext_resource type="Theme" uid="uid://forf20kkm6ao" path="res://art/tutorial/tutorial_theme.tres" id="7_1s7n3"]
+
+[node name="vicroy" type="Node2D" unique_id=9903558]
+script = ExtResource("1_u1yty")
+
+[node name="bg" type="Sprite2D" parent="." unique_id=103307646]
+position = Vector2(960, 536)
+scale = Vector2(2.545, 2.545)
+texture = ExtResource("2_u1yty")
+region_enabled = true
+region_rect = Rect2(0, 0, 540, 360)
+metadata/_edit_lock_ = true
+
+[node name="GiphyS" type="Sprite2D" parent="." unique_id=1192726326]
+position = Vector2(964.798, 461.2992)
+scale = Vector2(0.059063125, 0.09825147)
+texture = ExtResource("3_msd2c")
+
+[node name="card_border" type="Sprite2D" parent="." unique_id=813605132]
+position = Vector2(965.3917, 459.97705)
+scale = Vector2(0.40260145, 0.40260145)
+texture = ExtResource("4_v245v")
+
+[node name="WoodBoard" type="Sprite2D" parent="." unique_id=566784769]
+position = Vector2(960, 176)
+texture = ExtResource("5_pg2b1")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="WoodBoard" unique_id=2130060524]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -771.5
+offset_top = -158.0
+offset_right = -19.5
+offset_bottom = -7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.39215687)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("6_j3yce")
+theme_override_font_sizes/font_size = 78
+text = "Victory"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Seeds 4 sale" type="Sprite2D" parent="." unique_id=1790743632]
+position = Vector2(960, 742.7602)
+scale = Vector2(0.621, 0.621)
+texture = ExtResource("5_pg2b1")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Seeds 4 sale" unique_id=1374563502]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -791.0
+offset_top = -158.0
+offset_right = -0.00024414063
+offset_bottom = -7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.39215687)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("6_j3yce")
+theme_override_font_sizes/font_size = 53
+text = "You will survive the winter!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buiildings 4 sale" type="Sprite2D" parent="." unique_id=1999968301]
+position = Vector2(598.51996, 355.69327)
+scale = Vector2(0.37578624, 0.37578627)
+texture = ExtResource("5_pg2b1")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Buiildings 4 sale" unique_id=1584114844]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -771.5
+offset_top = -158.0
+offset_right = -19.5
+offset_bottom = -7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.39215687)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("6_j3yce")
+theme_override_font_sizes/font_size = 78
+text = "Days Survived:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buiildings 4 sale2" type="Sprite2D" parent="." unique_id=1367767362]
+position = Vector2(600.94, 494.8433)
+scale = Vector2(0.37578624, 0.37578627)
+texture = ExtResource("5_pg2b1")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Buiildings 4 sale2" unique_id=370744365]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -771.5
+offset_top = -158.0
+offset_right = -19.5
+offset_bottom = -7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.39215687)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("6_j3yce")
+theme_override_font_sizes/font_size = 78
+text = "Crops Harvested"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buiildings 4 sale3" type="Sprite2D" parent="." unique_id=1940675751]
+position = Vector2(1336, 360.5333)
+scale = Vector2(0.37578624, 0.37578627)
+texture = ExtResource("5_pg2b1")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Buiildings 4 sale3" unique_id=1447104395]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -771.5
+offset_top = -158.0
+offset_right = -19.5
+offset_bottom = -7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.39215687)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("6_j3yce")
+theme_override_font_sizes/font_size = 78
+text = "Money Made"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buiildings 4 sale4" type="Sprite2D" parent="." unique_id=1538812740]
+position = Vector2(1336, 487.58328)
+scale = Vector2(0.37578624, 0.37578627)
+texture = ExtResource("5_pg2b1")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Buiildings 4 sale4" unique_id=1376228840]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -771.5
+offset_top = -158.0
+offset_right = -19.5
+offset_bottom = -7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.39215687)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("6_j3yce")
+theme_override_font_sizes/font_size = 78
+text = "Total Seeds"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="peek" type="Button" parent="." unique_id=1276272614]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1368.0
+offset_top = 124.0
+offset_right = 1496.0
+offset_bottom = 236.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme = ExtResource("7_1s7n3")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "Peek at 
+farm"
+icon_alignment = 1
+
+[node name="reroll" type="Button" parent="." unique_id=1635219617]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 869.5
+offset_top = 815.9551
+offset_right = 1050.5
+offset_bottom = 927.9551
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme = ExtResource("7_1s7n3")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = " Try for a better score "
+icon_alignment = 1
+
+[connection signal="pressed" from="peek" to="." method="_on_peek_pressed"]
+[connection signal="pressed" from="reroll" to="." method="_on_reroll_pressed"]
