@@ -88,7 +88,7 @@ var current_state = STATE.PLAY
 			#jukebox.play_fert()
 		fertCount = value
 		resources.fertilizer_label.text = str(int(value))
-@onready var moneyCount : float = 5:
+@onready var moneyCount : float = 0:
 	set(value):
 		if moneyCount < value:
 			money_total += value - moneyCount
@@ -97,7 +97,7 @@ var current_state = STATE.PLAY
 		moneyCount = value
 		resources.money_label.text = str(int(value))
 		
-@onready var foodCount : float = 30:
+@onready var foodCount : float = 0:
 	set(value):
 		#if value > foodCount:
 			#jukebox.play_food()
