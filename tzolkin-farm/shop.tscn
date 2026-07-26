@@ -12,12 +12,13 @@
 
 [node name="Shop" type="Node2D" unique_id=9903558]
 script = ExtResource("1_fgaav")
-reroll_cost = null
 
 [node name="bg" type="Sprite2D" parent="." unique_id=103307646]
 position = Vector2(960, 536)
 scale = Vector2(1.4250001, 1.425)
 texture = ExtResource("1_blqjs")
+region_enabled = true
+region_rect = Rect2(0, 0, 790.5581, 520)
 metadata/_edit_lock_ = true
 
 [node name="WoodBoard" type="Sprite2D" parent="." unique_id=566784769]
@@ -44,90 +45,6 @@ theme_override_constants/shadow_outline_size = 0
 theme_override_fonts/font = ExtResource("3_6lah5")
 theme_override_font_sizes/font_size = 78
 text = "Farmer's Market"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Seeds 4 sale" type="Sprite2D" parent="." unique_id=1790743632]
-position = Vector2(952, 304)
-scale = Vector2(0.37578624, 0.37578627)
-texture = ExtResource("2_fgaav")
-metadata/_edit_group_ = true
-
-[node name="Label" type="Label" parent="Seeds 4 sale" unique_id=1374563502]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -771.5
-offset_top = -158.0
-offset_right = -19.5
-offset_bottom = -7.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.39215687)
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 3
-theme_override_constants/shadow_outline_size = 0
-theme_override_fonts/font = ExtResource("3_6lah5")
-theme_override_font_sizes/font_size = 78
-text = "Seeds 4 Sale"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Buiildings 4 sale" type="Sprite2D" parent="." unique_id=1999968301]
-position = Vector2(495.99994, 304)
-scale = Vector2(0.37578624, 0.37578627)
-texture = ExtResource("2_fgaav")
-metadata/_edit_group_ = true
-
-[node name="Label" type="Label" parent="Buiildings 4 sale" unique_id=1584114844]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -771.5
-offset_top = -158.0
-offset_right = -19.5
-offset_bottom = -7.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.39215687)
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 3
-theme_override_constants/shadow_outline_size = 0
-theme_override_fonts/font = ExtResource("3_6lah5")
-theme_override_font_sizes/font_size = 78
-text = "Renovations"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="tools 4 sale" type="Sprite2D" parent="." unique_id=1924874673]
-position = Vector2(1416, 304)
-scale = Vector2(0.37578624, 0.37578627)
-texture = ExtResource("2_fgaav")
-metadata/_edit_group_ = true
-
-[node name="Label" type="Label" parent="tools 4 sale" unique_id=1151485895]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -771.5
-offset_top = -158.0
-offset_right = -19.5
-offset_bottom = -7.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.39215687)
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 3
-theme_override_constants/shadow_outline_size = 0
-theme_override_fonts/font = ExtResource("3_6lah5")
-theme_override_font_sizes/font_size = 78
-text = "Used Gear"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -171,6 +88,62 @@ text = "Reroll
 ($5)"
 icon_alignment = 1
 
+[node name="Seeds 4 sale" type="Sprite2D" parent="." unique_id=1790743632]
+position = Vector2(1160, 303.875)
+scale = Vector2(0.37578624, 0.37578627)
+texture = ExtResource("2_fgaav")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Seeds 4 sale" unique_id=1374563502]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -771.5
+offset_top = -158.0
+offset_right = -19.5
+offset_bottom = -7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.39215687)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("3_6lah5")
+theme_override_font_sizes/font_size = 78
+text = "Seeds 4 Sale"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buiildings 4 sale" type="Sprite2D" parent="." unique_id=1999968301]
+position = Vector2(764.6235, 304)
+scale = Vector2(0.37578624, 0.37578627)
+texture = ExtResource("2_fgaav")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Buiildings 4 sale" unique_id=1584114844]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -771.5
+offset_top = -158.0
+offset_right = -19.5
+offset_bottom = -7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.39215687)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("3_6lah5")
+theme_override_font_sizes/font_size = 78
+text = "Renovations"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="seed_shop" type="Control" parent="." unique_id=423650468]
 layout_mode = 3
 anchors_preset = 8
@@ -178,20 +151,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 752.0
-offset_top = 360.0
-offset_right = 752.0
-offset_bottom = 360.0
+offset_left = 960.0
+offset_top = 359.875
+offset_right = 960.0
+offset_bottom = 359.875
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="handSlot4" type="TextureRect" parent="seed_shop" unique_id=186561810]
 texture_filter = 1
 layout_mode = 0
-offset_left = 200.0
-offset_top = 160.0
-offset_right = 410.0
-offset_bottom = 398.0
+offset_left = 208.0
+offset_top = 160.125
+offset_right = 418.0
+offset_bottom = 398.125
 scale = Vector2(0.66, 0.66)
 texture = ExtResource("5_6lah5")
 stretch_mode = 2
@@ -214,10 +187,10 @@ script = ExtResource("6_gmb2m")
 [node name="handSlot2" type="TextureRect" parent="seed_shop" unique_id=500835319]
 texture_filter = 1
 layout_mode = 0
-offset_left = 200.0
-offset_top = -24.0
-offset_right = 410.0
-offset_bottom = 214.0
+offset_left = 208.0
+offset_top = -23.875
+offset_right = 418.0
+offset_bottom = 214.125
 scale = Vector2(0.66, 0.66)
 texture = ExtResource("5_6lah5")
 stretch_mode = 2
@@ -238,10 +211,10 @@ script = ExtResource("6_gmb2m")
 [node name="handSlot6" type="TextureRect" parent="seed_shop" unique_id=1392506651]
 texture_filter = 1
 layout_mode = 0
-offset_left = 200.0
-offset_top = 344.0
-offset_right = 410.0
-offset_bottom = 582.0
+offset_left = 208.0
+offset_top = 344.125
+offset_right = 418.0
+offset_bottom = 582.125
 scale = Vector2(0.66, 0.66)
 texture = ExtResource("5_6lah5")
 stretch_mode = 2
@@ -266,10 +239,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 400.0
-offset_top = 360.0
-offset_right = 400.0
-offset_bottom = 360.0
+offset_left = 664.0
+offset_top = 376.0
+offset_right = 664.0
+offset_bottom = 376.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -310,7 +283,37 @@ texture = ExtResource("7_myf4l")
 stretch_mode = 2
 script = ExtResource("6_gmb2m")
 
+[node name="tools 4 sale" type="Sprite2D" parent="." unique_id=1924874673]
+visible = false
+position = Vector2(1416, 304)
+scale = Vector2(0.37578624, 0.37578627)
+texture = ExtResource("2_fgaav")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="tools 4 sale" unique_id=1151485895]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -771.5
+offset_top = -158.0
+offset_right = -19.5
+offset_bottom = -7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.39215687)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("3_6lah5")
+theme_override_font_sizes/font_size = 78
+text = "Used Gear"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="tool_shop" type="Control" parent="." unique_id=825254780]
+visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5

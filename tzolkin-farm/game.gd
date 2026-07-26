@@ -80,7 +80,7 @@ var current_state = STATE.PLAY
 			#jukebox.play_fert()
 		fertCount = value
 		resources.fertilizer_label.text = str(int(value))
-@onready var moneyCount : float = 16:
+@onready var moneyCount : float = 5:
 	set(value):
 		if moneyCount < value:
 			money_total += value - moneyCount
@@ -89,7 +89,7 @@ var current_state = STATE.PLAY
 		moneyCount = value
 		resources.money_label.text = str(int(value))
 		
-@onready var foodCount : float = 26:
+@onready var foodCount : float = 0:
 	set(value):
 		#if value > foodCount:
 			#jukebox.play_food()
@@ -106,16 +106,16 @@ func _ready() -> void:
 	
 	Game.game = self
 	resources.update_quota(quota)
-	for i in 3:
-		seedkeeper.discard_pile.add_card(APPLE)
-		seedkeeper.discard_pile.add_card(SQUASH)
+	#for i in 3:
+		#seedkeeper.discard_pile.add_card(APPLE)
+		#seedkeeper.discard_pile.add_card(SQUASH)
 	for i in 2:
-		seedkeeper.drawpile.add_card(APPLE)
+		
 		seedkeeper.drawpile.add_card(MAIZE)
 		seedkeeper.drawpile.add_card(POTATO)
 
+	seedkeeper.drawpile.add_card(APPLE)
 	seedkeeper.drawpile.add_card(BEANS)
-	seedkeeper.drawpile.add_card(WHEAT)
 	
 	seedkeeper.hand.handList.resize(3)
 	seedkeeper.draw_until_full()

@@ -19,8 +19,8 @@ func _ready():
 	modulate = Color(1.0, 1.0, 1.0, 0.0)
 	match rarity:
 		0: money_cost = 10
-		1: money_cost = 13
-		2: money_cost = 17
+		1: money_cost = 14
+		2: money_cost = 18
 
 func build_animation():
 	built = true
