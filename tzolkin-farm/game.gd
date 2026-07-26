@@ -224,7 +224,7 @@ func weekend():
 	
 	
 	jukebox.play_week_end()
-	
+	for building in building_keeper.buildings: building.on_week_end()
 	
 	remaining = slotList.size()
 	

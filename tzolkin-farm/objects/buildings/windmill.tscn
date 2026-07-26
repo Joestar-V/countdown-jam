@@ -8,6 +8,7 @@
 script = ExtResource("2_ls77g")
 building_name = "Wind Mill"
 picture = ExtResource("3_nss0v")
+tooltip = "Flowering plants yield 1 extra coin"
 
 [node name="picture" parent="." index="0" unique_id=1028298159]
 position = Vector2(-24, -156.00002)

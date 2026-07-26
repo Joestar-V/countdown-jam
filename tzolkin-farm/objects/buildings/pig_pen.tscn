@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bwbd6340j740s"]
+
+[ext_resource type="PackedScene" uid="uid://buo3cu3g4ufdo" path="res://objects/buildings/building.tscn" id="1_y4kby"]
+[ext_resource type="Script" uid="uid://dqeqiofj60rly" path="res://objects/buildings/pig_pen.gd" id="2_y4kby"]
+[ext_resource type="Texture2D" uid="uid://buyru4lmjcubv" path="res://art/buildings/pig_pen.png" id="4_3wr35"]
+
+[node name="pig pen" unique_id=90871590 instance=ExtResource("1_y4kby")]
+script = ExtResource("2_y4kby")
+building_name = "Pig Pen"
+picture = ExtResource("4_3wr35")
+tooltip = "Fruits yield 2 bonus food on death"
+
+[node name="picture" parent="." index="0" unique_id=1028298159]
+position = Vector2(0, -36)
+scale = Vector2(0.43225965, 0.4322596)
+texture = ExtResource("4_3wr35")
+
+[node name="Marker2D" parent="." index="1" unique_id=233934269]
+visible = true
