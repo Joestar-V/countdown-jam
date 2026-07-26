@@ -186,7 +186,7 @@ func _on_end_turn_pressed() -> void:
 		close_shop()
 		return
 			
-			
+	current_state = STATE.POPUP
 	for slot in slotList:
 		if slot.pos == 4:
 			await slot.harvest_list()
