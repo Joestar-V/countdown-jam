@@ -33,13 +33,13 @@ func _on_peek_pressed() -> void:
 	#shop is still visible, idk if that interfers with trying to interact with the buildings
 	
 func set_up_stats(win_or_lose = 0):
-	moeny_gathered.text = str(Game.game.money_total)
+	moeny_gathered.text = str(int(Game.game.money_total))
 	crops_harvested.text = str(Game.game.harvest_total)
 	total_seeds.text = str(Game.game.total_seeds)
 	if win_or_lose == 0:
 		days_survived_or_apples.text = str(Game.game.total_days)
 	else:
-		days_survived_or_apples.text = str(Game.game.total_apples)
+		days_survived_or_apples.text = str(int(Game.game.total_apples))
 
 func _on_reroll_pressed() -> void:
 	get_tree().change_scene_to_file("res://title_screen.tscn")

@@ -13,7 +13,7 @@ extends Marker2D
 		currentDay = value
 		number.text = str(weekLength - currentDay)
 @export var week = 0
-@onready var finalDay = weekLength*5
+@onready var finalDay = weekLength*1
 @onready var dayList : Array[Day]
 @export var dayPoolGood : Array[PackedScene]
 @export var dayPoolBad : Array[PackedScene]
