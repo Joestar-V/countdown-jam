@@ -46,6 +46,7 @@ func button_up():
 			no_room.hide()
 			return
 		#buy
+		Game.game.jukebox.play_purchase()
 		Game.game.moneyCount -= building_for_sale.money_cost
 		remove_child(building_for_sale)
 		Game.game.building_keeper.add_building(building_for_sale)
