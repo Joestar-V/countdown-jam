@@ -44,8 +44,8 @@ texture = ExtResource("1_10ilk")
 
 [node name="MrSun" type="AnimatedSprite2D" parent="." unique_id=775240405]
 texture_filter = 5
-position = Vector2(336, 132)
-scale = Vector2(1.5, 1.5)
+position = Vector2(381, 144)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_gwce8")
 autoplay = "default"
 flip_h = true

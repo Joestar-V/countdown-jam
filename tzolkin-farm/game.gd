@@ -58,12 +58,12 @@ var current_state = STATE.PLAY
 @onready var total_seeds = 0
 @onready var vicroy: Node2D = $vicroy
 
-@onready var water : int = 10:
+@onready var water : int = 9:
 	set(value):
 		water = clamp(value, 0, water_max)
 		water_label.text = str(water) +"/"+ str(water_max)
 		
-@onready var water_max : int = 10:
+@onready var water_max : int = 9:
 	set(value):
 		water_max = value
 		water_label.text = str(water) +"/"+ str(water_max)

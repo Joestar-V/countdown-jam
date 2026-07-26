@@ -4,10 +4,10 @@ extends Node2D
 @onready var buildings := []
 @onready var max_builds := 4
 #
-#const BARN = preload("uid://rhdfbuaejr7m")
+#const BARN = preload("uid://rhdfbuaejr7m") 
 #const WINDMILL = preload("uid://rlxpw61la8um")
 #const CHICKEN_COOP = preload("uid://ds42iybef5saq")
-const COMPOSTER = preload("uid://dealvndyjgyyq")
+#const COMPOSTER = preload("uid://dealvndyjgyyq")
 #const MAGIC_GARDEN = preload("uid://6ii4tvrtdknv")
 #const MARKET = preload("uid://bkuddae7q3vsc")
 #const TOOL_SHED = preload("uid://cgill5jo1aspp")
@@ -21,7 +21,7 @@ func _ready():
 	#add_building_packed(TOOL_SHED)
 	#add_building_packed(BARN)
 	#add_building_packed(CHICKEN_COOP)
-	add_building_packed(COMPOSTER)
+	#add_building_packed(COMPOSTER)
 #
 
 func add_building(building : Building):

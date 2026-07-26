@@ -6,7 +6,7 @@
 
 [node name="Composter" unique_id=90871590 instance=ExtResource("1_t78bv")]
 script = ExtResource("2_t78bv")
-min_fert = 2
+min_fert = 0
 max_fert = 2
 building_name = "Composter"
 picture = ExtResource("3_ay6qu")

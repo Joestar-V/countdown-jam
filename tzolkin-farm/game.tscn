@@ -561,7 +561,7 @@ visible = false
 position = Vector2(0, -1080)
 
 [node name="moon_group" type="Node2D" parent="." unique_id=1657950665]
-position = Vector2(1716, 1080)
+position = Vector2(1717, 1080)
 script = ExtResource("34_87ddb")
 
 [node name="Moon" type="Sprite2D" parent="moon_group" unique_id=1706999615]
@@ -610,7 +610,7 @@ text = "10/10"
 label_settings = ExtResource("37_lwlx3")
 
 [node name="sundial" type="Marker2D" parent="." unique_id=1442074541]
-position = Vector2(1692, 139)
+position = Vector2(1717, 139)
 script = ExtResource("27_bnpwn")
 spacing_degrees = 17.0
 dayPoolGood = Array[PackedScene]([ExtResource("29_xfvwf"), ExtResource("35_iu0sx"), ExtResource("31_dhpj7")])
