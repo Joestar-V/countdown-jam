@@ -34,6 +34,7 @@ func draw_until_full():
 			drawnCard.handPos = j
 			drawnCard.homeSlot = hand.slotList[j]
 			Game.game.seedList.append(drawnCard)
+			for bld in Game.game.building_keeper.buildings: bld.on_seed_init(drawnCard)
 			
 func reshuffle():
 	var tinyList : Array

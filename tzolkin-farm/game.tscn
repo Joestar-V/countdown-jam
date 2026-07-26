@@ -612,6 +612,7 @@ label_settings = ExtResource("37_lwlx3")
 [node name="sundial" type="Marker2D" parent="." unique_id=1442074541]
 position = Vector2(1717, 139)
 script = ExtResource("27_bnpwn")
+weekLength = 4
 spacing_degrees = 17.0
 dayPoolGood = Array[PackedScene]([ExtResource("29_xfvwf"), ExtResource("35_iu0sx"), ExtResource("31_dhpj7")])
 dayPoolBad = Array[PackedScene]([ExtResource("36_4v2jo"), ExtResource("40_klri6")])

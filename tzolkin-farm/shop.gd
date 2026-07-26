@@ -36,9 +36,6 @@ func roll():
 		seed.homeSlot = slot
 		seed.global_position = slot.global_position + ( slot.size/2)
 		
-	for slot in tool_shop.get_children():
-		if slot.tool:
-			slot.tool.queue_free()
 			
 	for slot in building_shop.get_children():
 		if slot.building:

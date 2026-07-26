@@ -7,7 +7,7 @@
 [node name="Cactus" unique_id=1742177086 instance=ExtResource("1_r6k67")]
 script = ExtResource("2_8kbmo")
 category = 2
-sprout = Vector3i(1, 0, 0)
+sprout = Vector3i(0, 1, 0)
 flower = Vector3i(1, 0, 0)
 fruit = Vector3i(2, 1, 0)
 death = Vector3i(0, 1, 0)

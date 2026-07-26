@@ -10,11 +10,11 @@ category = 2
 sprout = Vector3i(0, 0, 1)
 flower = Vector3i(0, 0, 1)
 fruit = Vector3i(6, 0, 0)
-death = Vector3i(6, 0, 0)
+death = Vector3i(5, 0, 0)
 card_name = "Squash"
 picture = ExtResource("3_ryfnu")
 rarity = 1
 water_cost = 6
 
-[node name="card_image" parent="." index="0" unique_id=551817306]
+[node name="card_image" parent="visual" parent_id_path=PackedInt32Array(153132487) index="0" unique_id=551817306]
 texture = ExtResource("3_ryfnu")

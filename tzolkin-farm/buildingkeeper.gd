@@ -6,7 +6,7 @@ extends Node2D
 #
 #const BARN = preload("uid://rhdfbuaejr7m") 
 #const WINDMILL = preload("uid://rlxpw61la8um")
-#const CHICKEN_COOP = preload("uid://ds42iybef5saq")
+const CHICKEN_COOP = preload("uid://ds42iybef5saq")
 #const COMPOSTER = preload("uid://dealvndyjgyyq")
 #const MAGIC_GARDEN = preload("uid://6ii4tvrtdknv")
 #const MARKET = preload("uid://bkuddae7q3vsc")
@@ -20,7 +20,7 @@ func _ready():
 	#add_building_packed(MARKET)
 	#add_building_packed(TOOL_SHED)
 	#add_building_packed(BARN)
-	#add_building_packed(CHICKEN_COOP)
+	add_building_packed(CHICKEN_COOP)
 	#add_building_packed(COMPOSTER)
 #
 

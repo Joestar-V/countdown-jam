@@ -34,12 +34,17 @@ func build_animation():
 	on_built()
 	
 
+func plant(seed:Seed):
+	pass
 
 func on_built():
 	pass
 
 func on_destroyed():
 	queue_free()
+
+func on_seed_init(seed:Seed):
+	pass
 
 func on_turn_start():
 	pass

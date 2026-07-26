@@ -55,12 +55,13 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	if (Game.game.dragging == true) and (Game.game.harvested == false) and (Game.game.water >= Game.game.dragged.water_cost) and (Game.game.fertCount >= self.pos): 
-		if !glowing: glow()
-	else:
-		create_tween().tween_property(self.material,"shader_parameter/flash_amount",0.0,0.0001)
-	
-	
+	if Game.game.current_state == Game.game.STATE.PLAY:
+		if (Game.game.dragging == true) and (Game.game.harvested == false) and (Game.game.dragged) and (Game.game.water >= Game.game.dragged.water_cost) and (Game.game.fertCount >= self.pos): 
+			if !glowing: glow()
+		else:
+			create_tween().tween_property(self.material,"shader_parameter/flash_amount",0.0,0.0001)
+		
+		
 	
 func glow():
 	glowing = true

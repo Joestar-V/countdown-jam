@@ -95,7 +95,7 @@ var current_state = STATE.PLAY
 		moneyCount = value
 		resources.money_label.text = str(int(value))
 		
-@onready var foodCount : float = 20:
+@onready var foodCount : float = 200:
 	set(value):
 		#if value > foodCount:
 			#jukebox.play_food()

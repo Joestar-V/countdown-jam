@@ -22,7 +22,7 @@ class_name Seed
 func update_visuals():
 	#do stuf
 	stat_spread.seed = self
-	stat_spread.set_visuals()
+	
 	water_label.text = str(water_cost)
 	title_label.text = card_name
 	cost_tag.text = "$" + str(money_cost)
@@ -42,8 +42,9 @@ func update_visuals():
 			card_border.modulate = Color(0.976, 0.898, 0.0, 1.0)
 			title_label.modulate = Color(0.69, 0.282, 0.0, 1.0)
 		
-	await get_tree().create_timer(.1).timeout
+	await get_tree().create_timer(.08).timeout
 	self.scale = default_scale
+	stat_spread.set_visuals()
 	if shop: price_tag.show()
 		
 func on_harvest_sprout():

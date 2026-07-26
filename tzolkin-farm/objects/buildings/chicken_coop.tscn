@@ -6,6 +6,9 @@
 
 [node name="Coop" unique_id=90871590 instance=ExtResource("1_d7je2")]
 script = ExtResource("2_d7je2")
+building_name = "Chicken Coop"
+picture = ExtResource("3_6um3c")
+tooltip = "Cereal Crops yield 1 bonus food"
 
 [node name="picture" parent="." index="0" unique_id=1028298159]
 position = Vector2(2, -43)
