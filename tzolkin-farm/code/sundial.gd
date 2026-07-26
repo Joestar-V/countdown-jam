@@ -13,7 +13,7 @@ extends Marker2D
 		currentDay = value
 		number.text = str(weekLength - currentDay)
 @export var week = 0
-@onready var finalDay = weekLength*1
+@onready var finalDay = weekLength*5
 @onready var dayList : Array[Day]
 @export var dayPoolGood : Array[PackedScene]
 @export var dayPoolBad : Array[PackedScene]
@@ -43,16 +43,14 @@ func first_day():
 	currentDay = currentDay
 	var j = 0
 	var k = 0
-	for i in weekLength:
-		if j < goodDays:
+	for i in weekLength-1:
+		if j < goodDays + badDays:
 			dayList.append(dayPoolGood.pick_random().instantiate())
 			j += 1
-		elif k < badDays:
-			dayList.append(dayPoolBad.pick_random().instantiate())
-			k += 1
 		else:
 			dayList.append(NORMAL_DAY.instantiate())
 	dayList.shuffle()
+	dayList.push_front(NORMAL_DAY.instantiate())
 	day_name.text = dayList.front().title
 	create_circle()
 	dayList.front().biggify()
@@ -63,7 +61,32 @@ func first_day():
 	
 	
 	return (dayList.pop_front())
+func firster_day():
+	currentDay = currentDay
+	var j = 0
+	var k = 0
 	
+	for i in weekLength-1:
+		if j < goodDays:
+			dayList.append(dayPoolGood.pick_random().instantiate())
+			j += 1
+		elif k < badDays:
+			dayList.append(dayPoolBad.pick_random().instantiate())
+			k += 1
+		else:
+			dayList.append(NORMAL_DAY.instantiate())
+	dayList.shuffle()
+	dayList.push_front(NORMAL_DAY.instantiate())
+	day_name.text = dayList.front().title
+	create_circle()
+	dayList.front().biggify()
+	dayList.front().day_start()
+	
+	for building : Building in Game.game.building_keeper.buildings:
+		building.on_turn_start()
+	
+	
+	return (dayList.pop_front())
 
 	
 func restart():
@@ -83,7 +106,7 @@ func advance_day():
 		day_name.text = lastDay.title
 		lastDay.biggify()
 		await Game.game.weekend()
-		Game.game.day = first_day()
+		Game.game.day = firster_day()
 		day_name.text = Game.game.day.title
 		
 	else:
