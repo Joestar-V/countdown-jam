@@ -28,6 +28,7 @@ Game="*uid://bjq2a5ncauj7y"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
+window/size/no_focus=true
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
